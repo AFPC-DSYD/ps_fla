@@ -2309,7 +2309,7 @@ if (false) {
                     myCount = d.value.cnt;
                     myAverage = d.value.average;
                 }
-                return __WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].geoCS[__WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].stateFormat[d.key]] + "\n Average TOS: " + myAverage + "\n Completed Tours: " + myCount;
+                return __WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].geoCS[__WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].stateFormat[d.key]] + "\n Average TOS: " + myAverage + " months" + "\n Completed Tours: " + myCount;
             });
             // usChart.on('filtered',(chart) => {
             //     if (chart.hasFilter()) {
@@ -2391,7 +2391,7 @@ if (false) {
                 }
                 //return formats.("99":"FullName")[formats.("AA":"99")[d.key]] + " " + myCount ;
                 //                             return formats.geoCS[formats.stateFormat[d.key]] + ": " + myCount ;
-                return __WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].countryLong[d.key] + "\n Average TOS: " + jpAverage + "\n Completed Tours: " + jpCount;
+                return __WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].countryLong[d.key] + "\n Average TOS: " + jpAverage + " months" + "\n Completed Tours: " + jpCount;
             });
 
             //jpChart.controlsUseVisibility(true)
@@ -26422,4 +26422,4 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.b0c11d3189405b731f55.js.map
+//# sourceMappingURL=app.90122c1684618eaa9f46.js.map
