@@ -2388,6 +2388,8 @@ if (false) {
             // })
 
             usChart.on('pretransition', function (chart) {
+
+                chart.select('svg').attr("class", "border shadow p-1 mt-3 bg-white rounded");
                 // set viewport for svg
                 chart.maxWidth = 950;
                 chart.maxHeight = 450;
@@ -2483,6 +2485,7 @@ if (false) {
 
             jpChart.on('pretransition', function (chart) {
                 var color = 'orange';
+                chart.select('svg').attr("class", "border shadow p-3 mt-3 bg-white rounded");
                 chart.select('svg').select(".divider").remove();
                 chart.select('#dc-jp-geoChoroplethChart svg .layer0').append('g').attr("class", "divider");
                 var divider = chart.select('.divider');
@@ -12296,7 +12299,7 @@ if(false) {
             usChart.on('pretransition', function (chart) {
 
                 var color = 'orange';
-                chart.select('svg').attr("class", "border");
+                chart.select('svg').attr("class", "border shadow p-1 mt-3 bg-white rounded");
                 chart.select('svg').select(".textLabels").remove();
                 chart.select('svg .layer0').append('g').attr("class", "textLabels");
 
@@ -26677,4 +26680,4 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.68e1ac125ce6273aa395.js.map
+//# sourceMappingURL=app.ffbae8955e4d3c22ab90.js.map
