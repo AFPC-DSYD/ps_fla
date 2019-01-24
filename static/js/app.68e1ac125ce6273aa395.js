@@ -12226,7 +12226,6 @@ if(false) {
                 return d.key;
             }).controlsUseVisibility(true).on('pretransition', function (chart) {
                 chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)').on('click', function (d) {
-                    //this.submit(d, 'dc-grade-barchart')
                     chart.filter(d);
                     dc.redrawAll();
                 });
@@ -25877,8 +25876,8 @@ if(false) {
                 return d.key;
             }).on('pretransition', function (chart) {
                 chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)').on('click', function (d) {
-                    _this.submit(d, 'dc-grade-barchart');
-                    console.log(d.key);
+                    chart.filter(d);
+                    dc.redrawAll();
                 });
             }).ordering(function (d) {
                 return __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].gradeOrder[d.key];
@@ -26678,4 +26677,4 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.da246c7a2de5a74aaa54.js.map
+//# sourceMappingURL=app.68e1ac125ce6273aa395.js.map
