@@ -37,7 +37,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container" },
+    { staticClass: "container-fluid" },
     [
       _c(
         "transition-group",
@@ -123,101 +123,129 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-4", attrs: { id: "fyr" } }, [
-                  _c("div", { attrs: { id: "dc-fyr-barchart" } }, [
-                    _c("h3", [
-                      _vm._v("Fiscal Year"),
-                      _c("span", {
-                        staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                      })
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12",
+                    attrs: { id: "fyr" }
+                  },
+                  [
+                    _c("div", { attrs: { id: "dc-fyr-barchart" } }, [
+                      _c("h3", [
+                        _vm._v("Fiscal Year"),
+                        _c("span", {
+                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
+                        })
+                      ])
                     ])
-                  ])
-                ]),
+                  ]
+                ),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-8", attrs: { id: "edlevel" } }, [
-                  _c("div", { attrs: { id: "dc-edlevel-barchart" } }, [
-                    _c("h3", [
-                      _vm._v("Degree Type "),
-                      _c("span", {
-                        staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "btn btn-danger btn-sm btn-rounded reset",
-                          staticStyle: { visibility: "hidden" },
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              _vm.resetChart("dc-edlevel-barchart")
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-xl-8 col-lg-8 col-md-6 col-sm-6 col-12",
+                    attrs: { id: "edlevel" }
+                  },
+                  [
+                    _c("div", { attrs: { id: "dc-edlevel-barchart" } }, [
+                      _c("h3", [
+                        _vm._v("Degree Type "),
+                        _c("span", {
+                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-danger btn-sm btn-rounded reset",
+                            staticStyle: { visibility: "hidden" },
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.resetChart("dc-edlevel-barchart")
+                              }
                             }
-                          }
-                        },
-                        [_vm._v("Reset\n                            ")]
-                      )
+                          },
+                          [_vm._v("Reset\n                            ")]
+                        )
+                      ])
                     ])
-                  ])
-                ])
+                  ]
+                )
               ]),
               _vm._v(" "),
               _c("br"),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-5", attrs: { id: "grade" } }, [
-                  _c("div", { attrs: { id: "dc-grade-rowchart" } }, [
-                    _c("h3", [
-                      _vm._v("Grade "),
-                      _c("span", {
-                        staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "btn btn-danger btn-sm btn-rounded reset",
-                          staticStyle: { visibility: "hidden" },
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              _vm.resetChart("dc-grade-rowchart")
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-xl-5 col-lg-5 col-md-6 col-sm-6 col-12",
+                    attrs: { id: "grade" }
+                  },
+                  [
+                    _c("div", { attrs: { id: "dc-grade-rowchart" } }, [
+                      _c("h3", [
+                        _vm._v("Grade "),
+                        _c("span", {
+                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-danger btn-sm btn-rounded reset",
+                            staticStyle: { visibility: "hidden" },
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.resetChart("dc-grade-rowchart")
+                              }
                             }
-                          }
-                        },
-                        [_vm._v("Reset\n                            ")]
-                      )
+                          },
+                          [_vm._v("Reset\n                            ")]
+                        )
+                      ])
                     ])
-                  ])
-                ]),
+                  ]
+                ),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-7", attrs: { id: "cafsc" } }, [
-                  _c("div", { attrs: { id: "dc-cafsc-rowchart" } }, [
-                    _c("h3", [
-                      _vm._v("CAFSC"),
-                      _c("span", {
-                        staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "btn btn-danger btn-sm btn-rounded reset",
-                          staticStyle: { visibility: "hidden" },
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              _vm.resetChart("dc-cafsc-rowchart")
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-xl-7 col-lg-7 col-md-6 col-sm-6 col-12",
+                    attrs: { id: "cafsc" }
+                  },
+                  [
+                    _c("div", { attrs: { id: "dc-cafsc-rowchart" } }, [
+                      _c("h3", [
+                        _vm._v("CAFSC"),
+                        _c("span", {
+                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-danger btn-sm btn-rounded reset",
+                            staticStyle: { visibility: "hidden" },
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.resetChart("dc-cafsc-rowchart")
+                              }
                             }
-                          }
-                        },
-                        [_vm._v("Reset\n                            ")]
-                      )
+                          },
+                          [_vm._v("Reset\n                            ")]
+                        )
+                      ])
                     ])
-                  ])
-                ])
+                  ]
+                )
               ])
             ]
           )
@@ -350,7 +378,7 @@ var render = function() {
   return _c("div", [
     _c(
       "div",
-      { staticClass: "container" },
+      { staticClass: "container-fluid" },
       [
         _c(
           "transition-group",
@@ -424,92 +452,126 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-3", attrs: { id: "year" } }, [
-                    _c("div", { attrs: { id: "dc-year-rowchart" } }, [
-                      _c("h3", [
-                        _vm._v("Year "),
-                        _c("span", {
-                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                        }),
-                        _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "btn btn-danger btn-sm btn-rounded reset",
-                            staticStyle: { visibility: "hidden" },
-                            attrs: { type: "button" },
-                            on: {
-                              click: function($event) {
-                                _vm.resetChart("dc-year-rowchart")
-                              }
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col-xl-2 col-lg-3 col-md-3 col-sm-6 col-6",
+                      attrs: { id: "year" }
+                    },
+                    [
+                      _c("div", { attrs: { id: "dc-year-rowchart" } }, [
+                        _c("h3", [
+                          _vm._v("Year "),
+                          _c("span", {
+                            staticStyle: {
+                              "font-size": "14pt",
+                              opacity: "0.87"
                             }
-                          },
-                          [_vm._v("Reset")]
-                        )
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "btn btn-danger btn-sm btn-rounded reset",
+                              staticStyle: { visibility: "hidden" },
+                              attrs: { type: "button" },
+                              on: {
+                                click: function($event) {
+                                  _vm.resetChart("dc-year-rowchart")
+                                }
+                              }
+                            },
+                            [_vm._v("Reset")]
+                          )
+                        ])
                       ])
-                    ])
-                  ]),
+                    ]
+                  ),
                   _vm._v(" "),
-                  _c("div", { staticClass: "col-3", attrs: { id: "type" } }, [
-                    _c("div", { attrs: { id: "dc-type-rowchart" } }, [
-                      _c("h3", [
-                        _vm._v("Type "),
-                        _c("span", {
-                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                        }),
-                        _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "btn btn-danger btn-sm btn-rounded reset",
-                            staticStyle: { visibility: "hidden" },
-                            attrs: { type: "button" },
-                            on: {
-                              click: function($event) {
-                                _vm.resetChart("dc-type-rowchart")
-                              }
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6",
+                      attrs: { id: "type" }
+                    },
+                    [
+                      _c("div", { attrs: { id: "dc-type-rowchart" } }, [
+                        _c("h3", [
+                          _vm._v("Type "),
+                          _c("span", {
+                            staticStyle: {
+                              "font-size": "14pt",
+                              opacity: "0.87"
                             }
-                          },
-                          [_vm._v("Reset")]
-                        )
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "btn btn-danger btn-sm btn-rounded reset",
+                              staticStyle: { visibility: "hidden" },
+                              attrs: { type: "button" },
+                              on: {
+                                click: function($event) {
+                                  _vm.resetChart("dc-type-rowchart")
+                                }
+                              }
+                            },
+                            [_vm._v("Reset")]
+                          )
+                        ])
                       ])
-                    ])
-                  ]),
+                    ]
+                  ),
                   _vm._v(" "),
-                  _c("div", { staticClass: "col-6", attrs: { id: "grade" } }, [
-                    _c("div", { attrs: { id: "dc-grade-barchart" } }, [
-                      _c("h3", [
-                        _vm._v("Grade "),
-                        _c("span", {
-                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                        }),
-                        _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "btn btn-danger btn-sm btn-rounded reset",
-                            staticStyle: { visibility: "hidden" },
-                            attrs: { type: "button" },
-                            on: {
-                              click: function($event) {
-                                _vm.resetChart("dc-grade-barchart")
-                              }
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "col-xl-7 col-lg-6 col-md-6 col-sm-12 col-12",
+                      attrs: { id: "grade" }
+                    },
+                    [
+                      _c("div", { attrs: { id: "dc-grade-barchart" } }, [
+                        _c("h3", [
+                          _vm._v("Grade "),
+                          _c("span", {
+                            staticStyle: {
+                              "font-size": "14pt",
+                              opacity: "0.87"
                             }
-                          },
-                          [_vm._v("Reset")]
-                        )
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "btn btn-danger btn-sm btn-rounded reset",
+                              staticStyle: { visibility: "hidden" },
+                              attrs: { type: "button" },
+                              on: {
+                                click: function($event) {
+                                  _vm.resetChart("dc-grade-barchart")
+                                }
+                              }
+                            },
+                            [_vm._v("Reset")]
+                          )
+                        ])
                       ])
-                    ])
-                  ])
+                    ]
+                  )
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "row" }, [
                   _c(
                     "div",
-                    { staticClass: "col-3", attrs: { id: "marital" } },
+                    {
+                      staticClass: "col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12",
+                      attrs: { id: "marital" }
+                    },
                     [
                       _c("div", { attrs: { id: "dc-marital-barchart" } }, [
                         _c("h3", [
@@ -543,7 +605,9 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "div",
-                    { staticClass: "col-9" },
+                    {
+                      staticClass: "col-xl-9 col-lg-9 col-md-9 col-sm-8 col-12"
+                    },
                     [
                       _c("largeBarChart", {
                         attrs: {
@@ -979,7 +1043,8 @@ if (false) {
             var careerFieldChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getOrdinalBarChart(careerFieldConfig);
             careerFieldChart.elasticX(true).on('pretransition', function (chart) {
                 chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)').on('click', function (d) {
-                    _this.submit(d, 'dc-careerField-barchart');
+                    chart.filter(d);
+                    dc.redrawAll();
                 });
             }).yAxis().tickFormat(function (v) {
                 return v + "%";
@@ -2200,7 +2265,10 @@ if (false) {
             }).elasticX(true).colorAccessor(function (d) {
                 return d.key;
             }).on('pretransition', function (chart) {
-                chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)');
+                chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)').on('click', function (d) {
+                    chart.filter(d);
+                    dc.redrawAll();
+                });
             }).ordering(function (d) {
                 return __WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].gradeOrder[d.key];
             });
@@ -2612,7 +2680,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container" },
+    { staticClass: "container-fluid" },
     [
       _c(
         "transition-group",
@@ -2681,111 +2749,134 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-4" }, [
-                  _c("div", { staticClass: "row" }, [
-                    _c(
-                      "div",
-                      { staticClass: "col-12", attrs: { id: "type" } },
-                      [
-                        _c("div", { attrs: { id: "dc-type-rowchart" } }, [
-                          _c("h3", [
-                            _vm._v("Type "),
-                            _c(
-                              "span",
-                              {
-                                staticStyle: {
-                                  "font-size": "14pt",
-                                  opacity: "0.87"
-                                }
-                              },
-                              [_vm._v(_vm._s(_vm.ylabel))]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "button",
-                              {
-                                staticClass:
-                                  "btn btn-danger btn-sm btn-rounded reset",
-                                staticStyle: { visibility: "hidden" },
-                                attrs: { type: "button" },
-                                on: {
-                                  click: function($event) {
-                                    _vm.resetChart("dc-type-rowchart")
+                _c(
+                  "div",
+                  { staticClass: "col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12" },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c(
+                        "div",
+                        { staticClass: "col-12", attrs: { id: "type" } },
+                        [
+                          _c("div", { attrs: { id: "dc-type-rowchart" } }, [
+                            _c("h3", [
+                              _vm._v("Type "),
+                              _c(
+                                "span",
+                                {
+                                  staticStyle: {
+                                    "font-size": "14pt",
+                                    opacity: "0.87"
                                   }
-                                }
-                              },
-                              [_vm._v("Reset")]
-                            )
+                                },
+                                [_vm._v(_vm._s(_vm.ylabel))]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "button",
+                                {
+                                  staticClass:
+                                    "btn btn-danger btn-sm btn-rounded reset",
+                                  staticStyle: { visibility: "hidden" },
+                                  attrs: { type: "button" },
+                                  on: {
+                                    click: function($event) {
+                                      _vm.resetChart("dc-type-rowchart")
+                                    }
+                                  }
+                                },
+                                [_vm._v("Reset")]
+                              )
+                            ])
                           ])
-                        ])
-                      ]
-                    )
-                  ])
-                ]),
+                        ]
+                      )
+                    ])
+                  ]
+                ),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-8", attrs: { id: "grade" } }, [
-                  _c("div", { attrs: { id: "dc-grade-barchart" } }, [
-                    _c("h3", [
-                      _vm._v(" Grade/Rank "),
-                      _c(
-                        "span",
-                        {
-                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                        },
-                        [_vm._v(_vm._s(_vm.ylabel))]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "btn btn-danger btn-sm btn-rounded reset",
-                          staticStyle: { visibility: "hidden" },
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              _vm.resetChart("dc-grade-barchart")
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12",
+                    attrs: { id: "grade" }
+                  },
+                  [
+                    _c("div", { attrs: { id: "dc-grade-barchart" } }, [
+                      _c("h3", [
+                        _vm._v(" Grade/Rank "),
+                        _c(
+                          "span",
+                          {
+                            staticStyle: {
+                              "font-size": "14pt",
+                              opacity: "0.87"
                             }
-                          }
-                        },
-                        [_vm._v("Reset")]
-                      )
-                    ])
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-12", attrs: { id: "empCat" } }, [
-                  _c("div", { attrs: { id: "dc-empCat-barchart" } }, [
-                    _c("h3", [
-                      _vm._v("EMPLOYEE CATEGORY "),
-                      _c(
-                        "span",
-                        {
-                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                        },
-                        [_vm._v(_vm._s(_vm.ylabel))]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "btn btn-danger btn-sm btn-rounded reset",
-                          staticStyle: { visibility: "hidden" },
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              _vm.resetChart("dc-empCat-barchart")
+                          },
+                          [_vm._v(_vm._s(_vm.ylabel))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-danger btn-sm btn-rounded reset",
+                            staticStyle: { visibility: "hidden" },
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.resetChart("dc-grade-barchart")
+                              }
                             }
-                          }
-                        },
-                        [_vm._v("Reset")]
-                      )
+                          },
+                          [_vm._v("Reset")]
+                        )
+                      ])
                     ])
-                  ])
-                ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12",
+                    attrs: { id: "empCat" }
+                  },
+                  [
+                    _c("div", { attrs: { id: "dc-empCat-barchart" } }, [
+                      _c("h3", [
+                        _vm._v("EMPLOYEE CATEGORY "),
+                        _c(
+                          "span",
+                          {
+                            staticStyle: {
+                              "font-size": "14pt",
+                              opacity: "0.87"
+                            }
+                          },
+                          [_vm._v(_vm._s(_vm.ylabel))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-danger btn-sm btn-rounded reset",
+                            staticStyle: { visibility: "hidden" },
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.resetChart("dc-empCat-barchart")
+                              }
+                            }
+                          },
+                          [_vm._v("Reset")]
+                        )
+                      ])
+                    ])
+                  ]
+                )
               ])
             ]
           )
@@ -2882,8 +2973,6 @@ exports.push([module.i, "\n.custom-control.custom-radio[data-v-9b0c2fd6]{\n    p
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_largeBarChart__ = __webpack_require__("A1IL");
-//
-//
 //
 //
 //
@@ -3342,7 +3431,10 @@ exports.push([module.i, "\n.custom-control.custom-radio[data-v-9b0c2fd6]{\n    p
             }).colorAccessor(function (d) {
                 return d.key;
             }).elasticX(true).on('pretransition', function (chart) {
-                chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)');
+                chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)').on('click', function (d) {
+                    chart.filter(d);
+                    dc.redrawAll();
+                });
             });
 
             //zone
@@ -3386,7 +3478,10 @@ exports.push([module.i, "\n.custom-control.custom-radio[data-v-9b0c2fd6]{\n    p
             }).ordering(function (d) {
                 return highestPmeOrder[d.key];
             }).elasticX(true).on('pretransition', function (chart) {
-                chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)');
+                chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)').on('click', function (d) {
+                    chart.filter(d);
+                    dc.redrawAll();
+                });
             }).yAxis().tickFormat(function (v) {
                 return v + "%";
             });
@@ -4808,7 +4903,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container" },
+    { staticClass: "container-fluid" },
     [
       _c("div", { staticClass: "row" }, [
         _c("h1", { staticClass: "col" }, [_vm._v("Assignments")]),
@@ -4914,7 +5009,7 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  /*should be scoped*/\n#radioSelect div,input,label{\n    cursor: pointer;\n}\n.fade-enter-active {\n    -webkit-transition: all 0.5s;\n    transition: all 0.5s;\n}\n.fade-leave-active {\n    -webkit-transition: all 0.2s;\n    transition: all 0.2s;\n}\n.fade-enter, .fade-leave-to {\n    opacity: 0;\n}\n.fade-enter-to, .fade-leave {\n    opacity: 1;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  /*should be scoped*/\n#radioSelect div,input,label{\n    cursor: pointer;\n}\n.fade-enter-active {\n    -webkit-transition: all 0.5s;\n    transition: all 0.5s;\n}\n.fade-leave-active {\n    -webkit-transition: all 0.2s;\n    transition: all 0.2s;\n}\n.fade-enter, .fade-leave-to {\n    opacity: 0;\n}\n.fade-enter-to, .fade-leave {\n    opacity: 1;\n}\n", ""]);
 
 // exports
 
@@ -5298,7 +5393,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container" },
+    { staticClass: "container-fluid" },
     [
       _c(
         "transition-group",
@@ -5647,54 +5742,64 @@ var render = function() {
               }),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-4", attrs: { id: "grade" } }, [
-                  _c(
-                    "div",
-                    {
-                      attrs: {
-                        id: "dc-grade-rowchart",
-                        "data-step": "3",
-                        "data-intro":
-                          "Clicking the bars applies filters to the chart. Click on one of the bars and watch the other charts update!"
-                      }
-                    },
-                    [
-                      _c("h3", [
-                        _vm._v("Grade "),
-                        _c(
-                          "span",
-                          {
-                            staticStyle: {
-                              "font-size": "14pt",
-                              opacity: "0.87"
-                            }
-                          },
-                          [_vm._v(_vm._s(_vm.ylabel))]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "btn btn-danger btn-sm btn-rounded reset",
-                            staticStyle: { visibility: "hidden" },
-                            attrs: { type: "button" },
-                            on: {
-                              click: function($event) {
-                                _vm.resetChart("dc-grade-rowchart")
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-md-4 col-sm-6 col-12",
+                    attrs: { id: "grade" }
+                  },
+                  [
+                    _c(
+                      "div",
+                      {
+                        attrs: {
+                          id: "dc-grade-rowchart",
+                          "data-step": "3",
+                          "data-intro":
+                            "Clicking the bars applies filters to the chart. Click on one of the bars and watch the other charts update!"
+                        }
+                      },
+                      [
+                        _c("h3", [
+                          _vm._v("Grade "),
+                          _c(
+                            "span",
+                            {
+                              staticStyle: {
+                                "font-size": "14pt",
+                                opacity: "0.87"
                               }
-                            }
-                          },
-                          [_vm._v("Reset")]
-                        )
-                      ])
-                    ]
-                  )
-                ]),
+                            },
+                            [_vm._v(_vm._s(_vm.ylabel))]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "btn btn-danger btn-sm btn-rounded reset",
+                              staticStyle: { visibility: "hidden" },
+                              attrs: { type: "button" },
+                              on: {
+                                click: function($event) {
+                                  _vm.resetChart("dc-grade-rowchart")
+                                }
+                              }
+                            },
+                            [_vm._v("Reset")]
+                          )
+                        ])
+                      ]
+                    )
+                  ]
+                ),
                 _vm._v(" "),
                 _c(
                   "div",
-                  { staticClass: "col-8", attrs: { id: "afscGroup" } },
+                  {
+                    staticClass: "col-md-8 col-sm-6 col-12",
+                    attrs: { id: "afscGroup" }
+                  },
                   [
                     _c("div", { attrs: { id: "dc-afscGroup-barchart" } }, [
                       _c("h3", [
@@ -5731,25 +5836,34 @@ var render = function() {
                 )
               ]),
               _vm._v(" "),
-              _c("overviewBarChart", {
-                attrs: {
-                  id: "mpf",
-                  dimension: _vm.mpfDim,
-                  aspectRatio: 3.8,
-                  minHeight: 240,
-                  normalToOverviewFactor: 2.5,
-                  selected: _vm.selected,
-                  ylabel: _vm.ylabel,
-                  reducerAdd: _vm.manningAdd,
-                  reducerRemove: _vm.manningRemove,
-                  accumulator: _vm.manningInitial,
-                  numBars: 15,
-                  margin: _vm.chartSpecs.baseChart.margins,
-                  colorScale: _vm.baseColorScale,
-                  title: "Servicing MPF",
-                  loaded: _vm.loaded
-                }
-              })
+              _c("div", { staticClass: "row" }, [
+                _c(
+                  "div",
+                  { staticClass: "col-sm-12 col-12" },
+                  [
+                    _c("overviewBarChart", {
+                      attrs: {
+                        id: "mpf",
+                        dimension: _vm.mpfDim,
+                        aspectRatio: 3.8,
+                        minHeight: 240,
+                        normalToOverviewFactor: 2.5,
+                        selected: _vm.selected,
+                        ylabel: _vm.ylabel,
+                        reducerAdd: _vm.manningAdd,
+                        reducerRemove: _vm.manningRemove,
+                        accumulator: _vm.manningInitial,
+                        numBars: 15,
+                        margin: _vm.chartSpecs.baseChart.margins,
+                        colorScale: _vm.baseColorScale,
+                        title: "Servicing MPF",
+                        loaded: _vm.loaded
+                      }
+                    })
+                  ],
+                  1
+                )
+              ])
             ],
             1
           )
@@ -5798,7 +5912,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container" },
+    { staticClass: "container-fluid" },
     [
       _c(
         "transition-group",
@@ -5887,106 +6001,136 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-3", attrs: { id: "tour" } }, [
-                  _c("div", { attrs: { id: "dc-tour-rowchart" } }, [
-                    _c("h3", [
-                      _vm._v("Tour "),
-                      _c(
-                        "span",
-                        {
-                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                        },
-                        [
-                          _vm._v(
-                            "\n\t\t                    \tAvg. TOS\n\t\t                    "
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "btn btn-danger btn-sm btn-rounded reset",
-                          staticStyle: { visibility: "hidden" },
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              _vm.resetChart("dc-tour-rowchart")
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6",
+                    attrs: { id: "tour" }
+                  },
+                  [
+                    _c("div", { attrs: { id: "dc-tour-rowchart" } }, [
+                      _c("h3", [
+                        _vm._v("Tour "),
+                        _c(
+                          "span",
+                          {
+                            staticStyle: {
+                              "font-size": "14pt",
+                              opacity: "0.87"
                             }
-                          }
-                        },
-                        [_vm._v("Reset")]
-                      )
+                          },
+                          [
+                            _vm._v(
+                              "\n\t\t                    \tAvg. TOS\n\t\t                    "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-danger btn-sm btn-rounded reset",
+                            staticStyle: { visibility: "hidden" },
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.resetChart("dc-tour-rowchart")
+                              }
+                            }
+                          },
+                          [_vm._v("Reset")]
+                        )
+                      ])
                     ])
-                  ])
-                ]),
+                  ]
+                ),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-3", attrs: { id: "type" } }, [
-                  _c("div", { attrs: { id: "dc-type-rowchart" } }, [
-                    _c("h3", [
-                      _vm._v("Type "),
-                      _c(
-                        "span",
-                        {
-                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                        },
-                        [
-                          _vm._v(
-                            "\n\t\t                    \tAvg. TOS\n\t\t                    "
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "btn btn-danger btn-sm btn-rounded reset",
-                          staticStyle: { visibility: "hidden" },
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              _vm.resetChart("dc-type-rowchart")
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6",
+                    attrs: { id: "type" }
+                  },
+                  [
+                    _c("div", { attrs: { id: "dc-type-rowchart" } }, [
+                      _c("h3", [
+                        _vm._v("Type "),
+                        _c(
+                          "span",
+                          {
+                            staticStyle: {
+                              "font-size": "14pt",
+                              opacity: "0.87"
                             }
-                          }
-                        },
-                        [_vm._v("Reset")]
-                      )
+                          },
+                          [
+                            _vm._v(
+                              "\n\t\t                    \tAvg. TOS\n\t\t                    "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-danger btn-sm btn-rounded reset",
+                            staticStyle: { visibility: "hidden" },
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.resetChart("dc-type-rowchart")
+                              }
+                            }
+                          },
+                          [_vm._v("Reset")]
+                        )
+                      ])
                     ])
-                  ])
-                ]),
+                  ]
+                ),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-6", attrs: { id: "grade" } }, [
-                  _c("div", { attrs: { id: "dc-grade-barchart" } }, [
-                    _c("h3", [
-                      _vm._v("Grade "),
-                      _c(
-                        "span",
-                        {
-                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                        },
-                        [_vm._v("Avg. TOS")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "btn btn-danger btn-sm btn-rounded reset",
-                          staticStyle: { visibility: "hidden" },
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              _vm.resetChart("dc-grade-barchart")
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12",
+                    attrs: { id: "grade" }
+                  },
+                  [
+                    _c("div", { attrs: { id: "dc-grade-barchart" } }, [
+                      _c("h3", [
+                        _vm._v("Grade "),
+                        _c(
+                          "span",
+                          {
+                            staticStyle: {
+                              "font-size": "14pt",
+                              opacity: "0.87"
                             }
-                          }
-                        },
-                        [_vm._v("Reset")]
-                      )
+                          },
+                          [_vm._v("Avg. TOS")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-danger btn-sm btn-rounded reset",
+                            staticStyle: { visibility: "hidden" },
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.resetChart("dc-grade-barchart")
+                              }
+                            }
+                          },
+                          [_vm._v("Reset")]
+                        )
+                      ])
                     ])
-                  ])
-                ])
+                  ]
+                )
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
@@ -6105,67 +6249,87 @@ var render = function() {
               ),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-6", attrs: { id: "us" } }, [
-                  _c("div", { attrs: { id: "dc-us-geoChoroplethChart" } }, [
-                    _c("h3", [
-                      _vm._v("CONUS Map "),
-                      _c(
-                        "span",
-                        {
-                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                        },
-                        [_vm._v("Avg. TOS")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "btn btn-danger btn-sm btn-rounded reset",
-                          staticStyle: { visibility: "hidden" },
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              _vm.resetChart("dc-us-geoChoroplethChart")
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-6 col-lg-6 col-md-6 col-sm-12 col-xs-12",
+                    attrs: { id: "us" }
+                  },
+                  [
+                    _c("div", { attrs: { id: "dc-us-geoChoroplethChart" } }, [
+                      _c("h3", [
+                        _vm._v("CONUS Map "),
+                        _c(
+                          "span",
+                          {
+                            staticStyle: {
+                              "font-size": "14pt",
+                              opacity: "0.87"
                             }
-                          }
-                        },
-                        [_vm._v("Reset")]
-                      )
+                          },
+                          [_vm._v("Avg. TOS")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-danger btn-sm btn-rounded reset",
+                            staticStyle: { visibility: "hidden" },
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.resetChart("dc-us-geoChoroplethChart")
+                              }
+                            }
+                          },
+                          [_vm._v("Reset")]
+                        )
+                      ])
                     ])
-                  ])
-                ]),
+                  ]
+                ),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-6", attrs: { id: "jp" } }, [
-                  _c("div", { attrs: { id: "dc-jp-geoChoroplethChart" } }, [
-                    _c("h3", [
-                      _vm._v("OCONUS Map "),
-                      _c(
-                        "span",
-                        {
-                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                        },
-                        [_vm._v("Avg. TOS")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "btn btn-danger btn-sm btn-rounded reset",
-                          staticStyle: { visibility: "hidden" },
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              _vm.resetChart("dc-jp-geoChoroplethChart")
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-6 col-lg-6 col-md-6 col-sm-12 col-xs-12",
+                    attrs: { id: "jp" }
+                  },
+                  [
+                    _c("div", { attrs: { id: "dc-jp-geoChoroplethChart" } }, [
+                      _c("h3", [
+                        _vm._v("OCONUS Map "),
+                        _c(
+                          "span",
+                          {
+                            staticStyle: {
+                              "font-size": "14pt",
+                              opacity: "0.87"
                             }
-                          }
-                        },
-                        [_vm._v("Reset")]
-                      )
+                          },
+                          [_vm._v("Avg. TOS")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-danger btn-sm btn-rounded reset",
+                            staticStyle: { visibility: "hidden" },
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.resetChart("dc-jp-geoChoroplethChart")
+                              }
+                            }
+                          },
+                          [_vm._v("Reset")]
+                        )
+                      ])
                     ])
-                  ])
-                ])
+                  ]
+                )
               ])
             ]
           )
@@ -6966,7 +7130,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container" },
+    { staticClass: "container-fluid" },
     [
       _c("div", { staticClass: "row" }, [
         _c("h1", { staticClass: "col" }, [_vm._v("Total Force Military")]),
@@ -7603,7 +7767,7 @@ var gradePairs = {
 var gradeDomain = __WEBPACK_IMPORTED_MODULE_1_babel_runtime_core_js_object_keys___default()(gradePairs);
 var gradeRange = __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_values___default()(gradePairs);
 var gradeChartColorScale = d3.scale.ordinal().domain(gradeDomain).range(gradeRange);
-
+var empCatColorScale = d3.scale.ordinal().range(["#ffc663", "#ffbb57", "#ffb04a", "#ffa63e", "#ff9b32", "#ff9025", "#ff8519", "#ff7a0c", "#ff6f00"]);
 var mapColorScale = d3.scale.quantize().range(["#E2F2FF", "#d4eafc", "#C4E4FF", "#badefc", "#a6d4fc", "#9ED2FF", "#81C5FF", "#75bfff", "#6BBAFF", "#51AEFF", "#40a4f9", "#36A2FF", "#2798f9", "#1E96FF", "#0089FF", "#0061B5"]);
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -7621,6 +7785,7 @@ var mapColorScale = d3.scale.quantize().range(["#E2F2FF", "#d4eafc", "#C4E4FF", 
     boardChart: boardChart,
     yrgpChart: yrgpChart,
     stateChart: stateChart,
+    empCatColorScale: empCatColorScale,
     gradeChartColorScale: gradeChartColorScale,
     mapColorScale: mapColorScale
 });
@@ -7807,7 +7972,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container" },
+    { staticClass: "container-fluid" },
     [
       _c(
         "transition-group",
@@ -7840,64 +8005,6 @@ var render = function() {
             },
             [
               _c("div", { staticClass: "row pt-2" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "col form-group",
-                    attrs: { id: "radioSelect" }
-                  },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "custom-control custom-radio custom-control-inline"
-                      },
-                      [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.selected,
-                              expression: "selected"
-                            }
-                          ],
-                          staticClass: "custom-control-input",
-                          attrs: {
-                            name: "radio",
-                            type: "radio",
-                            id: "radio1",
-                            value: "percent"
-                          },
-                          domProps: {
-                            checked: _vm._q(_vm.selected, "percent")
-                          },
-                          on: {
-                            click: _vm.radioButton,
-                            change: function($event) {
-                              _vm.selected = "percent"
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c(
-                          "label",
-                          {
-                            staticClass: "custom-control-label",
-                            attrs: { for: "radio1" }
-                          },
-                          [
-                            _vm._v(
-                              "\n                            Promotion Rate\n                        "
-                            )
-                          ]
-                        )
-                      ]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
                 _c("div", { staticClass: "col" }),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-auto" }, [
@@ -7931,224 +8038,223 @@ var render = function() {
               _c("div", { staticClass: "row" }, [
                 _c("div", { staticClass: "col-auto" }, [
                   _vm._v(
-                    "\n                    Selects:        \n                    "
+                    "\n                        Selects:        \n                        "
                   ),
                   _c("span", { attrs: { id: "Selects" } })
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-auto" }, [
                   _vm._v(
-                    "\n                    Eligibles: \n                    "
+                    "\n                        Eligibles: \n                        "
                   ),
                   _c("span", { attrs: { id: "Eligible" } })
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-auto" }, [
                   _vm._v(
-                    "\n                    Promotion Rate: \n                    "
+                    "\n                        Promotion Rate: \n                        "
                   ),
                   _c("span", { attrs: { id: "SelectsRate" } })
                 ])
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-4" }, [
-                  _c("div", { staticClass: "row" }, [
-                    _c(
-                      "div",
-                      { staticClass: "col-12", attrs: { id: "grade" } },
-                      [
-                        _c("div", { attrs: { id: "dc-grade-rowchart" } }, [
-                          _c("h3", [
-                            _vm._v("Grade "),
-                            _c(
-                              "span",
-                              {
-                                staticStyle: {
-                                  "font-size": "14pt",
-                                  opacity: "0.87"
-                                }
-                              },
-                              [_vm._v(_vm._s(_vm.ylabel))]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "button",
-                              {
-                                staticClass:
-                                  "btn btn-danger btn-sm btn-rounded reset",
-                                staticStyle: { display: "none" },
-                                attrs: { type: "button" },
-                                on: {
-                                  click: function($event) {
-                                    _vm.resetChart("dc-grade-rowchart")
-                                  }
-                                }
-                              },
-                              [_vm._v("Reset")]
-                            )
-                          ])
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "col-12", attrs: { id: "look" } },
-                      [
-                        _c("div", { attrs: { id: "dc-look-rowchart" } }, [
-                          _c("h3", [
-                            _vm._v("Look "),
-                            _c(
-                              "span",
-                              {
-                                staticStyle: {
-                                  "font-size": "14pt",
-                                  opacity: "0.87"
-                                }
-                              },
-                              [_vm._v(_vm._s(_vm.ylabel))]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "button",
-                              {
-                                staticClass:
-                                  "btn btn-danger btn-sm btn-rounded reset",
-                                staticStyle: { display: "none" },
-                                attrs: { type: "button" },
-                                on: {
-                                  click: function($event) {
-                                    _vm.resetChart("dc-look-rowchart")
-                                  }
-                                }
-                              },
-                              [_vm._v("Reset")]
-                            )
-                          ])
-                        ])
-                      ]
-                    )
-                  ])
-                ]),
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12",
+                    attrs: { id: "grade" }
+                  },
+                  [
+                    _c("div", { attrs: { id: "dc-grade-rowchart" } }, [
+                      _c("h3", [
+                        _vm._v("Grade "),
+                        _c(
+                          "span",
+                          {
+                            staticStyle: {
+                              "font-size": "14pt",
+                              opacity: "0.87"
+                            }
+                          },
+                          [_vm._v(_vm._s(_vm.ylabel))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-danger btn-sm btn-rounded reset",
+                            staticStyle: { display: "none" },
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.resetChart("dc-grade-rowchart")
+                              }
+                            }
+                          },
+                          [_vm._v("Reset")]
+                        )
+                      ])
+                    ])
+                  ]
+                ),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-8" }, [
-                  _c(
-                    "div",
-                    { staticClass: "row" },
+                _c(
+                  "div",
+                  { staticClass: "col-xl-8 col-lg-8 col-md-8 col-sm-6 col-12" },
+                  [
                     [
-                      [
-                        !_vm.startAfsc
-                          ? _c("div", { staticClass: "col-12" }, [
-                              _c("h3", [
-                                _vm._v(
-                                  "\n                                    AFSC \n                                    "
-                                ),
-                                _c(
-                                  "span",
-                                  {
-                                    staticStyle: {
-                                      "font-size": "14pt",
-                                      opacity: "0.87"
-                                    }
-                                  },
-                                  [_vm._v(" " + _vm._s(_vm.ylabel) + "  ")]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "button",
-                                  {
-                                    staticClass:
-                                      "btn btn-danger btn-sm btn-rounded reset",
-                                    staticStyle: { visibility: "hidden" },
-                                    attrs: { type: "button" }
-                                  },
-                                  [_vm._v("Reset")]
-                                )
-                              ])
-                            ])
-                          : _c(
-                              "div",
-                              { staticClass: "col-12" },
-                              [
-                                _c("afsc", {
-                                  attrs: {
-                                    ndx: _vm.ndx,
-                                    ylabel: _vm.ylabel,
-                                    selected: _vm.selected,
-                                    reduceAdd: _vm.promoAdd,
-                                    reduceRemove: _vm.promoRemove,
-                                    reduceInitial: _vm.promoInitial,
-                                    dataVar: "ACA43",
-                                    minHeight: 200,
-                                    aspectRatio: 3
-                                  },
-                                  model: {
-                                    value: _vm.sa,
-                                    callback: function($$v) {
-                                      _vm.sa = $$v
-                                    },
-                                    expression: "sa"
-                                  }
-                                })
-                              ],
-                              1
-                            )
-                      ],
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "col-12", attrs: { id: "recommend" } },
-                        [
-                          _c(
-                            "div",
-                            { attrs: { id: "dc-recommend-rowchart" } },
-                            [
+                      !_vm.startAfsc
+                        ? _c("div", { staticClass: "col-12" }, [
+                            _c("h3", [
+                              _vm._v(
+                                "\n                                    AFSC \n                                    "
+                              ),
                               _c(
-                                "h3",
-                                [
-                                  _vm._v("Recommendation "),
-                                  _c(
-                                    "span",
-                                    {
-                                      staticStyle: {
-                                        "font-size": "14pt",
-                                        opacity: "0.87"
-                                      }
-                                    },
-                                    [_vm._v(_vm._s(_vm.ylabel))]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("transition", [
-                                    _c(
-                                      "button",
-                                      {
-                                        staticClass:
-                                          "btn btn-danger btn-sm btn-rounded reset",
-                                        staticStyle: { display: "none" },
-                                        attrs: { type: "button" },
-                                        on: {
-                                          click: function($event) {
-                                            _vm.resetChart(
-                                              "dc-recommend-rowchart"
-                                            )
-                                          }
-                                        }
-                                      },
-                                      [_vm._v("Reset")]
-                                    )
-                                  ])
-                                ],
-                                1
+                                "span",
+                                {
+                                  staticStyle: {
+                                    "font-size": "14pt",
+                                    opacity: "0.87"
+                                  }
+                                },
+                                [_vm._v(" " + _vm._s(_vm.ylabel) + "  ")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "button",
+                                {
+                                  staticClass:
+                                    "btn btn-danger btn-sm btn-rounded reset",
+                                  staticStyle: { visibility: "hidden" },
+                                  attrs: { type: "button" }
+                                },
+                                [_vm._v("Reset")]
                               )
-                            ]
+                            ])
+                          ])
+                        : _c(
+                            "div",
+                            { staticClass: "col-12" },
+                            [
+                              _c("afsc", {
+                                attrs: {
+                                  ndx: _vm.ndx,
+                                  ylabel: _vm.ylabel,
+                                  selected: _vm.selected,
+                                  reduceAdd: _vm.promoAdd,
+                                  reduceRemove: _vm.promoRemove,
+                                  reduceInitial: _vm.promoInitial,
+                                  dataVar: "ACA43",
+                                  minHeight: 200,
+                                  aspectRatio: 3
+                                },
+                                model: {
+                                  value: _vm.sa,
+                                  callback: function($$v) {
+                                    _vm.sa = $$v
+                                  },
+                                  expression: "sa"
+                                }
+                              })
+                            ],
+                            1
                           )
-                        ]
+                    ]
+                  ],
+                  2
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12",
+                    attrs: { id: "look" }
+                  },
+                  [
+                    _c("div", { attrs: { id: "dc-look-rowchart" } }, [
+                      _c("h3", [
+                        _vm._v("Look "),
+                        _c(
+                          "span",
+                          {
+                            staticStyle: {
+                              "font-size": "14pt",
+                              opacity: "0.87"
+                            }
+                          },
+                          [_vm._v(_vm._s(_vm.ylabel))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-danger btn-sm btn-rounded reset",
+                            staticStyle: { display: "none" },
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.resetChart("dc-look-rowchart")
+                              }
+                            }
+                          },
+                          [_vm._v("Reset")]
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-xl-8 col-lg-8 col-md-8 col-sm-6 col-12",
+                    attrs: { id: "recommend" }
+                  },
+                  [
+                    _c("div", { attrs: { id: "dc-recommend-rowchart" } }, [
+                      _c(
+                        "h3",
+                        [
+                          _vm._v("Recommendation "),
+                          _c(
+                            "span",
+                            {
+                              staticStyle: {
+                                "font-size": "14pt",
+                                opacity: "0.87"
+                              }
+                            },
+                            [_vm._v(_vm._s(_vm.ylabel))]
+                          ),
+                          _vm._v(" "),
+                          _c("transition", [
+                            _c(
+                              "button",
+                              {
+                                staticClass:
+                                  "btn btn-danger btn-sm btn-rounded reset",
+                                staticStyle: { display: "none" },
+                                attrs: { type: "button" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.resetChart("dc-recommend-rowchart")
+                                  }
+                                }
+                              },
+                              [_vm._v("Reset")]
+                            )
+                          ])
+                        ],
+                        1
                       )
-                    ],
-                    2
-                  )
-                ])
+                    ])
+                  ]
+                )
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }),
@@ -8387,7 +8493,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container" },
+    { staticClass: "container-fluid" },
     [
       _c(
         "transition-group",
@@ -8496,7 +8602,7 @@ var render = function() {
                 _c(
                   "div",
                   {
-                    staticClass: "col-3 col-lg-3 col-md-6 col-sm-12 col-xs-12",
+                    staticClass: "col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12",
                     attrs: { id: "type" }
                   },
                   [
@@ -8537,7 +8643,7 @@ var render = function() {
                 _c(
                   "div",
                   {
-                    staticClass: "col-5 col-lg-5 col-md-6 col-sm-12 col-xs-12",
+                    staticClass: "col-xl-5 col-lg-5 col-md-6 col-sm-12 col-12",
                     attrs: { id: "grade" }
                   },
                   [
@@ -8578,7 +8684,7 @@ var render = function() {
                 _c(
                   "div",
                   {
-                    staticClass: "col-4 col-lg-4 col-md-6 col-sm-12 col-xs-12",
+                    staticClass: "col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12",
                     attrs: { id: "empCat" }
                   },
                   [
@@ -9340,7 +9446,8 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
                 return d.value[_this.selected];
             }).on('pretransition', function (chart) {
                 chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)').on('click', function (d) {
-                    _this.submit(d, 'dc-afscGroup-barchart');
+                    chart.filter(d);
+                    dc.redrawAll();
                 });
             });
 
@@ -9406,6 +9513,10 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_searchBox__ = __webpack_require__("CjlA");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_largeBarChart__ = __webpack_require__("A1IL");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_overviewBarChart__ = __webpack_require__("Kvlx");
+//
+//
+//
+//
 //
 //
 //
@@ -10218,7 +10329,10 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
             }).ordering(function (d) {
                 return __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].gradeOrder[d.key];
             }).on('pretransition', function (chart) {
-                chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)');
+                chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)').on('click', function (d) {
+                    chart.filter(d);
+                    dc.redrawAll();
+                });
             });
 
             //Marital marital
@@ -10236,7 +10350,10 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
             maritalConfig.colors = ["#7570b3"];
             var maritalChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getOrdinalBarChart(maritalConfig);
             maritalChart.controlsUseVisibility(true).elasticX(true).on('pretransition', function (chart) {
-                chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)');
+                chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)').on('click', function (d) {
+                    chart.filter(d);
+                    dc.redrawAll();
+                });
             })
             //order by descending value
             .ordering(function (d) {
@@ -10606,40 +10723,53 @@ var render = function() {
               }),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-4", attrs: { id: "grade" } }, [
-                  _c("div", { attrs: { id: "dc-grade-rowchart" } }, [
-                    _c("h3", [
-                      _vm._v("Grade "),
-                      _c(
-                        "span",
-                        {
-                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                        },
-                        [_vm._v(_vm._s(_vm.ylabel))]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "btn btn-danger btn-sm btn-rounded reset",
-                          staticStyle: { display: "none" },
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              _vm.resetChart("dc-grade-rowchart")
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12",
+                    attrs: { id: "grade" }
+                  },
+                  [
+                    _c("div", { attrs: { id: "dc-grade-rowchart" } }, [
+                      _c("h3", [
+                        _vm._v("Grade "),
+                        _c(
+                          "span",
+                          {
+                            staticStyle: {
+                              "font-size": "14pt",
+                              opacity: "0.87"
                             }
-                          }
-                        },
-                        [_vm._v("Reset")]
-                      )
+                          },
+                          [_vm._v(_vm._s(_vm.ylabel))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-danger btn-sm btn-rounded reset",
+                            staticStyle: { display: "none" },
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.resetChart("dc-grade-rowchart")
+                              }
+                            }
+                          },
+                          [_vm._v("Reset")]
+                        )
+                      ])
                     ])
-                  ])
-                ]),
+                  ]
+                ),
                 _vm._v(" "),
                 _c(
                   "div",
-                  { staticClass: "col-8", attrs: { id: "afscGroup" } },
+                  {
+                    staticClass: "col-xl-8 col-lg-8 col-md-8 col-sm-6 col-12",
+                    attrs: { id: "afscGroup" }
+                  },
                   [
                     _c("div", { attrs: { id: "dc-afscGroup-barchart" } }, [
                       _c("h3", [
@@ -11225,7 +11355,10 @@ if (false) {(function () {
             var groupChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getOrdinalBarChart(groupConfig).valueAccessor(function (d) {
                 return d.value[_this.selected];
             }).controlsUseVisibility(true).elasticX(true).on('pretransition', function (chart) {
-                chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)');
+                chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)').on('click', function (d) {
+                    chart.filter(d);
+                    dc.redrawAll();
+                });
             }).yAxis().tickFormat(function (v) {
                 return v + "%";
             });
@@ -11246,7 +11379,10 @@ if (false) {(function () {
             edLevelChart.valueAccessor(function (d) {
                 return d.value[_this.selected];
             }).controlsUseVisibility(true).elasticX(true).on('pretransition', function (chart) {
-                chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)');
+                chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)').on('click', function (d) {
+                    chart.filter(d);
+                    dc.redrawAll();
+                });
             }).yAxis().tickFormat(function (v) {
                 return v + "%";
             });
@@ -11583,7 +11719,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container" },
+    { staticClass: "container-fluid" },
     [
       _c("div", { staticClass: "row" }, [
         _c("h1", { staticClass: "col" }, [_vm._v("Education")]),
@@ -12050,13 +12186,14 @@ if(false) {
             empCatConfig.minHeight = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].empCatChart.minHeight;
             empCatConfig.aspectRatio = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].empCatChart.aspectRatio;
             empCatConfig.margins = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].empCatChart.margins;
-            empCatConfig.colors = [__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].empCatChart.color];
+            empCatConfig.colors = _this.chartSpecs.empCatColorScale;
             var empCatChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getOrdinalBarChart(empCatConfig);
-            empCatChart.elasticX(true).controlsUseVisibility(true)
-            //.ordinalColors(["#1976d2","#ff4500"])
-            .on('pretransition', function (chart) {
+            empCatChart.elasticX(true).colorAccessor(function (d) {
+                return d.key;
+            }).controlsUseVisibility(true).on('pretransition', function (chart) {
                 chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)').on('click', function (d) {
-                    _this.submit(d, 'dc-empCat-barchart');
+                    chart.filter(d);
+                    dc.redrawAll();
                 });
             });
 
@@ -12089,7 +12226,9 @@ if(false) {
                 return d.key;
             }).controlsUseVisibility(true).on('pretransition', function (chart) {
                 chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)').on('click', function (d) {
-                    _this.submit(d, 'dc-grade-barchart');
+                    //this.submit(d, 'dc-grade-barchart')
+                    chart.filter(d);
+                    dc.redrawAll();
                 });
             }).yAxis().tickFormat(function (v) {
                 return v + "%";
@@ -12098,6 +12237,8 @@ if(false) {
             gradeChart.ordering(function (d) {
                 return __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].gradeOrder[d.key];
             });
+
+            //this.gradeChart = gradeChart
 
             //CONUS 
             var usConfig = {};
@@ -12156,6 +12297,7 @@ if(false) {
             usChart.on('pretransition', function (chart) {
 
                 var color = 'orange';
+                chart.select('svg').attr("class", "border");
                 chart.select('svg').select(".textLabels").remove();
                 chart.select('svg .layer0').append('g').attr("class", "textLabels");
 
@@ -12604,7 +12746,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container" },
+    { staticClass: "container-fluid" },
     [
       _c(
         "transition-group",
@@ -12690,97 +12832,125 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-3", attrs: { id: "fyr" } }, [
-                  _c("div", { attrs: { id: "dc-fyr-barchart" } }, [
-                    _c("h3", [
-                      _vm._v("Fiscal Year"),
-                      _c("span", {
-                        staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                      })
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12",
+                    attrs: { id: "fyr" }
+                  },
+                  [
+                    _c("div", { attrs: { id: "dc-fyr-barchart" } }, [
+                      _c("h3", [
+                        _vm._v("Fiscal Year"),
+                        _c("span", {
+                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
+                        })
+                      ])
                     ])
-                  ])
-                ]),
+                  ]
+                ),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-3", attrs: { id: "offgroup" } }, [
-                  _c("div", { attrs: { id: "dc-offgroup-barchart" } }, [
-                    _c("h3", [
-                      _vm._v("Group"),
-                      _c("span", {
-                        staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "btn btn-danger btn-sm btn-rounded reset",
-                          staticStyle: { visibility: "hidden" },
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              _vm.resetChart("dc-offgroup-barchart")
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12",
+                    attrs: { id: "offgroup" }
+                  },
+                  [
+                    _c("div", { attrs: { id: "dc-offgroup-barchart" } }, [
+                      _c("h3", [
+                        _vm._v("Group"),
+                        _c("span", {
+                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-danger btn-sm btn-rounded reset",
+                            staticStyle: { visibility: "hidden" },
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.resetChart("dc-offgroup-barchart")
+                              }
                             }
-                          }
-                        },
-                        [_vm._v("Reset\n                            ")]
-                      )
+                          },
+                          [_vm._v("Reset\n                            ")]
+                        )
+                      ])
                     ])
-                  ])
-                ]),
+                  ]
+                ),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-3", attrs: { id: "grade" } }, [
-                  _c("div", { attrs: { id: "dc-grade-rowchart" } }, [
-                    _c("h3", [
-                      _vm._v("Grade "),
-                      _c("span", {
-                        staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "btn btn-danger btn-sm btn-rounded reset",
-                          staticStyle: { visibility: "hidden" },
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              _vm.resetChart("dc-grade-rowchart")
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12",
+                    attrs: { id: "grade" }
+                  },
+                  [
+                    _c("div", { attrs: { id: "dc-grade-rowchart" } }, [
+                      _c("h3", [
+                        _vm._v("Grade "),
+                        _c("span", {
+                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-danger btn-sm btn-rounded reset",
+                            staticStyle: { visibility: "hidden" },
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.resetChart("dc-grade-rowchart")
+                              }
                             }
-                          }
-                        },
-                        [_vm._v("Reset\n                            ")]
-                      )
+                          },
+                          [_vm._v("Reset\n                            ")]
+                        )
+                      ])
                     ])
-                  ])
-                ]),
+                  ]
+                ),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-3", attrs: { id: "edlevel" } }, [
-                  _c("div", { attrs: { id: "dc-edlevel-barchart" } }, [
-                    _c("h3", [
-                      _vm._v("Degree Type "),
-                      _c("span", {
-                        staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "btn btn-danger btn-sm btn-rounded reset",
-                          staticStyle: { visibility: "hidden" },
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              _vm.resetChart("dc-edlevel-barchart")
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12",
+                    attrs: { id: "edlevel" }
+                  },
+                  [
+                    _c("div", { attrs: { id: "dc-edlevel-barchart" } }, [
+                      _c("h3", [
+                        _vm._v("Degree Type "),
+                        _c("span", {
+                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-danger btn-sm btn-rounded reset",
+                            staticStyle: { visibility: "hidden" },
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.resetChart("dc-edlevel-barchart")
+                              }
                             }
-                          }
-                        },
-                        [_vm._v("Reset\n                            ")]
-                      )
+                          },
+                          [_vm._v("Reset\n                            ")]
+                        )
+                      ])
                     ])
-                  ])
-                ])
+                  ]
+                )
               ]),
               _vm._v(" "),
               _c("br"),
@@ -16650,7 +16820,8 @@ if(false) {
                 return d.key;
             }).colors(d3.scale.ordinal().domain(["[31-33] AMN", "SRA", "SSG", "TSG", "MSG", "SMS", "CMS"]).range([c.brighter(1).toString(), c.brighter(0.8).toString(), c.brighter(0.6).toString(), c.brighter(0.4).toString(), c.brighter(0.2).toString(), c.darker(0.2).toString(), c.darker(0.4).toString()])).on('pretransition', function (chart) {
                 chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)').on('click', function (d) {
-                    _this2.submit(d, 'dc-grade-barchart');
+                    chart.filter(d);
+                    dc.redrawAll();
                 });
             }).ordering(function (d) {
                 return __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].gradeOrder[d.key];
@@ -16972,7 +17143,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container" },
+    { staticClass: "container-fluid" },
     [
       _c(
         "transition-group",
@@ -17140,38 +17311,45 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-3", attrs: { id: "grp" } }, [
-                  _c("div", { attrs: { id: "dc-grp-rowchart" } }, [
-                    _c("h3", [
-                      _vm._v(" Join Type "),
-                      _c(
-                        "span",
-                        {
-                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                        },
-                        [_vm._v(" " + _vm._s(_vm.ylabel) + " ")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "btn btn-danger btn-sm btn-rounded reset",
-                          staticStyle: { visibility: "hidden" },
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              _vm.resetChart("dc-grp-rowchart")
+                _c(
+                  "div",
+                  { staticClass: "col-sm-6 col-12", attrs: { id: "grp" } },
+                  [
+                    _c("div", { attrs: { id: "dc-grp-rowchart" } }, [
+                      _c("h3", [
+                        _vm._v(" Join Type "),
+                        _c(
+                          "span",
+                          {
+                            staticStyle: {
+                              "font-size": "14pt",
+                              opacity: "0.87"
                             }
-                          }
-                        },
-                        [_vm._v("Reset")]
-                      )
+                          },
+                          [_vm._v(" " + _vm._s(_vm.ylabel) + " ")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-danger btn-sm btn-rounded reset",
+                            staticStyle: { visibility: "hidden" },
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.resetChart("dc-grp-rowchart")
+                              }
+                            }
+                          },
+                          [_vm._v("Reset")]
+                        )
+                      ])
                     ])
-                  ])
-                ]),
+                  ]
+                ),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-4" }, [
+                _c("div", { staticClass: "col-sm-6 col-12" }, [
                   _c("h3", [
                     _vm._v(" Grade \n\t\t\t\t\t\t\t"),
                     _c(
@@ -18246,10 +18424,6 @@ exports.push([module.i, "\n.elevate-3[data-v-0817b8a2] {\n    -webkit-box-shadow
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -18560,7 +18734,8 @@ exports.push([module.i, "\n.elevate-3[data-v-0817b8a2] {\n    -webkit-box-shadow
                 return __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].gradeOrder[d.key.substring(0, 3)] + d.key.substring(3, 7);
             }).on('pretransition', function (chart) {
                 chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)').on('click', function (d) {
-                    _this.submit(d, 'dc-board-barchart');
+                    chart.filter(d);
+                    dc.redrawAll();
                 });
             });
 
@@ -18630,7 +18805,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container" },
+    { staticClass: "container-fluid" },
     [
       _c(
         "transition-group",
@@ -18663,64 +18838,6 @@ var render = function() {
             },
             [
               _c("div", { staticClass: "row pt-2" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "col form-group",
-                    attrs: { id: "radioSelect" }
-                  },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "custom-control custom-radio custom-control-inline"
-                      },
-                      [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.selected,
-                              expression: "selected"
-                            }
-                          ],
-                          staticClass: "custom-control-input",
-                          attrs: {
-                            name: "radio",
-                            type: "radio",
-                            id: "radio1",
-                            value: "percent"
-                          },
-                          domProps: {
-                            checked: _vm._q(_vm.selected, "percent")
-                          },
-                          on: {
-                            click: _vm.radioButton,
-                            change: function($event) {
-                              _vm.selected = "percent"
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c(
-                          "label",
-                          {
-                            staticClass: "custom-control-label",
-                            attrs: { for: "radio1" }
-                          },
-                          [
-                            _vm._v(
-                              "\n                                Promotion Rate\n                            "
-                            )
-                          ]
-                        )
-                      ]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
                 _c("div", { staticClass: "col" }),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-auto" }, [
@@ -18815,71 +18932,94 @@ var render = function() {
               ),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-4", attrs: { id: "grade" } }, [
-                  _c("div", { attrs: { id: "dc-grade-barchart" } }, [
-                    _c("h3", { staticClass: "mb-0" }, [
-                      _vm._v("Grade "),
-                      _c(
-                        "span",
-                        {
-                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                        },
-                        [_vm._v(_vm._s(_vm.ylabel))]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "btn btn-danger btn-sm btn-rounded reset",
-                          staticStyle: { visibility: "hidden" },
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              _vm.resetChart("dc-grade-barchart")
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-xl-2 col-lg-4 col-md-6 col-sm-6 col-12",
+                    attrs: { id: "grade" }
+                  },
+                  [
+                    _c("div", { attrs: { id: "dc-grade-barchart" } }, [
+                      _c("h3", { staticClass: "mb-0" }, [
+                        _vm._v("Grade "),
+                        _c(
+                          "span",
+                          {
+                            staticStyle: {
+                              "font-size": "14pt",
+                              opacity: "0.87"
                             }
-                          }
-                        },
-                        [_vm._v("Reset")]
-                      )
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-4", attrs: { id: "zone" } }, [
-                  _c("div", { attrs: { id: "dc-zone-rowchart" } }, [
-                    _c("h3", [
-                      _vm._v("Zone "),
-                      _c(
-                        "span",
-                        {
-                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                        },
-                        [_vm._v(_vm._s(_vm.ylabel))]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "btn btn-danger btn-sm btn-rounded reset",
-                          staticStyle: { display: "none" },
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              _vm.resetChart("dc-zone-rowchart")
+                          },
+                          [_vm._v(_vm._s(_vm.ylabel))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-danger btn-sm btn-rounded reset",
+                            staticStyle: { visibility: "hidden" },
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.resetChart("dc-grade-barchart")
+                              }
                             }
-                          }
-                        },
-                        [_vm._v("Reset")]
-                      )
+                          },
+                          [_vm._v("Reset")]
+                        )
+                      ])
                     ])
-                  ])
-                ]),
+                  ]
+                ),
                 _vm._v(" "),
                 _c(
                   "div",
-                  { staticClass: "col-4", attrs: { id: "highestPme" } },
+                  {
+                    staticClass: "col-xl-2 col-lg-4 col-md-6 col-sm-6 col-12",
+                    attrs: { id: "zone" }
+                  },
+                  [
+                    _c("div", { attrs: { id: "dc-zone-rowchart" } }, [
+                      _c("h3", [
+                        _vm._v("Zone "),
+                        _c(
+                          "span",
+                          {
+                            staticStyle: {
+                              "font-size": "14pt",
+                              opacity: "0.87"
+                            }
+                          },
+                          [_vm._v(_vm._s(_vm.ylabel))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-danger btn-sm btn-rounded reset",
+                            staticStyle: { display: "none" },
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.resetChart("dc-zone-rowchart")
+                              }
+                            }
+                          },
+                          [_vm._v("Reset")]
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-xl-2 col-lg-4 col-md-6 col-sm-6 col-12",
+                    attrs: { id: "highestPme" }
+                  },
                   [
                     _c("div", { attrs: { id: "dc-highestPme-barchart" } }, [
                       _c("h3", { staticClass: "mb-0" }, [
@@ -18913,44 +19053,55 @@ var render = function() {
                       ])
                     ])
                   ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-4", attrs: { id: "compCat" } }, [
-                  _c("div", { attrs: { id: "dc-compCat-rowchart" } }, [
-                    _c("h3", { staticClass: "mb-0" }, [
-                      _vm._v("CompCat "),
-                      _c(
-                        "span",
-                        {
-                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                        },
-                        [_vm._v(_vm._s(_vm.ylabel))]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "btn btn-danger btn-sm btn-rounded reset",
-                          staticStyle: { visibility: "hidden" },
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              _vm.resetChart("dc-compCat-rowchart")
-                            }
-                          }
-                        },
-                        [_vm._v("Reset")]
-                      )
-                    ])
-                  ])
-                ]),
+                ),
                 _vm._v(" "),
                 _c(
                   "div",
-                  { staticClass: "col-4", attrs: { id: "recommend" } },
+                  {
+                    staticClass: "col-xl-2 col-lg-4 col-md-6 col-sm-6 col-12",
+                    attrs: { id: "compCat" }
+                  },
+                  [
+                    _c("div", { attrs: { id: "dc-compCat-rowchart" } }, [
+                      _c("h3", { staticClass: "mb-0" }, [
+                        _vm._v("CompCat "),
+                        _c(
+                          "span",
+                          {
+                            staticStyle: {
+                              "font-size": "14pt",
+                              opacity: "0.87"
+                            }
+                          },
+                          [_vm._v(_vm._s(_vm.ylabel))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-danger btn-sm btn-rounded reset",
+                            staticStyle: { visibility: "hidden" },
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.resetChart("dc-compCat-rowchart")
+                              }
+                            }
+                          },
+                          [_vm._v("Reset")]
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-xl-2 col-lg-4 col-md-6 col-sm-6 col-12",
+                    attrs: { id: "recommend" }
+                  },
                   [
                     _c("div", { attrs: { id: "dc-recommend-rowchart" } }, [
                       _c(
@@ -18995,7 +19146,10 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "div",
-                  { staticClass: "col-4", attrs: { id: "pmeMethod" } },
+                  {
+                    staticClass: "col-xl-2 col-lg-4 col-md-6 col-sm-6 col-12",
+                    attrs: { id: "pmeMethod" }
+                  },
                   [
                     _c("div", { attrs: { id: "dc-pmeMethod-rowchart" } }, [
                       _c("h3", { staticClass: "mb-0" }, [
@@ -19104,7 +19258,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container" },
+    { staticClass: "container-fluid" },
     [
       _c("div", { staticClass: "row" }, [
         _c("h1", { staticClass: "col" }, [_vm._v("Civilian")]),
@@ -19191,60 +19345,18 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-4" }, [
-                  _c("div", { staticClass: "row" }, [
-                    _c(
-                      "div",
-                      { staticClass: "col-12", attrs: { id: "grade" } },
-                      [
-                        _c("div", { attrs: { id: "dc-grade-rowchart" } }, [
-                          _c("h3", [
-                            _vm._v("Grade "),
-                            _c(
-                              "span",
-                              {
-                                staticStyle: {
-                                  "font-size": "14pt",
-                                  opacity: "0.87"
-                                }
-                              },
-                              [_vm._v(_vm._s(_vm.ylabel))]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "button",
-                              {
-                                staticClass:
-                                  "btn btn-danger btn-sm btn-rounded reset",
-                                staticStyle: { display: "none" },
-                                attrs: { type: "button" },
-                                on: {
-                                  click: function($event) {
-                                    _vm.resetChart("dc-grade-rowchart")
-                                  }
-                                }
-                              },
-                              [_vm._v("Reset")]
-                            )
-                          ])
-                        ])
-                      ]
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-8" }, [
-                  _c("div", { staticClass: "row" }, [
-                    _c(
-                      "div",
-                      { staticClass: "col-12", attrs: { id: "careerField" } },
-                      [
-                        _c(
-                          "div",
-                          { attrs: { id: "dc-careerField-barchart" } },
-                          [
+                _c(
+                  "div",
+                  { staticClass: "col-xl-4 col-lg-4 col-md-4 col-sm-3" },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c(
+                        "div",
+                        { staticClass: "col-12", attrs: { id: "grade" } },
+                        [
+                          _c("div", { attrs: { id: "dc-grade-rowchart" } }, [
                             _c("h3", [
-                              _vm._v("Career Field "),
+                              _vm._v("Grade "),
                               _c(
                                 "span",
                                 {
@@ -19265,129 +19377,197 @@ var render = function() {
                                   attrs: { type: "button" },
                                   on: {
                                     click: function($event) {
-                                      _vm.resetChart("dc-careerField-barchart")
+                                      _vm.resetChart("dc-grade-rowchart")
                                     }
                                   }
                                 },
                                 [_vm._v("Reset")]
                               )
                             ])
-                          ]
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-4", attrs: { id: "age" } }, [
-                      _c("div", { attrs: { id: "dc-age-rowchart" } }, [
-                        _c("h3", [
-                          _vm._v("Age "),
+                          ])
+                        ]
+                      )
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "col-xl-8 col-lg-8 col-md-8 col-sm-9" },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c(
+                        "div",
+                        { staticClass: "col-12", attrs: { id: "careerField" } },
+                        [
                           _c(
-                            "span",
-                            {
-                              staticStyle: {
-                                "font-size": "14pt",
-                                opacity: "0.87"
-                              }
-                            },
-                            [_vm._v(_vm._s(_vm.ylabel))]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "button",
-                            {
-                              staticClass:
-                                "btn btn-danger btn-sm btn-rounded reset",
-                              staticStyle: { display: "none" },
-                              attrs: { type: "button" },
-                              on: {
-                                click: function($event) {
-                                  _vm.resetChart("dc-age-rowchart")
-                                }
-                              }
-                            },
-                            [_vm._v("Reset")]
+                            "div",
+                            { attrs: { id: "dc-careerField-barchart" } },
+                            [
+                              _c("h3", [
+                                _vm._v("Career Field "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticStyle: {
+                                      "font-size": "14pt",
+                                      opacity: "0.87"
+                                    }
+                                  },
+                                  [_vm._v(_vm._s(_vm.ylabel))]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass:
+                                      "btn btn-danger btn-sm btn-rounded reset",
+                                    staticStyle: { display: "none" },
+                                    attrs: { type: "button" },
+                                    on: {
+                                      click: function($event) {
+                                        _vm.resetChart(
+                                          "dc-careerField-barchart"
+                                        )
+                                      }
+                                    }
+                                  },
+                                  [_vm._v("Reset")]
+                                )
+                              ])
+                            ]
                           )
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "col-4", attrs: { id: "gender" } },
-                      [
-                        _c("div", { attrs: { id: "dc-gender-piechart" } }, [
-                          _c("h3", [
-                            _vm._v("Gender "),
-                            _c(
-                              "span",
-                              {
-                                staticStyle: {
-                                  "font-size": "14pt",
-                                  opacity: "0.87"
-                                }
-                              },
-                              [_vm._v(_vm._s(_vm.ylabel))]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "button",
-                              {
-                                staticClass:
-                                  "btn btn-danger btn-sm btn-rounded reset",
-                                staticStyle: { display: "none" },
-                                attrs: { type: "button" },
-                                on: {
-                                  click: function($event) {
-                                    _vm.resetChart("dc-gender-piechart")
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12",
+                          attrs: { id: "age" }
+                        },
+                        [
+                          _c("div", { attrs: { id: "dc-age-rowchart" } }, [
+                            _c("h3", [
+                              _vm._v("Age "),
+                              _c(
+                                "span",
+                                {
+                                  staticStyle: {
+                                    "font-size": "14pt",
+                                    opacity: "0.87"
                                   }
-                                }
-                              },
-                              [_vm._v("Reset")]
-                            )
-                          ])
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "col-4", attrs: { id: "prior" } },
-                      [
-                        _c("div", { attrs: { id: "dc-prior-rowchart" } }, [
-                          _c("h3", [
-                            _vm._v("Prior Military Service "),
-                            _c(
-                              "span",
-                              {
-                                staticStyle: {
-                                  "font-size": "14pt",
-                                  opacity: "0.87"
-                                }
-                              },
-                              [_vm._v(_vm._s(_vm.ylabel))]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "button",
-                              {
-                                staticClass:
-                                  "btn btn-danger btn-sm btn-rounded reset",
-                                staticStyle: { display: "none" },
-                                attrs: { type: "button" },
-                                on: {
-                                  click: function($event) {
-                                    _vm.resetChart("dc-prior-rowchart")
+                                },
+                                [_vm._v(_vm._s(_vm.ylabel))]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "button",
+                                {
+                                  staticClass:
+                                    "btn btn-danger btn-sm btn-rounded reset",
+                                  staticStyle: { display: "none" },
+                                  attrs: { type: "button" },
+                                  on: {
+                                    click: function($event) {
+                                      _vm.resetChart("dc-age-rowchart")
+                                    }
                                   }
-                                }
-                              },
-                              [_vm._v("Reset")]
-                            )
+                                },
+                                [_vm._v("Reset")]
+                              )
+                            ])
                           ])
-                        ])
-                      ]
-                    )
-                  ])
-                ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12",
+                          attrs: { id: "gender" }
+                        },
+                        [
+                          _c("div", { attrs: { id: "dc-gender-piechart" } }, [
+                            _c("h3", [
+                              _vm._v("Gender "),
+                              _c(
+                                "span",
+                                {
+                                  staticStyle: {
+                                    "font-size": "14pt",
+                                    opacity: "0.87"
+                                  }
+                                },
+                                [_vm._v(_vm._s(_vm.ylabel))]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "button",
+                                {
+                                  staticClass:
+                                    "btn btn-danger btn-sm btn-rounded reset",
+                                  staticStyle: { display: "none" },
+                                  attrs: { type: "button" },
+                                  on: {
+                                    click: function($event) {
+                                      _vm.resetChart("dc-gender-piechart")
+                                    }
+                                  }
+                                },
+                                [_vm._v("Reset")]
+                              )
+                            ])
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12",
+                          attrs: { id: "prior" }
+                        },
+                        [
+                          _c("div", { attrs: { id: "dc-prior-rowchart" } }, [
+                            _c("h3", [
+                              _vm._v("Prior Military Service "),
+                              _c(
+                                "span",
+                                {
+                                  staticStyle: {
+                                    "font-size": "14pt",
+                                    opacity: "0.87"
+                                  }
+                                },
+                                [_vm._v(_vm._s(_vm.ylabel))]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "button",
+                                {
+                                  staticClass:
+                                    "btn btn-danger btn-sm btn-rounded reset",
+                                  staticStyle: { display: "none" },
+                                  attrs: { type: "button" },
+                                  on: {
+                                    click: function($event) {
+                                      _vm.resetChart("dc-prior-rowchart")
+                                    }
+                                  }
+                                },
+                                [_vm._v("Reset")]
+                              )
+                            ])
+                          ])
+                        ]
+                      )
+                    ])
+                  ]
+                )
               ]),
               _vm._v(" "),
               _c("largeBarChart", {
@@ -19979,7 +20159,7 @@ exports.push([module.i, "\n#base[data-v-1b760aa6] text{\n    font: 8px sans-seri
             });
             fyrChart.filter('2018');
 
-            //Education Level Barchart
+            //Education Level / Degree Type Barchart
             var edLevelConfig = {};
             edLevelConfig.id = 'edlevel';
             edLevelConfig.dim = _this.ndx.dimension(function (d) {
@@ -19996,7 +20176,8 @@ exports.push([module.i, "\n#base[data-v-1b760aa6] text{\n    font: 8px sans-seri
                 return d.value.totalCount;
             }).elasticX(true).on('pretransition', function (chart) {
                 chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)').on('click', function (d) {
-                    _this.submit(d, 'dc-edlevel-barchart');
+                    chart.filter(d);
+                    dc.redrawAll();
                 });
             }).yAxis().tickFormat(function (v) {
                 return v + "%";
@@ -20144,7 +20325,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container" },
+    { staticClass: "container-fluid" },
     [
       _c(
         "transition-group",
@@ -20495,98 +20676,128 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-3", attrs: { id: "offgroup" } }, [
-                  _c("div", { attrs: { id: "dc-offgroup-barchart" } }, [
-                    _c("h3", [
-                      _vm._v("Group"),
-                      _c(
-                        "span",
-                        {
-                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                        },
-                        [_vm._v(" " + _vm._s(_vm.ylabel))]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "btn btn-danger btn-sm btn-rounded reset",
-                          staticStyle: { visibility: "hidden" },
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              _vm.resetChart("dc-offgroup-barchart")
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12",
+                    attrs: { id: "offgroup" }
+                  },
+                  [
+                    _c("div", { attrs: { id: "dc-offgroup-barchart" } }, [
+                      _c("h3", [
+                        _vm._v("Group"),
+                        _c(
+                          "span",
+                          {
+                            staticStyle: {
+                              "font-size": "14pt",
+                              opacity: "0.87"
                             }
-                          }
-                        },
-                        [_vm._v("Reset\n                            ")]
-                      )
+                          },
+                          [_vm._v(" " + _vm._s(_vm.ylabel))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-danger btn-sm btn-rounded reset",
+                            staticStyle: { visibility: "hidden" },
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.resetChart("dc-offgroup-barchart")
+                              }
+                            }
+                          },
+                          [_vm._v("Reset\n                            ")]
+                        )
+                      ])
                     ])
-                  ])
-                ]),
+                  ]
+                ),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-4", attrs: { id: "grade" } }, [
-                  _c("div", { attrs: { id: "dc-grade-rowchart" } }, [
-                    _c("h3", [
-                      _vm._v("Grade "),
-                      _c(
-                        "span",
-                        {
-                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                        },
-                        [_vm._v(_vm._s(_vm.ylabel))]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "btn btn-danger btn-sm btn-rounded reset",
-                          staticStyle: { visibility: "hidden" },
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              _vm.resetChart("dc-grade-rowchart")
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12",
+                    attrs: { id: "grade" }
+                  },
+                  [
+                    _c("div", { attrs: { id: "dc-grade-rowchart" } }, [
+                      _c("h3", [
+                        _vm._v("Grade "),
+                        _c(
+                          "span",
+                          {
+                            staticStyle: {
+                              "font-size": "14pt",
+                              opacity: "0.87"
                             }
-                          }
-                        },
-                        [_vm._v("Reset\n                            ")]
-                      )
+                          },
+                          [_vm._v(_vm._s(_vm.ylabel))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-danger btn-sm btn-rounded reset",
+                            staticStyle: { visibility: "hidden" },
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.resetChart("dc-grade-rowchart")
+                              }
+                            }
+                          },
+                          [_vm._v("Reset\n                            ")]
+                        )
+                      ])
                     ])
-                  ])
-                ]),
+                  ]
+                ),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-5", attrs: { id: "edlevel" } }, [
-                  _c("div", { attrs: { id: "dc-edlevel-barchart" } }, [
-                    _c("h3", [
-                      _vm._v("Highest Edu Level "),
-                      _c(
-                        "span",
-                        {
-                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                        },
-                        [_vm._v(_vm._s(_vm.ylabel))]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "btn btn-danger btn-sm btn-rounded reset",
-                          staticStyle: { visibility: "hidden" },
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              _vm.resetChart("dc-edlevel-barchart")
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12",
+                    attrs: { id: "edlevel" }
+                  },
+                  [
+                    _c("div", { attrs: { id: "dc-edlevel-barchart" } }, [
+                      _c("h3", [
+                        _vm._v("Highest Edu Level "),
+                        _c(
+                          "span",
+                          {
+                            staticStyle: {
+                              "font-size": "14pt",
+                              opacity: "0.87"
                             }
-                          }
-                        },
-                        [_vm._v("Reset\n                            ")]
-                      )
+                          },
+                          [_vm._v(_vm._s(_vm.ylabel))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-danger btn-sm btn-rounded reset",
+                            staticStyle: { visibility: "hidden" },
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.resetChart("dc-edlevel-barchart")
+                              }
+                            }
+                          },
+                          [_vm._v("Reset\n                            ")]
+                        )
+                      ])
                     ])
-                  ])
-                ])
+                  ]
+                )
               ]),
               _vm._v(" "),
               _c("largeBarChart", {
@@ -22616,6 +22827,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticClass: "container-fluid" },
     [
       _c(
         "transition-group",
@@ -22862,8 +23074,12 @@ var render = function() {
                 "div",
                 { staticClass: "row" },
                 [
-                  _c("div", { staticClass: "col-4" }, [
-                    _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12"
+                    },
+                    [
                       _c(
                         "div",
                         { staticClass: "col-12", attrs: { id: "year" } },
@@ -22918,42 +23134,52 @@ var render = function() {
                           ])
                         ]
                       )
-                    ])
-                  ]),
+                    ]
+                  ),
                   _vm._v(" "),
                   [
                     !_vm.startAfsc
-                      ? _c("div", { staticClass: "col-8" }, [
-                          _c("h3", [
-                            _vm._v(
-                              "\n                            AFSC \n                            "
-                            ),
-                            _c(
-                              "span",
-                              {
-                                staticStyle: {
-                                  "font-size": "14pt",
-                                  opacity: "0.87"
-                                }
-                              },
-                              [_vm._v(" " + _vm._s(_vm.ylabel) + "  ")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "button",
-                              {
-                                staticClass:
-                                  "btn btn-danger btn-sm btn-rounded reset",
-                                staticStyle: { visibility: "hidden" },
-                                attrs: { type: "button" }
-                              },
-                              [_vm._v("Reset")]
-                            )
-                          ])
-                        ])
+                      ? _c(
+                          "div",
+                          {
+                            staticClass:
+                              "col-xl-8 col-lg-8 col-md-8 col-sm-6 col-12"
+                          },
+                          [
+                            _c("h3", [
+                              _vm._v(
+                                "\n                            AFSC \n                            "
+                              ),
+                              _c(
+                                "span",
+                                {
+                                  staticStyle: {
+                                    "font-size": "14pt",
+                                    opacity: "0.87"
+                                  }
+                                },
+                                [_vm._v(" " + _vm._s(_vm.ylabel) + "  ")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "button",
+                                {
+                                  staticClass:
+                                    "btn btn-danger btn-sm btn-rounded reset",
+                                  staticStyle: { visibility: "hidden" },
+                                  attrs: { type: "button" }
+                                },
+                                [_vm._v("Reset")]
+                              )
+                            ])
+                          ]
+                        )
                       : _c(
                           "div",
-                          { staticClass: "col-8" },
+                          {
+                            staticClass:
+                              "col-xl-8 col-lg-8 col-md-8 col-sm-6 col-12"
+                          },
                           [
                             _c("afsc", {
                               attrs: {
@@ -23310,7 +23536,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container" },
+    { staticClass: "container-fluid" },
     [
       _c("div", { staticClass: "row" }, [
         _c("h1", { staticClass: "col" }, [_vm._v("Officer")]),
@@ -23456,8 +23682,6 @@ if (false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_Loader__ = __webpack_require__("wd27");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__store_store__ = __webpack_require__("wtEF");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_searchBox__ = __webpack_require__("CjlA");
-//
-//
 //
 //
 //
@@ -23720,12 +23944,15 @@ if (false) {
             empCatConfig.minHeight = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].empCatChart.minHeight;
             empCatConfig.aspectRatio = 4;
             empCatConfig.margins = { top: 10, left: 40, right: 10, bottom: 80 };
-            empCatConfig.colors = [__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].empCatChart.color];
+            empCatConfig.colors = _this.chartSpecs.empCatColorScale;
             var empCatChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getOrdinalBarChart(empCatConfig);
-            empCatChart.controlsUseVisibility(true).elasticX(true)
-            //.ordinalColors(["#1976d2","#ff4500"])
-            .on('pretransition', function (chart) {
-                chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)');
+            empCatChart.controlsUseVisibility(true).elasticX(true).colorAccessor(function (d) {
+                return d.key;
+            }).on('pretransition', function (chart) {
+                chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)').on('click', function (d) {
+                    chart.filter(d);
+                    dc.redrawAll();
+                });
             });
 
             empCatChart.filter([['ART', 'HQ AGR', 'HQ AGR RECRUIT', 'IMA', 'TRAD', 'UNIT AGR']]);
@@ -23747,23 +23974,33 @@ if (false) {
             gradeConfig.dim = _this.ndx.dimension(function (d) {
                 return d.Grade;
             });
-            var gradeGroup = removeEmptyBins(gradeConfig.dim.group().reduceSum(function (d) {
+            // var gradeGroup = removeEmptyBins(gradeConfig.dim.group().reduceSum(function(d) {return +d.Inventory;}))
+            // gradeConfig.group = removeError(gradeGroup)
+            gradeConfig.group = removeEmptyBins(gradeConfig.dim.group().reduceSum(function (d) {
                 return +d.Inventory;
             }));
-            gradeConfig.group = removeError(gradeGroup);
             gradeConfig.minHeight = 250;
             gradeConfig.aspectRatio = 3;
             gradeConfig.margins = { top: 10, left: 50, right: 10, bottom: 60 };
             gradeConfig.colors = _this.chartSpecs.gradeChartColorScale;
             var gradeChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getOrdinalBarChart(gradeConfig);
-            gradeChart.elasticX(true).controlsUseVisibility(true).colorAccessor(function (d) {
+            gradeChart.elasticX(true).colorAccessor(function (d) {
                 return d.key;
-            }).ordering(function (d) {
-                return __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].gradeOrder[d.key];
-            }).on('pretransition', function (chart) {
-                chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)');
+            }).controlsUseVisibility(true)
+            // .ordering(function(d){
+            //   return formats.gradeOrder[d.key]
+            // })  
+            .on('pretransition', function (chart) {
+                chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)').on('click', function (d) {
+                    chart.filter(d);
+                    dc.redrawAll();
+                });
             }).yAxis().tickFormat(function (v) {
                 return v + "%";
+            });
+
+            gradeChart.ordering(function (d) {
+                return __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].gradeOrder[d.key];
             });
 
             //Download Raw Data button
@@ -24257,7 +24494,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container" },
+    { staticClass: "container-fluid" },
     [
       _c(
         "transition-group",
@@ -24326,78 +24563,94 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-4" }, [
-                  _c("div", { staticClass: "row" }, [
-                    _c(
-                      "div",
-                      { staticClass: "col-12", attrs: { id: "type" } },
-                      [
-                        _c("div", { attrs: { id: "dc-type-rowchart" } }, [
-                          _c("h3", [
-                            _vm._v("Type "),
-                            _c(
-                              "span",
-                              {
-                                staticStyle: {
-                                  "font-size": "14pt",
-                                  opacity: "0.87"
-                                }
-                              },
-                              [_vm._v(_vm._s(_vm.ylabel))]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "button",
-                              {
-                                staticClass:
-                                  "btn btn-danger btn-sm btn-rounded reset",
-                                staticStyle: { visibility: "hidden" },
-                                attrs: { type: "button" },
-                                on: {
-                                  click: function($event) {
-                                    _vm.resetChart("dc-type-rowchart")
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-xl-4 col-lg-4 col-md-3 col-sm-12 col-12"
+                  },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c(
+                        "div",
+                        { staticClass: "col-12", attrs: { id: "type" } },
+                        [
+                          _c("div", { attrs: { id: "dc-type-rowchart" } }, [
+                            _c("h3", [
+                              _vm._v("Type "),
+                              _c(
+                                "span",
+                                {
+                                  staticStyle: {
+                                    "font-size": "14pt",
+                                    opacity: "0.87"
                                   }
-                                }
-                              },
-                              [_vm._v("Reset")]
-                            )
+                                },
+                                [_vm._v(_vm._s(_vm.ylabel))]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "button",
+                                {
+                                  staticClass:
+                                    "btn btn-danger btn-sm btn-rounded reset",
+                                  staticStyle: { visibility: "hidden" },
+                                  attrs: { type: "button" },
+                                  on: {
+                                    click: function($event) {
+                                      _vm.resetChart("dc-type-rowchart")
+                                    }
+                                  }
+                                },
+                                [_vm._v("Reset")]
+                              )
+                            ])
                           ])
-                        ])
-                      ]
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-8", attrs: { id: "grade" } }, [
-                  _c("div", { attrs: { id: "dc-grade-barchart" } }, [
-                    _c("h3", [
-                      _vm._v(" Grade/Rank "),
-                      _c(
-                        "span",
-                        {
-                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                        },
-                        [_vm._v(_vm._s(_vm.ylabel))]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "btn btn-danger btn-sm btn-rounded reset",
-                          staticStyle: { visibility: "hidden" },
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              _vm.resetChart("dc-grade-barchart")
-                            }
-                          }
-                        },
-                        [_vm._v("Reset")]
+                        ]
                       )
                     ])
-                  ])
-                ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-xl-8 col-lg-8 col-md-9 col-sm-12 col-12",
+                    attrs: { id: "grade" }
+                  },
+                  [
+                    _c("div", { attrs: { id: "dc-grade-barchart" } }, [
+                      _c("h3", [
+                        _vm._v(" Grade/Rank "),
+                        _c(
+                          "span",
+                          {
+                            staticStyle: {
+                              "font-size": "14pt",
+                              opacity: "0.87"
+                            }
+                          },
+                          [_vm._v(_vm._s(_vm.ylabel))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-danger btn-sm btn-rounded reset",
+                            staticStyle: { visibility: "hidden" },
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.resetChart("dc-grade-barchart")
+                              }
+                            }
+                          },
+                          [_vm._v("Reset")]
+                        )
+                      ])
+                    ])
+                  ]
+                )
               ]),
               _vm._v(" "),
               _c("largeBarChart", {
@@ -24645,7 +24898,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container" },
+    { staticClass: "container-fluid" },
     [
       _c("div", { staticClass: "row" }, [
         _c("h1", { staticClass: "col" }, [_vm._v("Enlisted")]),
@@ -25625,6 +25878,7 @@ if(false) {
             }).on('pretransition', function (chart) {
                 chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)').on('click', function (d) {
                     _this.submit(d, 'dc-grade-barchart');
+                    console.log(d.key);
                 });
             }).ordering(function (d) {
                 return __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].gradeOrder[d.key];
@@ -26128,13 +26382,14 @@ if(false) {
                 return d.value.totalCount;
             }).elasticX(true).on('pretransition', function (chart) {
                 chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)').on('click', function (d) {
-                    _this.submit(d, 'dc-offgroup-barchart');
+                    chart.filter(d);
+                    dc.redrawAll();
                 });
             }).yAxis().tickFormat(function (v) {
                 return v + "%";
             });
 
-            //Education Level Barchart
+            //Education Level / Degree Type Barchart
             var edLevelConfig = {};
             edLevelConfig.id = 'edlevel';
             edLevelConfig.dim = _this.ndx.dimension(function (d) {
@@ -26153,7 +26408,8 @@ if(false) {
                 return __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].edLevelOrder[d.key];
             }).on('pretransition', function (chart) {
                 chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)').on('click', function (d) {
-                    _this.submit(d, 'dc-edlevel-barchart');
+                    chart.filter(d);
+                    dc.redrawAll();
                 });
             }).yAxis().tickFormat(function (v) {
                 return v + "%";
@@ -26422,4 +26678,4 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.90122c1684618eaa9f46.js.map
+//# sourceMappingURL=app.da246c7a2de5a74aaa54.js.map
