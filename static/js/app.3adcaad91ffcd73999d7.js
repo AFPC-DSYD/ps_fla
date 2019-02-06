@@ -609,19 +609,20 @@ var render = function() {
                       staticClass: "col-xl-9 col-lg-9 col-md-9 col-sm-8 col-12"
                     },
                     [
-                      _c("largeBarChart", {
+                      _c("overviewBarChart", {
                         attrs: {
                           id: "majcom",
                           dimension: _vm.majcomDim,
-                          group: _vm.majcomGroup,
-                          widthFactor: 0.9,
                           aspectRatio: _vm.chartSpecs.majcomChart.aspectRatio,
                           minHeight: _vm.chartSpecs.majcomChart.minHeight,
-                          ylabel: " ",
-                          reducer: _vm.asgnAdd,
+                          normalToOverviewFactor: 2.5,
+                          selected: _vm.selected,
+                          ylabel: _vm.ylabel,
+                          reducerAdd: _vm.asgnAdd,
+                          reducerRemove: _vm.asgnRemove,
                           accumulator: _vm.asgnInitial,
                           numBars: 10,
-                          margin: { top: 10, left: 40, right: 10, bottom: 90 },
+                          margin: _vm.chartSpecs.majcomChart.margins,
                           colorScale: _vm.majcomColorScale,
                           title: "MAJCOM",
                           loaded: _vm.loaded
@@ -632,16 +633,17 @@ var render = function() {
                   )
                 ]),
                 _vm._v(" "),
-                _c("largeBarChart", {
+                _c("overviewBarChart", {
                   attrs: {
                     id: "base",
                     dimension: _vm.baseDim,
-                    group: _vm.baseGroup,
-                    widthFactor: 0.9,
                     aspectRatio: _vm.chartSpecs.baseChart.aspectRatio,
                     minHeight: _vm.chartSpecs.baseChart.minHeight,
-                    ylabel: " ",
-                    reducer: _vm.asgnAdd,
+                    normalToOverviewFactor: 2.5,
+                    selected: _vm.selected,
+                    ylabel: _vm.ylabel,
+                    reducerAdd: _vm.asgnAdd,
+                    reducerRemove: _vm.asgnRemove,
                     accumulator: _vm.asgnInitial,
                     numBars: 20,
                     margin: _vm.chartSpecs.baseChart.margins,
@@ -689,6 +691,7 @@ if (false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_Loader__ = __webpack_require__("wd27");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__store_store__ = __webpack_require__("wtEF");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_largeBarChart__ = __webpack_require__("A1IL");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_overviewBarChart__ = __webpack_require__("Kvlx");
 //
 //
 //
@@ -812,6 +815,40 @@ if (false) {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -862,9 +899,8 @@ if (false) {
             });
         },
         locGroup: function locGroup() {
-            return this.locDim.group().reduceSum(function (d) {
-                return d.Inventory;
-            });
+            //return this.locDim.group().reduceSum(function(d) {return d.Inventory;}) 
+            return this.removeError(this.locDim.group().reduce(this.inventoryAdd, this.inventoryRemove, this.inventoryInitial));
         },
         majcomDim: function majcomDim() {
             return this.ndx.dimension(function (d) {
@@ -872,9 +908,8 @@ if (false) {
             });
         },
         majcomGroup: function majcomGroup() {
-            return this.majcomDim.group().reduceSum(function (d) {
-                return d.Inventory;
-            });
+            //return this.majcomDim.group().reduceSum(function(d) {return d.Inventory;}) 
+            return this.removeError(this.majcomDim.group().reduce(this.inventoryAdd, this.inventoryRemove, this.inventoryInitial));
         }
 
     },
@@ -916,7 +951,10 @@ if (false) {
             dc.redrawAll();
         },
         inventoryAdd: function inventoryAdd(p, v) {
-            return p + v;
+            return p = p + v.Inventory;
+        },
+        inventoryRemove: function inventoryRemove(p, v) {
+            return p = p - v.Inventory;
         },
         inventoryInitial: function inventoryInitial() {
             return 0;
@@ -926,7 +964,8 @@ if (false) {
         'autocomplete': __WEBPACK_IMPORTED_MODULE_4__components_AutoComplete__["a" /* default */],
         'loader': __WEBPACK_IMPORTED_MODULE_6__components_Loader__["a" /* default */],
         searchBox: __WEBPACK_IMPORTED_MODULE_5__components_searchBox__["a" /* default */],
-        largeBarChart: __WEBPACK_IMPORTED_MODULE_8__components_largeBarChart__["a" /* default */]
+        largeBarChart: __WEBPACK_IMPORTED_MODULE_8__components_largeBarChart__["a" /* default */],
+        overviewBarChart: __WEBPACK_IMPORTED_MODULE_9__components_overviewBarChart__["a" /* default */]
     },
     created: function created() {
         console.log('created');
@@ -1943,6 +1982,17 @@ if (false) {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2334,6 +2384,10 @@ if (false) {
                 return d.State;
             });
             usConfig.group = usConfig.dim.group().reduce(tosAdd, tosRemove, tosInitial);
+            //alert(_.values(usConfig.group))
+            //alert(Object.values(usConfig.group))
+            //alert(Object.valueOf(usConfig.group))
+            //alert(Object.keys(usConfig.group))
             usConfig.scale = 1;
             usConfig.minHeight = 200;
             usConfig.aspectRatio = 2;
@@ -2976,6 +3030,7 @@ exports.push([module.i, "\n.custom-control.custom-radio[data-v-9b0c2fd6]{\n    p
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_largeBarChart__ = __webpack_require__("A1IL");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_overviewBarChart__ = __webpack_require__("Kvlx");
 //
 //
 //
@@ -3138,6 +3193,41 @@ exports.push([module.i, "\n.custom-control.custom-radio[data-v-9b0c2fd6]{\n    p
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -3265,7 +3355,8 @@ exports.push([module.i, "\n.custom-control.custom-radio[data-v-9b0c2fd6]{\n    p
         'autocomplete': __WEBPACK_IMPORTED_MODULE_4__components_AutoComplete__["a" /* default */],
         'loader': __WEBPACK_IMPORTED_MODULE_5__components_Loader__["a" /* default */],
         FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome___default.a,
-        largeBarChart: __WEBPACK_IMPORTED_MODULE_8__components_largeBarChart__["a" /* default */]
+        largeBarChart: __WEBPACK_IMPORTED_MODULE_8__components_largeBarChart__["a" /* default */],
+        overviewBarChart: __WEBPACK_IMPORTED_MODULE_9__components_overviewBarChart__["a" /* default */]
     },
     created: function created() {
         console.log('created');
@@ -4889,7 +4980,7 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* need to make this scoped */\n#radioSelect div[data-v-76d32ee7],input[data-v-76d32ee7],label[data-v-76d32ee7]{\n    cursor: pointer;\n}\n.form-group[data-v-76d32ee7]{\n    -ms-flex-line-pack: center;\n        align-content: center;\n}\n.fade-enter-active[data-v-76d32ee7] {\n    -webkit-transition: all 0.5s;\n    transition: all 0.5s;\n}\n.fade-leave-active[data-v-76d32ee7] {\n    -webkit-transition: all 0.2s;\n    transition: all 0.2s;\n}\n.fade-enter[data-v-76d32ee7], .fade-leave-to[data-v-76d32ee7] {\n    opacity: 0;\n}\n.fade-enter-to[data-v-76d32ee7], .fade-leave[data-v-76d32ee7] {\n    opacity: 1;\n}\n#category .custom-control-input:checked~.custom-control-indicator[data-v-76d32ee7] {\n    background-color: rgb(18, 153, 60);\n}\n#category .custom-control-input:focus~.custom-control-indicator[data-v-76d32ee7] {\n    -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(18, 153, 60,.25);\n            box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(18, 153, 60,.25);\n}\n#category[data-v-76d32ee7]{\n    margin-top: .5rem;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* need to make this scoped */\n#radioSelect div[data-v-76d32ee7],input[data-v-76d32ee7],label[data-v-76d32ee7]{\n    cursor: pointer;\n}\n.form-group[data-v-76d32ee7]{\n    -ms-flex-line-pack: center;\n        align-content: center;\n}\n.fade-enter-active[data-v-76d32ee7] {\n    -webkit-transition: all 0.5s;\n    transition: all 0.5s;\n}\n.fade-leave-active[data-v-76d32ee7] {\n    -webkit-transition: all 0.2s;\n    transition: all 0.2s;\n}\n.fade-enter[data-v-76d32ee7], .fade-leave-to[data-v-76d32ee7] {\n    opacity: 0;\n}\n.fade-enter-to[data-v-76d32ee7], .fade-leave[data-v-76d32ee7] {\n    opacity: 1;\n}\n#category .custom-control-input:checked~.custom-control-indicator[data-v-76d32ee7] {\n    background-color: rgb(18, 153, 60);\n}\n#category .custom-control-input:focus~.custom-control-indicator[data-v-76d32ee7] {\n    -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(18, 153, 60,.25);\n            box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(18, 153, 60,.25);\n}\n#category[data-v-76d32ee7]{\n    margin-top: .5rem;\n}\n", ""]);
 
 // exports
 
@@ -5012,7 +5103,7 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  /*should be scoped*/\n#radioSelect div,input,label{\n    cursor: pointer;\n}\n.fade-enter-active {\n    -webkit-transition: all 0.5s;\n    transition: all 0.5s;\n}\n.fade-leave-active {\n    -webkit-transition: all 0.2s;\n    transition: all 0.2s;\n}\n.fade-enter, .fade-leave-to {\n    opacity: 0;\n}\n.fade-enter-to, .fade-leave {\n    opacity: 1;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  /*should be scoped*/\n#radioSelect div,input,label{\n    cursor: pointer;\n}\n.fade-enter-active {\n    -webkit-transition: all 0.5s;\n    transition: all 0.5s;\n}\n.fade-leave-active {\n    -webkit-transition: all 0.2s;\n    transition: all 0.2s;\n}\n.fade-enter, .fade-leave-to {\n    opacity: 0;\n}\n.fade-enter-to, .fade-leave {\n    opacity: 1;\n}\n", ""]);
 
 // exports
 
@@ -5263,6 +5354,7 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -5340,6 +5432,13 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 			if (this.focus) return {
 				'border-bottom': '2px solid ' + this.colorGiven
 			};else return {};
+		},
+		getButtonHeight: function getButtonHeight() {
+			if (this.searchVar.length > 0) return {
+				'top': '-9px'
+			};else return {
+				'top': '-3px'
+			};
 		}
 	},
 	watch: {
@@ -5724,19 +5823,19 @@ var render = function() {
                 ]
               ),
               _vm._v(" "),
-              _c("largeBarChart", {
+              _c("overviewBarChart", {
                 attrs: {
                   id: "majcom",
                   dimension: _vm.majcomDim,
-                  group: _vm.majcomGroup,
-                  widthFactor: 0.9,
                   aspectRatio: _vm.chartSpecs.majcomChart.aspectRatio,
                   minHeight: _vm.chartSpecs.majcomChart.minHeight,
+                  normalToOverviewFactor: 2.5,
                   selected: _vm.selected,
                   ylabel: _vm.ylabel,
-                  reducer: _vm.manningAddLarge,
+                  reducerAdd: _vm.manningAdd,
+                  reducerRemove: _vm.manningRemove,
                   accumulator: _vm.manningInitial,
-                  numBars: 30,
+                  numBars: 15,
                   margin: _vm.chartSpecs.majcomChart.margins,
                   colorScale: _vm.majcomColorScale,
                   title: "MAJCOM",
@@ -6136,7 +6235,7 @@ var render = function() {
                 )
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "row pt-2" }, [
                 _c(
                   "div",
                   { staticClass: "col-12", attrs: { id: "base" } },
@@ -6144,7 +6243,9 @@ var render = function() {
                     _c("div", { attrs: { id: "dc-base-select" } }),
                     _vm._v(" "),
                     _c("h3", [
-                      _vm._v("Installation "),
+                      _vm._v(
+                        "Installation \n                                    "
+                      ),
                       _c(
                         "span",
                         {
@@ -6154,26 +6255,29 @@ var render = function() {
                       ),
                       _vm._v(" "),
                       _c(
-                        "button",
+                        "span",
                         {
-                          staticClass:
-                            "btn btn-danger btn-sm btn-rounded reset",
-                          staticStyle: { visibility: "hidden" },
-                          attrs: { type: "button", id: "btn-base-reset" },
-                          on: {
-                            click: function($event) {
-                              _vm.resetChart("dc-base-barchart")
-                              _vm.resetChart("dc-base-select")
-                            }
+                          staticClass: "pl-1",
+                          staticStyle: { "font-size": "12pt" },
+                          attrs: {
+                            "data-toggle": "tooltip",
+                            "data-placement": "bottom",
+                            title:
+                              "Type in the full, or partial, installation name and press the Search Button to Filter by Installation."
                           }
                         },
-                        [_vm._v("Reset")]
+                        [
+                          _c("fontAwesomeIcon", {
+                            attrs: { icon: "info-circle" }
+                          })
+                        ],
+                        1
                       )
                     ]),
                     _vm._v(" "),
                     _c("searchBox", {
                       attrs: {
-                        size: "3",
+                        size: "5",
                         label: "Enter Installation",
                         button: "true",
                         color: _vm.baseColor,
@@ -6191,67 +6295,13 @@ var render = function() {
                         },
                         expression: "searchBase"
                       }
-                    }),
-                    _vm._v(" "),
-                    _c("transition", { key: "1", attrs: { name: "expand" } }, [
-                      _c("div", {
-                        directives: [
-                          {
-                            name: "show",
-                            rawName: "v-show",
-                            value: _vm.loaded && _vm.showBase,
-                            expression: "loaded&&showBase"
-                          }
-                        ],
-                        attrs: { id: "dc-base-barchart" }
-                      })
-                    ])
+                    })
                   ],
                   1
                 )
               ]),
               _vm._v(" "),
-              _c(
-                "div",
-                {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.loaded && !_vm.showBase,
-                      expression: "loaded&&!showBase"
-                    }
-                  ],
-                  key: "first",
-                  staticClass:
-                    "alert alert-warning alert-dismissible fade show",
-                  attrs: { role: "alert" }
-                },
-                [
-                  _vm._v(
-                    "\n                    Please select from maps below to display Installation graph\n                    "
-                  ),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "close",
-                      staticStyle: { cursor: "pointer" },
-                      attrs: {
-                        type: "button",
-                        "data-dismiss": "alert",
-                        "aria-label": "Close"
-                      }
-                    },
-                    [
-                      _c("span", { attrs: { "aria-hidden": "true" } }, [
-                        _vm._v("×")
-                      ])
-                    ]
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "row pt-2" }, [
                 _c(
                   "div",
                   {
@@ -7418,7 +7468,7 @@ var render = function() {
   return _c("div", { staticClass: "row" }, [
     _c("div", { staticClass: "col-12", attrs: { id: "overview" + _vm.id } }, [
       _c("h3", { staticClass: "mb-0 pb-0" }, [
-        _vm._v(" " + _vm._s(_vm.title) + "\n            "),
+        _vm._v(" " + _vm._s(_vm.title) + "\n                "),
         _c("span", { staticStyle: { "font-size": "14pt", opacity: "0.87" } }, [
           _vm._v(_vm._s(_vm.ylabel))
         ]),
@@ -7453,7 +7503,7 @@ var render = function() {
               }
             }
           },
-          [_vm._v("\n                Reset Top\n            ")]
+          [_vm._v("\n                    Reset Top\n                ")]
         ),
         _vm._v(" "),
         _c(
@@ -7468,7 +7518,7 @@ var render = function() {
               }
             }
           },
-          [_vm._v("\n                Reset Bottom\n            ")]
+          [_vm._v("\n                    Reset Bottom\n                ")]
         )
       ]),
       _vm._v(" "),
@@ -9152,6 +9202,23 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -9707,7 +9774,7 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
             });
         },
         majcomGroup: function majcomGroup() {
-            return this.majcomDim.group().reduce(this.manningAdd, this.manningRemove, this.manningInitial);
+            return this.removeEmptyBins(this.majcomDim.group().reduce(this.manningAdd, this.manningRemove, this.manningInitial));
         },
         mpfDim: function mpfDim() {
             return this.ndx.dimension(function (d) {
@@ -9715,7 +9782,7 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
             });
         },
         mpfGroup: function mpfGroup() {
-            return this.mpfDim.group().reduce(this.manningAdd, this.manningRemove, this.manningInitial);
+            return this.removeEmptyBins(this.mpfDim.group().reduce(this.manningAdd, this.manningRemove, this.manningInitial));
         },
         gradeDim: function gradeDim() {
             return this.ndx.dimension(function (d) {
@@ -10011,6 +10078,7 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__store_store__ = __webpack_require__("wtEF");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_searchBox__ = __webpack_require__("CjlA");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_largeBarChart__ = __webpack_require__("A1IL");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_overviewBarChart__ = __webpack_require__("Kvlx");
 //
 //
 //
@@ -10114,6 +10182,41 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -10155,9 +10258,8 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
             });
         },
         majcomGroup: function majcomGroup() {
-            return this.majcomDim.group().reduceSum(function (d) {
-                return +d.Count;
-            });
+            //return this.majcomDim.group().reduceSum((d) => {return +d.Count;})
+            return this.removeError(this.majcomDim.group().reduce(this.asgnAdd, this.asgnRemove, this.asgnInitial));
         },
         baseDim: function baseDim() {
             return this.ndx.dimension(function (d) {
@@ -10165,9 +10267,8 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
             });
         },
         baseGroup: function baseGroup() {
-            return this.baseDim.group().reduceSum(function (d) {
-                return +d.Count;
-            });
+            //return this.baseDim.group().reduceSum((d) => {return +d.Count;})
+            return this.removeError(this.baseDim.group().reduce(this.asgnAdd, this.asgnRemove, this.asgnInitial));
         }
     },
     methods: {
@@ -10199,7 +10300,12 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
             };
         },
         asgnAdd: function asgnAdd(p, v) {
-            return p + v;
+            p = p + +v.Count;
+            return p;
+        },
+        asgnRemove: function asgnRemove(p, v) {
+            p = p - +v.Count;
+            return p;
         },
         asgnInitial: function asgnInitial() {
             return 0;
@@ -10408,7 +10514,8 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
     components: {
         'loader': __WEBPACK_IMPORTED_MODULE_4__components_Loader__["a" /* default */],
         searchBox: __WEBPACK_IMPORTED_MODULE_6__components_searchBox__["a" /* default */],
-        largeBarChart: __WEBPACK_IMPORTED_MODULE_7__components_largeBarChart__["a" /* default */]
+        largeBarChart: __WEBPACK_IMPORTED_MODULE_7__components_largeBarChart__["a" /* default */],
+        overviewBarChart: __WEBPACK_IMPORTED_MODULE_8__components_overviewBarChart__["a" /* default */]
     }
 });
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("Za4h"), __webpack_require__("JowF"), __webpack_require__("iEPi"), __webpack_require__("lDdF")))
@@ -10503,7 +10610,7 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                            Percentage\n                        "
+                              "\n                                Percentage\n                            "
                             )
                           ]
                         )
@@ -10550,7 +10657,7 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                            Assigned \n                        "
+                              "\n                                Assigned \n                            "
                             )
                           ]
                         )
@@ -10597,7 +10704,7 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                            Authorized \n                        "
+                              "\n                                Authorized \n                            "
                             )
                           ]
                         )
@@ -10644,7 +10751,7 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                            STP \n                        "
+                              "\n                                STP \n                            "
                             )
                           ]
                         )
@@ -10680,42 +10787,44 @@ var render = function() {
               _c("div", { staticClass: "row" }, [
                 _c("div", { staticClass: "col-auto" }, [
                   _vm._v(
-                    "\n                    Assigned:\n                    "
+                    "\n                        Assigned:\n                        "
                   ),
                   _c("span", { attrs: { id: "asgn" } })
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-auto" }, [
-                  _vm._v("\n                    STP:\n                    "),
+                  _vm._v(
+                    "\n                        STP:\n                        "
+                  ),
                   _c("span", { attrs: { id: "stp" } })
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-auto" }, [
                   _vm._v(
-                    "\n                    Authorized:\n                    "
+                    "\n                        Authorized:\n                        "
                   ),
                   _c("span", { attrs: { id: "auth" } })
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-auto" }, [
                   _vm._v(
-                    "\n                    Manning Percent:\n                    "
+                    "\n                        Manning Percent:\n                        "
                   ),
                   _c("span", { attrs: { id: "percent" } })
                 ])
               ]),
               _vm._v(" "),
-              _c("largeBarChart", {
+              _c("overviewBarChart", {
                 attrs: {
                   id: "majcom",
                   dimension: _vm.majcomDim,
-                  group: _vm.majcomGroup,
-                  widthFactor: 0.9,
-                  aspectRatio: _vm.chartSpecs.majcomChart.aspectRatio,
-                  minHeight: _vm.chartSpecs.majcomChart.minHeight,
+                  aspectRatio: 3.8,
+                  minHeight: 240,
+                  normalToOverviewFactor: 2.5,
                   selected: _vm.selected,
                   ylabel: _vm.ylabel,
-                  reducer: _vm.manningAddLarge,
+                  reducerAdd: _vm.manningAdd,
+                  reducerRemove: _vm.manningRemove,
                   accumulator: _vm.manningInitial,
                   numBars: 15,
                   margin: _vm.chartSpecs.majcomChart.margins,
@@ -10938,6 +11047,7 @@ if (false) {(function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_Loader__ = __webpack_require__("wd27");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__store_store__ = __webpack_require__("wtEF");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_largeBarChart__ = __webpack_require__("A1IL");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_overviewBarChart__ = __webpack_require__("Kvlx");
 //
 //
 //
@@ -11083,6 +11193,45 @@ if (false) {(function () {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -11125,7 +11274,7 @@ if (false) {(function () {
             });
         },
         coreGroup: function coreGroup() {
-            return this.coreDim.group().reduce(this.edAdd, this.edRemove, this.edInitial);
+            return this.coreDim.group().reduce(this.edAdd, this.edRemoveLarge, this.edInitial);
         },
         yrgpDim: function yrgpDim() {
             return this.ndx.dimension(function (d) {
@@ -11133,7 +11282,7 @@ if (false) {(function () {
             });
         },
         yrgpGroup: function yrgpGroup() {
-            return this.yrgpDim.group().reduce(this.edAdd, this.edRemove, this.edInitial);
+            return this.yrgpDim.group().reduce(this.edAdd, this.edRemoveLarge, this.edInitial);
         },
         ylabel: function ylabel() {
             if (_.includes(this.selected, "Percent")) {
@@ -11198,23 +11347,31 @@ if (false) {(function () {
                 nonStem: 0,
                 stemPercent: 0,
                 nonStemPercent: 0
-            };
-        },
-        edAddLarge: function edAddLarge(p, v) {
-            p.totalCount = p.totalCount + +v.totalCount;
-            p.stem = p.stem + +v.stem;
-            p.nonStem = p.nonStem + +v.nonStem;
-            p.stemPercent = p.stem / p.totalCount === Infinity ? 0 : Math.round(p.stem / p.totalCount * 1000) / 10 || 0;
-            p.nonStemPercent = p.nonStem / p.totalCount === Infinity ? 0 : Math.round(p.nonStem / p.totalCount * 1000) / 10 || 0;
-            return p;
-        },
-        edInitialLarge: function edInitialLarge() {
-            return {
-                totalCount: 0,
-                stem: 0,
-                nonStem: 0,
-                stemPercent: 0,
-                nonStemPercent: 0
+                // },                 
+                // edAddLarge: function(p,v) {
+                //     p.totalCount = p.totalCount + +v.totalCount
+                //     p.stem = p.stem + +v.stem
+                //     p.nonStem = p.nonStem + +v.nonStem
+                //     p.stemPercent = p.stem/p.totalCount === Infinity ? 0 : Math.round((p.stem/p.totalCount)*1000)/10 || 0
+                //     p.nonStemPercent = p.nonStem/p.totalCount === Infinity ? 0 : Math.round((p.nonStem/p.totalCount)*1000)/10 || 0
+                //     return p 
+                // },
+                // edRemoveLarge: function(p,v) {
+                //     p.totalCount = p.totalCount - +v.totalCount
+                //     p.stem = p.stem - +v.stem
+                //     p.nonStem = p.nonStem - +v.nonstem
+                //     p.stemPercent = p.stem/p.totalCount === Infinity ? 0 : Math.round((p.stem/p.totalCount)*1000)/10 || 0
+                //     p.nonStemPercent = p.nonStem/p.totalCount === Infinity ? 0 : Math.round((p.nonStem/p.totalCount)*1000)/10 || 0
+                //     return p
+                // },
+                // edInitialLarge: function() {
+                //     return {
+                //       totalCount: 0,
+                //       stem: 0,
+                //       nonStem: 0,
+                //       stemPercent: 0,
+                //       nonStemPercent: 0
+                //     }
             };
         }
     },
@@ -11223,7 +11380,8 @@ if (false) {(function () {
         'AutoComplete': __WEBPACK_IMPORTED_MODULE_4__components_AutoComplete__["a" /* default */],
         'Loader': __WEBPACK_IMPORTED_MODULE_6__components_Loader__["a" /* default */],
         searchBox: __WEBPACK_IMPORTED_MODULE_5__components_searchBox__["a" /* default */],
-        largeBarChart: __WEBPACK_IMPORTED_MODULE_8__components_largeBarChart__["a" /* default */]
+        largeBarChart: __WEBPACK_IMPORTED_MODULE_8__components_largeBarChart__["a" /* default */],
+        overviewBarChart: __WEBPACK_IMPORTED_MODULE_9__components_overviewBarChart__["a" /* default */]
     },
 
     created: function created() {
@@ -11270,7 +11428,11 @@ if (false) {(function () {
 
             obj.count = given.count;
             obj.edlevel = given.edlevel;
-            obj.core = given.core;
+            if (given.core == '**ERROR**' || given.core == '') {
+                obj.core = 'Unknown';
+            } else {
+                obj.core = given.core;
+            }
             obj.grade = __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].gradeFormat[given.grade];
             obj.group = given.grp;
             obj.type = given.type;
@@ -12957,17 +13119,19 @@ var render = function() {
               _vm._v(" "),
               _c("br"),
               _vm._v(" "),
-              _c("largeBarChart", {
+              _c("overviewBarChart", {
                 attrs: {
                   id: "core",
                   dimension: _vm.coreDim,
-                  group: _vm.removeError(_vm.coreGroup),
-                  widthFactor: 0.9,
                   aspectRatio: _vm.chartSpecs.coreChart.aspectRatio,
                   minHeight: _vm.chartSpecs.coreChart.minHeight,
-                  reducer: _vm.edAdd,
+                  normalToOverviewFactor: 2.5,
+                  selected: _vm.selected,
+                  ylabel: _vm.ylabel,
+                  reducerAdd: _vm.edAdd,
+                  reducerRemove: _vm.edRemove,
                   accumulator: _vm.edInitial,
-                  numBars: 30,
+                  numBars: 15,
                   margin: _vm.chartSpecs.coreChart.margins,
                   colorScale: _vm.coreColorScale,
                   title: "Core",
@@ -18911,7 +19075,7 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    "\n                    Data prefiltered to IPZ Zone Promotion Rate\n                    "
+                    "\n                    Data prefiltered to In-the-Promotion-Zone\n                    "
                   ),
                   _c(
                     "button",
@@ -19188,19 +19352,19 @@ var render = function() {
                 )
               ]),
               _vm._v(" "),
-              _c("largeBarChart", {
+              _c("overviewBarChart", {
                 attrs: {
                   id: "core",
                   dimension: _vm.coreDim,
-                  group: _vm.coreGroup,
-                  widthFactor: 0.9,
                   aspectRatio: _vm.chartSpecs.coreChart.aspectRatio,
                   minHeight: _vm.chartSpecs.coreChart.minHeight,
+                  normalToOverviewFactor: 2.5,
                   selected: _vm.selected,
                   ylabel: _vm.ylabel,
-                  reducer: _vm.promoAdd,
+                  reducerAdd: _vm.promoAdd,
+                  reducerRemove: _vm.promoRemove,
                   accumulator: _vm.promoInitial,
-                  numBars: 30,
+                  numBars: 15,
                   margin: _vm.chartSpecs.coreChart.margins,
                   colorScale: _vm.coreColorScale,
                   title: "Core",
@@ -19208,19 +19372,19 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _c("largeBarChart", {
+              _c("overviewBarChart", {
                 attrs: {
                   id: "board",
                   dimension: _vm.boardDim,
-                  group: _vm.boardGroup,
-                  widthFactor: 0.9,
                   aspectRatio: _vm.chartSpecs.boardChart.aspectRatio,
                   minHeight: _vm.chartSpecs.boardChart.minHeight,
+                  normalToOverviewFactor: 2.5,
                   selected: _vm.selected,
                   ylabel: _vm.ylabel,
-                  reducer: _vm.promoAdd,
+                  reducerAdd: _vm.promoAdd,
+                  reducerRemove: _vm.promoRemove,
                   accumulator: _vm.promoInitial,
-                  numBars: 30,
+                  numBars: 15,
                   margin: _vm.chartSpecs.boardChart.margins,
                   colorScale: _vm.boardColorScale,
                   title: "Board",
@@ -19272,7 +19436,9 @@ var render = function() {
             staticStyle: { "margin-top": "15px" }
           },
           [
-            _vm._v("\n                    Data as of: \n                    "),
+            _vm._v(
+              "\n                        Data as of: \n                        "
+            ),
             _c(
               "span",
               { staticStyle: { "font-weight": "bold", color: "#4d8bf9" } },
@@ -19315,7 +19481,7 @@ var render = function() {
               _c("div", { staticClass: "row pt-2" }, [
                 _c("div", { staticClass: "col-auto" }, [
                   _vm._v(
-                    "\n                    Inventory:        \n                    "
+                    "\n                        Inventory:        \n                        "
                   ),
                   _c("span", { attrs: { id: "inv" } })
                 ]),
@@ -19572,18 +19738,19 @@ var render = function() {
                 )
               ]),
               _vm._v(" "),
-              _c("largeBarChart", {
+              _c("overviewBarChart", {
                 attrs: {
                   id: "majcom",
                   dimension: _vm.majcomDim,
-                  group: _vm.majcomGroup,
-                  widthFactor: 0.9,
-                  aspectRatio: _vm.chartSpecs.majcomChart.aspectRatio,
-                  minHeight: _vm.chartSpecs.majcomChart.minHeight,
+                  aspectRatio: 3.8,
+                  minHeight: 240,
+                  normalToOverviewFactor: 2.5,
+                  selected: _vm.selected,
                   ylabel: _vm.ylabel,
-                  reducer: _vm.inventoryAdd,
+                  reducerAdd: _vm.inventoryAdd,
+                  reducerRemove: _vm.inventoryRemove,
                   accumulator: _vm.inventoryInitial,
-                  numBars: 30,
+                  numBars: 15,
                   margin: _vm.chartSpecs.majcomChart.margins,
                   colorScale: _vm.majcomColorScale,
                   title: "MAJCOM",
@@ -19591,18 +19758,19 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _c("largeBarChart", {
+              _c("overviewBarChart", {
                 attrs: {
                   id: "loc",
                   dimension: _vm.locDim,
-                  group: _vm.locGroup,
-                  widthFactor: 0.9,
-                  aspectRatio: _vm.chartSpecs.baseChart.aspectRatio,
-                  minHeight: _vm.chartSpecs.baseChart.minHeight,
+                  aspectRatio: 3.8,
+                  minHeight: 240,
+                  normalToOverviewFactor: 2.5,
+                  selected: _vm.selected,
                   ylabel: _vm.ylabel,
-                  reducer: _vm.inventoryAdd,
+                  reducerAdd: _vm.inventoryAdd,
+                  reducerRemove: _vm.inventoryRemove,
                   accumulator: _vm.inventoryInitial,
-                  numBars: 30,
+                  numBars: 15,
                   margin: _vm.chartSpecs.baseChart.margins,
                   colorScale: _vm.locColorScale,
                   title: "Servicing MPF",
@@ -20802,41 +20970,40 @@ var render = function() {
                 )
               ]),
               _vm._v(" "),
-              _c("largeBarChart", {
+              _c("overviewBarChart", {
                 attrs: {
                   id: "yrgp",
                   dimension: _vm.yrgpDim,
-                  group: _vm.removeError(_vm.yrgpGroup),
-                  widthFactor: 0.9,
-                  aspectRatio: 4,
-                  minHeight: 200,
-                  ylabel: _vm.ylabel,
+                  aspectRatio: _vm.chartSpecs.yrgpChart.aspectRatio,
+                  minHeight: _vm.chartSpecs.yrgpChart.minHeight,
+                  normalToOverviewFactor: 2.5,
                   selected: _vm.selected,
-                  reducer: _vm.edAddLarge,
-                  accumulator: _vm.edInitialLarge,
-                  numBars: 30,
+                  ylabel: _vm.ylabel,
+                  reducerAdd: _vm.edAdd,
+                  reducerRemove: _vm.edRemove,
+                  accumulator: _vm.edInitial,
+                  numBars: 15,
                   margin: _vm.chartSpecs.yrgpChart.margins,
                   colorScale: _vm.yrgpColorScale,
                   title: "Year Group",
                   loaded: _vm.loaded,
-                  sortBy: "key",
                   orderBy: "desc"
                 }
               }),
               _vm._v(" "),
-              _c("largeBarChart", {
+              _c("overviewBarChart", {
                 attrs: {
                   id: "core",
                   dimension: _vm.coreDim,
-                  group: _vm.removeError(_vm.coreGroup),
-                  ylabel: _vm.ylabel,
+                  aspectRatio: _vm.chartSpecs.coreChart.aspectRatio,
+                  minHeight: _vm.chartSpecs.coreChart.minHeight,
+                  normalToOverviewFactor: 2.5,
                   selected: _vm.selected,
-                  widthFactor: 0.9,
-                  aspectRatio: 4,
-                  minHeight: 200,
-                  reducer: _vm.edAddLarge,
-                  accumulator: _vm.edInitialLarge,
-                  numBars: 30,
+                  ylabel: _vm.ylabel,
+                  reducerAdd: _vm.edAdd,
+                  reducerRemove: _vm.edRemove,
+                  accumulator: _vm.edInitial,
+                  numBars: 15,
                   margin: _vm.chartSpecs.coreChart.margins,
                   colorScale: _vm.coreColorScale,
                   title: "Core",
@@ -21052,6 +21219,7 @@ exports.push([module.i, "\n#radioSelect div[data-v-f29f4a5c],input[data-v-f29f4a
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_largeBarChart__ = __webpack_require__("A1IL");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_overviewBarChart__ = __webpack_require__("Kvlx");
 var _this2 = this;
 
 //
@@ -21209,6 +21377,39 @@ var _this2 = this;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -21245,7 +21446,8 @@ var _this2 = this;
         'loader': __WEBPACK_IMPORTED_MODULE_6__components_Loader__["a" /* default */],
         'searchBox': __WEBPACK_IMPORTED_MODULE_7__components_searchBox__["a" /* default */],
         largeBarChart: __WEBPACK_IMPORTED_MODULE_8__components_largeBarChart__["a" /* default */],
-        fontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default.a
+        fontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default.a,
+        overviewBarChart: __WEBPACK_IMPORTED_MODULE_10__components_overviewBarChart__["a" /* default */]
     },
     computed: {
         ndx: function ndx() {
@@ -22007,7 +22209,7 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -22067,6 +22269,7 @@ if(false) {
 
 "use strict";
 var render = function() {
+  var this$1 = this
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
@@ -22088,7 +22291,8 @@ var render = function() {
                       value: _vm.searchVar.length > 0,
                       expression: "searchVar.length>0"
                     }
-                  ]
+                  ],
+                  staticClass: "float:left"
                 },
                 [
                   _vm._v(
@@ -22153,8 +22357,9 @@ var render = function() {
                 ],
                 staticClass: "searchRemove",
                 on: {
-                  click: function($event) {
-                    _vm.searchVar = ""
+                  click: function() {
+                    this$1.$emit("input", "")
+                    this$1.$emit("sub")
                   }
                 }
               },
@@ -22177,7 +22382,7 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-auto", staticStyle: { top: "-3px" } }, [
+      _c("div", { staticClass: "col-auto", style: _vm.getButtonHeight }, [
         _vm.bIf
           ? _c(
               "button",
@@ -22188,7 +22393,29 @@ var render = function() {
               },
               [_vm._v(" " + _vm._s(_vm.bLabel) + " ")]
             )
-          : _vm._e()
+          : _vm._e(),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.searchVar.length > 0,
+                expression: "searchVar.length>0"
+              }
+            ],
+            staticClass: "btn btn-danger btn-sm btn-rounded waves-effect",
+            on: {
+              click: function() {
+                this$1.$emit("input", "")
+                this$1.$emit("sub")
+              }
+            }
+          },
+          [_vm._v("Reset ")]
+        )
       ])
     ]
   )
@@ -22908,7 +23135,7 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                            Reenlistment Rate \n                        "
+                              "\n                                Reenlistment Rate \n                            "
                             )
                           ]
                         )
@@ -22957,7 +23184,7 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                            Keep Rate \n                        "
+                              "\n                                Keep Rate \n                            "
                             )
                           ]
                         )
@@ -23000,33 +23227,35 @@ var render = function() {
               _c("div", { staticClass: "row" }, [
                 _c("div", { staticClass: "col-auto" }, [
                   _vm._v(
-                    "\n                    Inventory:\n                    "
+                    "\n                        Inventory:\n                        "
                   ),
                   _c("span", { attrs: { id: "inv" } })
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-auto" }, [
                   _vm._v(
-                    "\n                    Eligible:\n                    "
+                    "\n                        Eligible:\n                        "
                   ),
                   _c("span", { attrs: { id: "elig" } })
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-auto" }, [
-                  _vm._v("\n                    Keep:\n                    "),
+                  _vm._v(
+                    "\n                        Keep:\n                        "
+                  ),
                   _c("span", { attrs: { id: "keep" } })
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-auto" }, [
                   _vm._v(
-                    "\n                    Re-Enlist Rate:\n                    "
+                    "\n                        Re-Enlist Rate:\n                        "
                   ),
                   _c("span", { attrs: { id: "reEnlRate" } })
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-auto" }, [
                   _vm._v(
-                    "\n                    Keep Rate:\n                    "
+                    "\n                        Keep Rate:\n                        "
                   ),
                   _c("span", { attrs: { id: "keepRate" } }),
                   _vm._v(" "),
@@ -23150,7 +23379,7 @@ var render = function() {
                           [
                             _c("h3", [
                               _vm._v(
-                                "\n                            AFSC \n                            "
+                                "\n                                AFSC \n                                "
                               ),
                               _c(
                                 "span",
@@ -23212,19 +23441,19 @@ var render = function() {
                 2
               ),
               _vm._v(" "),
-              _c("largeBarChart", {
+              _c("overviewBarChart", {
                 attrs: {
                   id: "majcom",
                   dimension: _vm.majcomDim,
-                  group: _vm.majcomGroup,
-                  widthFactor: 0.9,
-                  aspectRatio: _vm.chartSpecs.majcomChart.aspectRatio,
-                  minHeight: _vm.chartSpecs.majcomChart.minHeight,
+                  aspectRatio: 3.8,
+                  minHeight: 240,
+                  normalToOverviewFactor: 2.5,
                   selected: _vm.selected,
                   ylabel: _vm.ylabel,
-                  reducer: _vm.retentionAddLarge,
+                  reducerAdd: _vm.retentionAdd,
+                  reducerRemove: _vm.retentionRemove,
                   accumulator: _vm.retentionInitial,
-                  numBars: 30,
+                  numBars: 15,
                   margin: _vm.chartSpecs.majcomChart.margins,
                   colorScale: _vm.majcomColorScale,
                   title: "MAJCOM",
@@ -23232,19 +23461,19 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _c("largeBarChart", {
+              _c("overviewBarChart", {
                 attrs: {
                   id: "mpf",
                   dimension: _vm.mpfDim,
-                  group: _vm.mpfGroup,
-                  widthFactor: 0.9,
-                  aspectRatio: _vm.chartSpecs.baseChart.aspectRatio,
-                  minHeight: _vm.chartSpecs.baseChart.minHeight,
+                  aspectRatio: 3.8,
+                  minHeight: 240,
+                  normalToOverviewFactor: 2.5,
                   selected: _vm.selected,
                   ylabel: _vm.ylabel,
-                  reducer: _vm.retentionAddLarge,
+                  reducerAdd: _vm.retentionAdd,
+                  reducerRemove: _vm.retentionRemove,
                   accumulator: _vm.retentionInitial,
-                  numBars: 30,
+                  numBars: 15,
                   margin: _vm.chartSpecs.baseChart.margins,
                   colorScale: _vm.baseColorScale,
                   title: "Servicing MPF",
@@ -24533,7 +24762,7 @@ var render = function() {
               _c("div", { staticClass: "row" }, [
                 _c("div", { staticClass: "col-auto" }, [
                   _vm._v(
-                    "\n                    Inventory:\n                    "
+                    "\n                        Inventory:\n                        "
                   ),
                   _c("span", { attrs: { id: "inv" } })
                 ]),
@@ -24655,17 +24884,19 @@ var render = function() {
                 )
               ]),
               _vm._v(" "),
-              _c("largeBarChart", {
+              _c("overviewBarChart", {
                 attrs: {
                   id: "majcom",
                   dimension: _vm.majcomDim,
-                  group: _vm.removeError(_vm.majcomGroup),
-                  widthFactor: 0.9,
-                  aspectRatio: 3,
-                  minHeight: 300,
-                  reducer: _vm.tfAdd,
+                  aspectRatio: _vm.chartSpecs.majcomChart.aspectRatio,
+                  minHeight: _vm.chartSpecs.majcomChart.minHeight,
+                  normalToOverviewFactor: 2.5,
+                  selected: _vm.selected,
+                  ylabel: _vm.ylabel,
+                  reducerAdd: _vm.tfAdd,
+                  reducerRemove: _vm.tfRemove,
                   accumulator: _vm.tfInitial,
-                  numBars: 30,
+                  numBars: 15,
                   margin: _vm.chartSpecs.majcomChart.margins,
                   colorScale: _vm.majcomColorScale,
                   title: "MAJCOM",
@@ -24673,17 +24904,19 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _c("largeBarChart", {
+              _c("overviewBarChart", {
                 attrs: {
                   id: "base",
                   dimension: _vm.baseDim,
-                  group: _vm.removeError(_vm.baseGroup),
-                  widthFactor: 0.9,
-                  aspectRatio: 3,
-                  minHeight: 300,
-                  reducer: _vm.tfAdd,
+                  aspectRatio: _vm.chartSpecs.baseChart.aspectRatio,
+                  minHeight: _vm.chartSpecs.baseChart.minHeight,
+                  normalToOverviewFactor: 2.5,
+                  selected: _vm.selected,
+                  ylabel: _vm.ylabel,
+                  reducerAdd: _vm.tfAdd,
+                  reducerRemove: _vm.tfRemove,
                   accumulator: _vm.tfInitial,
-                  numBars: 30,
+                  numBars: 15,
                   margin: _vm.chartSpecs.baseChart.margins,
                   colorScale: _vm.baseColorScale,
                   title: "Servicing MPF",
@@ -25127,6 +25360,16 @@ if(false) {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -25138,7 +25381,8 @@ if(false) {
             chartSpecs: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */],
             overviewChart: {},
             overviewNormalChart: {},
-            sortKey: true,
+            rendered: false,
+            allSort: true,
             keys: []
         };
     },
@@ -25211,11 +25455,19 @@ if(false) {
         loaded: {
             type: Boolean,
             required: true
+        },
+        sortBy: {
+            type: String,
+            required: false
+        },
+        orderBy: {
+            type: String,
+            required: false
         }
     },
     computed: {
         overviewGroup: function overviewGroup() {
-            return this.dimension.group().reduce(this.reducerAdd, this.reducerRemove, this.accumulator);
+            return this.removeError(this.dimension.group().reduce(this.reducerAdd, this.reducerRemove, this.accumulator));
         },
         overviewConfig: function overviewConfig() {
             return {
@@ -25234,12 +25486,19 @@ if(false) {
             return {
                 'id': this.id,
                 'dim': this.dimension,
-                'group': this.removeNonBrush(this.overviewGroup),
+                //'group': this.removeNonBrush(this.overviewGroup),
+                'group': this.removeEmptyBinsAndNonBrush(this.overviewGroup),
                 'minHeight': this.minHeight,
                 'aspectRatio': this.aspectRatio,
                 'margins': { top: 10, left: this.margin.left, right: this.margin.right, bottom: this.margin.bottom },
                 'colors': this.colorScale
             };
+        },
+        sortedBy: function sortedBy() {
+            return this.sortBy || 'value';
+        },
+        orderedBy: function orderedBy() {
+            return this.orderBy || 'desc';
         }
     },
     methods: {
@@ -25259,6 +25518,16 @@ if(false) {
                 all: function all() {
                     return source_group.all().filter(function (d) {
                         return (d.value[_this.selected] === undefined ? d.value : d.value[_this.selected]) != 0;
+                    });
+                }
+            };
+        },
+        //remove empty function (es6 syntax to keep correct scope)
+        removeError: function removeError(source_group) {
+            return {
+                all: function all() {
+                    return source_group.all().filter(function (d) {
+                        return d.key != "error" && d.key != "**ERROR**";
                     });
                 }
             };
@@ -25302,25 +25571,136 @@ if(false) {
             };
         },
         //sort by Value (TODO: enable sorting)
-        sortGroup: function sortGroup(group) {
+        // sortGroup: function(group) {
+        //     return {
+        //         all: () => {
+        //             return group.all().concat().sort((a,b) => (b.value[this.selected] === undefined ? b.value : b.value[this.selected]) - (a.value[this.selected] === undefined ? a.value : a.value[this.selected]))
+        //         }
+        //     }
+        // },
+        // sortKey: function(order) {
+        //     if (order == 'desc') {
+        //         console.log("sortKey order is desc")                    
+        //         return this.overviewGroup.all().sort((a,b) => b.key.localeCompare(a.key));
+        //     } else {
+        //         console.log("sortKey order is asc+")
+        //         return this.overviewGroup.all().sort((a,b) => a.key.localeCompare(b.key));
+        //     }
+        // },
+        // sortValue: function(order) {
+        //     if (order == 'desc') {
+        //         console.log("sortValue order is desc+1.1.1")
+        //         return this.overviewGroup.all().sort((a,b) => (b.value[this.selected] === undefined ? b.value : b.value[this.selected]) - (a.value[this.selected] === undefined ? a.value : a.value[this.selected]));
+        //     } else {
+        //         console.log("sortValue order is asc")
+        //         return this.overviewGroup.all().sort((a,b) => (a.value[this.selected] === undefined ? a.value : a.value[this.selected]) - (b.value[this.selected] === undefined ? b.value : b.value[this.selected]));
+        //     }
+
+        // },
+        dataAll: function dataAll() {
             var _this4 = this;
 
-            return {
-                all: function all() {
-                    return group.all().concat().sort(function (a, b) {
-                        return (b.value[_this4.selected] === undefined ? b.value : b.value[_this4.selected]) - (a.value[_this4.selected] === undefined ? a.value : a.value[_this4.selected]);
-                    });
+            //allSort toggles between key and value sort 
+            if (this.allSort == true) {
+                //sortedBy is initial sort type (key or value), orderedBy is ascending or descending
+                if (this.sortedBy == "value") {
+                    if (this.orderedBy == 'desc') {
+                        console.log("Quantity sort: allSort true, sortedBy value, orderedBy desc+");
+                        return this.overviewGroup.all().sort(function (a, b) {
+                            return (b.value[_this4.selected] === undefined ? b.value : b.value[_this4.selected]) - (a.value[_this4.selected] === undefined ? a.value : a.value[_this4.selected]);
+                        });
+                    } else {
+                        console.log("allSort true, sortedBy value, orderedBy asc");
+                        //return this.overviewGroup.all().sort((a,b) => (a.value[this.selected] === undefined ? a.value : a.value[this.selected]) - (b.value[this.selected] === undefined ? b.value : b.value[this.selected]));
+                    }
+                    //return this.sortValue(this.orderedBy);
+                } else {
+                    if (this.orderedBy == 'desc') {
+                        console.log("allSort true, sortedBy key, orderedBy desc");
+                        //return this.overviewGroup.all().sort((a,b) => b.key.localeCompare(a.key));
+                    } else {
+                        console.log("allSort true, sortedBy key, orderedBy asc");
+                        //return this.overviewGroup.all().sort((a,b) => a.key.localeCompare(b.key));
+                    }
+                    //return this.sortKey(this.orderedBy);
                 }
+            } else {
+                if (this.sortedBy == "value") {
+                    if (this.orderedBy == 'desc') {
+                        console.log("Alpha sort: allSort false, sortedBy key, orderedBy desc+");
+                        return this.overviewGroup.all().sort(function (a, b) {
+                            return a.key.localeCompare(b.key);
+                        });
+                    } else {
+                        console.log("allSort false, sortedBy key, orderedBy asc");
+                        //return this.overviewGroup.all().sort((a,b) => b.key.localeCompare(a.key));                            
+                    }
+                    //return this.sortKey('asc');
+                } else {
+                    if (this.orderedBy == 'desc') {
+                        console.log("allSort false, sortedBy value, orderedBy desc");
+                        //return this.overviewGroup.all().sort((a,b) => (b.value[this.selected] === undefined ? b.value : b.value[this.selected]) - (a.value[this.selected] === undefined ? a.value : a.value[this.selected]));
+                    } else {
+                        console.log("allSort false, sortedBy value, orderedBy asc");
+                        //return this.overviewGroup.all().sort((a,b) => (a.value[this.selected] === undefined ? a.value : a.value[this.selected]) - (b.value[this.selected] === undefined ? b.value : b.value[this.selected]));
+                    }
+                    //return this.sortValue('desc');
+                }
+            }
+        },
+        filterAll: function filterAll(all) {
+            //all is boolean. true for all, false for partial
+            console.log('filterAll: no filters');
+            var all = all == undefined ? true : all;
+            d3.select("#" + this.id).selectAll("rect")
+            // on reset, always fill all with first color in color domain
+            .attr("fill", this.colorScale(this.colorScale.domain()[0])).attr("opacity", 1);
+            //hide reset button
+            d3.select("#" + this.id + "reset").style("visibility", all ? "hidden" : "visible");
+            //hide 'move up' button
+            d3.select("#" + this.id + "level").style("visibility", "hidden");
+            // enable slider
+            this.sliderDisabled = !all;
+            //enable sort
+            d3.select("#" + this.id + "sortAll").property("disabled", false);
+            this.filters = [];
+            this.dimension.filterAll();
+            this.level = 0;
+            this.original = true;
+            dc.redrawAll();
+        },
+        updateData: function updateData() {
+            var _this5 = this;
+
+            //data to display now
+            this.data = this.dataAll().slice(this.lastBar * this.level, this.lastBar * (this.level + 1));
+            //remaining data that gets group into others
+            this.nextData = this.dataAll().slice(this.lastBar * (this.level + 1));
+            // pull out value object from all data
+            var nextVal = this.nextData.map(function (d) {
+                return d.value;
+            });
+            this.data = this.data.filter(function (d) {
+                return (d.value[_this5.selected] === undefined ? d.value : d.value[_this5.selected]) != 0;
+            });
+        },
+        sortAll: function sortAll() {
+            this.allSort = !this.allSort;
+            //key function for accessing key properties in data
+            var key = function key(d) {
+                return d.key;
             };
+            this.updateData();
+            this.renderOverviewCharts();
         },
         renderOverviewCharts: function renderOverviewCharts() {
-            var _this5 = this;
+            var _this6 = this;
 
             var vm = this;
             this.keys = this.overviewGroup.all().map(dc.pluck('key')).slice();
             var overviewChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getBrushBarChart(this.overviewConfig);
             overviewChart.controlsUseVisibility(true).colorAccessor(this.colorFunction).valueAccessor(function (d) {
-                return d.value[_this5.selected] === undefined ? d.value : d.value[_this5.selected];
+                return d.value[_this6.selected] === undefined ? d.value : d.value[_this6.selected];
             }).xAxis().ticks([]);
 
             //set up filter to enable brush (by default no brush for ordinal chart)
@@ -25433,7 +25813,7 @@ if(false) {
             //unit
             var overviewNormalChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getOrdinalBarChart(this.overviewNormalConfig);
             overviewNormalChart.elasticX(true).controlsUseVisibility(true).colorAccessor(this.colorFunction).valueAccessor(function (d) {
-                return d.value[_this5.selected] === undefined ? d.value : d.value[_this5.selected];
+                return d.value[_this6.selected] === undefined ? d.value : d.value[_this6.selected];
             }).on('pretransition', function (chart) {
                 chart.selectAll('g.x text').style('text-anchor', 'end').attr('transform', 'translate(-8,0)rotate(-45)').on('click', function (d) {
                     chart.filter(d);
@@ -25448,6 +25828,7 @@ if(false) {
                 d3.select('#btn-' + vm.id + '-reset').style('visibility', 'hidden');
             };
             this.overviewNormalChart = overviewNormalChart;
+            this.updateData();
             //render and redraw
             this.overviewChart.render();
             this.overviewNormalChart.render();
@@ -25465,6 +25846,12 @@ if(false) {
             if (this.loaded == true) {
                 console.log('loaded true');
                 this.renderOverviewCharts();
+            }
+        },
+        //force redraw after rendered changes to true
+        rendered: function rendered() {
+            if (this.rendered == true) {
+                this.updateData();
             }
         }
     },
@@ -25561,6 +25948,7 @@ if(false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__store_store__ = __webpack_require__("wtEF");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_searchBox__ = __webpack_require__("CjlA");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_largeBarChart__ = __webpack_require__("A1IL");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_overviewBarChart__ = __webpack_require__("Kvlx");
 //
 //
 //
@@ -25642,6 +26030,39 @@ if(false) {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -25656,6 +26077,7 @@ if(false) {
     data: function data() {
         return {
             data: [],
+            selected: 'percent',
             ylabel: 'Inventory',
             loaded: false,
             baseColor: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color,
@@ -25689,9 +26111,8 @@ if(false) {
             });
         },
         majcomGroup: function majcomGroup() {
-            return this.majcomDim.group().reduceSum(function (d) {
-                return d.Inventory;
-            });
+            //return this.majcomDim.group().reduceSum(function(d) {return d.Inventory;});
+            return this.removeEmptyBins(this.majcomDim.group().reduce(this.tfAdd, this.tfRemove, this.tfInitial));
         },
         baseDim: function baseDim() {
             return this.ndx.dimension(function (d) {
@@ -25699,9 +26120,8 @@ if(false) {
             });
         },
         baseGroup: function baseGroup() {
-            return this.baseDim.group().reduceSum(function (d) {
-                return d.Inventory;
-            });
+            //return this.baseDim.group().reduceSum(function(d) {return d.Inventory;});
+            return this.removeEmptyBins(this.baseDim.group().reduce(this.tfAdd, this.tfRemove, this.tfInitial));
         },
         typeDim: function typeDim() {
             return this.ndx.dimension(function (d) {
@@ -25712,9 +26132,9 @@ if(false) {
             return {
                 'id': 'type',
                 'dim': this.typeDim,
-                'group': this.typeDim.group().reduceSum(function (d) {
+                'group': this.removeError(this.typeDim.group().reduceSum(function (d) {
                     return +d.Inventory;
-                }),
+                })),
                 'minHeight': 200,
                 'aspectRatio': 3,
                 'margins': { top: 0, left: 30, right: 30, bottom: 20 },
@@ -25731,7 +26151,7 @@ if(false) {
             return {
                 'id': 'grade',
                 'dim': this.gradeDim,
-                'group': this.removeError(this.gradeDim.group().reduceSum(function (d) {
+                'group': this.removeEmptyBins(this.gradeDim.group().reduceSum(function (d) {
                     return +d.Inventory;
                 })),
                 'minHeight': 250,
@@ -25773,14 +26193,19 @@ if(false) {
             });
             dc.redrawAll();
         },
-
         tfAdd: function tfAdd(p, v) {
-            return p + v;
+            p = p + +v.Inventory;
+            //p = p/p === Infinity ? 0 : Math.round((p/p)*1000)/10 || 0
+            return p;
+        },
+        tfRemove: function tfRemove(p, v) {
+            p = p - +v.Inventory;
+            //p = p/p === Infinity ? 0 : Math.round((p/p)*1000)/10 || 0                
+            return p;
         },
         tfInitial: function tfInitial() {
             return 0;
         },
-
         //remove empty function (es6 syntax to keep correct scope)
         removeError: function removeError(source_group) {
             return {
@@ -25920,7 +26345,8 @@ if(false) {
     components: {
         'loader': __WEBPACK_IMPORTED_MODULE_4__components_Loader__["a" /* default */],
         searchBox: __WEBPACK_IMPORTED_MODULE_6__components_searchBox__["a" /* default */],
-        largeBarChart: __WEBPACK_IMPORTED_MODULE_7__components_largeBarChart__["a" /* default */]
+        largeBarChart: __WEBPACK_IMPORTED_MODULE_7__components_largeBarChart__["a" /* default */],
+        overviewBarChart: __WEBPACK_IMPORTED_MODULE_8__components_overviewBarChart__["a" /* default */]
     },
     created: function created() {
         console.log('created');
@@ -26012,6 +26438,7 @@ if(false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_Loader__ = __webpack_require__("wd27");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__store_store__ = __webpack_require__("wtEF");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_largeBarChart__ = __webpack_require__("A1IL");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_overviewBarChart__ = __webpack_require__("Kvlx");
 //
 //
 //
@@ -26103,6 +26530,25 @@ if(false) {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -26142,9 +26588,8 @@ if(false) {
             });
         },
         coreGroup: function coreGroup() {
-            return this.coreDim.group().reduceSum(function (d) {
-                return d.count;
-            });
+            //return this.coreDim.group().reduceSum(function(d) {return d.count;});
+            return this.coreDim.group().reduce(this.edAdd, this.edRemoveLarge, this.edInitial);
         }
     },
 
@@ -26211,7 +26656,12 @@ if(false) {
             dc.redrawAll();
         },
         edAdd: function edAdd(p, v) {
-            return p + v;
+            p = p + +v.count;
+            return p;
+        },
+        edRemove: function edRemove(p, v) {
+            p = p - +v.count;
+            return p;
         },
         edInitial: function edInitial() {
             return 0;
@@ -26222,7 +26672,8 @@ if(false) {
         'AutoComplete': __WEBPACK_IMPORTED_MODULE_4__components_AutoComplete__["a" /* default */],
         'Loader': __WEBPACK_IMPORTED_MODULE_6__components_Loader__["a" /* default */],
         searchBox: __WEBPACK_IMPORTED_MODULE_5__components_searchBox__["a" /* default */],
-        largeBarChart: __WEBPACK_IMPORTED_MODULE_8__components_largeBarChart__["a" /* default */]
+        largeBarChart: __WEBPACK_IMPORTED_MODULE_8__components_largeBarChart__["a" /* default */],
+        overviewBarChart: __WEBPACK_IMPORTED_MODULE_9__components_overviewBarChart__["a" /* default */]
     },
 
     created: function created() {
@@ -26680,4 +27131,4 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.ffbae8955e4d3c22ab90.js.map
+//# sourceMappingURL=app.3adcaad91ffcd73999d7.js.map
