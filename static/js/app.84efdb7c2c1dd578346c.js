@@ -133,9 +133,16 @@ var render = function() {
                     _c("div", { attrs: { id: "dc-fyr-barchart" } }, [
                       _c("h3", [
                         _vm._v("Fiscal Year"),
-                        _c("span", {
-                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                        })
+                        _c(
+                          "span",
+                          {
+                            staticStyle: {
+                              "font-size": "14pt",
+                              opacity: "0.87"
+                            }
+                          },
+                          [_vm._v(_vm._s(_vm.ylabel))]
+                        )
                       ])
                     ])
                   ]
@@ -151,9 +158,16 @@ var render = function() {
                     _c("div", { attrs: { id: "dc-edlevel-barchart" } }, [
                       _c("h3", [
                         _vm._v("Degree Type "),
-                        _c("span", {
-                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                        }),
+                        _c(
+                          "span",
+                          {
+                            staticStyle: {
+                              "font-size": "14pt",
+                              opacity: "0.87"
+                            }
+                          },
+                          [_vm._v(_vm._s(_vm.ylabel))]
+                        ),
                         _vm._v(" "),
                         _c(
                           "button",
@@ -189,9 +203,16 @@ var render = function() {
                     _c("div", { attrs: { id: "dc-grade-rowchart" } }, [
                       _c("h3", [
                         _vm._v("Grade "),
-                        _c("span", {
-                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                        }),
+                        _c(
+                          "span",
+                          {
+                            staticStyle: {
+                              "font-size": "14pt",
+                              opacity: "0.87"
+                            }
+                          },
+                          [_vm._v(_vm._s(_vm.ylabel))]
+                        ),
                         _vm._v(" "),
                         _c(
                           "button",
@@ -223,9 +244,16 @@ var render = function() {
                     _c("div", { attrs: { id: "dc-cafsc-rowchart" } }, [
                       _c("h3", [
                         _vm._v("CAFSC"),
-                        _c("span", {
-                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                        }),
+                        _c(
+                          "span",
+                          {
+                            staticStyle: {
+                              "font-size": "14pt",
+                              opacity: "0.87"
+                            }
+                          },
+                          [_vm._v(_vm._s(_vm.ylabel))]
+                        ),
                         _vm._v(" "),
                         _c(
                           "button",
@@ -462,12 +490,16 @@ var render = function() {
                       _c("div", { attrs: { id: "dc-year-rowchart" } }, [
                         _c("h3", [
                           _vm._v("Year "),
-                          _c("span", {
-                            staticStyle: {
-                              "font-size": "14pt",
-                              opacity: "0.87"
-                            }
-                          }),
+                          _c(
+                            "span",
+                            {
+                              staticStyle: {
+                                "font-size": "14pt",
+                                opacity: "0.87"
+                              }
+                            },
+                            [_vm._v(_vm._s(_vm.ylabel))]
+                          ),
                           _vm._v(" "),
                           _c(
                             "button",
@@ -499,12 +531,16 @@ var render = function() {
                       _c("div", { attrs: { id: "dc-type-rowchart" } }, [
                         _c("h3", [
                           _vm._v("Type "),
-                          _c("span", {
-                            staticStyle: {
-                              "font-size": "14pt",
-                              opacity: "0.87"
-                            }
-                          }),
+                          _c(
+                            "span",
+                            {
+                              staticStyle: {
+                                "font-size": "14pt",
+                                opacity: "0.87"
+                              }
+                            },
+                            [_vm._v(_vm._s(_vm.ylabel))]
+                          ),
                           _vm._v(" "),
                           _c(
                             "button",
@@ -537,12 +573,16 @@ var render = function() {
                       _c("div", { attrs: { id: "dc-grade-barchart" } }, [
                         _c("h3", [
                           _vm._v("Grade "),
-                          _c("span", {
-                            staticStyle: {
-                              "font-size": "14pt",
-                              opacity: "0.87"
-                            }
-                          }),
+                          _c(
+                            "span",
+                            {
+                              staticStyle: {
+                                "font-size": "14pt",
+                                opacity: "0.87"
+                              }
+                            },
+                            [_vm._v(_vm._s(_vm.ylabel))]
+                          ),
                           _vm._v(" "),
                           _c(
                             "button",
@@ -576,12 +616,16 @@ var render = function() {
                       _c("div", { attrs: { id: "dc-marital-barchart" } }, [
                         _c("h3", [
                           _vm._v("Marital Status "),
-                          _c("span", {
-                            staticStyle: {
-                              "font-size": "14pt",
-                              opacity: "0.87"
-                            }
-                          }),
+                          _c(
+                            "span",
+                            {
+                              staticStyle: {
+                                "font-size": "14pt",
+                                opacity: "0.87"
+                              }
+                            },
+                            [_vm._v(_vm._s(_vm.ylabel))]
+                          ),
                           _vm._v(" "),
                           _c(
                             "button",
@@ -1004,11 +1048,11 @@ if (false) {
                 obj2 = formatData(obj);
                 obj2 = testData(obj2, obj);
 
-                if (obj2.MAJCOM == "UNKNOWN") {
-                    console.log('UNKNOWN MAJCOM');
-                    console.log(obj);
-                    console.log(obj2);
-                }
+                // if (obj2.MAJCOM == "UNKNOWN"){
+                //     console.log('UNKNOWN MAJCOM')
+                //     console.log(obj)
+                //     console.log(obj2)
+                // }
 
                 output.push(obj2);
             }
@@ -1033,8 +1077,8 @@ if (false) {
         var testData = function testData(formatted, original) {
             for (var key in formatted) {
                 if (formatted[key] === undefined) {
-                    console.log('Empty Value of ' + key);
-                    console.log(original);
+                    // console.log('Empty Value of ' + key)
+                    // console.log(original)
                     formatted[key] = "UNKNOWN";
                 }
             }
@@ -1856,7 +1900,6 @@ if (false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__);
 
-//
 //
 //
 //
@@ -3027,10 +3070,21 @@ exports.push([module.i, "\n.custom-control.custom-radio[data-v-9b0c2fd6]{\n    p
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_AutoComplete__ = __webpack_require__("nObl");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_Loader__ = __webpack_require__("wd27");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__store_store__ = __webpack_require__("wtEF");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_largeBarChart__ = __webpack_require__("A1IL");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_overviewBarChart__ = __webpack_require__("Kvlx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_largeBarChart__ = __webpack_require__("A1IL");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_overviewBarChart__ = __webpack_require__("Kvlx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3245,6 +3299,7 @@ exports.push([module.i, "\n.custom-control.custom-radio[data-v-9b0c2fd6]{\n    p
             data: [],
             selected: "percent",
             loaded: false,
+            HpmeLoaded: false,
             showAlert: true,
             width: document.documentElement.clientWidth,
             chartSpecs: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */],
@@ -3354,9 +3409,9 @@ exports.push([module.i, "\n.custom-control.custom-radio[data-v-9b0c2fd6]{\n    p
     components: {
         'autocomplete': __WEBPACK_IMPORTED_MODULE_4__components_AutoComplete__["a" /* default */],
         'loader': __WEBPACK_IMPORTED_MODULE_5__components_Loader__["a" /* default */],
-        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome___default.a,
-        largeBarChart: __WEBPACK_IMPORTED_MODULE_8__components_largeBarChart__["a" /* default */],
-        overviewBarChart: __WEBPACK_IMPORTED_MODULE_9__components_overviewBarChart__["a" /* default */]
+        largeBarChart: __WEBPACK_IMPORTED_MODULE_7__components_largeBarChart__["a" /* default */],
+        overviewBarChart: __WEBPACK_IMPORTED_MODULE_8__components_overviewBarChart__["a" /* default */],
+        'fontAwesomeIcon': __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default.a
     },
     created: function created() {
         console.log('created');
@@ -3376,6 +3431,7 @@ exports.push([module.i, "\n.custom-control.custom-radio[data-v-9b0c2fd6]{\n    p
             _this.data = objData;
             _this.loaded = true;
             renderCharts();
+            _this.completed = true;
         }).catch(console.error);
 
         //TODO: import makeObject function and add new data
@@ -3441,8 +3497,8 @@ exports.push([module.i, "\n.custom-control.custom-radio[data-v-9b0c2fd6]{\n    p
         var testData = function testData(formatted, original) {
             for (var key in formatted) {
                 if (formatted[key] === undefined) {
-                    console.log('Empty Value of ' + key);
-                    console.log(original);
+                    // console.log('Empty Value of ' + key)
+                    // console.log(original)
                     formatted[key] = "UNKNOWN";
                 }
             }
@@ -3577,7 +3633,7 @@ exports.push([module.i, "\n.custom-control.custom-radio[data-v-9b0c2fd6]{\n    p
                     dc.redrawAll();
                 });
             }).yAxis().tickFormat(function (v) {
-                return v + "%";
+                return v;
             });
 
             //Compcat
@@ -3649,6 +3705,7 @@ exports.push([module.i, "\n.custom-control.custom-radio[data-v-9b0c2fd6]{\n    p
             // after DOM updated redraw to make chart widths update
             _this.$nextTick(function () {
                 dc.redrawAll();
+                _this.HpmeLoaded = true;
             });
 
             //make responsive
@@ -3965,9 +4022,11 @@ var render = function() {
         "navbar navbar-expand-lg navbar-dark primary-color-dark fixed-top"
     },
     [
-      _c("img", {
-        attrs: { src: __webpack_require__("jBjs"), height: "30px" }
-      }),
+      _c("router-link", { staticClass: "white-text", attrs: { to: "/" } }, [
+        _c("img", {
+          attrs: { src: __webpack_require__("jBjs"), height: "30px" }
+        })
+      ]),
       _vm._v(" "),
       _c(
         "div",
@@ -4374,7 +4433,8 @@ var render = function() {
           )
         ]
       )
-    ]
+    ],
+    1
   )
 }
 var staticRenderFns = [
@@ -5103,7 +5163,7 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  /*should be scoped*/\n#radioSelect div,input,label{\n    cursor: pointer;\n}\n.fade-enter-active {\n    -webkit-transition: all 0.5s;\n    transition: all 0.5s;\n}\n.fade-leave-active {\n    -webkit-transition: all 0.2s;\n    transition: all 0.2s;\n}\n.fade-enter, .fade-leave-to {\n    opacity: 0;\n}\n.fade-enter-to, .fade-leave {\n    opacity: 1;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  /*should be scoped*/\n#radioSelect div,input,label{\n    cursor: pointer;\n}\n.fade-enter-active {\n    -webkit-transition: all 0.5s;\n    transition: all 0.5s;\n}\n.fade-leave-active {\n    -webkit-transition: all 0.2s;\n    transition: all 0.2s;\n}\n.fade-enter, .fade-leave-to {\n    opacity: 0;\n}\n.fade-enter-to, .fade-leave {\n    opacity: 1;\n}\n", ""]);
 
 // exports
 
@@ -5726,7 +5786,27 @@ var render = function() {
                               "\n                            STP \n                        "
                             )
                           ]
-                        )
+                        ),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "h3 ml-2" }, [
+                          _c(
+                            "span",
+                            {
+                              attrs: {
+                                "data-toggle": "tooltip",
+                                "data-placement": "top",
+                                title: "Student, Trainee, and Personnel Hold."
+                              }
+                            },
+                            [
+                              _c("FontAwesomeIcon", {
+                                staticStyle: { "vertical-align": "3px" },
+                                attrs: { icon: "info-circle", size: "xs" }
+                              })
+                            ],
+                            1
+                          )
+                        ])
                       ]
                     )
                   ]
@@ -6063,7 +6143,7 @@ var render = function() {
                   _c(
                     "span",
                     {
-                      staticClass: "pl-1",
+                      staticClass: "h3 pl-1",
                       attrs: {
                         "data-toggle": "tooltip",
                         "data-placement": "bottom",
@@ -6071,7 +6151,11 @@ var render = function() {
                           "Average TOS and Completed Tours are calculated by aggregating over a 4 year period."
                       }
                     },
-                    [_c("fontAwesomeIcon", { attrs: { icon: "info-circle" } })],
+                    [
+                      _c("fontAwesomeIcon", {
+                        attrs: { icon: "info-circle", size: "xs" }
+                      })
+                    ],
                     1
                   )
                 ]),
@@ -6258,7 +6342,6 @@ var render = function() {
                         "span",
                         {
                           staticClass: "pl-1",
-                          staticStyle: { "font-size": "12pt" },
                           attrs: {
                             "data-toggle": "tooltip",
                             "data-placement": "bottom",
@@ -6268,7 +6351,7 @@ var render = function() {
                         },
                         [
                           _c("fontAwesomeIcon", {
-                            attrs: { icon: "info-circle" }
+                            attrs: { icon: "info-circle", size: "xs" }
                           })
                         ],
                         1
@@ -9083,6 +9166,8 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_searchBox__ = __webpack_require__("CjlA");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_largeBarChart__ = __webpack_require__("A1IL");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_overviewBarChart__ = __webpack_require__("Kvlx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__);
 //
 //
 //
@@ -9219,6 +9304,18 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -9364,6 +9461,7 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
     components: {
         'loader': __WEBPACK_IMPORTED_MODULE_4__components_Loader__["a" /* default */],
         searchBox: __WEBPACK_IMPORTED_MODULE_6__components_searchBox__["a" /* default */],
+        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default.a,
         largeBarChart: __WEBPACK_IMPORTED_MODULE_7__components_largeBarChart__["a" /* default */],
         overviewBarChart: __WEBPACK_IMPORTED_MODULE_8__components_overviewBarChart__["a" /* default */]
     },
@@ -9583,6 +9681,8 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_searchBox__ = __webpack_require__("CjlA");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_largeBarChart__ = __webpack_require__("A1IL");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_overviewBarChart__ = __webpack_require__("Kvlx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome__);
 //
 //
 //
@@ -9718,6 +9818,18 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -10021,6 +10133,7 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
         'autocomplete': __WEBPACK_IMPORTED_MODULE_4__components_AutoComplete__["a" /* default */],
         'loader': __WEBPACK_IMPORTED_MODULE_5__components_Loader__["a" /* default */],
         searchBox: __WEBPACK_IMPORTED_MODULE_7__components_searchBox__["a" /* default */],
+        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome___default.a,
         largeBarChart: __WEBPACK_IMPORTED_MODULE_8__components_largeBarChart__["a" /* default */],
         overviewBarChart: __WEBPACK_IMPORTED_MODULE_9__components_overviewBarChart__["a" /* default */]
     },
@@ -10321,7 +10434,7 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
             var axiosData = response.data.data;
             __WEBPACK_IMPORTED_MODULE_5__store_store__["a" /* store */].state.asDate = response.data.ASOFDATE;
             var objData = makeObject(axiosData);
-            console.log(objData);
+            // console.log(objData)
             _this.data = objData;
             _this.loaded = true;
             renderCharts();
@@ -10365,8 +10478,8 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
         var testData = function testData(formatted, original) {
             for (var key in formatted) {
                 if (formatted[key] === undefined) {
-                    console.log('Empty Value of ' + key);
-                    console.log(original);
+                    // console.log('Empty Value of ' + key)
+                    // console.log(original)
                     formatted[key] = "UNKNOWN";
                 }
             }
@@ -10754,7 +10867,27 @@ var render = function() {
                               "\n                                STP \n                            "
                             )
                           ]
-                        )
+                        ),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "h3 ml-2" }, [
+                          _c(
+                            "span",
+                            {
+                              attrs: {
+                                "data-toggle": "tooltip",
+                                "data-placement": "top",
+                                title: "Student, Trainee, and Personnel Hold."
+                              }
+                            },
+                            [
+                              _c("FontAwesomeIcon", {
+                                staticStyle: { "vertical-align": "3px" },
+                                attrs: { icon: "info-circle", size: "xs" }
+                              })
+                            ],
+                            1
+                          )
+                        ])
                       ]
                     )
                   ]
@@ -13006,9 +13139,16 @@ var render = function() {
                     _c("div", { attrs: { id: "dc-fyr-barchart" } }, [
                       _c("h3", [
                         _vm._v("Fiscal Year"),
-                        _c("span", {
-                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                        })
+                        _c(
+                          "span",
+                          {
+                            staticStyle: {
+                              "font-size": "14pt",
+                              opacity: "0.87"
+                            }
+                          },
+                          [_vm._v(_vm._s(_vm.ylabel))]
+                        )
                       ])
                     ])
                   ]
@@ -13024,9 +13164,16 @@ var render = function() {
                     _c("div", { attrs: { id: "dc-offgroup-barchart" } }, [
                       _c("h3", [
                         _vm._v("Group"),
-                        _c("span", {
-                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                        }),
+                        _c(
+                          "span",
+                          {
+                            staticStyle: {
+                              "font-size": "14pt",
+                              opacity: "0.87"
+                            }
+                          },
+                          [_vm._v(_vm._s(_vm.ylabel))]
+                        ),
                         _vm._v(" "),
                         _c(
                           "button",
@@ -13058,9 +13205,16 @@ var render = function() {
                     _c("div", { attrs: { id: "dc-grade-rowchart" } }, [
                       _c("h3", [
                         _vm._v("Grade "),
-                        _c("span", {
-                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                        }),
+                        _c(
+                          "span",
+                          {
+                            staticStyle: {
+                              "font-size": "14pt",
+                              opacity: "0.87"
+                            }
+                          },
+                          [_vm._v(_vm._s(_vm.ylabel))]
+                        ),
                         _vm._v(" "),
                         _c(
                           "button",
@@ -13092,9 +13246,16 @@ var render = function() {
                     _c("div", { attrs: { id: "dc-edlevel-barchart" } }, [
                       _c("h3", [
                         _vm._v("Degree Type "),
-                        _c("span", {
-                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
-                        }),
+                        _c(
+                          "span",
+                          {
+                            staticStyle: {
+                              "font-size": "14pt",
+                              opacity: "0.87"
+                            }
+                          },
+                          [_vm._v(_vm._s(_vm.ylabel))]
+                        ),
                         _vm._v(" "),
                         _c(
                           "button",
@@ -18760,8 +18921,8 @@ exports.push([module.i, "\n.elevate-3[data-v-0817b8a2] {\n    -webkit-box-shadow
         var testData = function testData(formatted, original) {
             for (var key in formatted) {
                 if (formatted[key] === undefined) {
-                    console.log('Empty Value of ' + key);
-                    console.log(original);
+                    // console.log('Empty Value of ' + key)
+                    // console.log(original)
                     formatted[key] = "UNKNOWN";
                 }
             }
@@ -18912,7 +19073,7 @@ exports.push([module.i, "\n.elevate-3[data-v-0817b8a2] {\n    -webkit-box-shadow
 
                 var myFilters = '';
                 dc.chartRegistry.list().forEach(function (d) {
-                    console.log(d.anchorName().toUpperCase());
+                    //console.log(d.anchorName().toUpperCase())
                     if (_.includes(d.anchorName().toUpperCase(), 'AFSC')) {
                         //console.log('AFSC Filter: ' + this.sa)
                         if (_.includes(d.anchorName().toUpperCase(), 'ROW') && _this.sa) {
@@ -19146,37 +19307,37 @@ var render = function() {
                     attrs: { id: "zone" }
                   },
                   [
-                    _c("div", { attrs: { id: "dc-zone-rowchart" } }, [
-                      _c("h3", [
-                        _vm._v("Zone "),
-                        _c(
-                          "span",
-                          {
-                            staticStyle: {
-                              "font-size": "14pt",
-                              opacity: "0.87"
-                            }
-                          },
-                          [_vm._v(_vm._s(_vm.ylabel))]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "btn btn-danger btn-sm btn-rounded reset",
-                            staticStyle: { display: "none" },
-                            attrs: { type: "button" },
-                            on: {
-                              click: function($event) {
-                                _vm.resetChart("dc-zone-rowchart")
-                              }
-                            }
-                          },
-                          [_vm._v("Reset")]
-                        )
-                      ])
-                    ])
+                    _c("h3", { staticClass: "mb-0" }, [
+                      _vm._v("Zone \n                            "),
+                      _c(
+                        "span",
+                        {
+                          staticStyle: { "font-size": "14pt", opacity: "0.87" }
+                        },
+                        [_vm._v(_vm._s(_vm.ylabel))]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          staticClass: "pl-1",
+                          attrs: {
+                            "data-toggle": "tooltip",
+                            "data-placement": "top",
+                            title:
+                              "Below-the-Promotion Zone, In-the-Promotion-Zone, Above-the-Promotion-Zone."
+                          }
+                        },
+                        [
+                          _c("fontAwesomeIcon", {
+                            attrs: { icon: "info-circle", size: "xs" }
+                          })
+                        ],
+                        1
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { attrs: { id: "dc-zone-rowchart" } })
                   ]
                 ),
                 _vm._v(" "),
@@ -19199,6 +19360,27 @@ var render = function() {
                             }
                           },
                           [_vm._v(_vm._s(_vm.ylabel))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "span",
+                          {
+                            staticClass: "pl-1",
+                            attrs: {
+                              "data-toggle": "tooltip",
+                              "data-placement": "top",
+                              title:
+                                "Below-the-Promotion Zone, In-the-Promotion-Zone, Above-the-Promotion-Zone."
+                            }
+                          },
+                          [
+                            _vm.HpmeLoaded
+                              ? _c("fontAwesomeIcon", {
+                                  attrs: { icon: "info-circle", size: "xs" }
+                                })
+                              : _vm._e()
+                          ],
+                          1
                         ),
                         _vm._v(" "),
                         _c(
@@ -20124,6 +20306,9 @@ exports.push([module.i, "\n#base[data-v-1b760aa6] text{\n    font: 8px sans-seri
         },
         allGroup: function allGroup() {
             return this.ndx.groupAll();
+        },
+        ylabel: function ylabel() {
+            return "(Count)";
         }
     },
 
@@ -22209,7 +22394,7 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -25486,7 +25671,6 @@ if(false) {
             return {
                 'id': this.id,
                 'dim': this.dimension,
-                //'group': this.removeNonBrush(this.overviewGroup),
                 'group': this.removeEmptyBinsAndNonBrush(this.overviewGroup),
                 'minHeight': this.minHeight,
                 'aspectRatio': this.aspectRatio,
@@ -25570,33 +25754,6 @@ if(false) {
                 }
             };
         },
-        //sort by Value (TODO: enable sorting)
-        // sortGroup: function(group) {
-        //     return {
-        //         all: () => {
-        //             return group.all().concat().sort((a,b) => (b.value[this.selected] === undefined ? b.value : b.value[this.selected]) - (a.value[this.selected] === undefined ? a.value : a.value[this.selected]))
-        //         }
-        //     }
-        // },
-        // sortKey: function(order) {
-        //     if (order == 'desc') {
-        //         console.log("sortKey order is desc")                    
-        //         return this.overviewGroup.all().sort((a,b) => b.key.localeCompare(a.key));
-        //     } else {
-        //         console.log("sortKey order is asc+")
-        //         return this.overviewGroup.all().sort((a,b) => a.key.localeCompare(b.key));
-        //     }
-        // },
-        // sortValue: function(order) {
-        //     if (order == 'desc') {
-        //         console.log("sortValue order is desc+1.1.1")
-        //         return this.overviewGroup.all().sort((a,b) => (b.value[this.selected] === undefined ? b.value : b.value[this.selected]) - (a.value[this.selected] === undefined ? a.value : a.value[this.selected]));
-        //     } else {
-        //         console.log("sortValue order is asc")
-        //         return this.overviewGroup.all().sort((a,b) => (a.value[this.selected] === undefined ? a.value : a.value[this.selected]) - (b.value[this.selected] === undefined ? b.value : b.value[this.selected]));
-        //     }
-
-        // },
         dataAll: function dataAll() {
             var _this4 = this;
 
@@ -25605,46 +25762,46 @@ if(false) {
                 //sortedBy is initial sort type (key or value), orderedBy is ascending or descending
                 if (this.sortedBy == "value") {
                     if (this.orderedBy == 'desc') {
-                        console.log("Quantity sort: allSort true, sortedBy value, orderedBy desc+");
+                        //console.log("Quantity sort: allSort true, sortedBy value, orderedBy desc+")
                         return this.overviewGroup.all().sort(function (a, b) {
                             return (b.value[_this4.selected] === undefined ? b.value : b.value[_this4.selected]) - (a.value[_this4.selected] === undefined ? a.value : a.value[_this4.selected]);
                         });
-                    } else {
-                        console.log("allSort true, sortedBy value, orderedBy asc");
-                        //return this.overviewGroup.all().sort((a,b) => (a.value[this.selected] === undefined ? a.value : a.value[this.selected]) - (b.value[this.selected] === undefined ? b.value : b.value[this.selected]));
-                    }
+                    } else {}
+                    //console.log("allSort true, sortedBy value, orderedBy asc")
+                    //return this.overviewGroup.all().sort((a,b) => (a.value[this.selected] === undefined ? a.value : a.value[this.selected]) - (b.value[this.selected] === undefined ? b.value : b.value[this.selected]));
+
                     //return this.sortValue(this.orderedBy);
                 } else {
                     if (this.orderedBy == 'desc') {
-                        console.log("allSort true, sortedBy key, orderedBy desc");
+                        //console.log("allSort true, sortedBy key, orderedBy desc")                    
                         //return this.overviewGroup.all().sort((a,b) => b.key.localeCompare(a.key));
-                    } else {
-                        console.log("allSort true, sortedBy key, orderedBy asc");
+                    } else {}
+                        //console.log("allSort true, sortedBy key, orderedBy asc")
                         //return this.overviewGroup.all().sort((a,b) => a.key.localeCompare(b.key));
-                    }
-                    //return this.sortKey(this.orderedBy);
+
+                        //return this.sortKey(this.orderedBy);
                 }
             } else {
                 if (this.sortedBy == "value") {
                     if (this.orderedBy == 'desc') {
-                        console.log("Alpha sort: allSort false, sortedBy key, orderedBy desc+");
+                        //console.log("Alpha sort: allSort false, sortedBy key, orderedBy desc+")                    
                         return this.overviewGroup.all().sort(function (a, b) {
                             return a.key.localeCompare(b.key);
                         });
-                    } else {
-                        console.log("allSort false, sortedBy key, orderedBy asc");
-                        //return this.overviewGroup.all().sort((a,b) => b.key.localeCompare(a.key));                            
-                    }
+                    } else {}
+                    //console.log("allSort false, sortedBy key, orderedBy asc")
+                    //return this.overviewGroup.all().sort((a,b) => b.key.localeCompare(a.key));                            
+
                     //return this.sortKey('asc');
                 } else {
                     if (this.orderedBy == 'desc') {
-                        console.log("allSort false, sortedBy value, orderedBy desc");
+                        //console.log("allSort false, sortedBy value, orderedBy desc")
                         //return this.overviewGroup.all().sort((a,b) => (b.value[this.selected] === undefined ? b.value : b.value[this.selected]) - (a.value[this.selected] === undefined ? a.value : a.value[this.selected]));
-                    } else {
-                        console.log("allSort false, sortedBy value, orderedBy asc");
+                    } else {}
+                        //console.log("allSort false, sortedBy value, orderedBy asc")
                         //return this.overviewGroup.all().sort((a,b) => (a.value[this.selected] === undefined ? a.value : a.value[this.selected]) - (b.value[this.selected] === undefined ? b.value : b.value[this.selected]));
-                    }
-                    //return this.sortValue('desc');
+
+                        //return this.sortValue('desc');
                 }
             }
         },
@@ -26566,6 +26723,7 @@ if(false) {
             data: [],
             loaded: false,
             searchCore: "",
+            selected: "Count",
             chartSpecs: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */],
             coreColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].coreChart.color])
         };
@@ -26590,6 +26748,9 @@ if(false) {
         coreGroup: function coreGroup() {
             //return this.coreDim.group().reduceSum(function(d) {return d.count;});
             return this.coreDim.group().reduce(this.edAdd, this.edRemoveLarge, this.edInitial);
+        },
+        ylabel: function ylabel() {
+            return "(Count)";
         }
     },
 
@@ -27131,4 +27292,4 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.3adcaad91ffcd73999d7.js.map
+//# sourceMappingURL=app.84efdb7c2c1dd578346c.js.map
