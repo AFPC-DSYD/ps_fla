@@ -665,7 +665,7 @@ var render = function() {
                           reducerAdd: _vm.asgnAdd,
                           reducerRemove: _vm.asgnRemove,
                           accumulator: _vm.asgnInitial,
-                          numBars: 10,
+                          numBars: 15,
                           margin: _vm.chartSpecs.majcomChart.margins,
                           colorScale: _vm.majcomColorScale,
                           title: "MAJCOM",
@@ -689,7 +689,7 @@ var render = function() {
                     reducerAdd: _vm.asgnAdd,
                     reducerRemove: _vm.asgnRemove,
                     accumulator: _vm.asgnInitial,
-                    numBars: 20,
+                    numBars: 15,
                     margin: _vm.chartSpecs.baseChart.margins,
                     colorScale: _vm.baseColorScale,
                     title: "Servicing MPF",
@@ -2653,19 +2653,41 @@ if (false) {
                 var data = tourConfig.dim.top(Infinity);
                 console.log(data);
                 data.forEach(function (d) {
-                    if (d.Country == "02") {
-                        d.Country = '';
-                        d.State = 'AK';
-                    }
-                    if (d.Country == "15") {
-                        d.Country = '';
-                        d.State = 'HI';
-                    }
+                    if (!d.Country && !d.State) {
+                        //console.log("Country_State already defined.")
+                        delete d.State;delete d.Country;
+                    } else {
+                        if (d.Country == "02") {
+                            d.Country = '';
+                            d.State = 'AK';
+                        }
+                        if (d.Country == "15") {
+                            d.Country = '';
+                            d.State = 'HI';
+                        }
+                        if (d.Country == "AL") {
+                            d.Country = 'ALB';
+                            d.State = '';
+                        }
+                        //if (formats.countryLong[d.Country] == 'undefined' ) {console.log(d.Country)}//AL albania
+                        //if (formats.stateLong[d.State] == 'undefined' ) {console.log(d.State);}
+                        if (d.State !== 'undefined' && d.State.length > 0) {
+                            d.Country_State = __WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].stateLong[d.State].toUpperCase();
+                        } else if (d.Country !== 'undefined' && d.Country.length > 0) {
+                            d.Country_State = __WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].countryLong[d.Country].toUpperCase();
+                        } else {
+                            d.Country_State = '';
+                        }
 
-                    if (d.State) d.Country_State = __WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].stateLong[d.State].toUpperCase();else if (d.Country) d.Country_State = __WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].countryLong[d.Country].toUpperCase();else d.Country_State = '';
-
-                    delete d.State;
-                    delete d.Country;
+                        if (d.State) {
+                            delete d.State;delete d.Country;
+                        }
+                        if (d.Country) {
+                            delete d.State;delete d.Country;
+                        } else {
+                            delete d.State;delete d.Country;
+                        }
+                    }
                 });
                 var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
 
@@ -2674,6 +2696,7 @@ if (false) {
                     if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
                 });
 
+                console.log(myFilters);
                 FileSaver.saveAs(blob, 'PERSTAT Officer_Average_TOS' + ' ' + __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
             });
 
@@ -6388,12 +6411,12 @@ var render = function() {
                 _c(
                   "div",
                   {
-                    staticClass: "col-6 col-lg-6 col-md-6 col-sm-12 col-xs-12",
+                    staticClass: "col-lg-6 col-md-6 col-sm-12 col-12",
                     attrs: { id: "us" }
                   },
                   [
                     _c("div", { attrs: { id: "dc-us-geoChoroplethChart" } }, [
-                      _c("h3", [
+                      _c("h3", { staticClass: "mt-2 mb-0" }, [
                         _vm._v("CONUS Map "),
                         _c(
                           "span",
@@ -6429,12 +6452,12 @@ var render = function() {
                 _c(
                   "div",
                   {
-                    staticClass: "col-6 col-lg-6 col-md-6 col-sm-12 col-xs-12",
+                    staticClass: "col-lg-6 col-md-6 col-sm-12 col-12",
                     attrs: { id: "jp" }
                   },
                   [
                     _c("div", { attrs: { id: "dc-jp-geoChoroplethChart" } }, [
-                      _c("h3", [
+                      _c("h3", { staticClass: "mt-2 mb-0" }, [
                         _vm._v("OCONUS Map "),
                         _c(
                           "span",
@@ -12573,6 +12596,10 @@ if(false) {
             usConfig.propName = 'name';
             usConfig.projection = d3.geo.albersUsa();
 
+            var guText = '';
+            var viText = '';
+            var prText = '';
+
             var usChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getGeoChart(usConfig);
             usChart.title(function (d) {
                 //console.log("**************************************************");
@@ -12587,6 +12614,15 @@ if(false) {
                 //console.log("**************************************************");
                 if (d.value == undefined) {
                     d.value = '0';
+                }
+                if (d.key == 'GU') {
+                    guText = __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].geoCS[__WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].stateFormat[d.key]] + ": " + d.value;
+                }
+                if (d.key == 'VI') {
+                    viText = __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].geoCS[__WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].stateFormat[d.key]] + ": " + d.value;
+                }
+                if (d.key == 'PR') {
+                    prText = __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].geoCS[__WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].stateFormat[d.key]] + ": " + d.value;
                 }
                 return __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].geoCS[__WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].stateFormat[d.key]] + ": " + d.value;
             });
@@ -12608,18 +12644,17 @@ if(false) {
                     //this.submit('GU', 'dc-us-geoChoroplethChart');
                     chart.filter([["GU"]]);
                     dc.redrawAll();
-                });
+                }).append("title").text(guText);
 
                 textLabels.append("text").attr("x", usConfig.width * 0.54).attr("y", usConfig.height * 0.99).attr("fill", color).attr("font-size", '0.7vw').attr("font-weight", 'bold').text('Puerto Rico').on('click', function () {
                     chart.filter([["PR"]]);
                     dc.redrawAll();
-                });
+                }).append("title").text(prText);
 
                 textLabels.append("text").attr("x", usConfig.width * 0.61).attr("y", usConfig.height * 0.93).attr("fill", color).attr("font-size", '0.7vw').attr("font-weight", 'bold').text('US Virgin Islands').on('click', function () {
                     chart.filter([["VI"]]);
                     dc.redrawAll();
-                });
-
+                }).append("title").text(viText);
                 // set viewport for svg
                 chart.maxWidth = 950;
                 chart.maxHeight = 450;
@@ -12635,15 +12670,6 @@ if(false) {
                     mapZoom.style("stroke-width", 1 / s).attr("transform", "translate(" + t + ")" + " scale(" + s + ")");
                 }));
             });
-
-            /*
-            .dc-chart g.state path {
-                stroke: #555; 
-                stroke-width: 0.3;}
-             .dc-chart .selected path, .dc-chart .selected circle {
-                stroke-width: 0.3;
-            }
-             */
 
             usChart.controlsUseVisibility(true);
 
@@ -18220,6 +18246,16 @@ exports.push([module.i, "\n.elevate-3[data-v-0817b8a2] {\n    -webkit-box-shadow
                     });
                 }
             };
+        },
+        //remove empty function (es6 syntax to keep correct scope)
+        removeError: function removeError(source_group) {
+            return {
+                all: function all() {
+                    return source_group.all().filter(function (d) {
+                        return d.key != "error" && d.key != "**ERROR**";
+                    });
+                }
+            };
         }
     },
     components: {
@@ -18278,6 +18314,16 @@ exports.push([module.i, "\n.elevate-3[data-v-0817b8a2] {\n    -webkit-box-shadow
                 };
             };
 
+            //remove empty function (es6 syntax to keep correct scope)
+            var removeError = function removeError(source_group) {
+                return {
+                    all: function all() {
+                        return source_group.all().filter(function (d) {
+                            return d.key != "error" && d.key != "**ERROR**";
+                        });
+                    }
+                };
+            };
             //reduce functions
             function jointAdd(p, v) {
                 p.count = p.count + +v.count;
@@ -18394,7 +18440,7 @@ exports.push([module.i, "\n.elevate-3[data-v-0817b8a2] {\n    -webkit-box-shadow
                 return d.gradeB;
             });
             var barPercent = barConfig.dim.group().reduce(jointAdd, jointRemove, jointInitial);
-            barConfig.group = removeEmptyBins(barPercent);
+            barConfig.group = removeError(removeEmptyBins(barPercent));
             barConfig.minHeight = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].majcomChart.minHeight;
             barConfig.aspectRatio = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].majcomChart.aspectRatio;
             barConfig.margins = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].majcomChart.margins;
@@ -25101,7 +25147,7 @@ var render = function() {
                   reducerAdd: _vm.tfAdd,
                   reducerRemove: _vm.tfRemove,
                   accumulator: _vm.tfInitial,
-                  numBars: 15,
+                  numBars: 20,
                   margin: _vm.chartSpecs.baseChart.margins,
                   colorScale: _vm.baseColorScale,
                   title: "Servicing MPF",
@@ -27292,4 +27338,4 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.84efdb7c2c1dd578346c.js.map
+//# sourceMappingURL=app.ff2d2f701955c67fbeef.js.map
