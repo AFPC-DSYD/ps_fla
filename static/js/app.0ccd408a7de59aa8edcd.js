@@ -2625,7 +2625,7 @@ exports.push([module.i, "\n.toast-title {\n  font-weight: bold;\n}\n.toast-messa
             });
 
             typeConfig.group = typeConfig.dim.group().reduce(tosAdd, tosRemove, tosInitial);
-            typeConfig.minHeight = 200;
+            typeConfig.minHeight = __WEBPACK_IMPORTED_MODULE_3__chartSpecs__["a" /* default */].standardBarChart.minHeight;
             typeConfig.aspectRatio = 2.7;
             typeConfig.margins = { top: 10, left: 10, right: 30, bottom: 20 };
             typeConfig.colors = d3.scale.category10();
@@ -2644,7 +2644,7 @@ exports.push([module.i, "\n.toast-title {\n  font-weight: bold;\n}\n.toast-messa
             });
 
             tourConfig.group = tourConfig.dim.group().reduce(tosAdd, tosRemove, tosInitial);
-            tourConfig.minHeight = 200;
+            tourConfig.minHeight = __WEBPACK_IMPORTED_MODULE_3__chartSpecs__["a" /* default */].standardBarChart.minHeight;
             tourConfig.aspectRatio = 2.6;
             tourConfig.margins = { top: 10, left: 10, right: 30, bottom: 20 };
             tourConfig.colors = d3.scale.category10();
@@ -2664,8 +2664,8 @@ exports.push([module.i, "\n.toast-title {\n  font-weight: bold;\n}\n.toast-messa
                 return d.Grade;
             });
             gradeConfig.group = removeEmptyBins(gradeConfig.dim.group().reduce(tosAdd, tosRemove, tosInitial));
-            gradeConfig.minHeight = 230;
-            gradeConfig.aspectRatio = 3;
+            gradeConfig.minHeight = __WEBPACK_IMPORTED_MODULE_3__chartSpecs__["a" /* default */].typeChart.minHeight;
+            gradeConfig.aspectRatio = __WEBPACK_IMPORTED_MODULE_3__chartSpecs__["a" /* default */].baseChart.aspectRatio;
             gradeConfig.margins = { top: 10, left: 30, right: 10, bottom: 55 };
             gradeConfig.colors = __WEBPACK_IMPORTED_MODULE_3__chartSpecs__["a" /* default */].gradeChartColorScale;
             var c = d3.rgb(51, 172, 255);
@@ -4139,8 +4139,8 @@ exports.push([module.i, "\n#tour, #type, #grade, #base, #us, #jp {\n    margin-t
                 return d.Competitive_Category;
             });
             compCatConfig.group = compCatConfig.dim.group().reduce(promoAdd, promoRemove, promoInitial);
-            compCatConfig.minHeight = 260;
-            compCatConfig.aspectRatio = 3;
+            compCatConfig.minHeight = 200;
+            compCatConfig.aspectRatio = 2;
             compCatConfig.margins = { top: 10, left: 30, right: 10, bottom: 20 };
             compCatConfig.colors = d3.scale.ordinal().range(["#6baed6"]);
             var compCatChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getRowChart(compCatConfig);
@@ -4155,7 +4155,7 @@ exports.push([module.i, "\n#tour, #type, #grade, #base, #us, #jp {\n    margin-t
                 return d.Recomendation;
             });
             recommendConfig.group = recommendConfig.dim.group().reduce(promoAdd, promoRemove, promoInitial);
-            recommendConfig.minHeight = 150;
+            recommendConfig.minHeight = 200;
             recommendConfig.aspectRatio = 2;
             recommendConfig.margins = { top: 10, left: 30, right: 10, bottom: 20 };
             recommendConfig.colors = d3.scale.ordinal().range(["#1a9641", "#a6d96a", "#fdae61", "#d7191c"]);
@@ -4173,7 +4173,7 @@ exports.push([module.i, "\n#tour, #type, #grade, #base, #us, #jp {\n    margin-t
                 return d.pmeMethod;
             });
             pmeMethodConfig.group = pmeMethodConfig.dim.group().reduce(promoAdd, promoRemove, promoInitial);
-            pmeMethodConfig.minHeight = 150;
+            pmeMethodConfig.minHeight = 200;
             pmeMethodConfig.aspectRatio = 2;
             pmeMethodConfig.margins = { top: 10, left: 30, right: 10, bottom: 20 };
             pmeMethodConfig.colors = d3.scale.ordinal().range(["#1a9850", "#91cf60", "#d9ef8b", "#fee08b"]);
@@ -4557,7 +4557,19 @@ var render = function() {
                     exact: ""
                   }
                 },
-                [_c("a", { staticClass: "nav-link" }, [_vm._v("Home")])]
+                [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "nav-link",
+                      attrs: {
+                        "data-toggle": "collapse",
+                        "data-target": "#navbarNavDropdown"
+                      }
+                    },
+                    [_vm._v("Home")]
+                  )
+                ]
               ),
               _vm._v(" "),
               _c("li", { staticClass: "nav-item dropdown" }, [
@@ -4589,7 +4601,12 @@ var render = function() {
                       {
                         staticClass: "dropdown-item",
                         staticStyle: { cursor: "pointer" },
-                        attrs: { to: "/totalforce", tag: "li" },
+                        attrs: {
+                          to: "/totalforce",
+                          tag: "li",
+                          "data-toggle": "collapse",
+                          "data-target": "#navbarNavDropdown"
+                        },
                         nativeOn: {
                           click: function($event) {
                             _vm.goToPage("adman")
@@ -4604,7 +4621,12 @@ var render = function() {
                       {
                         staticClass: "dropdown-item",
                         staticStyle: { cursor: "pointer" },
-                        attrs: { to: "/totalforce", tag: "li" },
+                        attrs: {
+                          to: "/totalforce",
+                          tag: "li",
+                          "data-toggle": "collapse",
+                          "data-target": "#navbarNavDropdown"
+                        },
                         nativeOn: {
                           click: function($event) {
                             _vm.goToPage("ang")
@@ -4619,7 +4641,12 @@ var render = function() {
                       {
                         staticClass: "dropdown-item",
                         staticStyle: { cursor: "pointer" },
-                        attrs: { to: "/totalforce", tag: "li" },
+                        attrs: {
+                          to: "/totalforce",
+                          tag: "li",
+                          "data-toggle": "collapse",
+                          "data-target": "#navbarNavDropdown"
+                        },
                         nativeOn: {
                           click: function($event) {
                             _vm.goToPage("afr")
@@ -4662,7 +4689,12 @@ var render = function() {
                       {
                         staticClass: "dropdown-item",
                         staticStyle: { cursor: "pointer" },
-                        attrs: { to: "/officer", tag: "li" },
+                        attrs: {
+                          to: "/officer",
+                          tag: "li",
+                          "data-toggle": "collapse",
+                          "data-target": "#navbarNavDropdown"
+                        },
                         nativeOn: {
                           click: function($event) {
                             _vm.goToPage("off-manning")
@@ -4677,7 +4709,12 @@ var render = function() {
                       {
                         staticClass: "dropdown-item",
                         staticStyle: { cursor: "pointer" },
-                        attrs: { to: "/officer", tag: "li" },
+                        attrs: {
+                          to: "/officer",
+                          tag: "li",
+                          "data-toggle": "collapse",
+                          "data-target": "#navbarNavDropdown"
+                        },
                         nativeOn: {
                           click: function($event) {
                             _vm.goToPage("off-promo")
@@ -4692,7 +4729,12 @@ var render = function() {
                       {
                         staticClass: "dropdown-item",
                         staticStyle: { cursor: "pointer" },
-                        attrs: { to: "/officer", tag: "li" },
+                        attrs: {
+                          to: "/officer",
+                          tag: "li",
+                          "data-toggle": "collapse",
+                          "data-target": "#navbarNavDropdown"
+                        },
                         nativeOn: {
                           click: function($event) {
                             _vm.goToPage("off-edu")
@@ -4735,7 +4777,12 @@ var render = function() {
                       {
                         staticClass: "dropdown-item",
                         staticStyle: { cursor: "pointer" },
-                        attrs: { to: "/enlisted", tag: "li" },
+                        attrs: {
+                          to: "/enlisted",
+                          tag: "li",
+                          "data-toggle": "collapse",
+                          "data-target": "#navbarNavDropdown"
+                        },
                         nativeOn: {
                           click: function($event) {
                             _vm.goToPage("manning")
@@ -4750,7 +4797,12 @@ var render = function() {
                       {
                         staticClass: "dropdown-item",
                         staticStyle: { cursor: "pointer" },
-                        attrs: { to: "/enlisted", tag: "li" },
+                        attrs: {
+                          to: "/enlisted",
+                          tag: "li",
+                          "data-toggle": "collapse",
+                          "data-target": "#navbarNavDropdown"
+                        },
                         nativeOn: {
                           click: function($event) {
                             _vm.goToPage("retention")
@@ -4765,7 +4817,12 @@ var render = function() {
                       {
                         staticClass: "dropdown-item",
                         staticStyle: { cursor: "pointer" },
-                        attrs: { to: "/enlisted", tag: "li" },
+                        attrs: {
+                          to: "/enlisted",
+                          tag: "li",
+                          "data-toggle": "collapse",
+                          "data-target": "#navbarNavDropdown"
+                        },
                         nativeOn: {
                           click: function($event) {
                             _vm.goToPage("promotions")
@@ -4789,7 +4846,19 @@ var render = function() {
                     "active-class": "active"
                   }
                 },
-                [_c("a", { staticClass: "nav-link" }, [_vm._v("Civilian")])]
+                [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "nav-link",
+                      attrs: {
+                        "data-toggle": "collapse",
+                        "data-target": "#navbarNavDropdown"
+                      }
+                    },
+                    [_vm._v("Civilian")]
+                  )
+                ]
               ),
               _vm._v(" "),
               _c("li", { staticClass: "nav-item dropdown" }, [
@@ -4821,7 +4890,12 @@ var render = function() {
                       {
                         staticClass: "dropdown-item",
                         staticStyle: { cursor: "pointer" },
-                        attrs: { to: "/assignments", tag: "li" },
+                        attrs: {
+                          to: "/assignments",
+                          tag: "li",
+                          "data-toggle": "collapse",
+                          "data-target": "#navbarNavDropdown"
+                        },
                         nativeOn: {
                           click: function($event) {
                             _vm.goToPage("offTOS")
@@ -4836,7 +4910,12 @@ var render = function() {
                       {
                         staticClass: "dropdown-item",
                         staticStyle: { cursor: "pointer" },
-                        attrs: { to: "/assignments", tag: "li" },
+                        attrs: {
+                          to: "/assignments",
+                          tag: "li",
+                          "data-toggle": "collapse",
+                          "data-target": "#navbarNavDropdown"
+                        },
                         nativeOn: {
                           click: function($event) {
                             _vm.goToPage("join")
@@ -4851,7 +4930,12 @@ var render = function() {
                       {
                         staticClass: "dropdown-item",
                         staticStyle: { cursor: "pointer" },
-                        attrs: { to: "/assignments", tag: "li" },
+                        attrs: {
+                          to: "/assignments",
+                          tag: "li",
+                          "data-toggle": "collapse",
+                          "data-target": "#navbarNavDropdown"
+                        },
                         nativeOn: {
                           click: function($event) {
                             _vm.goToPage("efmp")
@@ -4894,7 +4978,12 @@ var render = function() {
                       {
                         staticClass: "dropdown-item",
                         staticStyle: { cursor: "pointer" },
-                        attrs: { to: "/education", tag: "li" },
+                        attrs: {
+                          to: "/education",
+                          tag: "li",
+                          "data-toggle": "collapse",
+                          "data-target": "#navbarNavDropdown"
+                        },
                         nativeOn: {
                           click: function($event) {
                             _vm.goToPage("offHighEd")
@@ -4909,7 +4998,12 @@ var render = function() {
                       {
                         staticClass: "dropdown-item",
                         staticStyle: { cursor: "pointer" },
-                        attrs: { to: "/education", tag: "li" },
+                        attrs: {
+                          to: "/education",
+                          tag: "li",
+                          "data-toggle": "collapse",
+                          "data-target": "#navbarNavDropdown"
+                        },
                         nativeOn: {
                           click: function($event) {
                             _vm.goToPage("enlHighEd")
@@ -6432,7 +6526,7 @@ var render = function() {
                   dimension: _vm.majcomDim,
                   aspectRatio: _vm.chartSpecs.majcomChart.aspectRatio,
                   minHeight: _vm.chartSpecs.majcomChart.minHeight,
-                  normalToOverviewFactor: 2.5,
+                  normalToOverviewFactor: 1.5,
                   selected: _vm.selected,
                   ylabel: _vm.ylabel,
                   reducerAdd: _vm.manningAdd,
@@ -6550,8 +6644,8 @@ var render = function() {
                       attrs: {
                         id: "mpf",
                         dimension: _vm.mpfDim,
-                        aspectRatio: 3.8,
-                        minHeight: 240,
+                        aspectRatio: _vm.chartSpecs.baseChart.aspectRatio,
+                        minHeight: _vm.chartSpecs.baseChart.minHeight,
                         normalToOverviewFactor: 2.5,
                         selected: _vm.selected,
                         ylabel: _vm.ylabel,
@@ -8407,22 +8501,29 @@ var standardRowChart = {
 
 var baseChart = {
     minHeight: 240,
-    aspectRatio: 3.8,
+    aspectRatio: 7,
     margins: { top: 5, left: 60, right: 10, bottom: 100 },
     color: "#dfaf00"
 };
 
 var majcomChart = {
     minHeight: 200,
-    aspectRatio: 4.2,
+    aspectRatio: 7,
     margins: { top: 5, left: 50, right: 10, bottom: 100 },
     color: "#1976d2"
 };
 
 var coreChart = {
-    minHeight: 250,
-    aspectRatio: 4,
+    minHeight: 200,
+    aspectRatio: 6,
     margins: { top: 5, left: 50, right: 10, bottom: 50 },
+    color: "#35978f"
+};
+
+var gradeChart = {
+    minHeight: 200,
+    aspectRatio: 2,
+    margins: { top: 10, left: 50, right: 30, bottom: 20 },
     color: "#35978f"
 };
 
@@ -8455,8 +8556,8 @@ var empCatChart = {
 };
 
 var afscGroupChart = {
-    minHeight: 300,
-    aspectRatio: 3,
+    minHeight: 275,
+    aspectRatio: 4,
     margins: { top: 10, left: 40, right: 10, bottom: 100 },
     color: "#108b52"
 };
@@ -8469,16 +8570,23 @@ var yearChart = {
 };
 
 var boardChart = {
-    minHeight: 250,
-    aspectRatio: 5,
+    minHeight: 200,
+    aspectRatio: 6,
     margins: { top: 5, left: 40, right: 30, bottom: 60 },
     color: "#1976d2"
 };
 
+var lookChart = {
+    minHeight: 200,
+    aspectRatio: 5,
+    margins: { top: 10, left: 40, right: 30, bottom: 20 },
+    color: "#ff9900"
+};
+
 var yrgpChart = {
-    minHeight: 300,
-    aspectRatio: 3,
-    margins: { top: 30, left: 50, right: 30, bottom: 50 },
+    minHeight: 200,
+    aspectRatio: 6,
+    margins: { top: 5, left: 50, right: 10, bottom: 50 },
     color: "#ff9900"
 };
 
@@ -8524,6 +8632,7 @@ var mapColorScale = d3.scale.quantize().range(["#E2F2FF", "#d4eafc", "#C4E4FF", 
     baseChart: baseChart,
     majcomChart: majcomChart,
     coreChart: coreChart,
+    gradeChart: gradeChart,
     highEdChart: highEdChart,
     offGroupChart: offGroupChart,
     typeChart: typeChart,
@@ -8531,6 +8640,7 @@ var mapColorScale = d3.scale.quantize().range(["#E2F2FF", "#d4eafc", "#C4E4FF", 
     afscGroupChart: afscGroupChart,
     yearChart: yearChart,
     boardChart: boardChart,
+    lookChart: lookChart,
     yrgpChart: yrgpChart,
     stateChart: stateChart,
     empCatColorScale: empCatColorScale,
@@ -8944,8 +9054,10 @@ var render = function() {
                                   reduceRemove: _vm.promoRemove,
                                   reduceInitial: _vm.promoInitial,
                                   dataVar: "ACA43",
-                                  minHeight: 200,
-                                  aspectRatio: 3
+                                  minHeight:
+                                    _vm.chartSpecs.standardBarChart.minHeight,
+                                  aspectRatio:
+                                    _vm.chartSpecs.afscGroupChart.aspectRatio
                                 },
                                 model: {
                                   value: _vm.sa,
@@ -10861,9 +10973,9 @@ if(false) {
                 'id': 'grade',
                 'dim': this.gradeDim,
                 'group': this.gradeDim.group().reduce(this.manningAdd, this.manningRemove, this.manningInitial),
-                'minHeight': 220,
-                'aspectRatio': 4,
-                'margins': { top: 10, left: 50, right: 30, bottom: 20 },
+                'minHeight': __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].gradeChart.minHeight,
+                'aspectRatio': __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].gradeChart.aspectRatio,
+                'margins': __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].gradeChart.margins,
                 'colors': this.chartSpecs.gradeChartColorScale
             };
         },
@@ -11527,7 +11639,7 @@ if(false) {
                 return d.Count;
             });
             yearConfig.minHeight = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].standardRowChart.minHeight;
-            yearConfig.aspectRatio = 1.5;
+            yearConfig.aspectRatio = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].yearChart.aspectRatio;
             yearConfig.margins = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].standardRowChart.margins;
             yearConfig.colors = d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color]);
             var yearChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getRowChart(yearConfig);
@@ -11543,7 +11655,7 @@ if(false) {
                 return d.Count;
             });
             typeConfig.minHeight = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].standardRowChart.minHeight;
-            typeConfig.aspectRatio = 1.5;
+            typeConfig.aspectRatio = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].typeChart.aspectRatio;
             typeConfig.margins = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].standardRowChart.margins;
             typeConfig.colors = d3.scale.category10();
             var typeChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getRowChart(typeConfig);
@@ -11558,8 +11670,8 @@ if(false) {
             gradeConfig.group = _this.removeEmptyBins(gradeConfig.dim.group().reduceSum(function (d) {
                 return d.Count;
             }));
-            gradeConfig.minHeight = 210;
-            gradeConfig.aspectRatio = 3;
+            gradeConfig.minHeight = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].gradeChart.minHeight;
+            gradeConfig.aspectRatio = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].standardBarChart.aspectRatio;
             gradeConfig.margins = { top: 10, left: 40, right: 10, bottom: 45 };
             gradeConfig.colors = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].gradeChartColorScale;
             var gradeChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getOrdinalBarChart(gradeConfig);
@@ -12038,9 +12150,9 @@ var render = function() {
                 attrs: {
                   id: "majcom",
                   dimension: _vm.majcomDim,
-                  aspectRatio: 3.8,
-                  minHeight: 240,
-                  normalToOverviewFactor: 2.5,
+                  aspectRatio: _vm.chartSpecs.majcomChart.aspectRatio,
+                  minHeight: _vm.chartSpecs.majcomChart.minHeight,
+                  normalToOverviewFactor: 1.5,
                   selected: _vm.selected,
                   ylabel: _vm.ylabel,
                   reducerAdd: _vm.manningAdd,
@@ -12144,7 +12256,7 @@ var render = function() {
                   dimension: _vm.mpfDim,
                   aspectRatio: _vm.chartSpecs.baseChart.aspectRatio,
                   minHeight: _vm.chartSpecs.baseChart.minHeight,
-                  normalToOverviewFactor: 2.5,
+                  normalToOverviewFactor: 1.5,
                   selected: _vm.selected,
                   ylabel: _vm.ylabel,
                   reducerAdd: _vm.manningAdd,
@@ -20649,10 +20761,11 @@ if(false) {
                 return d.Grade;
             });
             gradeConfig.group = gradeConfig.dim.group().reduce(promoAdd, promoRemove, promoInitial);
-            gradeConfig.minHeight = 240;
-            gradeConfig.aspectRatio = 2;
-            gradeConfig.margins = { top: 10, left: 40, right: 30, bottom: 20 };
-            gradeConfig.colors = _this.chartSpecs.gradeChartColorScale;
+            gradeConfig.minHeight = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].gradeChart.minHeight;
+            gradeConfig.aspectRatio = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].gradeChart.aspectRatio;
+            gradeConfig.margins = { top: 20, left: 40, right: 30, bottom: 20
+                //gradeConfig.margins = chartSpecs.gradeChart.margins          
+            };gradeConfig.colors = _this.chartSpecs.gradeChartColorScale;
             var gradeChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getRowChart(gradeConfig);
             gradeChart.valueAccessor(function (d) {
                 return d.value[_this.selected];
@@ -20669,9 +20782,9 @@ if(false) {
                 return d.Look;
             });
             lookConfig.group = lookConfig.dim.group().reduce(promoAdd, promoRemove, promoInitial);
-            lookConfig.minHeight = 150;
-            lookConfig.aspectRatio = 2;
-            lookConfig.margins = { top: 10, left: 40, right: 30, bottom: 20 };
+            lookConfig.minHeight = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].lookChart.minHeight;
+            lookConfig.aspectRatio = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].lookChart.aspectRatio;
+            lookConfig.margins = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].lookChart.margins;
             lookConfig.colors = d3.scale.category10().domain([100, 0]);
             var lookChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getRowChart(lookConfig);
             lookChart.valueAccessor(function (d) {
@@ -20685,9 +20798,9 @@ if(false) {
                 return d.Recommendation;
             });
             recommendConfig.group = recommendConfig.dim.group().reduce(promoAdd, promoRemove, promoInitial);
-            recommendConfig.minHeight = 185;
-            recommendConfig.aspectRatio = 5;
-            recommendConfig.margins = { top: 10, left: 40, right: 30, bottom: 20 };
+            recommendConfig.minHeight = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].lookChart.minHeight;
+            recommendConfig.aspectRatio = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].lookChart.aspectRatio;
+            recommendConfig.margins = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].lookChart.margins;
             recommendConfig.colors = d3.scale.ordinal().range(["#1a9850", "#91cf60", "#d9ef8b", "#fee08b", "#fc8d59", "#d73027"]);
             var recommendChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getRowChart(recommendConfig);
             recommendChart.valueAccessor(function (d) {
@@ -20704,8 +20817,8 @@ if(false) {
             });
             var boardGroup = boardConfig.dim.group().reduce(promoAdd, promoRemove, promoInitial);
             boardConfig.group = removeEmptyBins(boardGroup);
-            boardConfig.minHeight = 250;
-            boardConfig.aspectRatio = 5;
+            boardConfig.minHeight = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].standardBarChart.minHeight;
+            boardConfig.aspectRatio = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.aspectRatio;
             boardConfig.margins = { top: 30, left: 40, right: 30, bottom: 60 };
             boardConfig.colors = ["#1976d2"];
             var boardChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getOrdinalBarChart(boardConfig);
@@ -21692,8 +21805,8 @@ var render = function() {
                 attrs: {
                   id: "majcom",
                   dimension: _vm.majcomDim,
-                  aspectRatio: 3.8,
-                  minHeight: 240,
+                  aspectRatio: _vm.chartSpecs.majcomChart.aspectRatio,
+                  minHeight: _vm.chartSpecs.majcomChart.minHeight,
                   normalToOverviewFactor: 2.5,
                   ylabel: _vm.ylabel,
                   reducerAdd: _vm.inventoryAdd,
@@ -21711,8 +21824,8 @@ var render = function() {
                 attrs: {
                   id: "loc",
                   dimension: _vm.locDim,
-                  aspectRatio: 3.8,
-                  minHeight: 240,
+                  aspectRatio: _vm.chartSpecs.baseChart.aspectRatio,
+                  minHeight: _vm.chartSpecs.baseChart.minHeight,
                   normalToOverviewFactor: 2.5,
                   ylabel: _vm.ylabel,
                   reducerAdd: _vm.inventoryAdd,
@@ -23901,9 +24014,9 @@ var _this2 = this;
                 return d.Year;
             });
             yearConfig.group = yearConfig.dim.group().reduce(_this3.retentionAdd, _this3.retentionRemove, _this3.retentionInitial);
-            yearConfig.minHeight = 100;
-            yearConfig.aspectRatio = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.aspectRatio;
-            yearConfig.margins = { top: 10, left: 45, right: 30, bottom: 30 };
+            yearConfig.minHeight = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].yearChart.minHeight / 2.9;
+            yearConfig.aspectRatio = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].yearChart.aspectRatio;
+            yearConfig.margins = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].standardRowChart.margins;
             yearConfig.colors = [__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color];
             var yearChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getRowChart(yearConfig);
             yearChart.elasticX(true).valueAccessor(function (d) {
@@ -23923,9 +24036,10 @@ var _this2 = this;
                 return d.Category;
             });
             catConfig.group = catConfig.dim.group().reduce(_this3.retentionAdd, _this3.retentionRemove, _this3.retentionInitial);
-            catConfig.minHeight = 100;
-            catConfig.aspectRatio = 3;
-            catConfig.margins = { top: 10, left: 40, right: 20, bottom: 20 };
+            //catConfig.minHeight = 125 
+            catConfig.minHeight = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].yearChart.minHeight / 2.4;
+            catConfig.aspectRatio = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].yearChart.aspectRatio;
+            catConfig.margins = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].standardRowChart.margins;
             catConfig.colors = d3.scale.category10();
             var catChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getRowChart(catConfig);
             catChart.valueAccessor(function (d) {
@@ -25778,8 +25892,10 @@ var render = function() {
                                 reduceInitial: _vm.retentionInitial,
                                 dataVar: "AFSC",
                                 removeBin: "inv",
-                                minHeight: 250,
-                                aspectRatio: 2.5
+                                minHeight:
+                                  _vm.chartSpecs.afscGroupChart.minHeight,
+                                aspectRatio:
+                                  _vm.chartSpecs.afscGroupChart.aspectRatio
                               },
                               model: {
                                 value: _vm.sa,
@@ -25801,9 +25917,9 @@ var render = function() {
                 attrs: {
                   id: "majcom",
                   dimension: _vm.majcomDim,
-                  aspectRatio: 3.8,
-                  minHeight: 240,
-                  normalToOverviewFactor: 2.5,
+                  aspectRatio: _vm.chartSpecs.majcomChart.aspectRatio,
+                  minHeight: _vm.chartSpecs.majcomChart.minHeight,
+                  normalToOverviewFactor: 1.5,
                   selected: _vm.selected,
                   ylabel: _vm.ylabel,
                   reducerAdd: _vm.retentionAdd,
@@ -25821,9 +25937,9 @@ var render = function() {
                 attrs: {
                   id: "mpf",
                   dimension: _vm.mpfDim,
-                  aspectRatio: 3.8,
-                  minHeight: 240,
-                  normalToOverviewFactor: 2.5,
+                  aspectRatio: _vm.chartSpecs.baseChart.aspectRatio,
+                  minHeight: _vm.chartSpecs.baseChart.minHeight,
+                  normalToOverviewFactor: 1.5,
                   selected: _vm.selected,
                   ylabel: _vm.ylabel,
                   reducerAdd: _vm.retentionAdd,
@@ -26355,7 +26471,7 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* need to make this scoped */\n#radioSelect div[data-v-76d32ee7],input[data-v-76d32ee7],label[data-v-76d32ee7]{\n    cursor: pointer;\n}\n.form-group[data-v-76d32ee7]{\n    -ms-flex-line-pack: center;\n        align-content: center;\n}\n.fade-enter-active[data-v-76d32ee7] {\n    -webkit-transition: all 0.5s;\n    transition: all 0.5s;\n}\n.fade-leave-active[data-v-76d32ee7] {\n    -webkit-transition: all 0.2s;\n    transition: all 0.2s;\n}\n.fade-enter[data-v-76d32ee7], .fade-leave-to[data-v-76d32ee7] {\n    opacity: 0;\n}\n.fade-enter-to[data-v-76d32ee7], .fade-leave[data-v-76d32ee7] {\n    opacity: 1;\n}\n#category .custom-control-input:checked~.custom-control-indicator[data-v-76d32ee7] {\n    background-color: rgb(18, 153, 60);\n}\n#category .custom-control-input:focus~.custom-control-indicator[data-v-76d32ee7] {\n    -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(18, 153, 60,.25);\n            box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(18, 153, 60,.25);\n}\n#category[data-v-76d32ee7]{\n    margin-top: .5rem;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* need to make this scoped */\n#radioSelect div[data-v-76d32ee7],input[data-v-76d32ee7],label[data-v-76d32ee7]{\n    cursor: pointer;\n}\n.form-group[data-v-76d32ee7]{\n    -ms-flex-line-pack: center;\n        align-content: center;\n}\n.fade-enter-active[data-v-76d32ee7] {\n    -webkit-transition: all 0.5s;\n    transition: all 0.5s;\n}\n.fade-leave-active[data-v-76d32ee7] {\n    -webkit-transition: all 0.2s;\n    transition: all 0.2s;\n}\n.fade-enter[data-v-76d32ee7], .fade-leave-to[data-v-76d32ee7] {\n    opacity: 0;\n}\n.fade-enter-to[data-v-76d32ee7], .fade-leave[data-v-76d32ee7] {\n    opacity: 1;\n}\n#category .custom-control-input:checked~.custom-control-indicator[data-v-76d32ee7] {\n    background-color: rgb(18, 153, 60);\n}\n#category .custom-control-input:focus~.custom-control-indicator[data-v-76d32ee7] {\n    -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(18, 153, 60,.25);\n            box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(18, 153, 60,.25);\n}\n#category[data-v-76d32ee7]{\n    margin-top: .5rem;\n}\n", ""]);
 
 // exports
 
@@ -27441,7 +27557,7 @@ var render = function() {
                   dimension: _vm.majcomDim,
                   aspectRatio: _vm.chartSpecs.majcomChart.aspectRatio,
                   minHeight: _vm.chartSpecs.majcomChart.minHeight,
-                  normalToOverviewFactor: 2.5,
+                  normalToOverviewFactor: 1.5,
                   selected: _vm.selected,
                   ylabel: _vm.ylabel,
                   reducerAdd: _vm.tfAdd,
@@ -28124,7 +28240,7 @@ if(false) {
                 'id': 'overview' + this.id,
                 'dim': this.dimension,
                 'group': this.id_group(this.overviewGroup),
-                'minHeight': this.aspectRatio / this.normalToOverviewFactor,
+                'minHeight': this.minHeight / (2 * this.normalToOverviewFactor),
                 'aspectRatio': this.aspectRatio * this.normalToOverviewFactor,
                 'margins': { top: this.margin.top, left: this.margin.left, right: this.margin.right, bottom: 10 },
                 'x': d3.scale.linear().domain([0, this.keys.length]),
@@ -29839,4 +29955,4 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.2ec79fa6c1d26a108f69.js.map
+//# sourceMappingURL=app.0ccd408a7de59aa8edcd.js.map
