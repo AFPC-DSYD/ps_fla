@@ -1055,6 +1055,7 @@ if (false) {
             searchBase: "",
             loaded: false,
             baseColor: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color,
+            pageName: 'Civilian',
             majcomColor: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].majcomChart.color,
             chartSpecs: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */],
             locColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color]),
@@ -1097,6 +1098,9 @@ if (false) {
         majcomGroup: function majcomGroup() {
             //return this.majcomDim.group().reduceSum(function(d) {return d.Inventory;}) 
             return this.removeError(this.majcomDim.group().reduce(this.inventoryAdd, this.inventoryRemove, this.inventoryInitial));
+        },
+        pageLabel: function pageLabel() {
+            return this.pageName;
         }
 
     },
@@ -1145,6 +1149,11 @@ if (false) {
         },
         inventoryInitial: function inventoryInitial() {
             return 0;
+        },
+        toProperCase: function toProperCase(s) {
+            return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
+                return $1.toUpperCase();
+            });
         }
     },
     components: {
@@ -1358,20 +1367,29 @@ if (false) {
 
             //Curent Filters button
             d3.select('#showMyFilters').on('click', function () {
-                var myFilters = 'Current filters include ';
+                var myFilters = _this.toProperCase(_this.pageLabel) + ' filters ';
+
                 dc.chartRegistry.list().forEach(function (d) {
-                    if (d.filters()[0]) myFilters += '\n (' + d.filters() + ')';
+                    if (d.hasFilter() && d.anchor() != '#dc-overviewmajcom-barchart' && d.anchor() != '#dc-overviewloc-barchart') {
+                        //console.log(d.anchor(), d.filters())
+                        myFilters += '\n (' + d.filters() + ')';
+                    }
                 });
                 if (myFilters !== undefined) {
+                    var counterVars = invND;
                     // Override global options
                     __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.options = {
                         "positionClass": "toast-bottom-full-width",
                         "closeButton": "true",
                         "preventDuplicates": "true"
                     };
-                    if (invND.value() == 0) {
-                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.warning('Your filter(s) returned no results. Please reset and try again.');
+                    if (counterVars.value() == 0) {
+                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.warning('Your ' + _this.toProperCase(_this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                    } else if (counterVars.value() == 1) {
+                        myFilters += ' return ' + counterVars.value() + ' result.';
+                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.info(myFilters);
                     } else {
+                        myFilters += ' return ' + counterVars.value() + ' results.';
                         __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.info(myFilters);
                     }
                 }
@@ -2353,6 +2371,7 @@ exports.push([module.i, "\n.toast-title {\n  font-weight: bold;\n}\n.toast-messa
 //
 //
 //
+//
 
 
 
@@ -2371,6 +2390,7 @@ exports.push([module.i, "\n.toast-title {\n  font-weight: bold;\n}\n.toast-messa
             loaded: false,
             searchBase: '',
             baseColor: __WEBPACK_IMPORTED_MODULE_3__chartSpecs__["a" /* default */].baseChart.color,
+            pageName: 'Average Time On Station',
             conusFiltered: false,
             oconusFiltered: false
         };
@@ -2385,10 +2405,14 @@ exports.push([module.i, "\n.toast-title {\n  font-weight: bold;\n}\n.toast-messa
         },
         showBase: function showBase() {
             return this.conusFiltered || this.oconusFiltered;
+        },
+        pageLabel: function pageLabel() {
+            return this.pageName;
         }
     },
     methods: {
         resetAll: function resetAll(event) {
+            document.querySelector('#installationSearchBar i.close-icon').click();
             dc.filterAll();
             dc.redrawAll();
         },
@@ -2418,6 +2442,12 @@ exports.push([module.i, "\n.toast-title {\n  font-weight: bold;\n}\n.toast-messa
                 }
             });
             dc.redrawAll();
+        },
+
+        toProperCase: function toProperCase(s) {
+            return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
+                return $1.toUpperCase();
+            });
         }
     },
     components: {
@@ -2624,7 +2654,7 @@ exports.push([module.i, "\n.toast-title {\n  font-weight: bold;\n}\n.toast-messa
                 return d.type;
             });
 
-            typeConfig.group = typeConfig.dim.group().reduce(tosAdd, tosRemove, tosInitial);
+            typeConfig.group = removeEmptyBins(typeConfig.dim.group().reduce(tosAdd, tosRemove, tosInitial));
             typeConfig.minHeight = __WEBPACK_IMPORTED_MODULE_3__chartSpecs__["a" /* default */].standardBarChart.minHeight;
             typeConfig.aspectRatio = 2.7;
             typeConfig.margins = { top: 10, left: 10, right: 30, bottom: 20 };
@@ -2643,7 +2673,7 @@ exports.push([module.i, "\n.toast-title {\n  font-weight: bold;\n}\n.toast-messa
                 return d.Tour;
             });
 
-            tourConfig.group = tourConfig.dim.group().reduce(tosAdd, tosRemove, tosInitial);
+            tourConfig.group = removeEmptyBins(tourConfig.dim.group().reduce(tosAdd, tosRemove, tosInitial));
             tourConfig.minHeight = __WEBPACK_IMPORTED_MODULE_3__chartSpecs__["a" /* default */].standardBarChart.minHeight;
             tourConfig.aspectRatio = 2.6;
             tourConfig.margins = { top: 10, left: 10, right: 30, bottom: 20 };
@@ -2968,20 +2998,28 @@ exports.push([module.i, "\n.toast-title {\n  font-weight: bold;\n}\n.toast-messa
 
             //Curent Filters button
             d3.select('#showMyFilters').on('click', function () {
-                var myFilters = 'Current filters include ';
+                var myFilters = _this.toProperCase(_this.pageLabel) + ' filters ';
+
                 dc.chartRegistry.list().forEach(function (d) {
-                    if (d.filters()[0]) myFilters += '\n (' + d.filters() + ')';
+                    if (d.hasFilter()) {
+                        myFilters += '\n (' + d.filters() + ')';
+                    }
                 });
                 if (myFilters !== undefined) {
+                    var counterVars = invND;
                     // Override global options
                     __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.options = {
                         "positionClass": "toast-bottom-full-width",
                         "closeButton": "true",
                         "preventDuplicates": "true"
                     };
-                    if (invND.value() == 0) {
-                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.warning('Your filter(s) returned no results. Please reset and try again.');
+                    if (counterVars.value() == 0) {
+                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.warning('Your ' + _this.toProperCase(_this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                    } else if (counterVars.value() == 1) {
+                        myFilters += ' return ' + counterVars.value() + ' result.';
+                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
                     } else {
+                        myFilters += ' return ' + counterVars.value() + ' results.';
                         __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
                     }
                 }
@@ -3799,7 +3837,8 @@ exports.push([module.i, "\n#tour, #type, #grade, #base, #us, #jp {\n    margin-t
             width: document.documentElement.clientWidth,
             chartSpecs: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */],
             coreColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].coreChart.color]),
-            boardColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].boardChart.color])
+            boardColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].boardChart.color]),
+            pageName: 'Officer Promotions'
         };
     },
 
@@ -3839,6 +3878,9 @@ exports.push([module.i, "\n#tour, #type, #grade, #base, #us, #jp {\n    margin-t
         },
         boardGroup: function boardGroup() {
             return this.boardDim.group().reduce(this.promoAdd, this.promoRemove, this.promoInitial);
+        },
+        pageLabel: function pageLabel() {
+            return this.pageName;
         }
 
     },
@@ -3899,6 +3941,11 @@ exports.push([module.i, "\n#tour, #type, #grade, #base, #us, #jp {\n    margin-t
                 sel: 0,
                 percent: 0
             };
+        },
+        toProperCase: function toProperCase(s) {
+            return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
+                return $1.toUpperCase();
+            });
         }
     },
     components: {
@@ -4186,20 +4233,25 @@ exports.push([module.i, "\n#tour, #type, #grade, #base, #us, #jp {\n    margin-t
 
             //Curent Filters button
             d3.select('#showMyFilters').on('click', function () {
-                var myFilters = 'Current filters include ';
+                var myFilters = _this.toProperCase(_this.pageLabel) + ' filters ';
+
                 dc.chartRegistry.list().forEach(function (d) {
-                    if (d.filters()[0]) myFilters += '\n (' + d.filters() + ')';
+                    if (d.hasFilter()) {
+                        myFilters += '\n (' + d.filters() + ')';
+                    }
                 });
                 if (myFilters !== undefined) {
+                    var counterVars = selRateND;
                     // Override global options
                     __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.options = {
                         "positionClass": "toast-bottom-full-width",
                         "closeButton": "true",
                         "preventDuplicates": "true"
                     };
-                    if (selRateND.value() == 0) {
-                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.warning('Your filter(s) returned no results. Please reset and try again.');
+                    if (counterVars.value() == 0) {
+                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.warning('Your ' + _this.toProperCase(_this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
                     } else {
+                        myFilters += ' return a Promotion Rate of ' + counterVars.value() + '%.';
                         __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
                     }
                 }
@@ -7022,6 +7074,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("searchBox", {
                       attrs: {
+                        id: "installationSearchBar",
                         size: "5",
                         label: "Enter Installation",
                         button: "true",
@@ -10280,7 +10333,8 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
             loaded: false,
             baseColor: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color,
             majcomColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].majcomChart.color]),
-            baseColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color])
+            baseColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color]),
+            pageName: 'Enlisted Manning'
         };
     },
 
@@ -10293,7 +10347,7 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
         },
         ylabel: function ylabel() {
             if (this.selected === "percent") {
-                return "Manning Percent (%)";
+                return "% Manning";
             } else if (this.selected === "asgn") {
                 return "Assigned";
             } else if (this.selected === "stp") {
@@ -10322,6 +10376,9 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
         },
         mpfGroup: function mpfGroup() {
             return this.mpfDim.group().reduce(this.manningAdd, this.manningRemove, this.manningInitial);
+        },
+        pageLabel: function pageLabel() {
+            return this.pageName;
         }
 
     },
@@ -10397,6 +10454,11 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
             p.percent = p.asgn / p.auth === Infinity ? 0 : Math.round(p.asgn / p.auth * 1000) / 10 || 0;
             p.stpPercent = p.stp / p.auth === Infinity ? 0 : Math.round(p.stp / p.auth * 1000) / 10 || 0;
             return p;
+        },
+        toProperCase: function toProperCase(s) {
+            return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
+                return $1.toUpperCase();
+            });
         }
 
     },
@@ -10563,9 +10625,14 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 
             //Curent Filters button
             d3.select('#showMyFilters').on('click', function () {
-                var myFilters = 'Current filters include ';
+
+                var myFilters = _this.toProperCase(_this.pageLabel) + ' filters ';
+
                 dc.chartRegistry.list().forEach(function (d) {
-                    if (d.filters()[0]) myFilters += '\n (' + d.filters() + ')';
+
+                    if (d.hasFilter() && d.anchor() != '#dc-overviewmajcom-barchart' && d.anchor() != '#dc-overviewmpf-barchart') {
+                        myFilters += '\n (' + d.filters() + ')';
+                    }
                 });
                 if (myFilters !== undefined) {
                     var myCheckValue = 0;
@@ -10587,9 +10654,13 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
                         "closeButton": "true",
                         "preventDuplicates": "true"
                     };
-                    if (myCheckValue() == 0) {
-                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.warning('Your filter(s) returned no results. Please reset and try again.');
+                    if (myCheckValue() == '0.0%' || myCheckValue() == 0) {
+                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.warning('Your ' + _this.toProperCase(_this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                    } else if (myCheckValue() == '1') {
+                        myFilters += ' return ' + myCheckValue() + ' ' + _this.ylabel + ' result.';
+                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
                     } else {
+                        myFilters += ' return ' + myCheckValue() + ' ' + _this.ylabel + ' results.';
                         __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
                     }
                 }
@@ -10920,6 +10991,7 @@ if(false) {
             chartSpecs: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */],
             majcomColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].majcomChart.color]),
             baseColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color]),
+            pageName: 'Officer Manning',
             afscGroupChart: {}
         };
     },
@@ -10933,7 +11005,7 @@ if(false) {
         },
         ylabel: function ylabel() {
             if (this.selected === "percent") {
-                return "Manning Percent (%)";
+                return "% Manning";
             } else if (this.selected === "asgn") {
                 return "Assigned";
             } else if (this.selected === "stp") {
@@ -10994,8 +11066,10 @@ if(false) {
                 'margins': __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].afscGroupChart.margins,
                 'colors': [__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].afscGroupChart.color]
             };
+        },
+        pageLabel: function pageLabel() {
+            return this.pageName;
         }
-
     },
     methods: {
         startDemo: function startDemo() {
@@ -11068,6 +11142,11 @@ if(false) {
                     });
                 }
             };
+        },
+        toProperCase: function toProperCase(s) {
+            return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
+                return $1.toUpperCase();
+            });
         },
         formatData: function formatData(given) {
             var obj = {};
@@ -11167,33 +11246,42 @@ if(false) {
 
             //Curent Filters button
             d3.select('#showMyFilters').on('click', function () {
-                var myFilters = 'Current filters include ';
+                var myFilters = _this2.toProperCase(_this2.pageLabel) + ' filters ';
+
                 dc.chartRegistry.list().forEach(function (d) {
-                    if (d.filters()[0]) myFilters += '\n (' + d.filters() + ')';
+
+                    if (d.hasFilter()) {
+                        myFilters += '\n (' + d.filters() + ')';
+                    }
                 });
                 if (myFilters !== undefined) {
-                    var myCheckValue = 0;
-                    if (_this2.selected == "percent") {
-                        myCheckValue = percentND.value;
-                    };
-                    if (_this2.selected == "auth") {
-                        myCheckValue = authND.value;
-                    };
+                    var myCheckValue = '0';
                     if (_this2.selected == "asgn") {
-                        myCheckValue = asgnND.value;
+                        myCheckValue = asgn.value();
                     };
                     if (_this2.selected == "stp") {
-                        myCheckValue = stpND.value;
+                        myCheckValue = stp.value();
                     };
+                    if (_this2.selected == "auth") {
+                        myCheckValue = auth.value();
+                    };
+                    if (_this2.selected == "percent") {
+                        myCheckValue = percent.innerText.substr(0, percent.innerText.length - 1);
+                    };
+                    //console.log("myCheckvalue: "+ myCheckValue );
                     // Override global options
                     __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.options = {
                         "positionClass": "toast-bottom-full-width",
                         "closeButton": "true",
                         "preventDuplicates": "true"
                     };
-                    if (myCheckValue() == 0) {
-                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.warning('Your filter(s) returned no results. Please reset and try again.');
+                    if (myCheckValue == '0.0%' || myCheckValue == 0) {
+                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.warning('Your ' + _this2.toProperCase(_this2.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                    } else if (myCheckValue == '1') {
+                        myFilters += ' return ' + myCheckValue + ' ' + _this2.ylabel + ' result.';
+                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.info(myFilters);
                     } else {
+                        myFilters += ' return ' + myCheckValue + ' ' + _this2.ylabel + ' results.';
                         __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.info(myFilters);
                     }
                 }
@@ -11477,6 +11565,7 @@ if(false) {
             loaded: false,
             ylabel: '(Count)',
             chartSpecs: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */],
+            pageName: 'Exceptional Family Member Program & Humanitarian',
             baseColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color]),
             majcomColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].majcomChart.color])
         };
@@ -11511,6 +11600,9 @@ if(false) {
         baseGroup: function baseGroup() {
             //return this.baseDim.group().reduceSum((d) => {return +d.Count;})
             return this.removeError(this.baseDim.group().reduce(this.asgnAdd, this.asgnRemove, this.asgnInitial));
+        },
+        pageLabel: function pageLabel() {
+            return this.pageName;
         }
     },
     methods: {
@@ -11551,6 +11643,11 @@ if(false) {
         },
         asgnInitial: function asgnInitial() {
             return 0;
+        },
+        toProperCase: function toProperCase(s) {
+            return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
+                return $1.toUpperCase();
+            });
         }
     },
     mounted: function mounted() {
@@ -11713,20 +11810,29 @@ if(false) {
 
             //Curent Filters button
             d3.select('#showMyFilters').on('click', function () {
-                var myFilters = 'Current filters include ';
+                var myFilters = _this.toProperCase(_this.pageLabel) + ' filters ';
+
                 dc.chartRegistry.list().forEach(function (d) {
-                    if (d.filters()[0]) myFilters += '\n (' + d.filters() + ')';
+                    if (d.hasFilter() && d.anchor() != '#dc-overviewmajcom-barchart' && d.anchor() != '#dc-overviewbase-barchart') {
+                        //console.log(d.anchor(), d.filters())
+                        myFilters += '\n (' + d.filters() + ')';
+                    }
                 });
                 if (myFilters !== undefined) {
+                    var counterVars = invND;
                     // Override global options
                     __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.options = {
                         "positionClass": "toast-bottom-full-width",
                         "closeButton": "true",
                         "preventDuplicates": "true"
                     };
-                    if (invND.value() == 0) {
-                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.warning('Your filter(s) returned no results. Please reset and try again.');
+                    if (counterVars.value() == 0) {
+                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.warning('Your ' + _this.toProperCase(_this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                    } else if (counterVars.value() == 1) {
+                        myFilters += ' return ' + counterVars.value() + ' result.';
+                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
                     } else {
+                        myFilters += ' return ' + counterVars.value() + ' results.';
                         __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
                     }
                 }
@@ -12353,7 +12459,7 @@ if (false) {(function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(d3, crossfilter, _, dc, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
+/* WEBPACK VAR INJECTION */(function(d3, crossfilter, dc, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__dchelpers__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chartSpecs__ = __webpack_require__("K62J");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__("mtWM");
@@ -12595,7 +12701,8 @@ if (false) {(function () {
             searchYRGP: "",
             chartSpecs: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */],
             coreColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].coreChart.color]),
-            yrgpColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].yrgpChart.color])
+            yrgpColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].yrgpChart.color]),
+            pageName: 'Officer Education'
         };
     },
 
@@ -12627,13 +12734,27 @@ if (false) {(function () {
             return this.yrgpDim.group().reduce(this.edAdd, this.edRemoveLarge, this.edInitial);
         },
         ylabel: function ylabel() {
-            if (_.includes(this.selected, "Percent")) {
-                return "(%)";
+            // if (_.includes(this.selected,"Percent")) {
+            //     return "(%)"
+            // }
+            // else {
+            //     return "(Count)"
+            // }
+            if (this.selected === "totalCount") {
+                return "Total";
+            } else if (this.selected === "stem") {
+                return "STEM Count";
+            } else if (this.selected === "nonStem") {
+                return "Non-STEM Count";
+            } else if (this.selected === "stemPercent") {
+                return "% STEM";
             } else {
-                return "(Count)";
+                return "% Non-STEM";
             }
+        },
+        pageLabel: function pageLabel() {
+            return this.pageName;
         }
-
     },
 
     methods: {
@@ -12690,6 +12811,11 @@ if (false) {(function () {
                 stemPercent: 0,
                 nonStemPercent: 0
             };
+        },
+        toProperCase: function toProperCase(s) {
+            return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
+                return $1.toUpperCase();
+            });
         }
     },
 
@@ -12895,11 +13021,15 @@ if (false) {(function () {
                 return __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].gradeOrder[d.key];
             });
 
-            //Curent Filters button
+            //Current Filters button
             d3.select('#showMyFilters').on('click', function () {
-                var myFilters = 'Current filters include ';
+                var myFilters = _this.toProperCase(_this.pageLabel) + ' filters ';
+
                 dc.chartRegistry.list().forEach(function (d) {
-                    if (d.filters()[0]) myFilters += '\n (' + d.filters() + ')';
+
+                    if (d.hasFilter() && d.anchor() != '#dc-overviewyrgp-barchart' && d.anchor() != '#dc-overviewcore-barchart') {
+                        myFilters += '\n (' + d.filters() + ')';
+                    }
                 });
                 if (myFilters !== undefined) {
                     var myCheckValue = 0;
@@ -12924,9 +13054,13 @@ if (false) {(function () {
                         "closeButton": "true",
                         "preventDuplicates": "true"
                     };
-                    if (myCheckValue() == 0) {
-                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.warning('Your filter(s) returned no results. Please reset and try again.');
+                    if (myCheckValue() == '0.0%' || myCheckValue() == 0) {
+                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.warning('Your ' + _this.toProperCase(_this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                    } else if (myCheckValue() == '1') {
+                        myFilters += ' return ' + myCheckValue() + ' ' + _this.ylabel + ' result.';
+                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
                     } else {
+                        myFilters += ' return ' + myCheckValue() + ' ' + _this.ylabel + ' results.';
                         __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
                     }
                 }
@@ -12976,7 +13110,7 @@ if (false) {(function () {
         console.log("destroyed");
     }
 });
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("Za4h"), __webpack_require__("JowF"), __webpack_require__("M4fF"), __webpack_require__("iEPi"), __webpack_require__("lDdF")))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("Za4h"), __webpack_require__("JowF"), __webpack_require__("iEPi"), __webpack_require__("lDdF")))
 
 /***/ }),
 
@@ -13633,6 +13767,7 @@ exports.push([module.i, "\n#fyr, #edlevel, #grade, #cafsc, #mpf {\n    margin-to
             /*                 baseColor: chartSpecs.baseChart.color, */
             chartSpecs: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */],
             baseColor: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color,
+            pageName: 'Total Force ANG',
             baseLen: 0,
             baseHasFilter: false,
             showBase: false
@@ -13650,6 +13785,9 @@ exports.push([module.i, "\n#fyr, #edlevel, #grade, #cafsc, #mpf {\n    margin-to
         },
         allGroup: function allGroup() {
             return this.ndx.groupAll();
+        },
+        pageLabel: function pageLabel() {
+            return this.pageName;
         }
         /*             stateDim: function() {
                         return this.ndx.dimension(function(d) {return d.state;});
@@ -13717,8 +13855,12 @@ exports.push([module.i, "\n#fyr, #edlevel, #grade, #cafsc, #mpf {\n    margin-to
                     });
                 }
             };
+        },
+        toProperCase: function toProperCase(s) {
+            return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
+                return $1.toUpperCase();
+            });
         }
-
     },
     components: {
         'loader': __WEBPACK_IMPORTED_MODULE_4__components_Loader__["a" /* default */],
@@ -13827,9 +13969,9 @@ exports.push([module.i, "\n#fyr, #edlevel, #grade, #cafsc, #mpf {\n    margin-to
             typeConfig.dim = _this.ndx.dimension(function (d) {
                 return d.File_Type;
             });
-            typeConfig.group = typeConfig.dim.group().reduceSum(function (d) {
+            typeConfig.group = removeEmptyBins(typeConfig.dim.group().reduceSum(function (d) {
                 return +d.Inventory;
-            });
+            }));
             typeConfig.minHeight = 250;
             typeConfig.aspectRatio = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].typeChart.aspectRatio;
             typeConfig.margins = { top: 0, left: 20, right: 30, bottom: 60 };
@@ -14018,20 +14160,29 @@ exports.push([module.i, "\n#fyr, #edlevel, #grade, #cafsc, #mpf {\n    margin-to
 
             //Curent Filters button
             d3.select('#showMyFilters').on('click', function () {
-                var myFilters = 'Current filters include ';
+                var myFilters = _this.toProperCase(_this.pageLabel) + ' filters ';
+
                 dc.chartRegistry.list().forEach(function (d) {
-                    if (d.filters()[0]) myFilters += '\n (' + d.filters() + ')';
+
+                    if (d.hasFilter()) {
+                        myFilters += '\n (' + d.filters() + ')';
+                    }
                 });
                 if (myFilters !== undefined) {
+                    var counterVars = inv;
                     // Override global options
                     __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.options = {
                         "positionClass": "toast-bottom-full-width",
                         "closeButton": "true",
                         "preventDuplicates": "true"
                     };
-                    if (inv.value() == 0) {
-                        __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.warning('Your filter(s) returned no results. Please reset and try again.');
+                    if (counterVars.value() == 0) {
+                        __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.warning('Your ' + _this.toProperCase(_this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                    } else if (counterVars.value() == 1) {
+                        myFilters += ' return ' + counterVars.value() + ' result.';
+                        __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.info(myFilters);
                     } else {
+                        myFilters += ' return ' + counterVars.value() + ' results.';
                         __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.info(myFilters);
                     }
                 }
@@ -20535,7 +20686,8 @@ if(false) {
             sa: '',
             loaded: false,
             chartSpecs: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */],
-            boardColor: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].boardChart.color
+            boardColor: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].boardChart.color,
+            pageName: 'Enlisted Promotions'
         };
     },
 
@@ -20548,7 +20700,7 @@ if(false) {
         },
         ylabel: function ylabel() {
             if (this.selected === "percent") {
-                return "Promotion Rate (%)";
+                return "% Promotion Rate";
             } else if (this.selected === "Selects") {
                 return "Selects";
             } else if (this.selected === "Eligible") {
@@ -20556,6 +20708,9 @@ if(false) {
             } else {
                 return "PME Complete Rate (%)";
             }
+        },
+        pageLabel: function pageLabel() {
+            return this.pageName;
         }
 
     },
@@ -20618,6 +20773,11 @@ if(false) {
                 Selects: 0,
                 percent: 0
             };
+        },
+        toProperCase: function toProperCase(s) {
+            return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
+                return $1.toUpperCase();
+            });
         }
     },
     components: {
@@ -20835,20 +20995,28 @@ if(false) {
 
             //Curent Filters button
             d3.select('#showMyFilters').on('click', function () {
-                var myFilters = 'Current filters include ';
+                var myFilters = _this.toProperCase(_this.pageLabel) + ' filters ';
+
                 dc.chartRegistry.list().forEach(function (d) {
-                    if (d.filters()[0]) myFilters += '\n (' + d.filters() + ')';
+                    if (d.hasFilter() && d.anchor() != '#dc-afsc-select') {
+                        myFilters += '\n (' + d.filters() + ')';
+                    }
                 });
                 if (myFilters !== undefined) {
+                    var counterVars = SelectsRateND;
                     // Override global options
                     __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.options = {
                         "positionClass": "toast-bottom-full-width",
                         "closeButton": "true",
                         "preventDuplicates": "true"
                     };
-                    if (SelectsRateND.value() == 0) {
-                        __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.warning('Your filter(s) returned no results. Please reset and try again.');
+                    if (counterVars.value() == 0) {
+                        __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.warning('Your ' + _this.toProperCase(_this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                    } else if (counterVars.value() == 1) {
+                        myFilters += ' return ' + counterVars.value() + ' ' + _this.ylabel + ' result.';
+                        __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.info(myFilters);
                     } else {
+                        myFilters += ' return ' + counterVars.value() + ' ' + _this.ylabel + ' results.';
                         __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.info(myFilters);
                     }
                 }
@@ -22250,7 +22418,8 @@ if(false) {
             data: [],
             loaded: false,
             fyr: '2018',
-            searchCAFSC: ""
+            searchCAFSC: "",
+            pageName: 'Enlisted Education'
         };
     },
 
@@ -22267,6 +22436,9 @@ if(false) {
         },
         ylabel: function ylabel() {
             return "(Count)";
+        },
+        pageLabel: function pageLabel() {
+            return this.pageName;
         }
     },
 
@@ -22320,6 +22492,11 @@ if(false) {
                 }
             });
             dc.redrawAll();
+        },
+        toProperCase: function toProperCase(s) {
+            return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
+                return $1.toUpperCase();
+            });
         }
     },
 
@@ -22540,20 +22717,29 @@ if(false) {
 
             //Curent Filters button
             d3.select('#showMyFilters').on('click', function () {
-                var myFilters = 'Current filters include ';
+                var myFilters = _this.toProperCase(_this.pageLabel) + ' filters ';
+
                 dc.chartRegistry.list().forEach(function (d) {
-                    if (d.filters()[0]) myFilters += '\n (' + d.filters() + ')';
+                    if (d.hasFilter()) {
+                        //console.log(d.anchor(), d.filters())
+                        myFilters += '\n (' + d.filters() + ')';
+                    }
                 });
                 if (myFilters !== undefined) {
+                    var counterVars = totalCountND;
                     // Override global options
                     __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.options = {
                         "positionClass": "toast-bottom-full-width",
                         "closeButton": "true",
                         "preventDuplicates": "true"
                     };
-                    if (totalCountND.value() == 0) {
-                        __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.warning('Your filter(s) returned no results. Please reset and try again.');
+                    if (counterVars.value() == 0) {
+                        __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.warning('Your ' + _this.toProperCase(_this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                    } else if (counterVars.value() == 1) {
+                        myFilters += ' return ' + counterVars.value() + ' result.';
+                        __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.info(myFilters);
                     } else {
+                        myFilters += ' return ' + counterVars.value() + ' results.';
                         __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.info(myFilters);
                     }
                 }
@@ -23728,6 +23914,7 @@ var _this2 = this;
             asDate: 'Undetermined',
             baseColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color]),
             majcomColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].majcomChart.color]),
+            pageName: 'Enlisted Retention',
             category: '1ST TERM',
             year: '2018'
         };
@@ -23756,9 +23943,9 @@ var _this2 = this;
             } else if (this.selected === "keep") {
                 return "Keep";
             } else if (this.selected === "reEnlRate") {
-                return "Reenlist Rate(%)";
+                return "% Reenlist Rate";
             } else {
-                return "Keep Rate(%)";
+                return "% Keep Rate";
             }
         },
         downloadDim: function downloadDim() {
@@ -23781,8 +23968,10 @@ var _this2 = this;
         },
         mpfGroup: function mpfGroup() {
             return this.mpfDim.group().reduce(this.retentionAdd, this.retentionRemove, this.retentionInitial);
+        },
+        pageLabel: function pageLabel() {
+            return this.pageName;
         }
-
     },
     methods: {
         resetAll: function resetAll() {
@@ -23897,6 +24086,11 @@ var _this2 = this;
                     });
                 }
             };
+        },
+        toProperCase: function toProperCase(s) {
+            return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
+                return $1.toUpperCase();
+            });
         }
     },
     created: function created() {
@@ -24058,9 +24252,12 @@ var _this2 = this;
 
             //Curent Filters button
             d3.select('#showMyFilters').on('click', function () {
-                var myFilters = 'Current filters include ';
+                var myFilters = _this3.toProperCase(_this3.pageLabel) + ' filters ';
+
                 dc.chartRegistry.list().forEach(function (d) {
-                    if (d.filters()[0]) myFilters += '\n (' + d.filters() + ')';
+                    if (d.hasFilter() && d.anchor() != '#dc-overviewmajcom-barchart' && d.anchor() != '#dc-overviewmpf-barchart') {
+                        myFilters += '\n (' + d.filters() + ')';
+                    }
                 });
                 if (myFilters !== undefined) {
                     var myCheckValue = 0;
@@ -24076,9 +24273,13 @@ var _this2 = this;
                         "closeButton": "true",
                         "preventDuplicates": "true"
                     };
-                    if (myCheckValue() == 0) {
-                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.warning('Your filter(s) returned no results. Please reset and try again.');
+                    if (myCheckValue() <= '0') {
+                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.warning('Your ' + _this3.toProperCase(_this3.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                    } else if (myCheckValue() == '1') {
+                        myFilters += ' return ' + myCheckValue() + ' ' + _this3.ylabel + ' result.';
+                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.info(myFilters);
                     } else {
+                        myFilters += ' return ' + myCheckValue() + ' ' + _this3.ylabel + ' results.';
                         __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.info(myFilters);
                     }
                 }
@@ -24632,7 +24833,7 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  /*should be scoped*/\n#radioSelect div,input,label{\n    cursor: pointer;\n}\n.fade-enter-active {\n    -webkit-transition: all 0.5s;\n    transition: all 0.5s;\n}\n.fade-leave-active {\n    -webkit-transition: all 0.2s;\n    transition: all 0.2s;\n}\n.fade-enter, .fade-leave-to {\n    opacity: 0;\n}\n.fade-enter-to, .fade-leave {\n    opacity: 1;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  /*should be scoped*/\n#radioSelect div,input,label{\n    cursor: pointer;\n}\n.fade-enter-active {\n    -webkit-transition: all 0.5s;\n    transition: all 0.5s;\n}\n.fade-leave-active {\n    -webkit-transition: all 0.2s;\n    transition: all 0.2s;\n}\n.fade-enter, .fade-leave-to {\n    opacity: 0;\n}\n.fade-enter-to, .fade-leave {\n    opacity: 1;\n}\n", ""]);
 
 // exports
 
@@ -26471,7 +26672,7 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* need to make this scoped */\n#radioSelect div[data-v-76d32ee7],input[data-v-76d32ee7],label[data-v-76d32ee7]{\n    cursor: pointer;\n}\n.form-group[data-v-76d32ee7]{\n    -ms-flex-line-pack: center;\n        align-content: center;\n}\n.fade-enter-active[data-v-76d32ee7] {\n    -webkit-transition: all 0.5s;\n    transition: all 0.5s;\n}\n.fade-leave-active[data-v-76d32ee7] {\n    -webkit-transition: all 0.2s;\n    transition: all 0.2s;\n}\n.fade-enter[data-v-76d32ee7], .fade-leave-to[data-v-76d32ee7] {\n    opacity: 0;\n}\n.fade-enter-to[data-v-76d32ee7], .fade-leave[data-v-76d32ee7] {\n    opacity: 1;\n}\n#category .custom-control-input:checked~.custom-control-indicator[data-v-76d32ee7] {\n    background-color: rgb(18, 153, 60);\n}\n#category .custom-control-input:focus~.custom-control-indicator[data-v-76d32ee7] {\n    -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(18, 153, 60,.25);\n            box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(18, 153, 60,.25);\n}\n#category[data-v-76d32ee7]{\n    margin-top: .5rem;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* need to make this scoped */\n#radioSelect div[data-v-76d32ee7],input[data-v-76d32ee7],label[data-v-76d32ee7]{\n    cursor: pointer;\n}\n.form-group[data-v-76d32ee7]{\n    -ms-flex-line-pack: center;\n        align-content: center;\n}\n.fade-enter-active[data-v-76d32ee7] {\n    -webkit-transition: all 0.5s;\n    transition: all 0.5s;\n}\n.fade-leave-active[data-v-76d32ee7] {\n    -webkit-transition: all 0.2s;\n    transition: all 0.2s;\n}\n.fade-enter[data-v-76d32ee7], .fade-leave-to[data-v-76d32ee7] {\n    opacity: 0;\n}\n.fade-enter-to[data-v-76d32ee7], .fade-leave[data-v-76d32ee7] {\n    opacity: 1;\n}\n#category .custom-control-input:checked~.custom-control-indicator[data-v-76d32ee7] {\n    background-color: rgb(18, 153, 60);\n}\n#category .custom-control-input:focus~.custom-control-indicator[data-v-76d32ee7] {\n    -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(18, 153, 60,.25);\n            box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(18, 153, 60,.25);\n}\n#category[data-v-76d32ee7]{\n    margin-top: .5rem;\n}\n", ""]);
 
 // exports
 
@@ -26595,6 +26796,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
             loaded: false,
             chartSpecs: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */],
             baseColor: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color,
+            pageName: 'Total Force AFR',
             majcomColor: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].majcomChart.color
         };
     },
@@ -26613,6 +26815,9 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
         },
         allGroup: function allGroup() {
             return this.ndx.groupAll();
+        },
+        pageLabel: function pageLabel() {
+            return this.pageName;
         }
     },
     methods: {
@@ -26651,6 +26856,11 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
                 }
             });
             dc.redrawAll();
+        },
+        toProperCase: function toProperCase(s) {
+            return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
+                return $1.toUpperCase();
+            });
         }
     },
     components: {
@@ -26841,20 +27051,29 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
             //Curent Filters button
             d3.select('#showMyFilters').on('click', function () {
-                var myFilters = 'Current filters include ';
+                var myFilters = _this.toProperCase(_this.pageLabel) + ' filters ';
+
                 dc.chartRegistry.list().forEach(function (d) {
-                    if (d.filters()[0]) myFilters += '\n (' + d.filters() + ')';
+                    if (d.hasFilter()) {
+                        myFilters += '\n (' + d.filters() + ')';
+                    }
                 });
                 if (myFilters !== undefined) {
+                    var counterVars = inv;
                     // Override global options
                     __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.options = {
                         "positionClass": "toast-bottom-full-width",
                         "closeButton": "true",
                         "preventDuplicates": "true"
                     };
-                    if (inv.value() == 0) {
-                        __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.warning('Your filter(s) returned no results. Please reset and try again.');
+                    if (counterVars.value() == 0) {
+                        __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.warning('Your ' + _this.toProperCase(_this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                    }
+                    if (counterVars.value() == 1) {
+                        myFilters += ' return ' + counterVars.value() + ' result.';
+                        __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.info(myFilters);
                     } else {
+                        myFilters += ' return ' + counterVars.value() + ' results.';
                         __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.info(myFilters);
                     }
                 }
@@ -28840,7 +29059,7 @@ if(false) {
             ylabel: 'Inventory',
             loaded: false,
             baseColor: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color,
-            pageName: 'Total Force Inventory',
+            pageName: 'Total Force Active Duty',
             chartSpecs: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */],
             majcomColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].majcomChart.color]),
             baseColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color]),
@@ -28891,7 +29110,7 @@ if(false) {
             return {
                 'id': 'type',
                 'dim': this.typeDim,
-                'group': this.removeError(this.typeDim.group().reduceSum(function (d) {
+                'group': this.removeEmptyBins(this.typeDim.group().reduceSum(function (d) {
                     return +d.Inventory;
                 })),
                 'minHeight': 250,
@@ -28918,6 +29137,9 @@ if(false) {
                 'margins': { top: 10, left: 50, right: 30, bottom: 60 },
                 'colors': this.chartSpecs.gradeChartColorScale
             };
+        },
+        pageLabel: function pageLabel() {
+            return this.pageName;
         }
     },
     methods: {
@@ -28996,6 +29218,12 @@ if(false) {
 
             return obj;
         },
+        toProperCase: function toProperCase(s) {
+            return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
+                return $1.toUpperCase();
+            });
+        },
+
         testData: function testData(formatted, original) {
             for (var key in formatted) {
                 if (formatted[key] === undefined) {
@@ -29076,20 +29304,32 @@ if(false) {
 
             //Curent Filters button
             d3.select('#showMyFilters').on('click', function () {
-                var myFilters = 'Current filters include ';
+                var myFilters = _this.toProperCase(_this.pageLabel) + ' filters ';
+
                 dc.chartRegistry.list().forEach(function (d) {
-                    if (d.filters()[0]) myFilters += '\n (' + d.filters() + ')';
+                    //console.log("d.filter(): "+d.filter())
+                    //if (d.hasFilter()) {console.log("d.filter(): "+d.filters())}
+                    if (d.hasFilter() && d.anchor() != '#dc-overviewmajcom-barchart' && d.anchor() != '#dc-overviewbase-barchart') {
+                        //console.log(d.anchor(), d.filters())
+                        myFilters += '\n (' + d.filters() + ')';
+                    }
                 });
                 if (myFilters !== undefined) {
+                    var counterVars = inv;
+                    //console.log("counterVars.value: "+counterVars.value());
                     // Override global options
                     __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.options = {
                         "positionClass": "toast-bottom-full-width",
                         "closeButton": "true",
                         "preventDuplicates": "true"
                     };
-                    if (inv.value() == 0) {
-                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.warning('Your filter(s) returned no results. Please reset and try again.');
+                    if (counterVars.value() == 0) {
+                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.warning('Your ' + _this.toProperCase(_this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                    } else if (counterVars.value() == 1) {
+                        myFilters += ' return ' + counterVars.value() + ' result.';
+                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
                     } else {
+                        myFilters += ' return ' + counterVars.value() + ' results.';
                         __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
                     }
                 }
@@ -29350,6 +29590,7 @@ if(false) {
             searchCore: "",
             selected: "Count",
             chartSpecs: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */],
+            pageName: 'Officer Education',
             coreColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].coreChart.color])
         };
     },
@@ -29376,6 +29617,9 @@ if(false) {
         },
         ylabel: function ylabel() {
             return "(Count)";
+        },
+        pageLabel: function pageLabel() {
+            return this.pageName;
         }
     },
 
@@ -29451,6 +29695,11 @@ if(false) {
         },
         edInitial: function edInitial() {
             return 0;
+        },
+        toProperCase: function toProperCase(s) {
+            return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
+                return $1.toUpperCase();
+            });
         }
     },
 
@@ -29703,20 +29952,29 @@ if(false) {
 
             //Curent Filters button
             d3.select('#showMyFilters').on('click', function () {
-                var myFilters = 'Current filters include ';
+                var myFilters = _this.toProperCase(_this.pageLabel) + ' filters ';
+
                 dc.chartRegistry.list().forEach(function (d) {
-                    if (d.filters()[0]) myFilters += '\n (' + d.filters() + ')';
+                    if (d.hasFilter() && d.anchor() != '#dc-overviewcore-barchart') {
+                        //console.log(d.anchor(), d.filters())
+                        myFilters += '\n (' + d.filters() + ')';
+                    }
                 });
                 if (myFilters !== undefined) {
+                    var counterVars = totalCountND;
                     // Override global options
                     __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.options = {
                         "positionClass": "toast-bottom-full-width",
                         "closeButton": "true",
                         "preventDuplicates": "true"
                     };
-                    if (totalCountND.value() == 0) {
-                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.warning('Your filter(s) returned no results. Please reset and try again.');
+                    if (counterVars.value() == 0) {
+                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.warning('Your ' + _this.toProperCase(_this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                    } else if (counterVars.value() == 1) {
+                        myFilters += ' return ' + counterVars.value() + ' result.';
+                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.info(myFilters);
                     } else {
+                        myFilters += ' return ' + counterVars.value() + ' results.';
                         __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.info(myFilters);
                     }
                 }
@@ -29955,4 +30213,4 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.0ccd408a7de59aa8edcd.js.map
+//# sourceMappingURL=app.fffa1fa2e89a2062955b.js.map
