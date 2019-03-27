@@ -19283,9 +19283,603 @@ exports.push([module.i, "\n#fyr, #edlevel, #grade, #cafsc, #mpf {\n    margin-to
 /***/ }),
 
 /***/ "S5C1":
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed: SyntaxError: Unexpected token (212:2)\n\n\u001b[0m \u001b[90m 210 | \u001b[39m                    })\n \u001b[90m 211 | \u001b[39m                }\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 212 | \u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\n \u001b[90m     | \u001b[39m  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 213 | \u001b[39m            }\u001b[33m,\u001b[39m                \n \u001b[90m 214 | \u001b[39m\u001b[33m||\u001b[39m\u001b[33m||\u001b[39m\u001b[33m||\u001b[39m\u001b[33m|\u001b[39m merged common ancestors\n \u001b[90m 215 | \u001b[39m            }\u001b[33m,\u001b[39m                \u001b[0m\n");
+"use strict";
+/* WEBPACK VAR INJECTION */(function(crossfilter, introJs, dc, $, d3, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__dchelpers__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chartSpecs__ = __webpack_require__("K62J");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__("mtWM");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_format__ = __webpack_require__("XCdN");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_Loader__ = __webpack_require__("wd27");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__store_store__ = __webpack_require__("wtEF");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_searchBox__ = __webpack_require__("CjlA");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_largeBarChart__ = __webpack_require__("A1IL");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_toastr__ = __webpack_require__("vQJi");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_toastr__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    data: function data() {
+        return {
+            data: [],
+            searchempCat: '',
+            selected: "percent",
+            ylabel: 'Inventory',
+            loaded: false,
+            /*                 baseColor: chartSpecs.baseChart.color, */
+            chartSpecs: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */],
+            baseColor: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color,
+            pageName: 'Total Force ANG',
+            baseLen: 0,
+            baseHasFilter: false,
+            showBase: false
+
+            /*                 stateColorScale: d3.scale.ordinal().range([chartSpecs.stateChart.color]), */
+        };
+    },
+
+    computed: {
+        ndx: function ndx() {
+            return crossfilter(this.data);
+        },
+        asDate: function asDate() {
+            return __WEBPACK_IMPORTED_MODULE_5__store_store__["a" /* store */].state.asDate;
+        },
+        allGroup: function allGroup() {
+            return this.ndx.groupAll();
+        },
+        pageLabel: function pageLabel() {
+            return this.pageName;
+        }
+        /*             stateDim: function() {
+                        return this.ndx.dimension(function(d) {return d.state;});
+                    },
+                    stateGroup: function() {
+                        return this.stateDim.group().reduceSum(function(d) {return d.Inventory;});
+                    }                        
+         */
+    },
+    methods: {
+        startDemo: function startDemo() {
+            introJs().start();
+        },
+        resetAll: function resetAll(event) {
+            dc.filterAll();
+            dc.redrawAll();
+        },
+        resetChart: function resetChart(id) {
+            dc.chartRegistry.list().filter(function (chart) {
+                return chart.anchorName() == id;
+            }).forEach(function (chart) {
+                chart.filterAll();
+            });
+            dc.redrawAll();
+        },
+        radioButton: function radioButton() {
+            setTimeout(function () {
+                dc.redrawAll();
+            }, 10);
+        },
+        submit: function submit(text, id) {
+            dc.chartRegistry.list().filter(function (chart) {
+                return chart.anchorName() == id;
+            }).forEach(function (chart) {
+                var mainArray = [];
+                chart.dimension().group().all().forEach(function (d) {
+                    mainArray.push(String(d.key));
+                });
+                var filterArray = mainArray.filter(function (d) {
+                    var element = d.toUpperCase();
+                    return element.indexOf(text.toUpperCase()) !== -1;
+                });
+                chart.filter(null);
+                if (filterArray.length != mainArray.length) {
+                    chart.filter([filterArray]);
+                }
+            });
+            dc.redrawAll();
+        },
+        angAdd: function angAdd(p, v) {
+            return p + v;
+        },
+        angRemove: function angRemove(p, v) {
+            return p - v;
+        },
+        angInitial: function angInitial() {
+            return 0;
+        },
+        //remove empty function (es6 syntax to keep correct scope)
+        removeError: function removeError(source_group) {
+            return {
+                all: function all() {
+                    return source_group.all().filter(function (d) {
+                        return d.key != "error" && d.key != "**ERROR**";
+                    });
+                }
+            };
+        },
+        toProperCase: function toProperCase(s) {
+            return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
+                return $1.toUpperCase();
+            });
+        }
+    },
+    components: {
+        'loader': __WEBPACK_IMPORTED_MODULE_4__components_Loader__["a" /* default */],
+        searchBox: __WEBPACK_IMPORTED_MODULE_6__components_searchBox__["a" /* default */],
+        largeBarChart: __WEBPACK_IMPORTED_MODULE_7__components_largeBarChart__["a" /* default */],
+        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default.a
+    },
+    created: function created() {
+        console.log('created');
+        //var data = require('@/assets/data/ps_off.csv')
+        //this.data = data
+    },
+    mounted: function mounted() {
+        var _this = this;
+
+        console.log('mounted');
+        $('[data-toggle="tooltip"]').tooltip({ delay: { "show": 100, "hide": 100 } });
+        //TEST AXIOS CALL:
+        __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post("https://stars.afpc.randolph.af.mil/FLA/perstat_json/ps_off_enl_ang.js").then(function (response) {
+            //console.log(response)
+            __WEBPACK_IMPORTED_MODULE_5__store_store__["a" /* store */].state.asDate = response.data.ASOFDATE;
+            var axiosData = response.data.data;
+            //console.log(axiosData)
+            var objData = makeObject(axiosData);
+            //console.log(objData)
+            _this.data = objData;
+            _this.loaded = true;
+            renderCharts();
+        }).catch(console.error);
+
+        var makeObject = function makeObject(data) {
+            var keys = data.shift();
+            var i = 0;
+            var k = 0;
+            var obj = null;
+            var obj2 = null;
+            var output = [];
+
+            for (i = 0; i < data.length; i++) {
+                obj = {};
+                for (k = 0; k < keys.length; k++) {
+                    obj[keys[k]] = data[i][k];
+                }
+                var obj2 = {};
+                obj2 = formatData(obj);
+                //obj2 = testData(obj2, obj) 
+                output.push(obj2);
+            }
+            return output;
+        };
+
+        var formatData = function formatData(given) {
+            var obj = {};
+
+            obj.File_Type = __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].type[given.type];
+            obj.Grade = __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].gradeFormat[given.grade];
+            obj.MAJCOM = __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].majFormat[given.maj];
+            obj.Inventory = given.freq;
+            obj.empCat = given.empcat;
+            obj.state = given.state;
+
+            return obj;
+        };
+
+        /*             var testData = (formatted, original) =>{
+                        for (var key in formatted) {
+                            if (formatted[key] === undefined){
+                                console.log('Empty Value of ' + key)
+                                console.log(original)
+                                formatted[key] = "UNKNOWN"
+                            }
+                        }
+                        return formatted;
+                    }
+         */
+        var renderCharts = function renderCharts() {
+            dc.dataCount(".dc-data-count").dimension(_this.ndx).group(_this.allGroup);
+
+            //console.log(this.data[0])
+            //reduce functions
+
+            //remove empty function (es6 syntax to keep correct scope)
+            var removeEmptyBins = function removeEmptyBins(source_group) {
+                return {
+                    all: function all() {
+                        return source_group.all().filter(function (d) {
+                            return d.value != 0;
+                        });
+                    }
+                };
+            };
+
+            //remove empty function (es6 syntax to keep correct scope)
+            var removeError = function removeError(source_group) {
+                return {
+                    all: function all() {
+                        return source_group.all().filter(function (d) {
+                            return d.key != "**ERROR**";
+                        });
+                    }
+                };
+            };
+
+            //type 
+            var typeConfig = {};
+            typeConfig.id = 'type';
+            typeConfig.dim = _this.ndx.dimension(function (d) {
+                return d.File_Type;
+            });
+            typeConfig.group = removeEmptyBins(typeConfig.dim.group().reduceSum(function (d) {
+                return +d.Inventory;
+            }));
+            typeConfig.minHeight = 250;
+            typeConfig.aspectRatio = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].typeChart.aspectRatio;
+            typeConfig.margins = { top: 0, left: 20, right: 30, bottom: 60 };
+            typeConfig.colors = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].typeChart.color;
+            var typeChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getRowChart(typeConfig);
+            typeChart.controlsUseVisibility(true);
+
+            //empCat
+            var empCatConfig = {};
+            empCatConfig.id = 'empCat';
+            empCatConfig.dim = _this.ndx.dimension(function (d) {
+                return d.empCat;
+            });
+            var empCatGroup = removeEmptyBins(empCatConfig.dim.group().reduceSum(function (d) {
+                return +d.Inventory;
+            }));
+            empCatConfig.group = removeError(empCatGroup);
+            empCatConfig.minHeight = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].empCatChart.minHeight;
+            empCatConfig.aspectRatio = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].empCatChart.aspectRatio;
+            empCatConfig.margins = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].empCatChart.margins;
+            empCatConfig.colors = _this.chartSpecs.empCatColorScale;
+            var empCatChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getOrdinalBarChart(empCatConfig);
+            empCatChart.elasticX(true).colorAccessor(function (d) {
+                return d.key;
+            }).controlsUseVisibility(true).on('pretransition', function (chart) {
+                chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)').on('click', function (d) {
+                    chart.filter(d);
+                    dc.redrawAll();
+                });
+            });
+
+            //Number Display for Auth, Asgn, STP - show total for filtered content
+            var inv = _this.ndx.groupAll().reduceSum(function (d) {
+                return +d.Inventory;
+            });
+            var invND = dc.numberDisplay("#inv");
+            invND.group(inv).formatNumber(d3.format("d")).valueAccessor(function (d) {
+                return d;
+            }).html({
+                one: "<span style=\"color:steelblue; font-size: 20px;\">%number</span>"
+            });
+
+            //grade
+            var gradeConfig = {};
+            gradeConfig.id = 'grade';
+            gradeConfig.dim = _this.ndx.dimension(function (d) {
+                return d.Grade;
+            });
+            gradeConfig.group = removeEmptyBins(gradeConfig.dim.group().reduceSum(function (d) {
+                return +d.Inventory;
+            }));
+            gradeConfig.minHeight = 250;
+            gradeConfig.aspectRatio = 5;
+            gradeConfig.margins = { top: 10, left: 50, right: 30, bottom: 60 };
+            gradeConfig.colors = _this.chartSpecs.gradeChartColorScale;
+            var gradeChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getOrdinalBarChart(gradeConfig);
+            gradeChart.elasticX(true).colorAccessor(function (d) {
+                return d.key;
+            }).controlsUseVisibility(true).on('pretransition', function (chart) {
+                chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)').on('click', function (d) {
+                    chart.filter(d);
+                    dc.redrawAll();
+                });
+            }).yAxis().tickFormat(function (v) {
+                return v + "%";
+            });
+
+            gradeChart.ordering(function (d) {
+                return __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].gradeOrder[d.key];
+            });
+
+            //this.gradeChart = gradeChart
+
+            //CONUS 
+            var usConfig = {};
+            usConfig.id = 'us';
+            usConfig.dim = _this.ndx.dimension(function (d) {
+                return d.state;
+            });
+            usConfig.group = removeError(usConfig.dim.group().reduceSum(function (d) {
+                return +d.Inventory;
+            }));
+            usConfig.scale = 1;
+            usConfig.minHeight = 200;
+            usConfig.aspectRatio = 2.01;
+            usConfig.xRatio = 2.0;
+            usConfig.yRatio = 2.0;
+
+            //default color scale from #E2F2FF to #0061B5.
+            usConfig.colors = d3.scale.quantize().range(["#E2F2FF", "#d4eafc", "#C4E4FF", "#badefc", "#a6d4fc", "#9ED2FF", "#81C5FF", "#75bfff", "#6BBAFF", "#51AEFF", "#40a4f9", "#36A2FF", "#2798f9", "#1E96FF", "#0089FF", "#0061B5"]);
+            usConfig.valueAccessor = function (d) {
+                if (d) {
+                    return d.value;
+                }
+            };
+            usConfig.colorAccessor = function (d) {
+                if (d) {
+                    return d;
+                } else {
+                    return 0;
+                }
+            };
+
+            var tfJson = __webpack_require__("WR++");
+            usConfig.json = tfJson;
+            usConfig.geoName = "state";
+            usConfig.propName = 'name';
+            usConfig.projection = d3.geo.albersUsa();
+
+            var guText = '';
+            var viText = '';
+            var prText = '';
+
+            var usChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getGeoChart(usConfig);
+            usChart.title(function (d) {
+                if (d.value == undefined) {
+                    d.value = '0';
+                }
+                if (d.key == 'GU') {
+                    guText = __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].geoCS[__WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].stateFormat[d.key]] + ": " + d.value;
+                }
+                if (d.key == 'VI') {
+                    viText = __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].geoCS[__WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].stateFormat[d.key]] + ": " + d.value;
+                }
+                if (d.key == 'PR') {
+                    prText = __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].geoCS[__WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].stateFormat[d.key]] + ": " + d.value;
+                }
+                return __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].geoCS[__WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].stateFormat[d.key]] + ": " + d.value;
+            });
+
+            usChart.on('pretransition', function (chart) {
+
+                var color = '#555';
+                chart.select('svg').attr("class", "border shadow p-1 mt-3 bg-white rounded");
+                chart.select('svg').select(".textLabels").remove();
+                chart.select('svg .layer0').append('g').attr("class", "textLabels");
+
+                var textLabels = chart.select('.textLabels');
+                textLabels.attr("cursor", "pointer");
+
+                var textStroke = 2;
+                textLabels.append("text").attr("x", usConfig.width * 0.12).attr("y", usConfig.height * 0.63).attr("fill", color).attr("font-size", '0.7vw').attr("font-weight", 'bold').text('Guam').on('click', function () {
+                    chart.filter([["GU"]]);
+                    dc.redrawAll();
+                }).append("title").text(guText);
+
+                textLabels.append("text").attr("x", usConfig.width * 0.54).attr("y", usConfig.height * 0.93).attr("fill", color).attr("font-size", '0.7vw').attr("font-weight", 'bold').text('Puerto Rico').on('click', function () {
+                    chart.filter([["PR"]]);
+                    dc.redrawAll();
+                }).append("title").text(prText);
+
+                textLabels.append("text").attr("x", usConfig.width * 0.61).attr("y", usConfig.height * 0.87).attr("fill", color).attr("font-size", '0.7vw').attr("font-weight", 'bold').text('US Virgin Islands').on('click', function () {
+                    chart.filter([["VI"]]);
+                    dc.redrawAll();
+                }).append("title").text(viText);
+                // set viewport for svg
+                chart.maxWidth = 950;
+                chart.maxHeight = 450;
+
+                var mapZoom = usChart.select('svg .layer0');
+                mapZoom.attr("width", chart.maxWidth).attr("height", chart.maxHeight).call(d3.behavior.zoom().scaleExtent([1, 10]).on("zoom", function () {
+                    var t = d3.event.translate,
+                        s = d3.event.scale;
+
+                    t[0] = Math.min(chart.maxWidth / 2 * (s - 1) + 400 * s, Math.max(chart.maxWidth / 2 * (1 - s) - 400 * s, t[0]));
+                    t[1] = Math.min(chart.maxHeight / 2 * (s - 1) + 250 * s, Math.max(chart.maxHeight / 2 * (1 - s) - 250 * s, t[1]));
+
+                    mapZoom.style("stroke-width", 1 / s).attr("transform", "translate(" + t + ")" + " scale(" + s + ")");
+                }));
+            });
+
+            usChart.controlsUseVisibility(true);
+
+            //Curent Filters button
+            d3.select('#showMyFilters').on('click', function () {
+                var myFilters = _this.toProperCase(_this.pageLabel) + ' filters ';
+
+                dc.chartRegistry.list().forEach(function (d) {
+
+                    if (d.hasFilter()) {
+                        myFilters += '\n (' + d.filters() + ')';
+                    }
+                });
+                if (myFilters !== undefined) {
+                    var counterVars = inv;
+                    // Override global options
+                    __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.options = {
+                        "positionClass": "toast-bottom-full-width",
+                        "closeButton": "true",
+                        "preventDuplicates": "true"
+                    };
+                    if (counterVars.value() == 0) {
+                        __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.warning('Your ' + _this.toProperCase(_this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                    } else if (counterVars.value() == 1) {
+                        myFilters += ' return ' + counterVars.value() + ' result.';
+                        __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.info(myFilters);
+                    } else {
+                        myFilters += ' return ' + counterVars.value() + ' results.';
+                        __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.info(myFilters);
+                    }
+                }
+                if (myFilters == 'undefined' || myFilters == undefined) {
+                    __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.error('Something went wrong. Please reset and try again.');
+                }
+            });
+
+            //Download Raw Data button
+            d3.select('#download').on('click', function () {
+                var data = typeConfig.dim.top(Infinity);
+                var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
+
+                var myFilters = '';
+                dc.chartRegistry.list().forEach(function (d) {
+                    if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
+                });
+                console.log(myFilters);
+                FileSaver.saveAs(blob, 'PERSTAT ' + _this.pageName + ' ' + __WEBPACK_IMPORTED_MODULE_5__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
+            });
+
+            // after DOM updated redraw to make chart widths update
+            _this.$nextTick(function () {
+                dc.redrawAll();
+            });
+
+            //make responsive
+            var temp;
+            window.onresize = function (event) {
+                clearTimeout(temp);
+                temp = setTimeout(dc.redrawAll(), 500);
+            };
+
+            //create charts
+            dc.renderAll();
+            dc.redrawAll();
+        };
+    },
+    beforeUpdate: function beforeUpdate() {
+        console.log("beforeupdate");
+    },
+    beforeDestroy: function beforeDestroy() {
+        console.log("beforeDestroy");
+        dc.chartRegistry.clear();
+        __WEBPACK_IMPORTED_MODULE_5__store_store__["a" /* store */].state.asDate = 'Undetermined';
+    },
+    destroyed: function destroyed() {
+        console.log("destroyed");
+    }
+});
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("JowF"), __webpack_require__("iGUu"), __webpack_require__("iEPi"), __webpack_require__("7t+N"), __webpack_require__("Za4h"), __webpack_require__("lDdF")))
 
 /***/ }),
 
@@ -23835,7 +24429,6 @@ exports.push([module.i, "\n#radioSelect div[data-v-08ea177d],input[data-v-08ea17
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_AdMan_vue__ = __webpack_require__("yQ0D");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_AdMan_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_AdMan_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7fea7ca1_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_AdMan_vue__ = __webpack_require__("uOAp");
 var disposed = false
 function injectStyle (ssrContext) {
@@ -23860,7 +24453,7 @@ var __vue_scopeId__ = "data-v-7fea7ca1"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_AdMan_vue__["default"],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_AdMan_vue__["a" /* default */],
   __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7fea7ca1_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_AdMan_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
@@ -38101,7 +38694,6 @@ exports.push([module.i, "\n.toast-title {\n  font-weight: bold;\n}\n.toast-messa
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_ANGMan_vue__ = __webpack_require__("S5C1");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_ANGMan_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_ANGMan_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1b760aa6_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_ANGMan_vue__ = __webpack_require__("MYVz");
 var disposed = false
 function injectStyle (ssrContext) {
@@ -38126,7 +38718,7 @@ var __vue_scopeId__ = "data-v-1b760aa6"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_ANGMan_vue__["default"],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_ANGMan_vue__["a" /* default */],
   __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1b760aa6_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_ANGMan_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
@@ -41432,9 +42024,531 @@ if(false) {
 /***/ }),
 
 /***/ "yQ0D":
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed: SyntaxError: Unexpected token (192:0)\n\n\u001b[0m \u001b[90m 190 | \u001b[39m                            \u001b[32m'id'\u001b[39m\u001b[33m:\u001b[39m \u001b[32m'type'\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 191 | \u001b[39m                            \u001b[32m'dim'\u001b[39m\u001b[33m:\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mtypeDim\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 192 | \u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\n \u001b[90m     | \u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 193 | \u001b[39m                            \u001b[32m'group'\u001b[39m\u001b[33m:\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mremoveError(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mtypeDim\u001b[33m.\u001b[39mgroup()\u001b[33m.\u001b[39mreduceSum(\u001b[36mfunction\u001b[39m(d) {\u001b[36mreturn\u001b[39m \u001b[33m+\u001b[39md\u001b[33m.\u001b[39m\u001b[33mInventory\u001b[39m\u001b[33m;\u001b[39m}))\u001b[33m,\u001b[39m\n \u001b[90m 194 | \u001b[39m                            \u001b[32m'minHeight'\u001b[39m\u001b[33m:\u001b[39m \u001b[35m300\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 195 | \u001b[39m\u001b[33m||\u001b[39m\u001b[33m||\u001b[39m\u001b[33m||\u001b[39m\u001b[33m|\u001b[39m merged common ancestors\u001b[0m\n");
+"use strict";
+/* WEBPACK VAR INJECTION */(function(d3, crossfilter, dc, FileSaver, $) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__dchelpers__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chartSpecs__ = __webpack_require__("K62J");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__("mtWM");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_format__ = __webpack_require__("XCdN");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_Loader__ = __webpack_require__("wd27");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__store_store__ = __webpack_require__("wtEF");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_searchBox__ = __webpack_require__("CjlA");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_largeBarChart__ = __webpack_require__("A1IL");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_overviewBarChart__ = __webpack_require__("Kvlx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr__ = __webpack_require__("vQJi");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_toastr__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    data: function data() {
+        return {
+            data: [],
+            selected: 'percent',
+            ylabel: 'Inventory',
+            loaded: false,
+            baseColor: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color,
+            pageName: 'Total Force Active Duty',
+            chartSpecs: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */],
+            majcomColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].majcomChart.color]),
+            baseColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color]),
+            gradeChart: {},
+            typeChart: {}
+        };
+    },
+
+    computed: {
+        ndx: function ndx() {
+            return crossfilter(this.data);
+        },
+        asDate: function asDate() {
+            return __WEBPACK_IMPORTED_MODULE_5__store_store__["a" /* store */].state.asDate;
+        },
+        allGroup: function allGroup() {
+            return this.ndx.groupAll();
+        },
+        downloadDim: function downloadDim() {
+            return this.ndx.dimension(function (d) {
+                return d;
+            });
+        },
+        majcomDim: function majcomDim() {
+            return this.ndx.dimension(function (d) {
+                return d.MAJCOM;
+            });
+        },
+        majcomGroup: function majcomGroup() {
+            //return this.majcomDim.group().reduceSum(function(d) {return d.Inventory;});
+            return this.removeEmptyBins(this.majcomDim.group().reduce(this.tfAdd, this.tfRemove, this.tfInitial));
+        },
+        baseDim: function baseDim() {
+            return this.ndx.dimension(function (d) {
+                return d.MPF;
+            });
+        },
+        baseGroup: function baseGroup() {
+            //return this.baseDim.group().reduceSum(function(d) {return d.Inventory;});
+            return this.removeEmptyBins(this.baseDim.group().reduce(this.tfAdd, this.tfRemove, this.tfInitial));
+        },
+        typeDim: function typeDim() {
+            return this.ndx.dimension(function (d) {
+                return d.File_Type;
+            });
+        },
+        typeConfig: function typeConfig() {
+            return {
+                'id': 'type',
+                'dim': this.typeDim,
+                'group': this.removeEmptyBins(this.typeDim.group().reduceSum(function (d) {
+                    return +d.Inventory;
+                })),
+                'minHeight': 250,
+                'aspectRatio': 3,
+                'margins': { top: 0, left: 20, right: 30, bottom: 60 },
+                'colors': __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].typeChart.color
+
+            };
+        },
+        gradeDim: function gradeDim() {
+            return this.ndx.dimension(function (d) {
+                return d.grade;
+            });
+        },
+        gradeConfig: function gradeConfig() {
+            return {
+                'id': 'grade',
+                'dim': this.gradeDim,
+                'group': this.removeEmptyBins(this.gradeDim.group().reduceSum(function (d) {
+                    return +d.Inventory;
+                })),
+                'minHeight': 250,
+                'aspectRatio': 5,
+                'margins': { top: 10, left: 50, right: 30, bottom: 60 },
+                'colors': this.chartSpecs.gradeChartColorScale
+            };
+        },
+        pageLabel: function pageLabel() {
+            return this.pageName;
+        }
+    },
+    methods: {
+        resetAll: function resetAll(event) {
+            dc.filterAll();
+            dc.redrawAll();
+        },
+        resetChart: function resetChart(id) {
+            dc.chartRegistry.list().filter(function (chart) {
+                return chart.anchorName() == id;
+            }).forEach(function (chart) {
+                chart.filterAll();
+            });
+            dc.redrawAll();
+        },
+        submit: function submit(text, id) {
+            dc.chartRegistry.list().filter(function (chart) {
+                return chart.anchorName() == id;
+            }).forEach(function (chart) {
+                var mainArray = [];
+                chart.dimension().group().all().forEach(function (d) {
+                    mainArray.push(String(d.key));
+                });
+                var filterArray = mainArray.filter(function (d) {
+                    var element = d.toUpperCase();
+                    return element.indexOf(text.toUpperCase()) !== -1;
+                });
+                chart.filter(null);
+                if (filterArray.length != mainArray.length) {
+                    chart.filter([filterArray]);
+                }
+            });
+            dc.redrawAll();
+        },
+        tfAdd: function tfAdd(p, v) {
+            p = p + +v.Inventory;
+            //p = p/p === Infinity ? 0 : Math.round((p/p)*1000)/10 || 0
+            return p;
+        },
+        tfRemove: function tfRemove(p, v) {
+            p = p - +v.Inventory;
+            //p = p/p === Infinity ? 0 : Math.round((p/p)*1000)/10 || 0                
+            return p;
+        },
+        tfInitial: function tfInitial() {
+            return 0;
+        },
+        //remove empty function (es6 syntax to keep correct scope)
+        removeError: function removeError(source_group) {
+            return {
+                all: function all() {
+                    return source_group.all().filter(function (d) {
+                        return d.key != "error" && d.key != "**ERROR**";
+                    });
+                }
+            };
+        },
+        //remove empty function (es6 syntax to keep correct scope)
+        removeEmptyBins: function removeEmptyBins(source_group) {
+            return {
+                all: function all() {
+                    return source_group.all().filter(function (d) {
+                        return d.value != 0;
+                    });
+                }
+            };
+        },
+        formatData: function formatData(given) {
+            var obj = {};
+
+            obj.File_Type = __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].type[given.type];
+            obj.grade = __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].gradeFormat[given.grade];
+            obj.MAJCOM = __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].majFormat[given.maj];
+            obj.MPF = __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].mpfFormat[given.mpf];
+            obj.Inventory = given.freq;
+
+            return obj;
+        },
+        toProperCase: function toProperCase(s) {
+            return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
+                return $1.toUpperCase();
+            });
+        },
+
+        testData: function testData(formatted, original) {
+            for (var key in formatted) {
+                if (formatted[key] === undefined) {
+                    console.log('Empty Value of ' + key);
+                    console.log(original);
+                    formatted[key] = "UNKNOWN";
+                }
+            }
+            return formatted;
+        },
+
+        makeObject: function makeObject(data) {
+            var keys = data.shift();
+            var i = 0;
+            var k = 0;
+            var obj = null;
+            var obj2 = null;
+            var output = [];
+
+            for (i = 0; i < data.length; i++) {
+                obj = {};
+                for (k = 0; k < keys.length; k++) {
+                    obj[keys[k]] = data[i][k];
+                }
+                var obj2 = {};
+                obj2 = this.formatData(obj);
+                obj2 = this.testData(obj2, obj);
+                output.push(obj2);
+            }
+            return output;
+        },
+        renderCharts: function renderCharts() {
+            var _this = this;
+
+            //remove empty function (es6 syntax to keep correct scope)
+            var removeEmptyBins = function removeEmptyBins(source_group) {
+                return {
+                    all: function all() {
+                        return source_group.all().filter(function (d) {
+                            return d.value != 0;
+                        });
+                    }
+                };
+            };
+            //Number Display for Auth, Asgn, STP - show total for filtered content
+            var inv = this.ndx.groupAll().reduceSum(function (d) {
+                return +d.Inventory;
+            });
+            var invND = dc.numberDisplay("#inv");
+            invND.group(inv).formatNumber(d3.format("d")).valueAccessor(function (d) {
+                return d;
+            }).html({
+                one: "<span style=\"color:steelblue; font-size: 20px;\">%number</span>"
+            });
+
+            //type 
+            var typeChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getRowChart(this.typeConfig);
+            typeChart.controlsUseVisibility(true);
+
+            this.typeChart = typeChart;
+
+            //grade
+            var gradeChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getOrdinalBarChart(this.gradeConfig);
+            gradeChart.elasticX(true).controlsUseVisibility(true).colorAccessor(function (d, i) {
+                return d.key;
+            }).on('pretransition', function (chart) {
+                chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)').on('click', function (d) {
+                    chart.filter(d);
+                    dc.redrawAll();
+                });
+            }).ordering(function (d) {
+                return __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].gradeOrder[d.key];
+            }).yAxis().tickFormat(function (v) {
+                return v + "%";
+            });
+
+            this.gradeChart = gradeChart;
+
+            //Curent Filters button
+            d3.select('#showMyFilters').on('click', function () {
+                var myFilters = _this.toProperCase(_this.pageLabel) + ' filters ';
+
+                dc.chartRegistry.list().forEach(function (d) {
+                    //console.log("d.filter(): "+d.filter())
+                    //if (d.hasFilter()) {console.log("d.filter(): "+d.filters())}
+                    if (d.hasFilter() && d.anchor() != '#dc-overviewmajcom-barchart' && d.anchor() != '#dc-overviewbase-barchart') {
+                        //console.log(d.anchor(), d.filters())
+                        myFilters += '\n (' + d.filters() + ')';
+                    }
+                });
+                if (myFilters !== undefined) {
+                    var counterVars = inv;
+                    //console.log("counterVars.value: "+counterVars.value());
+                    // Override global options
+                    __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.options = {
+                        "positionClass": "toast-bottom-full-width",
+                        "closeButton": "true",
+                        "preventDuplicates": "true"
+                    };
+                    if (counterVars.value() == 0) {
+                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.warning('Your ' + _this.toProperCase(_this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                    } else if (counterVars.value() == 1) {
+                        myFilters += ' return ' + counterVars.value() + ' result.';
+                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
+                    } else {
+                        myFilters += ' return ' + counterVars.value() + ' results.';
+                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
+                    }
+                }
+                if (myFilters == 'undefined' || myFilters == undefined) {
+                    __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.error('Something went wrong. Please reset and try again.');
+                }
+            });
+
+            //Download Raw Data button
+            d3.select('#download').on('click', function () {
+                var data = _this.downloadDim.top(Infinity);
+                var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
+
+                var myFilters = '';
+                dc.chartRegistry.list().forEach(function (d) {
+                    if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
+                });
+
+                FileSaver.saveAs(blob, 'PERSTAT TF Active Duty' + ' ' + __WEBPACK_IMPORTED_MODULE_5__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
+            });
+            // after DOM updated redraw to make chart widths update
+            this.$nextTick(function () {
+                dc.redrawAll();
+            });
+            //make responsive
+            var temp;
+            window.onresize = function (event) {
+                clearTimeout(temp);
+                temp = setTimeout(dc.redrawAll(), 500);
+            };
+            //create charts
+            dc.renderAll();
+            dc.redrawAll();
+        }
+    },
+    components: {
+        'loader': __WEBPACK_IMPORTED_MODULE_4__components_Loader__["a" /* default */],
+        searchBox: __WEBPACK_IMPORTED_MODULE_6__components_searchBox__["a" /* default */],
+        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default.a,
+        largeBarChart: __WEBPACK_IMPORTED_MODULE_7__components_largeBarChart__["a" /* default */],
+        overviewBarChart: __WEBPACK_IMPORTED_MODULE_8__components_overviewBarChart__["a" /* default */]
+    },
+    created: function created() {
+        console.log('created');
+        //var data = require('@/assets/data/ps_off.csv')
+        //this.data = data
+    },
+    mounted: function mounted() {
+        var _this2 = this;
+
+        console.log('mounted');
+        $('[data-toggle="tooltip"]').tooltip({ delay: { "show": 100, "hide": 100 } });
+        //TEST AXIOS CALL:
+        __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post("https://stars.afpc.randolph.af.mil/FLA/perstat_json/ps_off_enl_ad.js").then(function (response) {
+            //console.log(response)
+            __WEBPACK_IMPORTED_MODULE_5__store_store__["a" /* store */].state.asDate = response.data.ASOFDATE;
+            var axiosData = response.data.data;
+            //console.log(axiosData)
+            var objData = _this2.makeObject(axiosData);
+            _this2.data = objData;
+            _this2.loaded = true;
+            _this2.renderCharts();
+        }).catch(console.error);
+        //remove empty function (es6 syntax to keep correct scope)
+        var removeError = function removeError(source_group) {
+            return {
+                all: function all() {
+                    return source_group.all().filter(function (d) {
+                        return d.key != "error" && d.key != "**ERROR**";
+                    });
+                }
+            };
+        };
+    },
+    beforeUpdate: function beforeUpdate() {
+        console.log("beforeupdate");
+    },
+    beforeDestroy: function beforeDestroy() {
+        console.log("beforeDestroy");
+        dc.chartRegistry.clear();
+        __WEBPACK_IMPORTED_MODULE_5__store_store__["a" /* store */].state.asDate = 'Undetermined';
+    },
+    destroyed: function destroyed() {
+        console.log("destroyed");
+    }
+});
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("Za4h"), __webpack_require__("JowF"), __webpack_require__("iEPi"), __webpack_require__("lDdF"), __webpack_require__("7t+N")))
 
 /***/ }),
 
@@ -42258,4 +43372,4 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.1b8d02085176a55a0c20.js.map
+//# sourceMappingURL=app.f9a4e7bdf9a2e3aba5a0.js.map
