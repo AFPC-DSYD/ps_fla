@@ -18507,8 +18507,6 @@ if (false) {
 //
 //
 //
-//
-//
 
 
 
@@ -18582,9 +18580,9 @@ if (false) {
                 'id': 'afscGroup',
                 'dim': this.afscGroupDim,
                 'group': this.removeEmptyBins(this.afscGroupDim.group().reduce(this.manningAdd, this.manningRemove, this.manningInitial)),
-                'minHeight': 350,
+                'minHeight': 420,
                 'aspectRatio': 7,
-                'margins': __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.margins,
+                'margins': { top: 10, left: 40, right: 10, bottom: 100 },
                 'colors': [__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].afscGroupChart.color]
             };
         },
@@ -18821,13 +18819,20 @@ if (false) {
             //     dimData.forEach(function (x) {
             //     console.log(JSON.stringify(x));
             // });
+            // usConfig.group = removeError(usConfig.dim.group().reduce(this.manningAdd,this.manningRemove,this.manningInitial))
+            // usConfig.scale = 1.0
+            // usConfig.minHeight = 360
+            // usConfig.maxHeight = '450 !important'
+            // usConfig.aspectRatio = 2.0 
+            // usConfig.xRatio = 2.0
+            // usConfig.yRatio = 2.0
             usConfig.group = removeError(usConfig.dim.group().reduce(_this2.manningAdd, _this2.manningRemove, _this2.manningInitial));
             usConfig.scale = 1.0;
-            usConfig.minHeight = 360;
-            usConfig.maxHeight = '450 !important';
-            usConfig.aspectRatio = 2.0;
+            usConfig.minHeight = 220;
+            usConfig.aspectRatio = 2;
             usConfig.xRatio = 2.0;
             usConfig.yRatio = 2.0;
+
             //default color scale from #E2F2FF to #0061B5.
             usConfig.colors = d3.scale.quantize().range(["#E2F2FF", "#d4eafc", "#C4E4FF", "#badefc", "#a6d4fc", "#9ED2FF", "#81C5FF", "#75bfff", "#6BBAFF", "#51AEFF", "#40a4f9", "#36A2FF", "#2798f9", "#1E96FF", "#0089FF", "#0061B5"]);
 
@@ -18882,17 +18887,17 @@ if (false) {
                 textLabels.attr("cursor", "pointer");
 
                 var textStroke = 2;
-                textLabels.append("text").attr("x", usConfig.width * 0.12).attr("y", usConfig.height * 0.67).attr("fill", color).attr("font-size", '1.2vw').attr("font-weight", 'bold').text('Guam').on('click', function () {
+                textLabels.append("text").attr("x", usConfig.width * 0.12).attr("y", usConfig.height * 0.67).attr("fill", color).attr("font-size", '0.6vw').attr("font-weight", 'bold').text('Guam').on('click', function () {
                     chart.filter([["GU"]]);
                     dc.redrawAll();
                 }).append("title").text(guText);
 
-                textLabels.append("text").attr("x", usConfig.width * 0.54).attr("y", usConfig.height * 0.97).attr("fill", color).attr("font-size", '1.2vw').attr("font-weight", 'bold').text('Puerto Rico').on('click', function () {
+                textLabels.append("text").attr("x", usConfig.width * 0.54).attr("y", usConfig.height * 0.97).attr("fill", color).attr("font-size", '0.6vw').attr("font-weight", 'bold').text('Puerto Rico').on('click', function () {
                     chart.filter([["PR"]]);
                     dc.redrawAll();
                 }).append("title").text(prText);
 
-                textLabels.append("text").attr("x", usConfig.width * 0.61).attr("y", usConfig.height * 0.91).attr("fill", color).attr("font-size", '1.2vw').attr("font-weight", 'bold').text('US Virgin Islands').on('click', function () {
+                textLabels.append("text").attr("x", usConfig.width * 0.61).attr("y", usConfig.height * 0.91).attr("fill", color).attr("font-size", '0.6vw').attr("font-weight", 'bold').text('US Virgin Islands').on('click', function () {
                     chart.filter([["VI"]]);
                     dc.redrawAll();
                 }).append("title").text(viText);
@@ -34574,55 +34579,60 @@ var render = function() {
                       ]
                     )
                   ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-12", attrs: { id: "us" } }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "center-block clearfix",
-                      attrs: {
-                        id: "dc-us-geoChoroplethChart",
-                        "data-step": "4",
-                        "data-intro":
-                          "You can mouse over a state or territory on the maps to see the personnel total or click on it to apply filters and update the other charts!"
-                      }
-                    },
-                    [
-                      _c("h3", [
-                        _vm._v("US Map "),
-                        _c(
-                          "span",
-                          {
-                            staticStyle: {
-                              "font-size": "14pt",
-                              opacity: "0.87"
-                            }
-                          },
-                          [_vm._v(_vm._s(_vm.ylabel))]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "btn btn-danger btn-sm btn-rounded reset",
-                            staticStyle: { visibility: "hidden" },
-                            attrs: { type: "button" },
-                            on: {
-                              click: function($event) {
-                                _vm.resetChart("dc-us-geoChoroplethChart")
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12",
+                    attrs: { id: "us" }
+                  },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "center-block clearfix",
+                        attrs: {
+                          id: "dc-us-geoChoroplethChart",
+                          "data-step": "4",
+                          "data-intro":
+                            "You can mouse over a state or territory on the maps to see the personnel total or click on it to apply filters and update the other charts!"
+                        }
+                      },
+                      [
+                        _c("h3", [
+                          _vm._v("US Map "),
+                          _c(
+                            "span",
+                            {
+                              staticStyle: {
+                                "font-size": "14pt",
+                                opacity: "0.87"
                               }
-                            }
-                          },
-                          [_vm._v("Reset")]
-                        )
-                      ])
-                    ]
-                  )
-                ])
+                            },
+                            [_vm._v(_vm._s(_vm.ylabel))]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "btn btn-danger btn-sm btn-rounded reset",
+                              staticStyle: { visibility: "hidden" },
+                              attrs: { type: "button" },
+                              on: {
+                                click: function($event) {
+                                  _vm.resetChart("dc-us-geoChoroplethChart")
+                                }
+                              }
+                            },
+                            [_vm._v("Reset")]
+                          )
+                        ])
+                      ]
+                    )
+                  ]
+                )
               ])
             ],
             1
@@ -35778,11 +35788,11 @@ if(false) {
             //     console.log(JSON.stringify(x));
             // });
             usConfig.group = removeError(usConfig.dim.group().reduce(_this2.manningAdd, _this2.manningRemove, _this2.manningInitial));
-            usConfig.scale = 1;
+            usConfig.scale = .90;
             usConfig.minHeight = 300;
             usConfig.aspectRatio = 1.8;
             usConfig.xRatio = 2.0;
-            usConfig.yRatio = 2.4;
+            usConfig.yRatio = 2.0;
             //default color scale from #E2F2FF to #0061B5.
             usConfig.colors = d3.scale.quantize().range(["#E2F2FF", "#d4eafc", "#C4E4FF", "#badefc", "#a6d4fc", "#9ED2FF", "#81C5FF", "#75bfff", "#6BBAFF", "#51AEFF", "#40a4f9", "#36A2FF", "#2798f9", "#1E96FF", "#0089FF", "#0061B5"]);
 
@@ -35837,17 +35847,17 @@ if(false) {
                 textLabels.attr("cursor", "pointer");
 
                 var textStroke = 2;
-                textLabels.append("text").attr("x", usConfig.width * 0.12).attr("y", usConfig.height * 0.56).attr("fill", color).attr("font-size", '0.6vw').attr("font-weight", 'bold').text('Guam').on('click', function () {
+                textLabels.append("text").attr("x", usConfig.width * 0.07).attr("y", usConfig.height * 0.64).attr("fill", color).attr("font-size", '0.6vw').attr("font-weight", 'bold').text('Guam').on('click', function () {
                     chart.filter([["GU"]]);
                     dc.redrawAll();
                 }).append("title").text(guText);
 
-                textLabels.append("text").attr("x", usConfig.width * 0.54).attr("y", usConfig.height * 0.83).attr("fill", color).attr("font-size", '0.6vw').attr("font-weight", 'bold').text('Puerto Rico').on('click', function () {
+                textLabels.append("text").attr("x", usConfig.width * 0.54).attr("y", usConfig.height * 0.95).attr("fill", color).attr("font-size", '0.6vw').attr("font-weight", 'bold').text('Puerto Rico').on('click', function () {
                     chart.filter([["PR"]]);
                     dc.redrawAll();
                 }).append("title").text(prText);
 
-                textLabels.append("text").attr("x", usConfig.width * 0.55).attr("y", usConfig.height * 0.75).attr("fill", color).attr("font-size", '0.6vw').attr("font-weight", 'bold').text('US Virgin Islands').on('click', function () {
+                textLabels.append("text").attr("x", usConfig.width * 0.59).attr("y", usConfig.height * 0.87).attr("fill", color).attr("font-size", '0.6vw').attr("font-weight", 'bold').text('US Virgin Islands').on('click', function () {
                     chart.filter([["VI"]]);
                     dc.redrawAll();
                 }).append("title").text(viText);
@@ -37704,7 +37714,7 @@ if(false) {
             });
             var edLevelGroup = removeEmptyBins(edLevelConfig.dim.group().reduce(_this.edAdd, _this.edRemove, _this.edInitial));
             edLevelConfig.group = removeError(edLevelGroup);
-            edLevelConfig.minHeight = 430;
+            edLevelConfig.minHeight = 360;
             edLevelConfig.aspectRatio = 2.5;
             edLevelConfig.margins = { top: 10, left: 50, right: 30, bottom: 50 };
             edLevelConfig.colors = ["#cc5500"];
@@ -43459,4 +43469,4 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.9d8f9eb633204c831d7b.js.map
+//# sourceMappingURL=app.f9c097c1615f80a1908a.js.map
