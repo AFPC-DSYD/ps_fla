@@ -35,7 +35,7 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 
 // module
-exports.push([module.i, "\n#afscGroup, #us {\n    margin-top: 1rem;\n    margin-bottom: 1rem;\n}\n#us svg {\n    background-color: darkGray !important;\n}\n#us svg g.state path {\n  stroke:#555;\n}\n#us svg g.state:hover path {\n  fill: orange;\n  stroke:#ccc;\n}\n#us svg g.state.selected path {\n  stroke: orange;\n  stroke-width: 1px;\n}\n", ""]);
+exports.push([module.i, "\n#afscGroup, #us {\n    margin-top: 1rem;\n    margin-bottom: 1rem;\n}\n#us svg {\n    background-color: #dee2e6 !important;\n}\n#us svg g.state path {\n  stroke:#555;\n}\n#us svg g.state:hover path {\n  fill: orange;\n  stroke:#ccc;\n}\n#us svg g.state.selected path {\n  stroke: orange;\n  stroke-width: 1px;\n}\n", ""]);
 
 // exports
 
@@ -122,11 +122,11 @@ var render = function() {
                     },
                     [
                       _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Filter  ")
+                        _vm._v("View Filters  ")
                       ]),
                       _vm._v(" "),
                       _c("FontAwesomeIcon", {
-                        attrs: { icon: "filter", size: "lg" }
+                        attrs: { icon: "search-filters", size: "lg" }
                       })
                     ],
                     1
@@ -579,11 +579,11 @@ var render = function() {
                       },
                       [
                         _c("p", { staticClass: "d-none d-md-inline" }, [
-                          _vm._v("Filter  ")
+                          _vm._v("View Filters  ")
                         ]),
                         _vm._v(" "),
                         _c("FontAwesomeIcon", {
-                          attrs: { icon: "filter", size: "lg" }
+                          attrs: { icon: "search-filters", size: "lg" }
                         })
                       ],
                       1
@@ -1965,6 +1965,8 @@ var render = function() {
     _vm._v(" "),
     _vm._m(1),
     _vm._v(" "),
+    _vm._m(2),
+    _vm._v(" "),
     _c("div", { staticClass: "row mt-3" }, [
       _c(
         "div",
@@ -1993,7 +1995,7 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _vm._m(2)
+              _vm._m(3)
             ]
           )
         ]
@@ -2026,7 +2028,7 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _vm._m(3)
+              _vm._m(4)
             ]
           )
         ]
@@ -2059,7 +2061,7 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _vm._m(4)
+              _vm._m(5)
             ]
           )
         ]
@@ -2092,7 +2094,7 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _vm._m(5)
+              _vm._m(6)
             ]
           )
         ]
@@ -2125,7 +2127,7 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _vm._m(6)
+              _vm._m(7)
             ]
           )
         ]
@@ -2157,7 +2159,7 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _vm._m(7)
+              _vm._m(8)
             ]
           )
         ]
@@ -2214,7 +2216,9 @@ var staticRenderFns = [
             }),
             _vm._v(" "),
             _c("h4", { staticClass: "col-lg-9 col-md-8 col-sm-12 pl-3" }, [
-              _vm._v("AFPC's Personnel Statistics\n                        "),
+              _vm._v(
+                "AFPC's Personnel Statistics\n                            "
+              ),
               _c("br"),
               _vm._v(" "),
               _c("br"),
@@ -2239,6 +2243,68 @@ var staticRenderFns = [
             ])
           ])
         ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row mt-3", attrs: { role: "alert" } }, [
+      _c("div", { staticClass: "col" }, [
+        _c(
+          "div",
+          { staticClass: "card alert alert-dismissible alert-success" },
+          [
+            _c(
+              "button",
+              {
+                staticClass: "close",
+                attrs: {
+                  type: "button",
+                  "data-dismiss": "alert",
+                  "aria-label": "Close"
+                }
+              },
+              [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body row" }, [
+              _c("h4", { staticClass: "col-lg-12 col-md-12 col-sm-12 pl-3" }, [
+                _vm._v("New PERS-STAT Items\n                        "),
+                _c("br"),
+                _vm._v(" "),
+                _c("h6", [
+                  _vm._v(
+                    "New items have been added to the PERS-STAT website.  "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("hr"),
+                _vm._v(" "),
+                _c("h6", [
+                  _vm._v(
+                    'On pages with interactive charts, there are two new buttons at the top one titled "Demo", and another titled "View Filters."'
+                  )
+                ]),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(" "),
+                _c("h6", [
+                  _vm._v(
+                    'The "Demo" Button allows you to observe important aspects on the page.'
+                  )
+                ]),
+                _vm._v(" "),
+                _c("h6", [
+                  _vm._v(
+                    'The "View Filter" Button allows you to quickly see all applied filters on the respective page.'
+                  )
+                ])
+              ])
+            ])
+          ]
+        )
       ])
     ])
   },
@@ -3395,11 +3461,11 @@ var render = function() {
                     },
                     [
                       _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Filter  ")
+                        _vm._v("View Filters  ")
                       ]),
                       _vm._v(" "),
                       _c("FontAwesomeIcon", {
-                        attrs: { icon: "filter", size: "lg" }
+                        attrs: { icon: "search-filters", size: "lg" }
                       })
                     ],
                     1
@@ -3711,7 +3777,7 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 
 // module
-exports.push([module.i, "\n#tour, #type, #grade, #base, #us, #jp {\n    margin-top: 1rem;\n    margin-bottom: 1rem;\n}\n#us svg, #jp svg {\n    background-color: darkGray !important;\n}\n#us svg g.state path, #jp svg g.state path {\n  stroke:#555;\n}\n#us svg g.state:hover path, #jp svg g.state:hover path  {\n  fill: orange;\n  stroke:#ccc;\n}\n#us svg g.state.selected path, #jp svg g.state.selected path {\n  stroke: orange;\n  stroke-width: 1px;\n}\n", ""]);
+exports.push([module.i, "\n#tour, #type, #grade, #base, #us, #jp {\n    margin-top: 1rem;\n    margin-bottom: 1rem;\n    padding: 0;\n}\n#us {\n    padding-right: 10px;\n}\n#jp {\n    padding-left: 10px;\n}\n#us svg, #jp svg {\n    background-color: #dee2e6 !important;\n}\n#us svg g.state path, #jp svg g.state path {\n  stroke:#555;\n}\n#us svg g.state:hover path, #jp svg g.state:hover path  {\n  fill: orange;\n  stroke:#ccc;\n}\n#us svg g.state.selected path, #jp svg g.state.selected path {\n  stroke: orange;\n  stroke-width: 1px;\n}\n", ""]);
 
 // exports
 
@@ -5617,7 +5683,7 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 
 // module
-exports.push([module.i, "\n#afscGroup, #skillLevel, #us {\n    margin-top: 1rem;\n    margin-bottom: 1rem;\n}\n#us svg {\n    background-color: darkGray !important;\n}\n#us svg g.state path {\n  stroke:#555;\n}\n#us svg g.state:hover path {\n  fill: orange;\n  stroke:#ccc;\n}\n#us svg g.state.selected path {\n  stroke: orange;\n  stroke-width: 1px;\n}\n", ""]);
+exports.push([module.i, "\n#afscGroup, #skillLevel, #us {\n    margin-top: 1rem;\n    margin-bottom: 1rem;\n}\n#us svg {\n    background-color: #dee2e6 !important;\n}\n#us svg g.state path {\n  stroke:#555;\n}\n#us svg g.state:hover path {\n  fill: orange;\n  stroke:#ccc;\n}\n#us svg g.state.selected path {\n  stroke: orange;\n  stroke-width: 1px;\n}\n", ""]);
 
 // exports
 
@@ -7171,16 +7237,16 @@ var render = function() {
                         id: "showMyFilters",
                         "data-step": "7",
                         "data-intro": "See the currently applied filters here!",
-                        title: "Filter"
+                        title: "View Current Filter(s)"
                       }
                     },
                     [
                       _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Filter  ")
+                        _vm._v("View Filters  ")
                       ]),
                       _vm._v(" "),
                       _c("FontAwesomeIcon", {
-                        attrs: { icon: "filter", size: "lg" }
+                        attrs: { icon: "search-filters", size: "lg" }
                       })
                     ],
                     1
@@ -7579,11 +7645,11 @@ var render = function() {
                     },
                     [
                       _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Filter  ")
+                        _vm._v("View Filters  ")
                       ]),
                       _vm._v(" "),
                       _c("FontAwesomeIcon", {
-                        attrs: { icon: "filter", size: "lg" }
+                        attrs: { icon: "search-filters", size: "lg" }
                       })
                     ],
                     1
@@ -10046,7 +10112,7 @@ if(false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(d3, crossfilter, _, dc, introJs, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
+/* WEBPACK VAR INJECTION */(function(d3, crossfilter, dc, introJs, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__dchelpers__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chartSpecs__ = __webpack_require__("K62J");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__("mtWM");
@@ -10059,6 +10125,8 @@ if(false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_overviewBarChart__ = __webpack_require__("Kvlx");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr__ = __webpack_require__("vQJi");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_toastr__);
 //
 //
 //
@@ -10230,6 +10298,7 @@ if(false) {
 //
 //
 //
+
 
 
 
@@ -10251,7 +10320,8 @@ if(false) {
             searchCore: "",
             searchYRGP: "",
             chartSpecs: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */],
-            baseColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color])
+            baseColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color]),
+            pageName: 'ANG Enlisted Education'
         };
     },
 
@@ -10275,11 +10345,20 @@ if(false) {
             return this.mpfDim.group().reduce(this.edAdd, this.edRemove, this.edInitial);
         },
         ylabel: function ylabel() {
-            if (_.includes(this.selected, "Percent")) {
-                return "(%)";
+            if (this.selected === "totalCount") {
+                return "Total";
+            } else if (this.selected === "stem") {
+                return "STEM Count";
+            } else if (this.selected === "nonStem") {
+                return "Non-STEM Count";
+            } else if (this.selected === "stemPercent") {
+                return "% STEM";
             } else {
-                return "(Count)";
+                return "% Non-STEM";
             }
+        },
+        pageLabel: function pageLabel() {
+            return this.pageName;
         }
 
     },
@@ -10366,6 +10445,11 @@ if(false) {
                 stemPercent: 0,
                 nonStemPercent: 0
             };
+        },
+        toProperCase: function toProperCase(s) {
+            return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
+                return $1.toUpperCase();
+            });
         }
     },
 
@@ -10652,6 +10736,55 @@ if(false) {
 
             usChart.controlsUseVisibility(true);
 
+            //Curent Filters button
+            d3.select('#showMyFilters').on('click', function () {
+                var myFilters = _this.toProperCase(_this.pageLabel) + ' filters ';
+
+                dc.chartRegistry.list().forEach(function (d) {
+
+                    if (d.hasFilter() && d.anchor() != '#dc-overviewmpf-barchart') {
+                        //console.log(d.anchor(), d.filters())
+                        myFilters += '\n (' + d.filters() + ')';
+                    }
+                });
+                if (myFilters !== undefined) {
+                    var myCheckValue = 0;
+                    if (_this.selected == "totalCount") {
+                        myCheckValue = totalCountND.value;
+                    };
+                    if (_this.selected == "stem") {
+                        myCheckValue = stemTotalND.value;
+                    };
+                    if (_this.selected == "nonStem") {
+                        myCheckValue = nonStemTotalND.value;
+                    };
+                    if (_this.selected == "stemPercent") {
+                        myCheckValue = percentStemND.value;
+                    };
+                    if (_this.selected == "nonStemPercent") {
+                        myCheckValue = percentNonStemND.value;
+                    };
+                    // Override global options
+                    __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.options = {
+                        "positionClass": "toast-bottom-full-width",
+                        "closeButton": "true",
+                        "preventDuplicates": "true"
+                    };
+                    if (myCheckValue() == '0.0%' || myCheckValue() == 0) {
+                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.warning('Your ' + _this.toProperCase(_this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                    } else if (myCheckValue() == '1') {
+                        myFilters += ' return ' + myCheckValue() + ' ' + _this.ylabel + ' result.';
+                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
+                    } else {
+                        myFilters += ' return ' + myCheckValue() + ' ' + _this.ylabel + ' results.';
+                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
+                    }
+                }
+                if (myFilters == 'undefined' || myFilters == undefined) {
+                    __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.error('Something went wrong. Please reset and try again.');
+                }
+            });
+
             //Download Raw Data button
             d3.select('#download').on('click', function () {
                 var data = gradeConfig.dim.top(Infinity);
@@ -10694,7 +10827,7 @@ if(false) {
         console.log("destroyed");
     }
 });
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("Za4h"), __webpack_require__("JowF"), __webpack_require__("M4fF"), __webpack_require__("iEPi"), __webpack_require__("iGUu"), __webpack_require__("lDdF")))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("Za4h"), __webpack_require__("JowF"), __webpack_require__("iEPi"), __webpack_require__("iGUu"), __webpack_require__("lDdF")))
 
 /***/ }),
 
@@ -11797,21 +11930,6 @@ if (false) {(function () {
 
 /***/ }),
 
-/***/ "L4z0":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("FZ+f")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.click[data-v-61c6c871] { \n    cursor: pointer;\n}\n.elevate-2[data-v-61c6c871] {\n    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0px 3px 6px rgba(0,0,0,0.23);\n            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0px 3px 6px rgba(0,0,0,0.23);\n}\n    \n", ""]);
-
-// exports
-
-
-/***/ }),
-
 /***/ "LNBs":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12276,7 +12394,7 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 
 // module
-exports.push([module.i, "\n#type, #grade, #empCat, #us {\n    margin-top: 1rem;\n    margin-bottom: 1rem;\n}\n#us svg {\n    background-color: darkGray !important;\n}\n#us svg g.state path {\n  stroke:#555;\n}\n#us svg g.state:hover path {\n  fill: orange;\n  stroke:#ccc;\n}\n#us svg g.state.selected path {\n  stroke: orange;\n  stroke-width: 1px;\n}\n", ""]);
+exports.push([module.i, "\n#type, #grade, #empCat, #us {\n    margin-top: 1rem;\n    margin-bottom: 1rem;\n}\n#us svg {\n    background-color: #dee2e6 !important;\n}\n#us svg g.state path {\n  stroke:#555;\n}\n#us svg g.state:hover path {\n  fill: orange;\n  stroke:#ccc;\n}\n#us svg g.state.selected path {\n  stroke: orange;\n  stroke-width: 1px;\n}\n", ""]);
 
 // exports
 
@@ -12786,6 +12904,31 @@ var render = function() {
                         "btn btn-info btn-rounded btn-sm waves-effect",
                       attrs: {
                         type: "button",
+                        id: "showMyFilters",
+                        "data-step": "8",
+                        "data-intro": "See the currently applied filters here!",
+                        title: "Filter"
+                      }
+                    },
+                    [
+                      _c("p", { staticClass: "d-none d-md-inline" }, [
+                        _vm._v("View Filters  ")
+                      ]),
+                      _vm._v(" "),
+                      _c("FontAwesomeIcon", {
+                        attrs: { icon: "search-filters", size: "lg" }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "btn btn-info btn-rounded btn-sm waves-effect",
+                      attrs: {
+                        type: "button",
                         id: "download",
                         "data-step": "7",
                         "data-intro": "Download data in tabular form here!",
@@ -13057,7 +13200,7 @@ var render = function() {
                           id: "dc-us-geoChoroplethChart",
                           "data-step": "4",
                           "data-intro":
-                            "You can mouse over a state or territory on the maps to see the personnel total or click on it to apply filters and update the other charts!"
+                            "You can zoom in and out, mouse over a state or territory on the maps to see the personnel total, or click on it to apply filters and update the other charts!"
                         }
                       },
                       [
@@ -13529,7 +13672,7 @@ var render = function() {
                           id: "dc-us-geoChoroplethChart",
                           "data-step": "3",
                           "data-intro":
-                            "You can mouse over a state or territory on the maps to see the personnel total or click on it to apply filters and update the other charts!"
+                            "You can zoom in and out, mouse over a state or territory on the maps to see the personnel total, or click on it to apply filters and update the other charts!"
                         }
                       },
                       [
@@ -13827,7 +13970,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__fortawesome_fontawesome_free_solid_faTimesCircle___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18__fortawesome_fontawesome_free_solid_faTimesCircle__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__fortawesome_fontawesome_free_solid_faEye__ = __webpack_require__("F4Gy");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__fortawesome_fontawesome_free_solid_faEye___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_19__fortawesome_fontawesome_free_solid_faEye__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__store_store__ = __webpack_require__("wtEF");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__fortawesome_fontawesome_free_solid_faSearchFilters__ = __webpack_require__("Vtzy");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__fortawesome_fontawesome_free_solid_faSearchFilters___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_20__fortawesome_fontawesome_free_solid_faSearchFilters__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__store_store__ = __webpack_require__("wtEF");
 // babel-polyfill allows use of Promises in IE
 
 //import bootstrap styles
@@ -13861,7 +14006,8 @@ __WEBPACK_IMPORTED_MODULE_8_axios___default.a.defaults.headers.get['Accepts'] = 
 
 
 
-__WEBPACK_IMPORTED_MODULE_9__fortawesome_fontawesome__["default"].library.add(__WEBPACK_IMPORTED_MODULE_10__fortawesome_fontawesome_free_solid_faSpinner___default.a, __WEBPACK_IMPORTED_MODULE_11__fortawesome_fontawesome_free_solid_faQuestionCircle___default.a, __WEBPACK_IMPORTED_MODULE_12__fortawesome_fontawesome_free_solid_faInfoCircle___default.a, __WEBPACK_IMPORTED_MODULE_13__fortawesome_fontawesome_free_solid_faFilter___default.a, __WEBPACK_IMPORTED_MODULE_14__fortawesome_fontawesome_free_solid_faDownload___default.a, __WEBPACK_IMPORTED_MODULE_15__fortawesome_fontawesome_free_solid_faRedoAlt___default.a, __WEBPACK_IMPORTED_MODULE_16__fortawesome_fontawesome_free_solid_faCheckCircle___default.a, __WEBPACK_IMPORTED_MODULE_17__fortawesome_fontawesome_free_solid_faExclamationTriangle___default.a, __WEBPACK_IMPORTED_MODULE_18__fortawesome_fontawesome_free_solid_faTimesCircle___default.a, __WEBPACK_IMPORTED_MODULE_19__fortawesome_fontawesome_free_solid_faEye___default.a);
+
+__WEBPACK_IMPORTED_MODULE_9__fortawesome_fontawesome__["default"].library.add(__WEBPACK_IMPORTED_MODULE_10__fortawesome_fontawesome_free_solid_faSpinner___default.a, __WEBPACK_IMPORTED_MODULE_11__fortawesome_fontawesome_free_solid_faQuestionCircle___default.a, __WEBPACK_IMPORTED_MODULE_12__fortawesome_fontawesome_free_solid_faInfoCircle___default.a, __WEBPACK_IMPORTED_MODULE_13__fortawesome_fontawesome_free_solid_faFilter___default.a, __WEBPACK_IMPORTED_MODULE_14__fortawesome_fontawesome_free_solid_faDownload___default.a, __WEBPACK_IMPORTED_MODULE_15__fortawesome_fontawesome_free_solid_faRedoAlt___default.a, __WEBPACK_IMPORTED_MODULE_16__fortawesome_fontawesome_free_solid_faCheckCircle___default.a, __WEBPACK_IMPORTED_MODULE_17__fortawesome_fontawesome_free_solid_faExclamationTriangle___default.a, __WEBPACK_IMPORTED_MODULE_18__fortawesome_fontawesome_free_solid_faTimesCircle___default.a, __WEBPACK_IMPORTED_MODULE_19__fortawesome_fontawesome_free_solid_faEye___default.a, __WEBPACK_IMPORTED_MODULE_20__fortawesome_fontawesome_free_solid_faSearchFilters___default.a);
 
 
 
@@ -13869,7 +14015,7 @@ __WEBPACK_IMPORTED_MODULE_9__fortawesome_fontawesome__["default"].library.add(__
 new __WEBPACK_IMPORTED_MODULE_5_vue__["a" /* default */]({
   el: '#app',
   router: __WEBPACK_IMPORTED_MODULE_7__router__["a" /* default */],
-  store: __WEBPACK_IMPORTED_MODULE_20__store_store__["a" /* store */],
+  store: __WEBPACK_IMPORTED_MODULE_21__store_store__["a" /* store */],
   template: '<App/>',
   components: { App: __WEBPACK_IMPORTED_MODULE_6__App__["a" /* default */] }
 });
@@ -14533,6 +14679,21 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 // module
 exports.push([module.i, "\n#grade, #zone, #highestPme, #compCat, #recommend, #pmeMethod, #core, #board {\n    margin-top: 1rem;\n    margin-bottom: 1rem;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "NnfQ":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("FZ+f")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.vue-alert {\n  margin-top: 10px;\n}\n", ""]);
 
 // exports
 
@@ -16193,7 +16354,7 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 
 // module
-exports.push([module.i, "\n#edlevel, #grade, #dafsc, #us {\n    margin-top: 1rem;\n    margin-bottom: 1rem;\n}\n#us svg {\n    background-color: darkGray !important;\n}\n#us svg g.state path {\n  stroke:#555;\n}\n#us svg g.state:hover path {\n  fill: orange;\n  stroke:#ccc;\n}\n#us svg g.state.selected path {\n  stroke: orange;\n  stroke-width: 1px;\n}\n", ""]);
+exports.push([module.i, "\n#edlevel, #grade, #dafsc, #us {\n    margin-top: 1rem;\n    margin-bottom: 1rem;\n}\n#us svg {\n    background-color: #dee2e6 !important;\n}\n#us svg g.state path {\n  stroke:#555;\n}\n#us svg g.state:hover path {\n  fill: orange;\n  stroke:#ccc;\n}\n#us svg g.state.selected path {\n  stroke: orange;\n  stroke-width: 1px;\n}\n", ""]);
 
 // exports
 
@@ -18303,6 +18464,33 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 
 // exports
 
+
+/***/ }),
+
+/***/ "QKMC":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("NnfQ");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("rjj0")("469b5e62", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../node_modules/css-loader/index.js?{\"minimize\":false,\"sourceMap\":false}!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-61c6c871\",\"scoped\":false,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Home.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js?{\"minimize\":false,\"sourceMap\":false}!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-61c6c871\",\"scoped\":false,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Home.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
 
 /***/ }),
 
@@ -20561,11 +20749,11 @@ var render = function() {
                     },
                     [
                       _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Filter  ")
+                        _vm._v("View Filters  ")
                       ]),
                       _vm._v(" "),
                       _c("FontAwesomeIcon", {
-                        attrs: { icon: "filter", size: "lg" }
+                        attrs: { icon: "search-filters", size: "lg" }
                       })
                     ],
                     1
@@ -21235,6 +21423,31 @@ var render = function() {
                         "btn btn-info btn-rounded btn-sm waves-effect",
                       attrs: {
                         type: "button",
+                        id: "showMyFilters",
+                        "data-step": "8",
+                        "data-intro": "See the currently applied filters here!",
+                        title: "Filter"
+                      }
+                    },
+                    [
+                      _c("p", { staticClass: "d-none d-md-inline" }, [
+                        _vm._v("View Filters  ")
+                      ]),
+                      _vm._v(" "),
+                      _c("FontAwesomeIcon", {
+                        attrs: { icon: "search-filters", size: "lg" }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "btn btn-info btn-rounded btn-sm waves-effect",
+                      attrs: {
+                        type: "button",
                         id: "download",
                         "data-step": "7",
                         "data-intro": "Download data in tabular form here!",
@@ -21474,7 +21687,7 @@ var render = function() {
                           id: "dc-us-geoChoroplethChart",
                           "data-step": "4",
                           "data-intro":
-                            "You can mouse over a state or territory on the maps to see the personnel total or click on it to apply filters and update the other charts!"
+                            "You can zoom in and out, mouse over a state or territory on the maps to see the personnel total, or click on it to apply filters and update the other charts!"
                         }
                       },
                       [
@@ -24951,6 +25164,33 @@ exports.push([module.i, "\n.toast-title {\n  font-weight: bold;\n}\n.toast-messa
 
 /***/ }),
 
+/***/ "Ze0X":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("epGb");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("rjj0")("1ce6059d", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../node_modules/css-loader/index.js?{\"minimize\":false,\"sourceMap\":false}!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-61c6c871\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=1&bustCache!./Home.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js?{\"minimize\":false,\"sourceMap\":false}!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-61c6c871\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=1&bustCache!./Home.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
 /***/ "Zuf+":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -24959,8 +25199,11 @@ module.exports = __webpack_require__.p + "static/img/education.87a7250.jpg";
 /***/ }),
 
 /***/ "ZyW/":
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_alert__ = __webpack_require__("HUmr");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_alert___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_alert__);
 //
 //
 //
@@ -25083,6 +25326,54 @@ module.exports = __webpack_require__.p + "static/img/education.87a7250.jpg";
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  data: function data() {
+    return {
+      dismissSecs: 30,
+      dismissCountDown: 0,
+      showDismissibleAlert: true
+    };
+  },
+
+  methods: {
+    countDownChanged: function countDownChanged(dismissCountDown) {
+      this.dismissCountDown = dismissCountDown;
+    },
+    showAlert: function showAlert() {
+      this.dismissCountDown = this.dismissSecs;
+    }
+  },
+  mounted: function mounted() {
+    this.$alert.success({ message: 'Component mounted!' });
+  }
+});
 
 /***/ }),
 
@@ -25143,33 +25434,6 @@ if (false) {(function () {
 
 /* harmony default export */ __webpack_exports__["a"] = (Component.exports);
 
-
-/***/ }),
-
-/***/ "aQyO":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("L4z0");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__("rjj0")("5a972748", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../node_modules/css-loader/index.js?{\"minimize\":false,\"sourceMap\":false}!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-61c6c871\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Home.vue", function() {
-     var newContent = require("!!../../node_modules/css-loader/index.js?{\"minimize\":false,\"sourceMap\":false}!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-61c6c871\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Home.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
 
 /***/ }),
 
@@ -28976,11 +29240,11 @@ var render = function() {
                     },
                     [
                       _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Filter  ")
+                        _vm._v("View Filters  ")
                       ]),
                       _vm._v(" "),
                       _c("FontAwesomeIcon", {
-                        attrs: { icon: "filter", size: "lg" }
+                        attrs: { icon: "search-filters", size: "lg" }
                       })
                     ],
                     1
@@ -30061,11 +30325,11 @@ var render = function() {
                     },
                     [
                       _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Filter  ")
+                        _vm._v("View Filters  ")
                       ]),
                       _vm._v(" "),
                       _c("FontAwesomeIcon", {
-                        attrs: { icon: "filter", size: "lg" }
+                        attrs: { icon: "search-filters", size: "lg" }
                       })
                     ],
                     1
@@ -30402,6 +30666,21 @@ if (false) {
 
 /***/ }),
 
+/***/ "epGb":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("FZ+f")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.click[data-v-61c6c871] { \n    cursor: pointer;\n}\n.elevate-2[data-v-61c6c871] {\n    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0px 3px 6px rgba(0,0,0,0.23);\n            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0px 3px 6px rgba(0,0,0,0.23);\n}\n    \n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "ertY":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -30681,7 +30960,7 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 
 // module
-exports.push([module.i, "\n#offgroup, #grade, #edlevel, #us {\n    margin-top: 1rem;\n    margin-bottom: 1rem;\n}\n#us svg {\n    background-color: darkGray !important;\n}\n#us svg g.state path {\n  stroke:#555;\n}\n#us svg g.state:hover path {\n  fill: orange;\n  stroke:#ccc;\n}\n#us svg g.state.selected path {\n  stroke: orange;\n  stroke-width: 1px;\n}\n", ""]);
+exports.push([module.i, "\n#offgroup, #grade, #edlevel, #us {\n    margin-top: 1rem;\n    margin-bottom: 1rem;\n}\n#us svg {\n    background-color: #dee2e6 !important;\n}\n#us svg g.state path {\n  stroke:#555;\n}\n#us svg g.state:hover path {\n  fill: orange;\n  stroke:#ccc;\n}\n#us svg g.state.selected path {\n  stroke: orange;\n  stroke-width: 1px;\n}\n", ""]);
 
 // exports
 
@@ -31629,11 +31908,11 @@ var render = function() {
                     },
                     [
                       _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Filter  ")
+                        _vm._v("View Filters  ")
                       ]),
                       _vm._v(" "),
                       _c("FontAwesomeIcon", {
-                        attrs: { icon: "filter", size: "lg" }
+                        attrs: { icon: "search-filters", size: "lg" }
                       })
                     ],
                     1
@@ -32286,6 +32565,31 @@ var render = function() {
                         "btn btn-info btn-rounded btn-sm waves-effect",
                       attrs: {
                         type: "button",
+                        id: "showMyFilters",
+                        "data-step": "8",
+                        "data-intro": "See the currently applied filters here!",
+                        title: "Filter"
+                      }
+                    },
+                    [
+                      _c("p", { staticClass: "d-none d-md-inline" }, [
+                        _vm._v("View Filters  ")
+                      ]),
+                      _vm._v(" "),
+                      _c("FontAwesomeIcon", {
+                        attrs: { icon: "search-filters", size: "lg" }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "btn btn-info btn-rounded btn-sm waves-effect",
+                      attrs: {
+                        type: "button",
                         id: "download",
                         "data-step": "7",
                         "data-intro": "Download data in tabular form here!",
@@ -32561,7 +32865,7 @@ var render = function() {
                           id: "dc-us-geoChoroplethChart",
                           "data-step": "4",
                           "data-intro":
-                            "You can mouse over a state or territory on the maps to see the personnel total or click on it to apply filters and update the other charts!"
+                            "You can zoom in and out, mouse over a state or territory on the maps to see the personnel total, or click on it to apply filters and update the other charts!"
                         }
                       },
                       [
@@ -33696,12 +34000,12 @@ if(false) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Home_vue__ = __webpack_require__("ZyW/");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Home_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Home_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_61c6c871_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Home_vue__ = __webpack_require__("1RlY");
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__("aQyO")
+  __webpack_require__("QKMC")
+  __webpack_require__("Ze0X")
 }
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
@@ -33717,7 +34021,7 @@ var __vue_scopeId__ = "data-v-61c6c871"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Home_vue___default.a,
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Home_vue__["a" /* default */],
   __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_61c6c871_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Home_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
@@ -34381,11 +34685,11 @@ var render = function() {
                     },
                     [
                       _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Filter  ")
+                        _vm._v("View Filters  ")
                       ]),
                       _vm._v(" "),
                       _c("FontAwesomeIcon", {
-                        attrs: { icon: "filter", size: "lg" }
+                        attrs: { icon: "search-filters", size: "lg" }
                       })
                     ],
                     1
@@ -34596,7 +34900,7 @@ var render = function() {
                           id: "dc-us-geoChoroplethChart",
                           "data-step": "4",
                           "data-intro":
-                            "You can mouse over a state or territory on the maps to see the personnel total or click on it to apply filters and update the other charts!"
+                            "You can zoom in and out, mouse over a state or territory on the maps to see the personnel total, or click on it to apply filters and update the other charts!"
                         }
                       },
                       [
@@ -35281,6 +35585,8 @@ if(false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_overviewBarChart__ = __webpack_require__("Kvlx");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr__ = __webpack_require__("vQJi");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_toastr__);
 //
 //
 //
@@ -35450,6 +35756,7 @@ if(false) {
 //
 //
 //
+
 
 
 
@@ -35471,6 +35778,7 @@ if(false) {
             loaded: false,
             chartSpecs: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */],
             baseColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color]),
+            pageName: 'ANG Enlisted Manning',
             afscGroupChart: {},
             skillLevelChart: {}
         };
@@ -35543,6 +35851,9 @@ if(false) {
                 'margins': { top: 10, left: 40, right: 10, bottom: 75 },
                 'colors': [__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].skillLevelChart.color]
             };
+        },
+        pageLabel: function pageLabel() {
+            return this.pageName;
         }
 
     },
@@ -35609,6 +35920,11 @@ if(false) {
                     });
                 }
             };
+        },
+        toProperCase: function toProperCase(s) {
+            return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
+                return $1.toUpperCase();
+            });
         }
     },
     components: {
@@ -35878,6 +36194,59 @@ if(false) {
             });
 
             usChart.controlsUseVisibility(true);
+
+            //Curent Filters button
+            d3.select('#showMyFilters').on('click', function () {
+                var myFilters = _this2.toProperCase(_this2.pageLabel) + ' filters ';
+
+                dc.chartRegistry.list().forEach(function (d) {
+
+                    if (d.hasFilter() && d.anchor() != '#dc-overviewmpf-barchart') {
+                        //console.log(d.anchor(), d.filters())
+                        myFilters += '\n (' + d.filters() + ')';
+                    }
+                });
+                if (myFilters !== undefined) {
+                    var myCheckValue = '0';
+                    if (_this2.selected == "asgn") {
+                        myCheckValue = asgn.value();
+                    };
+                    if (_this2.selected == "auth") {
+                        myCheckValue = auth.value();
+                    };
+                    if (_this2.selected == "gains") {
+                        myCheckValue = gains.value();
+                    };
+                    if (_this2.selected == "losses") {
+                        myCheckValue = losses.value();
+                    };
+                    if (_this2.selected == "vacancies") {
+                        myCheckValue = vacancies.value();
+                    };
+                    if (_this2.selected == "excess") {
+                        myCheckValue = excess.value();
+                    };
+                    //console.log("myCheckValue.value: "+myCheckValue.value());
+                    // Override global options
+                    __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.options = {
+                        "positionClass": "toast-bottom-full-width",
+                        "closeButton": "true",
+                        "preventDuplicates": "true"
+                    };
+                    if (myCheckValue == 0) {
+                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.warning('Your ' + _this2.toProperCase(_this2.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                    } else if (myCheckValue == 1) {
+                        myFilters += ' return ' + myCheckValue + ' ' + _this2.ylabel + ' result.';
+                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
+                    } else {
+                        myFilters += ' return ' + myCheckValue + ' ' + _this2.ylabel + ' results.';
+                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
+                    }
+                }
+                if (myFilters == 'undefined' || myFilters == undefined) {
+                    __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.error('Something went wrong. Please reset and try again.');
+                }
+            });
 
             //Download Raw Data button
             d3.select('#download').on('click', function () {
@@ -37207,7 +37576,7 @@ if(false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(d3, crossfilter, _, dc, introJs, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
+/* WEBPACK VAR INJECTION */(function(d3, crossfilter, dc, introJs, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__dchelpers__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chartSpecs__ = __webpack_require__("K62J");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__("mtWM");
@@ -37220,6 +37589,8 @@ if(false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_overviewBarChart__ = __webpack_require__("Kvlx");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr__ = __webpack_require__("vQJi");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_toastr__);
 //
 //
 //
@@ -37396,6 +37767,7 @@ if(false) {
 //
 //
 //
+
 
 
 
@@ -37418,8 +37790,9 @@ if(false) {
             searchYRGP: "",
             chartSpecs: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */],
             coreColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].coreChart.color]),
-            baseColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color])
-            // yrgpColorScale: d3.scale.ordinal().range([chartSpecs.yrgpChart.color]),                    
+            baseColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color]),
+            // yrgpColorScale: d3.scale.ordinal().range([chartSpecs.yrgpChart.color]),
+            pageName: 'ANG Officer Education'
         };
     },
 
@@ -37450,7 +37823,6 @@ if(false) {
         mpfGroup: function mpfGroup() {
             return this.mpfDim.group().reduce(this.edAdd, this.edRemove, this.edInitial);
         },
-
         // yrgpDim: function() {
         //     return this.ndx.dimension(function(d) {return d.yrgp;});
         // },
@@ -37458,13 +37830,21 @@ if(false) {
         //     return this.yrgpDim.group().reduce(this.edAdd,this.edRemove,this.edInitial);
         // },            
         ylabel: function ylabel() {
-            if (_.includes(this.selected, "Percent")) {
-                return "(%)";
+            if (this.selected === "totalCount") {
+                return "Total";
+            } else if (this.selected === "stem") {
+                return "STEM Count";
+            } else if (this.selected === "nonStem") {
+                return "Non-STEM Count";
+            } else if (this.selected === "stemPercent") {
+                return "% STEM";
             } else {
-                return "(Count)";
+                return "% Non-STEM";
             }
+        },
+        pageLabel: function pageLabel() {
+            return this.pageName;
         }
-
     },
 
     methods: {
@@ -37549,6 +37929,11 @@ if(false) {
                 stemPercent: 0,
                 nonStemPercent: 0
             };
+        },
+        toProperCase: function toProperCase(s) {
+            return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
+                return $1.toUpperCase();
+            });
         }
     },
 
@@ -37848,6 +38233,55 @@ if(false) {
 
             usChart.controlsUseVisibility(true);
 
+            //Curent Filters button
+            d3.select('#showMyFilters').on('click', function () {
+                var myFilters = _this.toProperCase(_this.pageLabel) + ' filters ';
+
+                dc.chartRegistry.list().forEach(function (d) {
+
+                    if (d.hasFilter() && d.anchor() != '#dc-overviewmpf-barchart') {
+                        //console.log(d.anchor(), d.filters())
+                        myFilters += '\n (' + d.filters() + ')';
+                    }
+                });
+                if (myFilters !== undefined) {
+                    var myCheckValue = 0;
+                    if (_this.selected == "totalCount") {
+                        myCheckValue = totalCountND.value;
+                    };
+                    if (_this.selected == "stem") {
+                        myCheckValue = stemTotalND.value;
+                    };
+                    if (_this.selected == "nonStem") {
+                        myCheckValue = nonStemTotalND.value;
+                    };
+                    if (_this.selected == "stemPercent") {
+                        myCheckValue = percentStemND.value;
+                    };
+                    if (_this.selected == "nonStemPercent") {
+                        myCheckValue = percentNonStemND.value;
+                    };
+                    // Override global options
+                    __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.options = {
+                        "positionClass": "toast-bottom-full-width",
+                        "closeButton": "true",
+                        "preventDuplicates": "true"
+                    };
+                    if (myCheckValue() == '0.0%' || myCheckValue() == 0) {
+                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.warning('Your ' + _this.toProperCase(_this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                    } else if (myCheckValue() == '1') {
+                        myFilters += ' return ' + myCheckValue() + ' ' + _this.ylabel + ' result.';
+                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
+                    } else {
+                        myFilters += ' return ' + myCheckValue() + ' ' + _this.ylabel + ' results.';
+                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
+                    }
+                }
+                if (myFilters == 'undefined' || myFilters == undefined) {
+                    __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.error('Something went wrong. Please reset and try again.');
+                }
+            });
+
             //Download Raw Data button
             d3.select('#download').on('click', function () {
                 var data = gradeConfig.dim.top(Infinity);
@@ -37890,7 +38324,7 @@ if(false) {
         console.log("destroyed");
     }
 });
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("Za4h"), __webpack_require__("JowF"), __webpack_require__("M4fF"), __webpack_require__("iEPi"), __webpack_require__("iGUu"), __webpack_require__("lDdF")))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("Za4h"), __webpack_require__("JowF"), __webpack_require__("iEPi"), __webpack_require__("iGUu"), __webpack_require__("lDdF")))
 
 /***/ }),
 
@@ -40719,11 +41153,11 @@ var render = function() {
                     },
                     [
                       _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Filter  ")
+                        _vm._v("View Filters  ")
                       ]),
                       _vm._v(" "),
                       _c("FontAwesomeIcon", {
-                        attrs: { icon: "filter", size: "lg" }
+                        attrs: { icon: "search-filters", size: "lg" }
                       })
                     ],
                     1
@@ -43469,4 +43903,4 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.f9c097c1615f80a1908a.js.map
+//# sourceMappingURL=app.b86b6fde5f2b0c75e4bd.js.map
