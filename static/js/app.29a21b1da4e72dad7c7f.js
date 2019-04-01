@@ -14259,7 +14259,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__fortawesome_fontawesome_free_solid_faTimesCircle___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18__fortawesome_fontawesome_free_solid_faTimesCircle__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__fortawesome_fontawesome_free_solid_faEye__ = __webpack_require__("F4Gy");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__fortawesome_fontawesome_free_solid_faEye___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_19__fortawesome_fontawesome_free_solid_faEye__);
-throw new Error("Cannot find module \"@fortawesome/fontawesome-free-solid/faSearchFilters\"");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__src_assets_faSearchFilters__ = __webpack_require__("nrsj");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__src_assets_faSearchFilters___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_20__src_assets_faSearchFilters__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__store_store__ = __webpack_require__("wtEF");
 // babel-polyfill allows use of Promises in IE
 
@@ -14293,9 +14294,10 @@ __WEBPACK_IMPORTED_MODULE_8_axios___default.a.defaults.headers.get['Accepts'] = 
 
 
 
+//import faSearchFilters from '@fortawesome/fontawesome-free-solid/faSearchFilters'
 
 
-__WEBPACK_IMPORTED_MODULE_9__fortawesome_fontawesome__["default"].library.add(__WEBPACK_IMPORTED_MODULE_10__fortawesome_fontawesome_free_solid_faSpinner___default.a, __WEBPACK_IMPORTED_MODULE_11__fortawesome_fontawesome_free_solid_faQuestionCircle___default.a, __WEBPACK_IMPORTED_MODULE_12__fortawesome_fontawesome_free_solid_faInfoCircle___default.a, __WEBPACK_IMPORTED_MODULE_13__fortawesome_fontawesome_free_solid_faFilter___default.a, __WEBPACK_IMPORTED_MODULE_14__fortawesome_fontawesome_free_solid_faDownload___default.a, __WEBPACK_IMPORTED_MODULE_15__fortawesome_fontawesome_free_solid_faRedoAlt___default.a, __WEBPACK_IMPORTED_MODULE_16__fortawesome_fontawesome_free_solid_faCheckCircle___default.a, __WEBPACK_IMPORTED_MODULE_17__fortawesome_fontawesome_free_solid_faExclamationTriangle___default.a, __WEBPACK_IMPORTED_MODULE_18__fortawesome_fontawesome_free_solid_faTimesCircle___default.a, __WEBPACK_IMPORTED_MODULE_19__fortawesome_fontawesome_free_solid_faEye___default.a, __WEBPACK_IMPORTED_MODULE_20__fortawesome_fontawesome_free_solid_faSearchFilters___default.a);
+__WEBPACK_IMPORTED_MODULE_9__fortawesome_fontawesome__["default"].library.add(__WEBPACK_IMPORTED_MODULE_10__fortawesome_fontawesome_free_solid_faSpinner___default.a, __WEBPACK_IMPORTED_MODULE_11__fortawesome_fontawesome_free_solid_faQuestionCircle___default.a, __WEBPACK_IMPORTED_MODULE_12__fortawesome_fontawesome_free_solid_faInfoCircle___default.a, __WEBPACK_IMPORTED_MODULE_13__fortawesome_fontawesome_free_solid_faFilter___default.a, __WEBPACK_IMPORTED_MODULE_14__fortawesome_fontawesome_free_solid_faDownload___default.a, __WEBPACK_IMPORTED_MODULE_15__fortawesome_fontawesome_free_solid_faRedoAlt___default.a, __WEBPACK_IMPORTED_MODULE_16__fortawesome_fontawesome_free_solid_faCheckCircle___default.a, __WEBPACK_IMPORTED_MODULE_17__fortawesome_fontawesome_free_solid_faExclamationTriangle___default.a, __WEBPACK_IMPORTED_MODULE_18__fortawesome_fontawesome_free_solid_faTimesCircle___default.a, __WEBPACK_IMPORTED_MODULE_19__fortawesome_fontawesome_free_solid_faEye___default.a, __WEBPACK_IMPORTED_MODULE_20__src_assets_faSearchFilters___default.a);
 
 
 
@@ -25595,7 +25597,8 @@ module.exports = __webpack_require__.p + "static/img/education.87a7250.jpg";
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-throw new Error("Cannot find module \"vue-alert\"");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_alert__ = __webpack_require__("HUmr");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_alert___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_alert__);
 //
 //
 //
@@ -35827,6 +35830,13 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
+/***/ "nrsj":
+/***/ (function(module, exports) {
+
+module.exports = { prefix: 'fas', iconName: 'search-filters', icon: [512, 512, [], "f00d", "M304 142 H112 C110 142 106 143 110 148 L170 202 V282 c0 7 3 15 10 19 l54 25 C235 325 253 324 250 307 V202 l54-54 C305 148 308 143 304 142zm170 365.7L476.7 505c-9.4 9.4-24.6 9.4-33.9 0L343 405.3c-4.5-4.5-7-10.6-7-17V372c-35.3 27.6-79.7 44-128 44C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208c0 48.3-6.4 92.7-44 128h16.3c6.4 0 12.5 2.5 17 7l99.7 99.7c9.3 9.4 9.3 24.6 0 34zM344 208c0-75.2-60.8-136-136-136S72 132.8 72 208s60.8 136 136 136 136-60.8 136-136z"] };
+
+/***/ }),
+
 /***/ "oIa5":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -44540,4 +44550,4 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.f59ee1ac412adb879332.js.map
+//# sourceMappingURL=app.29a21b1da4e72dad7c7f.js.map
