@@ -5173,6 +5173,64 @@ var render = function() {
                       "aria-expanded": "false"
                     }
                   },
+                  [_vm._v("\n                 Active Duty\n             ")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "dropdown-menu",
+                    attrs: { "aria-labelledby": "navbarDropdown" }
+                  },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "dropdown-item",
+                        staticStyle: { cursor: "pointer" },
+                        attrs: { to: "/officer", tag: "li" },
+                        nativeOn: {
+                          click: function($event) {
+                            _vm.goToPage("officer")
+                          }
+                        }
+                      },
+                      [_vm._v("Officer")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "dropdown-item",
+                        staticStyle: { cursor: "pointer" },
+                        attrs: { to: "/enlisted", tag: "li" },
+                        nativeOn: {
+                          click: function($event) {
+                            _vm.goToPage("enlisted")
+                          }
+                        }
+                      },
+                      [_vm._v("Enlisted")]
+                    )
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "nav-item dropdown" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "nav-link dropdown-toggle",
+                    attrs: {
+                      href: "#",
+                      id: "navbarDropdown",
+                      role: "button",
+                      "data-toggle": "dropdown",
+                      "aria-haspopup": "true",
+                      "aria-expanded": "false"
+                    }
+                  },
                   [_vm._v("\n                   Active Duty\n               ")]
                 ),
                 _vm._v(" "),
@@ -44206,4 +44264,4 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.62f8306d1ef152bf0afc.js.map
+//# sourceMappingURL=app.c199967b8867ef899a60.js.map
