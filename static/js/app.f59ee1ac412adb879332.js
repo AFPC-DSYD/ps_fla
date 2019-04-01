@@ -85,26 +85,39 @@ var render = function() {
             },
             [
               _c("div", { staticClass: "row pt-2" }, [
-                _c("div", { staticClass: "col-auto" }, [
-                  _vm._v(
-                    "\n                        Total:\n                        "
-                  ),
-                  _c("span", { attrs: { id: "totalCount" } })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _vm._v(
-                    "\n                        STEM:\n                        "
-                  ),
-                  _c("span", { attrs: { id: "stemTotal" } })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _vm._v(
-                    "\n                        Non-STEM:\n                        "
-                  ),
-                  _c("span", { attrs: { id: "nonStemTotal" } })
-                ]),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "custom-control custom-radio custom-control-inline",
+                    attrs: {
+                      "data-step": "1",
+                      "data-intro": "STEM and Non-STEM totals."
+                    }
+                  },
+                  [
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                            Total:\n                            "
+                      ),
+                      _c("span", { attrs: { id: "totalCount" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                            STEM:\n                            "
+                      ),
+                      _c("span", { attrs: { id: "stemTotal" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                            Non-STEM:\n                            "
+                      ),
+                      _c("span", { attrs: { id: "nonStemTotal" } })
+                    ])
+                  ]
+                ),
                 _vm._v(" "),
                 _c("div", { staticClass: "col" }),
                 _vm._v(" "),
@@ -114,9 +127,31 @@ var render = function() {
                     {
                       staticClass:
                         "btn btn-info btn-rounded btn-sm waves-effect",
+                      attrs: { type: "button", id: "demo", title: "Demo" },
+                      on: { click: _vm.startDemo }
+                    },
+                    [
+                      _c("p", { staticClass: "d-none d-md-inline" }, [
+                        _vm._v("Demo  ")
+                      ]),
+                      _vm._v(" "),
+                      _c("FontAwesomeIcon", {
+                        attrs: { icon: "eye", size: "lg" }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "btn btn-info btn-rounded btn-sm waves-effect",
                       attrs: {
                         type: "button",
                         id: "showMyFilters",
+                        "data-step": "6",
+                        "data-intro": "See the currently applied filters here!",
                         title: "Filter"
                       }
                     },
@@ -140,6 +175,8 @@ var render = function() {
                       attrs: {
                         type: "button",
                         id: "download",
+                        "data-step": "5",
+                        "data-intro": "Download data in tabular form here!",
                         title: "Download Raw Data"
                       }
                     },
@@ -160,7 +197,13 @@ var render = function() {
                     {
                       staticClass:
                         "btn btn-danger btn-rounded btn-sm waves-effect",
-                      attrs: { type: "button", title: "Reset All" },
+                      attrs: {
+                        type: "button",
+                        "data-step": "3",
+                        "data-intro":
+                          "Click here to reset filters on all charts.",
+                        title: "Reset All"
+                      },
                       on: {
                         click: function($event) {
                           _vm.searchCore = ""
@@ -190,21 +233,32 @@ var render = function() {
                     attrs: { id: "fyr" }
                   },
                   [
-                    _c("div", { attrs: { id: "dc-fyr-barchart" } }, [
-                      _c("h3", [
-                        _vm._v("Fiscal Year"),
-                        _c(
-                          "span",
-                          {
-                            staticStyle: {
-                              "font-size": "14pt",
-                              opacity: "0.87"
-                            }
-                          },
-                          [_vm._v(_vm._s(_vm.ylabel))]
-                        )
-                      ])
-                    ])
+                    _c(
+                      "div",
+                      {
+                        attrs: {
+                          id: "dc-fyr-barchart",
+                          "data-step": "2",
+                          "data-intro":
+                            "Clicking the bars applies filters to the chart. Click on one of the bars and watch the other charts update!"
+                        }
+                      },
+                      [
+                        _c("h3", [
+                          _vm._v("Fiscal Year"),
+                          _c(
+                            "span",
+                            {
+                              staticStyle: {
+                                "font-size": "14pt",
+                                opacity: "0.87"
+                              }
+                            },
+                            [_vm._v(_vm._s(_vm.ylabel))]
+                          )
+                        ])
+                      ]
+                    )
                   ]
                 ),
                 _vm._v(" "),
@@ -556,12 +610,25 @@ var render = function() {
               },
               [
                 _c("div", { staticClass: "row pt-2" }, [
-                  _c("div", { staticClass: "col-auto pt-1" }, [
-                    _vm._v(
-                      "\n                        Assignment Actions:\n                        "
-                    ),
-                    _c("span", { attrs: { id: "count" } })
-                  ]),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      attrs: {
+                        id: "radioSelect",
+                        "data-step": "1",
+                        "data-intro": "Assignment action total."
+                      }
+                    },
+                    [
+                      _c("div", { staticClass: "col-auto pt-1" }, [
+                        _vm._v(
+                          "\n                            Assignment Actions:\n                            "
+                        ),
+                        _c("span", { attrs: { id: "count" } })
+                      ])
+                    ]
+                  ),
                   _vm._v(" "),
                   _c("div", { staticClass: "col" }),
                   _vm._v(" "),
@@ -571,9 +638,32 @@ var render = function() {
                       {
                         staticClass:
                           "btn btn-info btn-rounded btn-sm waves-effect",
+                        attrs: { type: "button", id: "demo", title: "Demo" },
+                        on: { click: _vm.startDemo }
+                      },
+                      [
+                        _c("p", { staticClass: "d-none d-md-inline" }, [
+                          _vm._v("Demo  ")
+                        ]),
+                        _vm._v(" "),
+                        _c("FontAwesomeIcon", {
+                          attrs: { icon: "eye", size: "lg" }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass:
+                          "btn btn-info btn-rounded btn-sm waves-effect",
                         attrs: {
                           type: "button",
                           id: "showMyFilters",
+                          "data-step": "7",
+                          "data-intro":
+                            "See the currently applied filters here!",
                           title: "Filter"
                         }
                       },
@@ -597,6 +687,8 @@ var render = function() {
                         attrs: {
                           type: "button",
                           id: "download",
+                          "data-step": "6",
+                          "data-intro": "Download data in tabular form here!",
                           title: "Download Raw Data"
                         }
                       },
@@ -617,7 +709,13 @@ var render = function() {
                       {
                         staticClass:
                           "btn btn-danger btn-rounded btn-sm waves-effect",
-                        attrs: { type: "button", title: "Reset All" },
+                        attrs: {
+                          type: "button",
+                          "data-step": "4",
+                          "data-intro":
+                            "Click here to reset filters on all charts.",
+                          title: "Reset All"
+                        },
                         on: {
                           click: function($event) {
                             _vm.searchAfsc = ""
@@ -649,37 +747,48 @@ var render = function() {
                       attrs: { id: "year" }
                     },
                     [
-                      _c("div", { attrs: { id: "dc-year-rowchart" } }, [
-                        _c("h3", [
-                          _vm._v("Year "),
-                          _c(
-                            "span",
-                            {
-                              staticStyle: {
-                                "font-size": "14pt",
-                                opacity: "0.87"
-                              }
-                            },
-                            [_vm._v(_vm._s(_vm.ylabel))]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "button",
-                            {
-                              staticClass:
-                                "btn btn-danger btn-sm btn-rounded reset",
-                              staticStyle: { visibility: "hidden" },
-                              attrs: { type: "button" },
-                              on: {
-                                click: function($event) {
-                                  _vm.resetChart("dc-year-rowchart")
+                      _c(
+                        "div",
+                        {
+                          attrs: {
+                            id: "dc-year-rowchart",
+                            "data-step": "2",
+                            "data-intro":
+                              "Clicking the bars applies filters to the chart. Click on one of the bars and watch the other charts update!"
+                          }
+                        },
+                        [
+                          _c("h3", [
+                            _vm._v("Year "),
+                            _c(
+                              "span",
+                              {
+                                staticStyle: {
+                                  "font-size": "14pt",
+                                  opacity: "0.87"
                                 }
-                              }
-                            },
-                            [_vm._v("Reset")]
-                          )
-                        ])
-                      ])
+                              },
+                              [_vm._v(_vm._s(_vm.ylabel))]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "button",
+                              {
+                                staticClass:
+                                  "btn btn-danger btn-sm btn-rounded reset",
+                                staticStyle: { visibility: "hidden" },
+                                attrs: { type: "button" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.resetChart("dc-year-rowchart")
+                                  }
+                                }
+                              },
+                              [_vm._v("Reset")]
+                            )
+                          ])
+                        ]
+                      )
                     ]
                   ),
                   _vm._v(" "),
@@ -841,6 +950,9 @@ var render = function() {
                 _vm._v(" "),
                 _c("overviewBarChart", {
                   attrs: {
+                    "data-step": "3",
+                    "data-intro":
+                      "Sliding scale chart.  Click the black circle for more info.",
                     id: "base",
                     dimension: _vm.baseDim,
                     aspectRatio: _vm.chartSpecs.baseChart.aspectRatio,
@@ -886,7 +998,7 @@ if (false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(d3, crossfilter, dc, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
+/* WEBPACK VAR INJECTION */(function(d3, crossfilter, dc, introJs, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__dchelpers__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chartSpecs__ = __webpack_require__("K62J");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__("mtWM");
@@ -902,6 +1014,21 @@ if (false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_toastr__ = __webpack_require__("vQJi");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_toastr__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -1150,6 +1277,9 @@ if (false) {
         resetAll: function resetAll(event) {
             dc.filterAll();
             dc.redrawAll();
+        },
+        startDemo: function startDemo() {
+            introJs().start();
         },
         resetChart: function resetChart(id) {
             dc.chartRegistry.list().filter(function (chart) {
@@ -1482,7 +1612,7 @@ if (false) {
         console.log("destroyed");
     }
 });
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("Za4h"), __webpack_require__("JowF"), __webpack_require__("iEPi"), __webpack_require__("lDdF")))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("Za4h"), __webpack_require__("JowF"), __webpack_require__("iEPi"), __webpack_require__("iGUu"), __webpack_require__("lDdF")))
 
 /***/ }),
 
@@ -1876,6 +2006,8 @@ if(false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_Assignments_EFMP__ = __webpack_require__("Up0M");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__store_store__ = __webpack_require__("wtEF");
 
+//
+//
 //
 //
 //
@@ -2388,7 +2520,7 @@ exports.push([module.i, "\n.toast-title {\n  font-weight: bold;\n}\n.toast-messa
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(crossfilter, dc, d3, FileSaver, $) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_promise__ = __webpack_require__("//Fk");
+/* WEBPACK VAR INJECTION */(function(crossfilter, dc, introJs, d3, FileSaver, $) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_promise__ = __webpack_require__("//Fk");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_promise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_promise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dchelpers__ = __webpack_require__("3VWa");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dchelpers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__dchelpers__);
@@ -2405,6 +2537,21 @@ exports.push([module.i, "\n.toast-title {\n  font-weight: bold;\n}\n.toast-messa
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr__ = __webpack_require__("vQJi");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_toastr__);
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2605,6 +2752,10 @@ exports.push([module.i, "\n.toast-title {\n  font-weight: bold;\n}\n.toast-messa
             dc.filterAll();
             dc.redrawAll();
         },
+        startDemo: function startDemo() {
+            introJs().start();
+        },
+
         resetChart: function resetChart(id) {
             dc.chartRegistry.list().filter(function (chart) {
                 return chart.anchorName() == id;
@@ -3301,7 +3452,7 @@ exports.push([module.i, "\n.toast-title {\n  font-weight: bold;\n}\n.toast-messa
         console.log("destroyed");
     }
 });
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("JowF"), __webpack_require__("iEPi"), __webpack_require__("Za4h"), __webpack_require__("lDdF"), __webpack_require__("7t+N")))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("JowF"), __webpack_require__("iEPi"), __webpack_require__("iGUu"), __webpack_require__("Za4h"), __webpack_require__("lDdF"), __webpack_require__("7t+N")))
 
 /***/ }),
 
@@ -3436,12 +3587,25 @@ var render = function() {
             },
             [
               _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-auto" }, [
-                  _vm._v(
-                    "\n                    Inventory:\n                    "
-                  ),
-                  _c("span", { attrs: { id: "inv" } })
-                ]),
+                _c(
+                  "div",
+                  {
+                    staticClass: "col",
+                    attrs: {
+                      id: "radioSelect",
+                      "data-step": "1",
+                      "data-intro": "Total number of AF Reserve personnel."
+                    }
+                  },
+                  [
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                        Inventory:\n                        "
+                      ),
+                      _c("span", { attrs: { id: "inv" } })
+                    ])
+                  ]
+                ),
                 _vm._v(" "),
                 _c("div", { staticClass: "col" }),
                 _vm._v(" "),
@@ -3451,10 +3615,30 @@ var render = function() {
                     {
                       staticClass:
                         "btn btn-info btn-rounded btn-sm waves-effect",
+                      attrs: { type: "button", id: "demo", title: "Demo" },
+                      on: { click: _vm.startDemo }
+                    },
+                    [
+                      _c("p", { staticClass: "d-none d-md-inline" }, [
+                        _vm._v("Demo  ")
+                      ]),
+                      _vm._v(" "),
+                      _c("FontAwesomeIcon", {
+                        attrs: { icon: "eye", size: "lg" }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "btn btn-info btn-rounded btn-sm waves-effect",
                       attrs: {
                         type: "button",
                         id: "showMyFilters",
-                        "data-step": "7",
+                        "data-step": "6",
                         "data-intro": "See the currently applied filters here!",
                         title: "Filter"
                       }
@@ -3479,6 +3663,8 @@ var render = function() {
                       attrs: {
                         type: "button",
                         id: "download",
+                        "data-step": "4",
+                        "data-intro": "Download data in tabular form here!",
                         title: "Download Raw Data"
                       }
                     },
@@ -3499,7 +3685,13 @@ var render = function() {
                     {
                       staticClass:
                         "btn btn-danger btn-rounded btn-sm waves-effect",
-                      attrs: { type: "button", title: "Reset All" },
+                      attrs: {
+                        type: "button",
+                        "data-step": "3",
+                        "data-intro":
+                          "Click here to reset filters on all charts.",
+                        title: "Reset All"
+                      },
                       on: { click: _vm.resetAll }
                     },
                     [
@@ -3572,37 +3764,48 @@ var render = function() {
                     attrs: { id: "grade" }
                   },
                   [
-                    _c("div", { attrs: { id: "dc-grade-barchart" } }, [
-                      _c("h3", [
-                        _vm._v(" Grade/Rank "),
-                        _c(
-                          "span",
-                          {
-                            staticStyle: {
-                              "font-size": "14pt",
-                              opacity: "0.87"
-                            }
-                          },
-                          [_vm._v(_vm._s(_vm.ylabel))]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "btn btn-danger btn-sm btn-rounded reset",
-                            staticStyle: { visibility: "hidden" },
-                            attrs: { type: "button" },
-                            on: {
-                              click: function($event) {
-                                _vm.resetChart("dc-grade-barchart")
+                    _c(
+                      "div",
+                      {
+                        attrs: {
+                          id: "dc-grade-barchart",
+                          "data-step": "2",
+                          "data-intro":
+                            "Clicking the bars applies filters to the chart. Click on one of the bars and watch the other charts update!"
+                        }
+                      },
+                      [
+                        _c("h3", [
+                          _vm._v(" Grade/Rank "),
+                          _c(
+                            "span",
+                            {
+                              staticStyle: {
+                                "font-size": "14pt",
+                                opacity: "0.87"
                               }
-                            }
-                          },
-                          [_vm._v("Reset")]
-                        )
-                      ])
-                    ])
+                            },
+                            [_vm._v(_vm._s(_vm.ylabel))]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "btn btn-danger btn-sm btn-rounded reset",
+                              staticStyle: { visibility: "hidden" },
+                              attrs: { type: "button" },
+                              on: {
+                                click: function($event) {
+                                  _vm.resetChart("dc-grade-barchart")
+                                }
+                              }
+                            },
+                            [_vm._v("Reset")]
+                          )
+                        ])
+                      ]
+                    )
                   ]
                 ),
                 _vm._v(" "),
@@ -6377,11 +6580,25 @@ var render = function() {
             staticStyle: { "margin-top": "15px" }
           },
           [
-            _vm._v("\n                    Data as of: \n                    "),
             _c(
               "span",
-              { staticStyle: { "font-weight": "bold", color: "#4d8bf9" } },
-              [_vm._v(" " + _vm._s(_vm.asDate) + " ")]
+              {
+                attrs: {
+                  "data-step": "5",
+                  "data-intro":
+                    "The data on this page is current as of the date shown here."
+                }
+              },
+              [
+                _vm._v(
+                  "\n                    Data as of: \n                    "
+                ),
+                _c(
+                  "span",
+                  { staticStyle: { "font-weight": "bold", color: "#4d8bf9" } },
+                  [_vm._v(" " + _vm._s(_vm.asDate) + " ")]
+                )
+              ]
             )
           ]
         )
@@ -7596,38 +7813,49 @@ var render = function() {
             },
             [
               _c("div", { staticClass: "row pt-2" }, [
-                _c("div", { staticClass: "col-auto pt-1" }, [
-                  _vm._v(
-                    "\n                        Average TOS: \n                        "
-                  ),
-                  _c("span", { attrs: { id: "average" } })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-auto pt-1" }, [
-                  _vm._v(
-                    "\n                        Completed Tours:        \n                        "
-                  ),
-                  _c("span", { attrs: { id: "count" } }),
-                  _vm._v(" "),
-                  _c(
-                    "span",
-                    {
-                      staticClass: "h3 pl-1",
-                      attrs: {
-                        "data-toggle": "tooltip",
-                        "data-placement": "bottom",
-                        title:
-                          "Average TOS and Completed Tours are calculated by aggregating over a 4 year period."
-                      }
-                    },
-                    [
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "info-circle", size: "xs" }
-                      })
-                    ],
-                    1
-                  )
-                ]),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "custom-control custom-radio custom-control-inline",
+                    attrs: {
+                      "data-step": "1",
+                      "data-intro": "Average TOS and Total Completed Tours."
+                    }
+                  },
+                  [
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                            Average TOS: \n                            "
+                      ),
+                      _c("span", { attrs: { id: "average" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                            Completed Tours:        \n                            "
+                      ),
+                      _c("span", { attrs: { id: "count" } }),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          attrs: {
+                            "data-toggle": "tooltip",
+                            "data-placement": "bottom",
+                            title: "Average TOS."
+                          }
+                        },
+                        [
+                          _c("FontAwesomeIcon", {
+                            attrs: { icon: "info-circle", size: "lg" }
+                          })
+                        ],
+                        1
+                      )
+                    ])
+                  ]
+                ),
                 _vm._v(" "),
                 _c("div", { staticClass: "col" }),
                 _vm._v(" "),
@@ -7637,9 +7865,31 @@ var render = function() {
                     {
                       staticClass:
                         "btn btn-info btn-rounded btn-sm waves-effect",
+                      attrs: { type: "button", id: "demo", title: "Demo" },
+                      on: { click: _vm.startDemo }
+                    },
+                    [
+                      _c("p", { staticClass: "d-none d-md-inline" }, [
+                        _vm._v("Demo  ")
+                      ]),
+                      _vm._v(" "),
+                      _c("FontAwesomeIcon", {
+                        attrs: { icon: "eye", size: "lg" }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "btn btn-info btn-rounded btn-sm waves-effect",
                       attrs: {
                         type: "button",
                         id: "showMyFilters",
+                        "data-step": "7",
+                        "data-intro": "See the currently applied filters here!",
                         title: "Filter"
                       }
                     },
@@ -7663,6 +7913,8 @@ var render = function() {
                       attrs: {
                         type: "button",
                         id: "download",
+                        "data-step": "6",
+                        "data-intro": "Download data in tabular form here!",
                         title: "Download Raw Data"
                       }
                     },
@@ -7683,7 +7935,13 @@ var render = function() {
                     {
                       staticClass:
                         "btn btn-danger btn-rounded btn-sm waves-effect",
-                      attrs: { type: "button", title: "Reset All" },
+                      attrs: {
+                        type: "button",
+                        "data-step": "4",
+                        "data-intro":
+                          "Click here to reset filters on all charts.",
+                        title: "Reset All"
+                      },
                       on: { click: _vm.resetAll }
                     },
                     [
@@ -7708,41 +7966,52 @@ var render = function() {
                     attrs: { id: "tour" }
                   },
                   [
-                    _c("div", { attrs: { id: "dc-tour-rowchart" } }, [
-                      _c("h3", [
-                        _vm._v("Tour "),
-                        _c(
-                          "span",
-                          {
-                            staticStyle: {
-                              "font-size": "14pt",
-                              opacity: "0.87"
-                            }
-                          },
-                          [
-                            _vm._v(
-                              "\n\t\t                    \tAvg. TOS\n\t\t                    "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "btn btn-danger btn-sm btn-rounded reset",
-                            staticStyle: { visibility: "hidden" },
-                            attrs: { type: "button" },
-                            on: {
-                              click: function($event) {
-                                _vm.resetChart("dc-tour-rowchart")
+                    _c(
+                      "div",
+                      {
+                        attrs: {
+                          id: "dc-tour-rowchart",
+                          "data-step": "2",
+                          "data-intro":
+                            "Clicking the bars applies filters to the chart. Click on one of the bars and watch the other charts update!"
+                        }
+                      },
+                      [
+                        _c("h3", [
+                          _vm._v("Tour "),
+                          _c(
+                            "span",
+                            {
+                              staticStyle: {
+                                "font-size": "14pt",
+                                opacity: "0.87"
                               }
-                            }
-                          },
-                          [_vm._v("Reset")]
-                        )
-                      ])
-                    ])
+                            },
+                            [
+                              _vm._v(
+                                "\n\t\t                    \tAvg. TOS\n\t\t                    "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "btn btn-danger btn-sm btn-rounded reset",
+                              staticStyle: { visibility: "hidden" },
+                              attrs: { type: "button" },
+                              on: {
+                                click: function($event) {
+                                  _vm.resetChart("dc-tour-rowchart")
+                                }
+                              }
+                            },
+                            [_vm._v("Reset")]
+                          )
+                        ])
+                      ]
+                    )
                   ]
                 ),
                 _vm._v(" "),
@@ -7907,37 +8176,48 @@ var render = function() {
                     attrs: { id: "us" }
                   },
                   [
-                    _c("div", { attrs: { id: "dc-us-geoChoroplethChart" } }, [
-                      _c("h3", { staticClass: "mt-2 mb-0" }, [
-                        _vm._v("CONUS Map "),
-                        _c(
-                          "span",
-                          {
-                            staticStyle: {
-                              "font-size": "14pt",
-                              opacity: "0.87"
-                            }
-                          },
-                          [_vm._v("Avg. TOS")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "btn btn-danger btn-sm btn-rounded reset",
-                            staticStyle: { visibility: "hidden" },
-                            attrs: { type: "button" },
-                            on: {
-                              click: function($event) {
-                                _vm.resetChart("dc-us-geoChoroplethChart")
+                    _c(
+                      "div",
+                      {
+                        attrs: {
+                          id: "dc-us-geoChoroplethChart",
+                          "data-step": "3",
+                          "data-intro":
+                            "You can mouse over a state, territory, or country on the maps to see the personnel total or click on it to apply filters and update the other charts!"
+                        }
+                      },
+                      [
+                        _c("h3", { staticClass: "mt-2 mb-0" }, [
+                          _vm._v("CONUS Map "),
+                          _c(
+                            "span",
+                            {
+                              staticStyle: {
+                                "font-size": "14pt",
+                                opacity: "0.87"
                               }
-                            }
-                          },
-                          [_vm._v("Reset")]
-                        )
-                      ])
-                    ])
+                            },
+                            [_vm._v("Avg. TOS")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "btn btn-danger btn-sm btn-rounded reset",
+                              staticStyle: { visibility: "hidden" },
+                              attrs: { type: "button" },
+                              on: {
+                                click: function($event) {
+                                  _vm.resetChart("dc-us-geoChoroplethChart")
+                                }
+                              }
+                            },
+                            [_vm._v("Reset")]
+                          )
+                        ])
+                      ]
+                    )
                   ]
                 ),
                 _vm._v(" "),
@@ -10112,21 +10392,24 @@ if(false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(d3, crossfilter, dc, introJs, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__dchelpers__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chartSpecs__ = __webpack_require__("K62J");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__("mtWM");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_format__ = __webpack_require__("XCdN");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_AutoComplete__ = __webpack_require__("nObl");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_searchBox__ = __webpack_require__("CjlA");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_Loader__ = __webpack_require__("wd27");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__store_store__ = __webpack_require__("wtEF");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_overviewBarChart__ = __webpack_require__("Kvlx");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr__ = __webpack_require__("vQJi");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_toastr__);
+/* WEBPACK VAR INJECTION */(function(d3, crossfilter, dc, introJs, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty__ = __webpack_require__("bOdI");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dchelpers__ = __webpack_require__("3VWa");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dchelpers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__dchelpers__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__chartSpecs__ = __webpack_require__("K62J");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_axios__ = __webpack_require__("mtWM");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__store_format__ = __webpack_require__("XCdN");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_AutoComplete__ = __webpack_require__("nObl");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_searchBox__ = __webpack_require__("CjlA");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_Loader__ = __webpack_require__("wd27");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__store_store__ = __webpack_require__("wtEF");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_overviewBarChart__ = __webpack_require__("Kvlx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_toastr__ = __webpack_require__("vQJi");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_toastr__);
+
 //
 //
 //
@@ -10319,8 +10602,8 @@ if(false) {
             selected: "totalCount",
             searchCore: "",
             searchYRGP: "",
-            chartSpecs: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */],
-            baseColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color]),
+            chartSpecs: __WEBPACK_IMPORTED_MODULE_2__chartSpecs__["a" /* default */],
+            baseColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_2__chartSpecs__["a" /* default */].baseChart.color]),
             pageName: 'ANG Enlisted Education'
         };
     },
@@ -10331,7 +10614,7 @@ if(false) {
             return crossfilter(this.data);
         },
         asDate: function asDate() {
-            return __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate;
+            return __WEBPACK_IMPORTED_MODULE_8__store_store__["a" /* store */].state.asDate;
         },
         allGroup: function allGroup() {
             return this.ndx.groupAll();
@@ -10363,7 +10646,7 @@ if(false) {
 
     },
 
-    methods: {
+    methods: __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty___default()({
         resetAll: function resetAll() {
             dc.filterAll();
             dc.redrawAll();
@@ -10384,6 +10667,11 @@ if(false) {
             setTimeout(function () {
                 dc.redrawAll();
             }, 10);
+        },
+        toProperCase: function toProperCase(s) {
+            return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
+                return $1.toUpperCase();
+            });
         },
         //remove empty function (es6 syntax to keep correct scope)
         removeError: function removeError(source_group) {
@@ -10445,20 +10733,19 @@ if(false) {
                 stemPercent: 0,
                 nonStemPercent: 0
             };
-        },
-        toProperCase: function toProperCase(s) {
-            return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
-                return $1.toUpperCase();
-            });
         }
-    },
+    }, 'toProperCase', function toProperCase(s) {
+        return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
+            return $1.toUpperCase();
+        });
+    }),
 
     components: {
-        'AutoComplete': __WEBPACK_IMPORTED_MODULE_4__components_AutoComplete__["a" /* default */],
-        'Loader': __WEBPACK_IMPORTED_MODULE_6__components_Loader__["a" /* default */],
-        searchBox: __WEBPACK_IMPORTED_MODULE_5__components_searchBox__["a" /* default */],
-        overviewBarChart: __WEBPACK_IMPORTED_MODULE_8__components_overviewBarChart__["a" /* default */],
-        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default.a
+        'AutoComplete': __WEBPACK_IMPORTED_MODULE_5__components_AutoComplete__["a" /* default */],
+        'Loader': __WEBPACK_IMPORTED_MODULE_7__components_Loader__["a" /* default */],
+        searchBox: __WEBPACK_IMPORTED_MODULE_6__components_searchBox__["a" /* default */],
+        overviewBarChart: __WEBPACK_IMPORTED_MODULE_9__components_overviewBarChart__["a" /* default */],
+        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome___default.a
     },
 
     created: function created() {
@@ -10471,8 +10758,8 @@ if(false) {
         console.log('mounted');
 
         //test AXIOS Call:
-        __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post("https://stars.afpc.randolph.af.mil/FLA/perstat_json/ps_high_ed_level_ang.js").then(function (response) {
-            __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate = response.data.ASOFDATE;
+        __WEBPACK_IMPORTED_MODULE_3_axios___default.a.post("https://stars.afpc.randolph.af.mil/FLA/perstat_json/ps_high_ed_level_ang.js").then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_8__store_store__["a" /* store */].state.asDate = response.data.ASOFDATE;
             var invData = response.data.data;
             //console.log(invData)
             var objData = makeObject(invData);
@@ -10507,12 +10794,12 @@ if(false) {
 
             obj.count = given.count;
             obj.edlevel = given.edlevel;
-            obj.grade = __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].gradeFormat[given.grd];
+            obj.grade = __WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].gradeFormat[given.grd];
             obj.type = given.type;
             obj.stem = given.stem;
             obj.nonstem = given.non_stem;
             obj.state = given.ang_state;
-            obj.mpf = __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].mpfFormat[given.mpf];
+            obj.mpf = __WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].mpfFormat[given.mpf];
             if (given.cafsc == null || given.cafsc == '') {
                 obj.dafsc = 'error';
             } else {
@@ -10601,7 +10888,7 @@ if(false) {
             edLevelConfig.aspectRatio = 4;
             edLevelConfig.margins = { top: 30, left: 50, right: 30, bottom: 50 };
             edLevelConfig.colors = ["#cc5500"];
-            var edLevelChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getOrdinalBarChart(edLevelConfig);
+            var edLevelChart = __WEBPACK_IMPORTED_MODULE_1__dchelpers___default.a.getOrdinalBarChart(edLevelConfig);
             edLevelChart.valueAccessor(function (d) {
                 return d.value[_this.selected];
             }).controlsUseVisibility(true).elasticX(true).on('pretransition', function (chart) {
@@ -10611,7 +10898,7 @@ if(false) {
             });
 
             edLevelChart.ordering(function (d) {
-                return __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].edLevelOrder[d.key];
+                return __WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].edLevelOrder[d.key];
             });
 
             //Grade Rowchart               
@@ -10627,12 +10914,12 @@ if(false) {
             gradeConfig.margins = { top: 10, left: 50, right: 30, bottom: 50 };
             var c = d3.rgb(51, 172, 255);
             gradeConfig.colors = _this.chartSpecs.gradeChartColorScale;
-            var gradeChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getRowChart(gradeConfig);
+            var gradeChart = __WEBPACK_IMPORTED_MODULE_1__dchelpers___default.a.getRowChart(gradeConfig);
 
             gradeChart.valueAccessor(function (d) {
                 return d.value[_this.selected];
             }).controlsUseVisibility(true).ordering(function (d) {
-                return __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].gradeOrder[d.key];
+                return __WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].gradeOrder[d.key];
             });
 
             //dafsc Rowchart
@@ -10646,12 +10933,12 @@ if(false) {
             dafscConfig.minHeight = 190;
             dafscConfig.aspectRatio = 3;
             dafscConfig.margins = { top: 20, left: 30, right: 10, bottom: 20 };
-            dafscConfig.colors = d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].afscGroupChart.color]);
-            var dafscChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getRowChart(dafscConfig);
+            dafscConfig.colors = d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_2__chartSpecs__["a" /* default */].afscGroupChart.color]);
+            var dafscChart = __WEBPACK_IMPORTED_MODULE_1__dchelpers___default.a.getRowChart(dafscConfig);
             dafscChart.valueAccessor(function (d) {
                 return d.value[_this.selected];
             }).controlsUseVisibility(true).ordering(function (d) {
-                return __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].gradeOrder[d.key];
+                return __WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].gradeOrder[d.key];
             });
 
             //CONUS 
@@ -10687,12 +10974,12 @@ if(false) {
             usConfig.propName = 'name';
             usConfig.projection = d3.geo.albersUsa();
 
-            var usChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getGeoChart(usConfig);
+            var usChart = __WEBPACK_IMPORTED_MODULE_1__dchelpers___default.a.getGeoChart(usConfig);
             usChart.title(function (d) {
                 if (d.value == undefined) {
                     d.value = '0';
                 }
-                return __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].geoCS[__WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].stateFormat[d.key]] + ": " + d.value;
+                return __WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].geoCS[__WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].stateFormat[d.key]] + ": " + d.value;
             });
 
             usChart.on('pretransition', function (chart) {
@@ -10765,23 +11052,23 @@ if(false) {
                         myCheckValue = percentNonStemND.value;
                     };
                     // Override global options
-                    __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.options = {
+                    __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.options = {
                         "positionClass": "toast-bottom-full-width",
                         "closeButton": "true",
                         "preventDuplicates": "true"
                     };
                     if (myCheckValue() == '0.0%' || myCheckValue() == 0) {
-                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.warning('Your ' + _this.toProperCase(_this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.warning('Your ' + _this.toProperCase(_this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
                     } else if (myCheckValue() == '1') {
                         myFilters += ' return ' + myCheckValue() + ' ' + _this.ylabel + ' result.';
-                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
+                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.info(myFilters);
                     } else {
                         myFilters += ' return ' + myCheckValue() + ' ' + _this.ylabel + ' results.';
-                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
+                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.info(myFilters);
                     }
                 }
                 if (myFilters == 'undefined' || myFilters == undefined) {
-                    __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.error('Something went wrong. Please reset and try again.');
+                    __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.error('Something went wrong. Please reset and try again.');
                 }
             });
 
@@ -10795,7 +11082,7 @@ if(false) {
                     if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
                 });
 
-                FileSaver.saveAs(blob, 'PERSTAT Enlisted Education' + ' ' + __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
+                FileSaver.saveAs(blob, 'PERSTAT Enlisted Education' + ' ' + __WEBPACK_IMPORTED_MODULE_8__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
             });
 
             // after DOM updated redraw to make chart widths update
@@ -10821,7 +11108,7 @@ if(false) {
     beforeDestroy: function beforeDestroy() {
         console.log("beforeDestroy");
         dc.chartRegistry.clear();
-        __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate = 'Undetermined';
+        __WEBPACK_IMPORTED_MODULE_8__store_store__["a" /* store */].state.asDate = 'Undetermined';
     },
     destroyed: function destroyed() {
         console.log("destroyed");
@@ -10841,6 +11128,8 @@ if(false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Education_EnlistedHighEd__ = __webpack_require__("CfCW");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_store__ = __webpack_require__("wtEF");
 
+//
+//
 //
 //
 //
@@ -13970,8 +14259,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__fortawesome_fontawesome_free_solid_faTimesCircle___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18__fortawesome_fontawesome_free_solid_faTimesCircle__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__fortawesome_fontawesome_free_solid_faEye__ = __webpack_require__("F4Gy");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__fortawesome_fontawesome_free_solid_faEye___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_19__fortawesome_fontawesome_free_solid_faEye__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__fortawesome_fontawesome_free_solid_faSearchFilters__ = __webpack_require__("Vtzy");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__fortawesome_fontawesome_free_solid_faSearchFilters___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_20__fortawesome_fontawesome_free_solid_faSearchFilters__);
+throw new Error("Cannot find module \"@fortawesome/fontawesome-free-solid/faSearchFilters\"");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__store_store__ = __webpack_require__("wtEF");
 // babel-polyfill allows use of Promises in IE
 
@@ -15321,7 +15609,7 @@ if(false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(d3, crossfilter, dc, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
+/* WEBPACK VAR INJECTION */(function(d3, crossfilter, dc, introJs, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__dchelpers__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chartSpecs__ = __webpack_require__("K62J");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__("mtWM");
@@ -15336,6 +15624,22 @@ if(false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr__ = __webpack_require__("vQJi");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_toastr__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -15557,6 +15861,10 @@ if(false) {
         resetAll: function resetAll(event) {
             dc.filterAll();
             dc.redrawAll();
+        },
+
+        startDemo: function startDemo() {
+            introJs().start();
         },
 
         resetChart: function resetChart(id) {
@@ -15839,7 +16147,7 @@ if(false) {
         overviewBarChart: __WEBPACK_IMPORTED_MODULE_8__components_overviewBarChart__["a" /* default */]
     }
 });
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("Za4h"), __webpack_require__("JowF"), __webpack_require__("iEPi"), __webpack_require__("lDdF")))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("Za4h"), __webpack_require__("JowF"), __webpack_require__("iEPi"), __webpack_require__("iGUu"), __webpack_require__("lDdF")))
 
 /***/ }),
 
@@ -16422,7 +16730,7 @@ if (false) {(function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(d3, crossfilter, dc, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
+/* WEBPACK VAR INJECTION */(function(d3, crossfilter, dc, introJs, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__dchelpers__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chartSpecs__ = __webpack_require__("K62J");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__("mtWM");
@@ -16438,6 +16746,20 @@ if (false) {(function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_toastr__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__fortawesome_vue_fontawesome__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -16726,6 +17048,9 @@ if (false) {(function () {
             dc.redrawAll();
         },
 
+        startDemo: function startDemo() {
+            introJs().start();
+        },
         resetChart: function resetChart(id) {
             dc.chartRegistry.list().filter(function (chart) {
                 return chart.anchorName() == id;
@@ -17073,7 +17398,7 @@ if (false) {(function () {
         console.log("destroyed");
     }
 });
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("Za4h"), __webpack_require__("JowF"), __webpack_require__("iEPi"), __webpack_require__("lDdF")))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("Za4h"), __webpack_require__("JowF"), __webpack_require__("iEPi"), __webpack_require__("iGUu"), __webpack_require__("lDdF")))
 
 /***/ }),
 
@@ -19274,11 +19599,25 @@ var render = function() {
             staticStyle: { "margin-top": "15px" }
           },
           [
-            _vm._v("\n                    Data as of: \n                    "),
             _c(
               "span",
-              { staticStyle: { "font-weight": "bold", color: "#4d8bf9" } },
-              [_vm._v(" " + _vm._s(_vm.asDate) + " ")]
+              {
+                attrs: {
+                  "data-step": "4",
+                  "data-intro":
+                    "The data on this page is current as of the date shown here."
+                }
+              },
+              [
+                _vm._v(
+                  "\n                    Data as of: \n                    "
+                ),
+                _c(
+                  "span",
+                  { staticStyle: { "font-weight": "bold", color: "#4d8bf9" } },
+                  [_vm._v(" " + _vm._s(_vm.asDate) + " ")]
+                )
+              ]
             )
           ]
         )
@@ -20712,26 +21051,39 @@ var render = function() {
             },
             [
               _c("div", { staticClass: "row pt-2" }, [
-                _c("div", { staticClass: "col-auto" }, [
-                  _vm._v(
-                    "\n                        Total:\n                        "
-                  ),
-                  _c("span", { attrs: { id: "totalCount" } })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _vm._v(
-                    "\n                        STEM:\n                        "
-                  ),
-                  _c("span", { attrs: { id: "stemTotal" } })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _vm._v(
-                    "\n                        Non-STEM:\n                        "
-                  ),
-                  _c("span", { attrs: { id: "nonStemTotal" } })
-                ]),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "custom-control custom-radio custom-control-inline",
+                    attrs: {
+                      "data-step": "1",
+                      "data-intro": "STEM and Non-STEM totals."
+                    }
+                  },
+                  [
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                            Total:\n                            "
+                      ),
+                      _c("span", { attrs: { id: "totalCount" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                            STEM:\n                            "
+                      ),
+                      _c("span", { attrs: { id: "stemTotal" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                            Non-STEM:\n                            "
+                      ),
+                      _c("span", { attrs: { id: "nonStemTotal" } })
+                    ])
+                  ]
+                ),
                 _vm._v(" "),
                 _c("div", { staticClass: "col" }),
                 _vm._v(" "),
@@ -20741,9 +21093,31 @@ var render = function() {
                     {
                       staticClass:
                         "btn btn-info btn-rounded btn-sm waves-effect",
+                      attrs: { type: "button", id: "demo", title: "Demo" },
+                      on: { click: _vm.startDemo }
+                    },
+                    [
+                      _c("p", { staticClass: "d-none d-md-inline" }, [
+                        _vm._v("Demo  ")
+                      ]),
+                      _vm._v(" "),
+                      _c("FontAwesomeIcon", {
+                        attrs: { icon: "eye", size: "lg" }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "btn btn-info btn-rounded btn-sm waves-effect",
                       attrs: {
                         type: "button",
                         id: "showMyFilters",
+                        "data-step": "6",
+                        "data-intro": "See the currently applied filters here!",
                         title: "Filter"
                       }
                     },
@@ -20767,6 +21141,8 @@ var render = function() {
                       attrs: {
                         type: "button",
                         id: "download",
+                        "data-step": "5",
+                        "data-intro": "Download data in tabular form here!",
                         title: "Download Raw Data"
                       }
                     },
@@ -20787,7 +21163,13 @@ var render = function() {
                     {
                       staticClass:
                         "btn btn-danger btn-rounded btn-sm waves-effect",
-                      attrs: { type: "button", title: "Reset All" },
+                      attrs: {
+                        type: "button",
+                        "data-step": "3",
+                        "data-intro":
+                          "Click here to reset filters on all charts.",
+                        title: "Reset All"
+                      },
                       on: {
                         click: function($event) {
                           _vm.searchCore = ""
@@ -20817,21 +21199,32 @@ var render = function() {
                     attrs: { id: "fyr" }
                   },
                   [
-                    _c("div", { attrs: { id: "dc-fyr-barchart" } }, [
-                      _c("h3", [
-                        _vm._v("Fiscal Year"),
-                        _c(
-                          "span",
-                          {
-                            staticStyle: {
-                              "font-size": "14pt",
-                              opacity: "0.87"
-                            }
-                          },
-                          [_vm._v(_vm._s(_vm.ylabel))]
-                        )
-                      ])
-                    ])
+                    _c(
+                      "div",
+                      {
+                        attrs: {
+                          id: "dc-fyr-barchart",
+                          "data-step": "2",
+                          "data-intro":
+                            "Clicking the bars applies filters to the chart. Click on one of the bars and watch the other charts update!"
+                        }
+                      },
+                      [
+                        _c("h3", [
+                          _vm._v("Fiscal Year"),
+                          _c(
+                            "span",
+                            {
+                              staticStyle: {
+                                "font-size": "14pt",
+                                opacity: "0.87"
+                              }
+                            },
+                            [_vm._v(_vm._s(_vm.ylabel))]
+                          )
+                        ])
+                      ]
+                    )
                   ]
                 ),
                 _vm._v(" "),
@@ -25202,8 +25595,7 @@ module.exports = __webpack_require__.p + "static/img/education.87a7250.jpg";
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_alert__ = __webpack_require__("HUmr");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_alert___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_alert__);
+throw new Error("Cannot find module \"vue-alert\"");
 //
 //
 //
@@ -30256,7 +30648,12 @@ var render = function() {
           "div",
           {
             staticClass: "col-4 text-right",
-            staticStyle: { "margin-top": "15px" }
+            staticStyle: { "margin-top": "15px" },
+            attrs: {
+              "data-step": "3",
+              "data-intro":
+                "The data on this page is current as of the date shown here."
+            }
           },
           [
             _vm._v(
@@ -30302,12 +30699,25 @@ var render = function() {
             },
             [
               _c("div", { staticClass: "row pt-2" }, [
-                _c("div", { staticClass: "col-auto" }, [
-                  _vm._v(
-                    "\n                        Inventory:        \n                        "
-                  ),
-                  _c("span", { attrs: { id: "inv" } })
-                ]),
+                _c(
+                  "div",
+                  {
+                    staticClass: "col",
+                    attrs: {
+                      id: "radioSelect",
+                      "data-step": "1",
+                      "data-intro": "Total number of Civilian personnel."
+                    }
+                  },
+                  [
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                            Inventory:        \n                            "
+                      ),
+                      _c("span", { attrs: { id: "inv" } })
+                    ])
+                  ]
+                ),
                 _vm._v(" "),
                 _c("div", { staticClass: "col" }),
                 _vm._v(" "),
@@ -30317,9 +30727,31 @@ var render = function() {
                     {
                       staticClass:
                         "btn btn-info btn-rounded btn-sm waves-effect",
+                      attrs: { type: "button", id: "demo", title: "Demo" },
+                      on: { click: _vm.startDemo }
+                    },
+                    [
+                      _c("p", { staticClass: "d-none d-md-inline" }, [
+                        _vm._v("Demo  ")
+                      ]),
+                      _vm._v(" "),
+                      _c("FontAwesomeIcon", {
+                        attrs: { icon: "eye", size: "lg" }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "btn btn-info btn-rounded btn-sm waves-effect",
                       attrs: {
                         type: "button",
                         id: "showMyFilters",
+                        "data-step": "6",
+                        "data-intro": "See the currently applied filters here!",
                         title: "Filter"
                       }
                     },
@@ -30343,6 +30775,8 @@ var render = function() {
                       attrs: {
                         type: "button",
                         id: "download",
+                        "data-step": "5",
+                        "data-intro": "Download data in tabular form here!",
                         title: "Download Raw Data"
                       }
                     },
@@ -30363,7 +30797,13 @@ var render = function() {
                     {
                       staticClass:
                         "btn btn-danger btn-rounded btn-sm waves-effect",
-                      attrs: { type: "button", title: "Reset All" },
+                      attrs: {
+                        type: "button",
+                        "data-step": "4",
+                        "data-intro":
+                          "Click here to reset filters on all charts.",
+                        title: "Reset All"
+                      },
                       on: { click: _vm.resetAll }
                     },
                     [
@@ -30438,7 +30878,14 @@ var render = function() {
                         [
                           _c(
                             "div",
-                            { attrs: { id: "dc-careerField-barchart" } },
+                            {
+                              attrs: {
+                                id: "dc-careerField-barchart",
+                                "data-step": "2",
+                                "data-intro":
+                                  "Clicking the bars applies filters to the chart. Click on one of the bars and watch the other charts update!"
+                              }
+                            },
                             [
                               _c("h3", [
                                 _vm._v("Career Field "),
@@ -30882,7 +31329,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "footer-copyright" }, [
       _c("div", { staticClass: "container-fluid" }, [
         _vm._v(
-          "\n                    © 2017-2018 Copyright: United States Air Force\n                "
+          "\n                    © 2019-2020 Copyright: United States Air Force\n                "
         )
       ])
     ])
@@ -31025,7 +31472,7 @@ if(false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(crossfilter, dc, d3, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
+/* WEBPACK VAR INJECTION */(function(crossfilter, dc, introJs, d3, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__dchelpers__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chartSpecs__ = __webpack_require__("K62J");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__("mtWM");
@@ -31039,6 +31486,20 @@ if(false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_toastr__ = __webpack_require__("vQJi");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_toastr__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -31186,6 +31647,9 @@ if(false) {
             this.singleSubmit('2018', 'dc-fyr-barchart');
         },
 
+        startDemo: function startDemo() {
+            introJs().start();
+        },
         resetChart: function resetChart(id) {
             dc.chartRegistry.list().filter(function (chart) {
                 return chart.anchorName() == id;
@@ -31571,7 +32035,7 @@ if(false) {
         console.log("destroyed");
     }
 });
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("JowF"), __webpack_require__("iEPi"), __webpack_require__("Za4h"), __webpack_require__("lDdF")))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("JowF"), __webpack_require__("iEPi"), __webpack_require__("iGUu"), __webpack_require__("Za4h"), __webpack_require__("lDdF")))
 
 /***/ }),
 
@@ -31647,7 +32111,15 @@ var render = function() {
               _c("div", { staticClass: "row pt-2" }, [
                 _c(
                   "div",
-                  { staticClass: "col-7", attrs: { id: "radioSelect" } },
+                  {
+                    staticClass: "col-7",
+                    attrs: {
+                      id: "radioSelect",
+                      "data-step": "1",
+                      "data-intro":
+                        "Toggle the radio buttons to change the data element being shown in the charts."
+                    }
+                  },
                   [
                     _c(
                       "div",
@@ -31900,9 +32372,31 @@ var render = function() {
                     {
                       staticClass:
                         "btn btn-info btn-rounded btn-sm waves-effect",
+                      attrs: { type: "button", id: "demo", title: "Demo" },
+                      on: { click: _vm.startDemo }
+                    },
+                    [
+                      _c("p", { staticClass: "d-none d-md-inline" }, [
+                        _vm._v("Demo  ")
+                      ]),
+                      _vm._v(" "),
+                      _c("FontAwesomeIcon", {
+                        attrs: { icon: "eye", size: "lg" }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "btn btn-info btn-rounded btn-sm waves-effect",
                       attrs: {
                         type: "button",
                         id: "showMyFilters",
+                        "data-step": "7",
+                        "data-intro": "See the currently applied filters here!",
                         title: "Filter"
                       }
                     },
@@ -31926,6 +32420,8 @@ var render = function() {
                       attrs: {
                         type: "button",
                         id: "download",
+                        "data-step": "6",
+                        "data-intro": "Download data in tabular form here!",
                         title: "Download Raw Data"
                       }
                     },
@@ -31946,7 +32442,13 @@ var render = function() {
                     {
                       staticClass:
                         "btn btn-danger btn-rounded btn-sm waves-effect",
-                      attrs: { type: "button", title: "Reset All" },
+                      attrs: {
+                        type: "button",
+                        "data-step": "4",
+                        "data-intro":
+                          "Click here to reset filters on all charts.",
+                        title: "Reset All"
+                      },
                       on: {
                         click: function($event) {
                           _vm.searchCore = ""
@@ -31970,42 +32472,53 @@ var render = function() {
               _vm._v(" "),
               _c("div", { staticClass: "row" }),
               _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-auto" }, [
-                  _vm._v(
-                    "\n                        Total:\n                        "
-                  ),
-                  _c("span", { attrs: { id: "totalCount" } })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _vm._v(
-                    "\n                        STEM:\n                        "
-                  ),
-                  _c("span", { attrs: { id: "stemTotal" } })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _vm._v(
-                    "\n                        Non-STEM:\n                        "
-                  ),
-                  _c("span", { attrs: { id: "nonStemTotal" } })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _vm._v(
-                    "\n                        Percent STEM:\n                        "
-                  ),
-                  _c("span", { attrs: { id: "percentStem" } })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _vm._v(
-                    "\n                        Percent Non-STEM:\n                        "
-                  ),
-                  _c("span", { attrs: { id: "percentNonStem" } })
-                ])
-              ]),
+              _c(
+                "div",
+                {
+                  staticClass: "row",
+                  attrs: {
+                    "data-step": "2",
+                    "data-intro":
+                      "Summary statistics for the data elements are shown here. These numbers change as filters are applied."
+                  }
+                },
+                [
+                  _c("div", { staticClass: "col-auto" }, [
+                    _vm._v(
+                      "\n                        Total:\n                        "
+                    ),
+                    _c("span", { attrs: { id: "totalCount" } })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-auto" }, [
+                    _vm._v(
+                      "\n                        STEM:\n                        "
+                    ),
+                    _c("span", { attrs: { id: "stemTotal" } })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-auto" }, [
+                    _vm._v(
+                      "\n                        Non-STEM:\n                        "
+                    ),
+                    _c("span", { attrs: { id: "nonStemTotal" } })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-auto" }, [
+                    _vm._v(
+                      "\n                        Percent STEM:\n                        "
+                    ),
+                    _c("span", { attrs: { id: "percentStem" } })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-auto" }, [
+                    _vm._v(
+                      "\n                        Percent Non-STEM:\n                        "
+                    ),
+                    _c("span", { attrs: { id: "percentNonStem" } })
+                  ])
+                ]
+              ),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
                 _c(
@@ -32097,37 +32610,48 @@ var render = function() {
                     attrs: { id: "edlevel" }
                   },
                   [
-                    _c("div", { attrs: { id: "dc-edlevel-barchart" } }, [
-                      _c("h3", [
-                        _vm._v("Highest Edu Level "),
-                        _c(
-                          "span",
-                          {
-                            staticStyle: {
-                              "font-size": "14pt",
-                              opacity: "0.87"
-                            }
-                          },
-                          [_vm._v(_vm._s(_vm.ylabel))]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "btn btn-danger btn-sm btn-rounded reset",
-                            staticStyle: { visibility: "hidden" },
-                            attrs: { type: "button" },
-                            on: {
-                              click: function($event) {
-                                _vm.resetChart("dc-edlevel-barchart")
+                    _c(
+                      "div",
+                      {
+                        attrs: {
+                          id: "dc-edlevel-barchart",
+                          "data-step": "3",
+                          "data-intro":
+                            "Clicking the bars applies filters to the chart. Click on one of the bars and watch the other charts update!"
+                        }
+                      },
+                      [
+                        _c("h3", [
+                          _vm._v("Highest Edu Level "),
+                          _c(
+                            "span",
+                            {
+                              staticStyle: {
+                                "font-size": "14pt",
+                                opacity: "0.87"
                               }
-                            }
-                          },
-                          [_vm._v("Reset\n                            ")]
-                        )
-                      ])
-                    ])
+                            },
+                            [_vm._v(_vm._s(_vm.ylabel))]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "btn btn-danger btn-sm btn-rounded reset",
+                              staticStyle: { visibility: "hidden" },
+                              attrs: { type: "button" },
+                              on: {
+                                click: function($event) {
+                                  _vm.resetChart("dc-edlevel-barchart")
+                                }
+                              }
+                            },
+                            [_vm._v("Reset\n                            ")]
+                          )
+                        ])
+                      ]
+                    )
                   ]
                 )
               ]),
@@ -37576,21 +38100,24 @@ if(false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(d3, crossfilter, dc, introJs, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__dchelpers__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chartSpecs__ = __webpack_require__("K62J");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__("mtWM");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_format__ = __webpack_require__("XCdN");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_AutoComplete__ = __webpack_require__("nObl");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_searchBox__ = __webpack_require__("CjlA");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_Loader__ = __webpack_require__("wd27");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__store_store__ = __webpack_require__("wtEF");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_overviewBarChart__ = __webpack_require__("Kvlx");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr__ = __webpack_require__("vQJi");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_toastr__);
+/* WEBPACK VAR INJECTION */(function(d3, crossfilter, dc, introJs, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty__ = __webpack_require__("bOdI");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dchelpers__ = __webpack_require__("3VWa");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dchelpers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__dchelpers__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__chartSpecs__ = __webpack_require__("K62J");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_axios__ = __webpack_require__("mtWM");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__store_format__ = __webpack_require__("XCdN");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_AutoComplete__ = __webpack_require__("nObl");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_searchBox__ = __webpack_require__("CjlA");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_Loader__ = __webpack_require__("wd27");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__store_store__ = __webpack_require__("wtEF");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_overviewBarChart__ = __webpack_require__("Kvlx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_toastr__ = __webpack_require__("vQJi");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_toastr__);
+
 //
 //
 //
@@ -37788,11 +38315,11 @@ if(false) {
             selected: "totalCount",
             searchCore: "",
             searchYRGP: "",
-            chartSpecs: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */],
-            coreColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].coreChart.color]),
-            baseColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color]),
-            // yrgpColorScale: d3.scale.ordinal().range([chartSpecs.yrgpChart.color]),
+            chartSpecs: __WEBPACK_IMPORTED_MODULE_2__chartSpecs__["a" /* default */],
+            coreColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_2__chartSpecs__["a" /* default */].coreChart.color]),
+            baseColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_2__chartSpecs__["a" /* default */].baseChart.color]),
             pageName: 'ANG Officer Education'
+            // yrgpColorScale: d3.scale.ordinal().range([chartSpecs.yrgpChart.color]),                    
         };
     },
 
@@ -37802,7 +38329,7 @@ if(false) {
             return crossfilter(this.data);
         },
         asDate: function asDate() {
-            return __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate;
+            return __WEBPACK_IMPORTED_MODULE_8__store_store__["a" /* store */].state.asDate;
         },
         allGroup: function allGroup() {
             return this.ndx.groupAll();
@@ -37847,7 +38374,7 @@ if(false) {
         }
     },
 
-    methods: {
+    methods: __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty___default()({
         resetAll: function resetAll() {
             dc.filterAll();
             dc.redrawAll();
@@ -37878,6 +38405,11 @@ if(false) {
                     });
                 }
             };
+        },
+        toProperCase: function toProperCase(s) {
+            return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
+                return $1.toUpperCase();
+            });
         },
         //reduce functions
         edAdd: function edAdd(p, v) {
@@ -37929,20 +38461,19 @@ if(false) {
                 stemPercent: 0,
                 nonStemPercent: 0
             };
-        },
-        toProperCase: function toProperCase(s) {
-            return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
-                return $1.toUpperCase();
-            });
         }
-    },
+    }, 'toProperCase', function toProperCase(s) {
+        return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
+            return $1.toUpperCase();
+        });
+    }),
 
     components: {
-        'AutoComplete': __WEBPACK_IMPORTED_MODULE_4__components_AutoComplete__["a" /* default */],
-        'Loader': __WEBPACK_IMPORTED_MODULE_6__components_Loader__["a" /* default */],
-        searchBox: __WEBPACK_IMPORTED_MODULE_5__components_searchBox__["a" /* default */],
-        overviewBarChart: __WEBPACK_IMPORTED_MODULE_8__components_overviewBarChart__["a" /* default */],
-        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default.a
+        'AutoComplete': __WEBPACK_IMPORTED_MODULE_5__components_AutoComplete__["a" /* default */],
+        'Loader': __WEBPACK_IMPORTED_MODULE_7__components_Loader__["a" /* default */],
+        searchBox: __WEBPACK_IMPORTED_MODULE_6__components_searchBox__["a" /* default */],
+        overviewBarChart: __WEBPACK_IMPORTED_MODULE_9__components_overviewBarChart__["a" /* default */],
+        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome___default.a
     },
 
     created: function created() {
@@ -37955,8 +38486,8 @@ if(false) {
         console.log('mounted');
 
         //test AXIOS Call:
-        __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post("https://stars.afpc.randolph.af.mil/FLA/perstat_json/ps_high_ed_level_ang.js").then(function (response) {
-            __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate = response.data.ASOFDATE;
+        __WEBPACK_IMPORTED_MODULE_3_axios___default.a.post("https://stars.afpc.randolph.af.mil/FLA/perstat_json/ps_high_ed_level_ang.js").then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_8__store_store__["a" /* store */].state.asDate = response.data.ASOFDATE;
             var invData = response.data.data;
             //console.log(invData)
             var objData = makeObject(invData);
@@ -37992,13 +38523,13 @@ if(false) {
             obj.count = given.count;
             obj.edlevel = given.edlevel;
             obj.core = given.core;
-            obj.grade = __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].gradeFormat[given.grd];
+            obj.grade = __WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].gradeFormat[given.grd];
             obj.group = given.grp;
             obj.type = given.type;
             obj.stem = given.stem;
             obj.nonstem = given.non_stem;
             obj.state = given.ang_state;
-            obj.mpf = __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].mpfFormat[given.mpf];
+            obj.mpf = __WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].mpfFormat[given.mpf];
             // obj.yrgp = given.year_grp
 
             return obj;
@@ -38083,7 +38614,7 @@ if(false) {
             groupConfig.aspectRatio = 2.5;
             groupConfig.margins = { top: 10, left: 50, right: 30, bottom: 50 };
             groupConfig.colors = ["#5F9EA0"];
-            var groupChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getOrdinalBarChart(groupConfig).valueAccessor(function (d) {
+            var groupChart = __WEBPACK_IMPORTED_MODULE_1__dchelpers___default.a.getOrdinalBarChart(groupConfig).valueAccessor(function (d) {
                 return d.value[_this.selected];
             }).controlsUseVisibility(true).elasticX(true).on('pretransition', function (chart) {
                 chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)');
@@ -38103,7 +38634,7 @@ if(false) {
             edLevelConfig.aspectRatio = 2.5;
             edLevelConfig.margins = { top: 10, left: 50, right: 30, bottom: 50 };
             edLevelConfig.colors = ["#cc5500"];
-            var edLevelChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getOrdinalBarChart(edLevelConfig);
+            var edLevelChart = __WEBPACK_IMPORTED_MODULE_1__dchelpers___default.a.getOrdinalBarChart(edLevelConfig);
             edLevelChart.valueAccessor(function (d) {
                 return d.value[_this.selected];
             }).controlsUseVisibility(true).elasticX(true).on('pretransition', function (chart) {
@@ -38113,7 +38644,7 @@ if(false) {
             });
 
             edLevelChart.ordering(function (d) {
-                return __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].edLevelOrder[d.key];
+                return __WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].edLevelOrder[d.key];
             });
 
             //Grade Rowchart               
@@ -38129,12 +38660,12 @@ if(false) {
             gradeConfig.margins = { top: 10, left: 50, right: 30, bottom: 50 };
             var c = d3.rgb(51, 172, 255);
             gradeConfig.colors = _this.chartSpecs.gradeChartColorScale;
-            var gradeChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getRowChart(gradeConfig);
+            var gradeChart = __WEBPACK_IMPORTED_MODULE_1__dchelpers___default.a.getRowChart(gradeConfig);
 
             gradeChart.valueAccessor(function (d) {
                 return d.value[_this.selected];
             }).controlsUseVisibility(true).ordering(function (d) {
-                return __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].gradeOrder[d.key];
+                return __WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].gradeOrder[d.key];
             });
 
             //CONUS 
@@ -38170,7 +38701,7 @@ if(false) {
             usConfig.propName = 'name';
             usConfig.projection = d3.geo.albersUsa();
 
-            var usChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getGeoChart(usConfig);
+            var usChart = __WEBPACK_IMPORTED_MODULE_1__dchelpers___default.a.getGeoChart(usConfig);
             usChart.title(function (d) {
                 //console.log("**************************************************");
                 // d.key = AA from json file
@@ -38185,7 +38716,7 @@ if(false) {
                 if (d.value == undefined) {
                     d.value = '0';
                 }
-                return __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].geoCS[__WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].stateFormat[d.key]] + ": " + d.value;
+                return __WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].geoCS[__WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].stateFormat[d.key]] + ": " + d.value;
             });
 
             usChart.on('pretransition', function (chart) {
@@ -38262,23 +38793,23 @@ if(false) {
                         myCheckValue = percentNonStemND.value;
                     };
                     // Override global options
-                    __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.options = {
+                    __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.options = {
                         "positionClass": "toast-bottom-full-width",
                         "closeButton": "true",
                         "preventDuplicates": "true"
                     };
                     if (myCheckValue() == '0.0%' || myCheckValue() == 0) {
-                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.warning('Your ' + _this.toProperCase(_this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.warning('Your ' + _this.toProperCase(_this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
                     } else if (myCheckValue() == '1') {
                         myFilters += ' return ' + myCheckValue() + ' ' + _this.ylabel + ' result.';
-                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
+                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.info(myFilters);
                     } else {
                         myFilters += ' return ' + myCheckValue() + ' ' + _this.ylabel + ' results.';
-                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
+                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.info(myFilters);
                     }
                 }
                 if (myFilters == 'undefined' || myFilters == undefined) {
-                    __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.error('Something went wrong. Please reset and try again.');
+                    __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.error('Something went wrong. Please reset and try again.');
                 }
             });
 
@@ -38292,7 +38823,7 @@ if(false) {
                     if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
                 });
 
-                FileSaver.saveAs(blob, 'PERSTAT Officer Year Group' + ' ' + __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
+                FileSaver.saveAs(blob, 'PERSTAT Officer Year Group' + ' ' + __WEBPACK_IMPORTED_MODULE_8__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
             });
 
             // after DOM updated redraw to make chart widths update
@@ -38318,7 +38849,7 @@ if(false) {
     beforeDestroy: function beforeDestroy() {
         console.log("beforeDestroy");
         dc.chartRegistry.clear();
-        __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate = 'Undetermined';
+        __WEBPACK_IMPORTED_MODULE_8__store_store__["a" /* store */].state.asDate = 'Undetermined';
     },
     destroyed: function destroyed() {
         console.log("destroyed");
@@ -40178,7 +40709,7 @@ if (false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(crossfilter, dc, $, d3, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
+/* WEBPACK VAR INJECTION */(function(crossfilter, introJs, dc, $, d3, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__dchelpers__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chartSpecs__ = __webpack_require__("K62J");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__("mtWM");
@@ -40191,6 +40722,19 @@ if (false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_toastr__ = __webpack_require__("vQJi");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_toastr__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -40316,6 +40860,9 @@ if (false) {
         }
     },
     methods: {
+        startDemo: function startDemo() {
+            introJs().start();
+        },
         resetAll: function resetAll(event) {
             dc.filterAll();
             dc.redrawAll();
@@ -40619,7 +41166,7 @@ if (false) {
         console.log("destroyed");
     }
 });
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("JowF"), __webpack_require__("iEPi"), __webpack_require__("7t+N"), __webpack_require__("Za4h"), __webpack_require__("lDdF")))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("JowF"), __webpack_require__("iGUu"), __webpack_require__("iEPi"), __webpack_require__("7t+N"), __webpack_require__("Za4h"), __webpack_require__("lDdF")))
 
 /***/ }),
 
@@ -41130,12 +41677,25 @@ var render = function() {
             },
             [
               _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-auto" }, [
-                  _vm._v(
-                    "\n                        Inventory:\n                        "
-                  ),
-                  _c("span", { attrs: { id: "inv" } })
-                ]),
+                _c(
+                  "div",
+                  {
+                    staticClass: "col",
+                    attrs: {
+                      id: "radioSelect",
+                      "data-step": "1",
+                      "data-intro": "Total number of Active Duty personnel."
+                    }
+                  },
+                  [
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                            Inventory:\n                            "
+                      ),
+                      _c("span", { attrs: { id: "inv" } })
+                    ])
+                  ]
+                ),
                 _vm._v(" "),
                 _c("div", { staticClass: "col" }),
                 _vm._v(" "),
@@ -41145,9 +41705,31 @@ var render = function() {
                     {
                       staticClass:
                         "btn btn-info btn-rounded btn-sm waves-effect",
+                      attrs: { type: "button", id: "demo", title: "Demo" },
+                      on: { click: _vm.startDemo }
+                    },
+                    [
+                      _c("p", { staticClass: "d-none d-md-inline" }, [
+                        _vm._v("Demo  ")
+                      ]),
+                      _vm._v(" "),
+                      _c("FontAwesomeIcon", {
+                        attrs: { icon: "eye", size: "lg" }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "btn btn-info btn-rounded btn-sm waves-effect",
                       attrs: {
                         type: "button",
                         id: "showMyFilters",
+                        "data-step": "6",
+                        "data-intro": "See the currently applied filters here!",
                         title: "Filter"
                       }
                     },
@@ -41171,6 +41753,8 @@ var render = function() {
                       attrs: {
                         type: "button",
                         id: "download",
+                        "data-step": "4",
+                        "data-intro": "Download data in tabular form here!",
                         title: "Download Raw Data"
                       }
                     },
@@ -41191,7 +41775,13 @@ var render = function() {
                     {
                       staticClass:
                         "btn btn-danger btn-rounded btn-sm waves-effect",
-                      attrs: { type: "button", title: "Reset All" },
+                      attrs: {
+                        type: "button",
+                        "data-step": "3",
+                        "data-intro":
+                          "Click here to reset filters on all charts.",
+                        title: "Reset All"
+                      },
                       on: { click: _vm.resetAll }
                     },
                     [
@@ -41257,37 +41847,48 @@ var render = function() {
                     attrs: { id: "grade" }
                   },
                   [
-                    _c("div", { attrs: { id: "dc-grade-barchart" } }, [
-                      _c("h3", [
-                        _vm._v(" Grade/Rank "),
-                        _c(
-                          "span",
-                          {
-                            staticStyle: {
-                              "font-size": "14pt",
-                              opacity: "0.87"
-                            }
-                          },
-                          [_vm._v(_vm._s(_vm.ylabel))]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "btn btn-danger btn-sm btn-rounded reset",
-                            staticStyle: { visibility: "hidden" },
-                            attrs: { type: "button" },
-                            on: {
-                              click: function($event) {
-                                _vm.resetChart("dc-grade-barchart")
+                    _c(
+                      "div",
+                      {
+                        attrs: {
+                          id: "dc-grade-barchart",
+                          "data-step": "2",
+                          "data-intro":
+                            "Clicking the bars applies filters to the chart. Click on one of the bars and watch the other charts update!"
+                        }
+                      },
+                      [
+                        _c("h3", [
+                          _vm._v(" Grade/Rank "),
+                          _c(
+                            "span",
+                            {
+                              staticStyle: {
+                                "font-size": "14pt",
+                                opacity: "0.87"
                               }
-                            }
-                          },
-                          [_vm._v("Reset")]
-                        )
-                      ])
-                    ])
+                            },
+                            [_vm._v(_vm._s(_vm.ylabel))]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "btn btn-danger btn-sm btn-rounded reset",
+                              staticStyle: { visibility: "hidden" },
+                              attrs: { type: "button" },
+                              on: {
+                                click: function($event) {
+                                  _vm.resetChart("dc-grade-barchart")
+                                }
+                              }
+                            },
+                            [_vm._v("Reset")]
+                          )
+                        ])
+                      ]
+                    )
                   ]
                 )
               ]),
@@ -42558,7 +43159,7 @@ if(false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(d3, crossfilter, dc, FileSaver, $) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
+/* WEBPACK VAR INJECTION */(function(d3, crossfilter, introJs, dc, FileSaver, $) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__dchelpers__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chartSpecs__ = __webpack_require__("K62J");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__("mtWM");
@@ -42573,6 +43174,21 @@ if(false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr__ = __webpack_require__("vQJi");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_toastr__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -42806,6 +43422,9 @@ if(false) {
         }
     },
     methods: {
+        startDemo: function startDemo() {
+            introJs().start();
+        },
         resetAll: function resetAll(event) {
             dc.filterAll();
             dc.redrawAll();
@@ -43079,7 +43698,7 @@ if(false) {
         console.log("destroyed");
     }
 });
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("Za4h"), __webpack_require__("JowF"), __webpack_require__("iEPi"), __webpack_require__("lDdF"), __webpack_require__("7t+N")))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("Za4h"), __webpack_require__("JowF"), __webpack_require__("iGUu"), __webpack_require__("iEPi"), __webpack_require__("lDdF"), __webpack_require__("7t+N")))
 
 /***/ }),
 
@@ -43114,7 +43733,7 @@ if(false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(d3, crossfilter, dc, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
+/* WEBPACK VAR INJECTION */(function(d3, crossfilter, dc, introJs, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__dchelpers__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chartSpecs__ = __webpack_require__("K62J");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__("mtWM");
@@ -43130,6 +43749,20 @@ if(false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_toastr__ = __webpack_require__("vQJi");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_toastr__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -43319,6 +43952,10 @@ if(false) {
             dc.redrawAll();
             this.fyr = '2018';
             this.singleSubmit('2018', 'dc-fyr-barchart');
+        },
+
+        startDemo: function startDemo() {
+            introJs().start();
         },
 
         resetChart: function resetChart(id) {
@@ -43760,7 +44397,7 @@ if(false) {
         console.log("destroyed");
     }
 });
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("Za4h"), __webpack_require__("JowF"), __webpack_require__("iEPi"), __webpack_require__("lDdF")))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("Za4h"), __webpack_require__("JowF"), __webpack_require__("iEPi"), __webpack_require__("iGUu"), __webpack_require__("lDdF")))
 
 /***/ }),
 
@@ -43903,4 +44540,4 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.b86b6fde5f2b0c75e4bd.js.map
+//# sourceMappingURL=app.f59ee1ac412adb879332.js.map
