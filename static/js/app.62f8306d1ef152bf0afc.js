@@ -5085,7 +5085,7 @@ var render = function() {
                       "aria-expanded": "false"
                     }
                   },
-                  [_vm._v("\n              Total Force \n          ")]
+                  [_vm._v("\n                 Total Force \n             ")]
                 ),
                 _vm._v(" "),
                 _c(
@@ -5173,7 +5173,7 @@ var render = function() {
                       "aria-expanded": "false"
                     }
                   },
-                  [_vm._v("\n                Active Duty\n            ")]
+                  [_vm._v("\n                   Active Duty\n               ")]
                 ),
                 _vm._v(" "),
                 _c(
@@ -5333,7 +5333,7 @@ var render = function() {
                       "aria-expanded": "false"
                     }
                   },
-                  [_vm._v("\n             AD Assignments \n          ")]
+                  [_vm._v("\n                AD Assignments \n             ")]
                 ),
                 _vm._v(" "),
                 _c(
@@ -5421,7 +5421,7 @@ var render = function() {
                       "aria-expanded": "false"
                     }
                   },
-                  [_vm._v("\n             AD Education\n          ")]
+                  [_vm._v("\n                AD Education\n             ")]
                 ),
                 _vm._v(" "),
                 _c(
@@ -5472,123 +5472,6 @@ var render = function() {
                     )
                   ],
                   1
-                )
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "nav-item dropdown" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "nav-link dropdown-toggle",
-                    attrs: {
-                      href: "#",
-                      id: "navbarDropdown",
-                      role: "button",
-                      "data-toggle": "dropdown",
-                      "aria-haspopup": "true",
-                      "aria-expanded": "false"
-                    }
-                  },
-                  [_vm._v("\n                ANG\n            ")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "dropdown-menu",
-                    attrs: { "aria-labelledby": "navbarDropdown" }
-                  },
-                  [
-                    _c("li", { staticClass: "dropdown-submenu" }, [
-                      _c(
-                        "a",
-                        { staticClass: "dropdown-item dropdown-toggle" },
-                        [_vm._v("Officer")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "ul",
-                        { staticClass: "dropdown-menu" },
-                        [
-                          _c(
-                            "router-link",
-                            {
-                              staticClass: "dropdown-item",
-                              staticStyle: { cursor: "pointer" },
-                              attrs: { to: "/angofficer", tag: "li" },
-                              nativeOn: {
-                                click: function($event) {
-                                  _vm.goToPage("ang-off-manning")
-                                }
-                              }
-                            },
-                            [_vm._v("Manning")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "router-link",
-                            {
-                              staticClass: "dropdown-item",
-                              staticStyle: { cursor: "pointer" },
-                              attrs: { to: "/angofficer", tag: "li" },
-                              nativeOn: {
-                                click: function($event) {
-                                  _vm.goToPage("ang-off-edu")
-                                }
-                              }
-                            },
-                            [_vm._v("Education")]
-                          )
-                        ],
-                        1
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "dropdown-submenu" }, [
-                      _c(
-                        "a",
-                        { staticClass: "dropdown-item dropdown-toggle" },
-                        [_vm._v("Enlisted")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "ul",
-                        { staticClass: "dropdown-menu" },
-                        [
-                          _c(
-                            "router-link",
-                            {
-                              staticClass: "dropdown-item",
-                              staticStyle: { cursor: "pointer" },
-                              attrs: { to: "/angenlisted", tag: "li" },
-                              nativeOn: {
-                                click: function($event) {
-                                  _vm.goToPage("ang-enl-manning")
-                                }
-                              }
-                            },
-                            [_vm._v("Manning")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "router-link",
-                            {
-                              staticClass: "dropdown-item",
-                              staticStyle: { cursor: "pointer" },
-                              attrs: { to: "/angenlisted", tag: "li" },
-                              nativeOn: {
-                                click: function($event) {
-                                  _vm.goToPage("ang-enl-edu")
-                                }
-                              }
-                            },
-                            [_vm._v("Education")]
-                          )
-                        ],
-                        1
-                      )
-                    ])
-                  ]
                 )
               ])
             ],
@@ -44323,4 +44206,4 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.6e4f2cdca43a785b6fc8.js.map
+//# sourceMappingURL=app.62f8306d1ef152bf0afc.js.map
