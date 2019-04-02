@@ -3991,7 +3991,7 @@ exports.push([module.i, "\n#tour, #type, #grade, #base, #us, #jp {\n    margin-t
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(d3, crossfilter, dc, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
+/* WEBPACK VAR INJECTION */(function(d3, crossfilter, dc, introJs, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__dchelpers__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chartSpecs__ = __webpack_require__("K62J");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__("mtWM");
@@ -4006,6 +4006,21 @@ exports.push([module.i, "\n#tour, #type, #grade, #base, #us, #jp {\n    margin-t
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr__ = __webpack_require__("vQJi");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_toastr__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -4307,6 +4322,9 @@ exports.push([module.i, "\n#tour, #type, #grade, #base, #us, #jp {\n    margin-t
         resetAll: function resetAll(event) {
             dc.filterAll();
             dc.redrawAll();
+        },
+        startDemo: function startDemo() {
+            introJs().start();
         },
         resetChart: function resetChart(id) {
             dc.chartRegistry.list().filter(function (chart) {
@@ -4723,7 +4741,7 @@ exports.push([module.i, "\n#tour, #type, #grade, #base, #us, #jp {\n    margin-t
         console.log("destroyed");
     }
 });
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("Za4h"), __webpack_require__("JowF"), __webpack_require__("iEPi"), __webpack_require__("lDdF")))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("Za4h"), __webpack_require__("JowF"), __webpack_require__("iEPi"), __webpack_require__("iGUu"), __webpack_require__("lDdF")))
 
 /***/ }),
 
@@ -12312,9 +12330,31 @@ var render = function() {
                     {
                       staticClass:
                         "btn btn-info btn-rounded btn-sm waves-effect",
+                      attrs: { type: "button", id: "demo", title: "Demo" },
+                      on: { click: _vm.startDemo }
+                    },
+                    [
+                      _c("p", { staticClass: "d-none d-md-inline" }, [
+                        _vm._v("Demo  ")
+                      ]),
+                      _vm._v(" "),
+                      _c("FontAwesomeIcon", {
+                        attrs: { icon: "eye", size: "lg" }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "btn btn-info btn-rounded btn-sm waves-effect",
                       attrs: {
                         type: "button",
                         id: "showMyFilters",
+                        "data-step": "6",
+                        "data-intro": "See the currently applied filters here!",
                         title: "Filter"
                       }
                     },
@@ -12338,6 +12378,8 @@ var render = function() {
                       attrs: {
                         type: "button",
                         id: "download",
+                        "data-step": "4",
+                        "data-intro": "Download data in tabular form here!",
                         title: "Download Raw Data"
                       }
                     },
@@ -12358,7 +12400,13 @@ var render = function() {
                     {
                       staticClass:
                         "btn btn-danger btn-rounded btn-sm waves-effect",
-                      attrs: { type: "button", title: "Reset All" },
+                      attrs: {
+                        type: "button",
+                        "data-step": "3",
+                        "data-intro":
+                          "Click here to reset filters on all charts.",
+                        title: "Reset All"
+                      },
                       on: { click: _vm.resetAll }
                     },
                     [
@@ -12379,28 +12427,40 @@ var render = function() {
                 _c("div", { staticClass: "col-auto" })
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-auto" }, [
-                  _vm._v(
-                    "\n                        Selects:        \n                        "
-                  ),
-                  _c("span", { attrs: { id: "Selects" } })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _vm._v(
-                    "\n                        Eligibles: \n                        "
-                  ),
-                  _c("span", { attrs: { id: "Eligible" } })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _vm._v(
-                    "\n                        Promotion Rate: \n                        "
-                  ),
-                  _c("span", { attrs: { id: "SelectsRate" } })
-                ])
-              ]),
+              _c(
+                "div",
+                {
+                  staticClass: "row",
+                  attrs: {
+                    id: "counts",
+                    "data-step": "1",
+                    "data-intro":
+                      "Summary statistics for the data elements are shown here. These numbers change as filters are applied."
+                  }
+                },
+                [
+                  _c("div", { staticClass: "col-auto" }, [
+                    _vm._v(
+                      "\n                        Selects:        \n                        "
+                    ),
+                    _c("span", { attrs: { id: "Selects" } })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-auto" }, [
+                    _vm._v(
+                      "\n                        Eligibles: \n                        "
+                    ),
+                    _c("span", { attrs: { id: "Eligible" } })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-auto" }, [
+                    _vm._v(
+                      "\n                        Promotion Rate: \n                        "
+                    ),
+                    _c("span", { attrs: { id: "SelectsRate" } })
+                  ])
+                ]
+              ),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
                 _c(
@@ -12410,37 +12470,49 @@ var render = function() {
                     attrs: { id: "grade" }
                   },
                   [
-                    _c("div", { attrs: { id: "dc-grade-rowchart" } }, [
-                      _c("h3", [
-                        _vm._v("Grade "),
-                        _c(
-                          "span",
-                          {
-                            staticStyle: {
-                              "font-size": "14pt",
-                              opacity: "0.87"
-                            }
-                          },
-                          [_vm._v(_vm._s(_vm.ylabel))]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "btn btn-danger btn-sm btn-rounded reset",
-                            staticStyle: { display: "none" },
-                            attrs: { type: "button" },
-                            on: {
-                              click: function($event) {
-                                _vm.resetChart("dc-grade-rowchart")
+                    _c(
+                      "div",
+                      {
+                        attrs: {
+                          id: "dc-grade-rowchart",
+                          "data-step": "2",
+                          "data-intro":
+                            "Clicking the bars applies filters to the chart. Click on one of the bars and watch the other charts update!"
+                        }
+                      },
+                      [
+                        _vm._v(">>>\n                            "),
+                        _c("h3", [
+                          _vm._v("Grade "),
+                          _c(
+                            "span",
+                            {
+                              staticStyle: {
+                                "font-size": "14pt",
+                                opacity: "0.87"
                               }
-                            }
-                          },
-                          [_vm._v("Reset")]
-                        )
-                      ])
-                    ])
+                            },
+                            [_vm._v(_vm._s(_vm.ylabel))]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "btn btn-danger btn-sm btn-rounded reset",
+                              staticStyle: { display: "none" },
+                              attrs: { type: "button" },
+                              on: {
+                                click: function($event) {
+                                  _vm.resetChart("dc-grade-rowchart")
+                                }
+                              }
+                            },
+                            [_vm._v("Reset")]
+                          )
+                        ])
+                      ]
+                    )
                   ]
                 ),
                 _vm._v(" "),
@@ -14361,7 +14433,7 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(d3, crossfilter, dc, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
+/* WEBPACK VAR INJECTION */(function(d3, crossfilter, dc, introJs, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__dchelpers__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chartSpecs__ = __webpack_require__("K62J");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__("mtWM");
@@ -14376,6 +14448,19 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr__ = __webpack_require__("vQJi");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_toastr__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -14619,6 +14704,9 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
         resetAll: function resetAll(event) {
             dc.filterAll();
             dc.redrawAll();
+        },
+        startDemo: function startDemo() {
+            introJs().start();
         },
         resetChart: function resetChart(id) {
             dc.chartRegistry.list().filter(function (chart) {
@@ -14944,7 +15032,7 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
         console.log("destroyed");
     }
 });
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("Za4h"), __webpack_require__("JowF"), __webpack_require__("iEPi"), __webpack_require__("lDdF")))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("Za4h"), __webpack_require__("JowF"), __webpack_require__("iEPi"), __webpack_require__("iGUu"), __webpack_require__("lDdF")))
 
 /***/ }),
 
@@ -16197,7 +16285,15 @@ var render = function() {
               _c("div", { staticClass: "row pt-2" }, [
                 _c(
                   "div",
-                  { staticClass: "col", attrs: { id: "radioSelect" } },
+                  {
+                    staticClass: "col",
+                    attrs: {
+                      id: "radioSelect",
+                      "data-step": "1",
+                      "data-intro":
+                        "Toggle the radio buttons to change the data element being shown in the charts."
+                    }
+                  },
                   [
                     _c(
                       "div",
@@ -16417,9 +16513,31 @@ var render = function() {
                     {
                       staticClass:
                         "btn btn-info btn-rounded btn-sm waves-effect",
+                      attrs: { type: "button", id: "demo", title: "Demo" },
+                      on: { click: _vm.startDemo }
+                    },
+                    [
+                      _c("p", { staticClass: "d-none d-md-inline" }, [
+                        _vm._v("Demo  ")
+                      ]),
+                      _vm._v(" "),
+                      _c("FontAwesomeIcon", {
+                        attrs: { icon: "eye", size: "lg" }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "btn btn-info btn-rounded btn-sm waves-effect",
                       attrs: {
                         type: "button",
                         id: "showMyFilters",
+                        "data-step": "7",
+                        "data-intro": "See the currently applied filters here!",
                         title: "Filter"
                       }
                     },
@@ -16443,6 +16561,8 @@ var render = function() {
                       attrs: {
                         type: "button",
                         id: "download",
+                        "data-step": "6",
+                        "data-intro": "Download data in tabular form here!",
                         title: "Download Raw Data"
                       }
                     },
@@ -16463,7 +16583,13 @@ var render = function() {
                     {
                       staticClass:
                         "btn btn-danger btn-rounded btn-sm waves-effect",
-                      attrs: { type: "button", title: "Reset All" },
+                      attrs: {
+                        type: "button",
+                        "data-step": "4",
+                        "data-intro":
+                          "Click here to reset filters on all charts.",
+                        title: "Reset All"
+                      },
                       on: { click: _vm.resetAll }
                     },
                     [
@@ -16480,35 +16606,47 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-auto" }, [
-                  _vm._v(
-                    "\n                        Assigned:\n                        "
-                  ),
-                  _c("span", { attrs: { id: "asgn" } })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _vm._v(
-                    "\n                        STP:\n                        "
-                  ),
-                  _c("span", { attrs: { id: "stp" } })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _vm._v(
-                    "\n                        Authorized:\n                        "
-                  ),
-                  _c("span", { attrs: { id: "auth" } })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _vm._v(
-                    "\n                        Manning Percent:\n                        "
-                  ),
-                  _c("span", { attrs: { id: "percent" } })
-                ])
-              ]),
+              _c(
+                "div",
+                {
+                  staticClass: "row",
+                  attrs: {
+                    id: "counts",
+                    "data-step": "2",
+                    "data-intro":
+                      "Summary statistics for the data elements are shown here. These numbers change as filters are applied."
+                  }
+                },
+                [
+                  _c("div", { staticClass: "col-auto" }, [
+                    _vm._v(
+                      "\n                        Assigned:\n                        "
+                    ),
+                    _c("span", { attrs: { id: "asgn" } })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-auto" }, [
+                    _vm._v(
+                      "\n                        STP:\n                        "
+                    ),
+                    _c("span", { attrs: { id: "stp" } })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-auto" }, [
+                    _vm._v(
+                      "\n                        Authorized:\n                        "
+                    ),
+                    _c("span", { attrs: { id: "auth" } })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-auto" }, [
+                    _vm._v(
+                      "\n                        Manning Percent:\n                        "
+                    ),
+                    _c("span", { attrs: { id: "percent" } })
+                  ])
+                ]
+              ),
               _vm._v(" "),
               _c("overviewBarChart", {
                 attrs: {
@@ -16538,37 +16676,49 @@ var render = function() {
                     attrs: { id: "grade" }
                   },
                   [
-                    _c("div", { attrs: { id: "dc-grade-rowchart" } }, [
-                      _c("h3", [
-                        _vm._v("Grade "),
-                        _c(
-                          "span",
-                          {
-                            staticStyle: {
-                              "font-size": "14pt",
-                              opacity: "0.87"
-                            }
-                          },
-                          [_vm._v(_vm._s(_vm.ylabel))]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "btn btn-danger btn-sm btn-rounded reset",
-                            staticStyle: { display: "none" },
-                            attrs: { type: "button" },
-                            on: {
-                              click: function($event) {
-                                _vm.resetChart("dc-grade-rowchart")
+                    _c(
+                      "div",
+                      {
+                        attrs: {
+                          id: "dc-grade-rowchart",
+                          "data-step": "3",
+                          "data-intro":
+                            "Clicking the bars applies filters to the chart. Click on one of the bars and watch the other charts update!"
+                        }
+                      },
+                      [
+                        _vm._v(">\n                            "),
+                        _c("h3", [
+                          _vm._v("Grade "),
+                          _c(
+                            "span",
+                            {
+                              staticStyle: {
+                                "font-size": "14pt",
+                                opacity: "0.87"
                               }
-                            }
-                          },
-                          [_vm._v("Reset")]
-                        )
-                      ])
-                    ])
+                            },
+                            [_vm._v(_vm._s(_vm.ylabel))]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "btn btn-danger btn-sm btn-rounded reset",
+                              staticStyle: { display: "none" },
+                              attrs: { type: "button" },
+                              on: {
+                                click: function($event) {
+                                  _vm.resetChart("dc-grade-rowchart")
+                                }
+                              }
+                            },
+                            [_vm._v("Reset")]
+                          )
+                        ])
+                      ]
+                    )
                   ]
                 ),
                 _vm._v(" "),
@@ -20715,6 +20865,8 @@ exports.push([module.i, "\n#type, #grade, #majcom, #base {\n    margin-top: 1rem
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Enlisted_EnlistedPromo__ = __webpack_require__("/1hU");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__store_store__ = __webpack_require__("wtEF");
 
+//
+//
 //
 //
 //
@@ -28788,7 +28940,7 @@ if (false) {(function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(crossfilter, dc, d3, _, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
+/* WEBPACK VAR INJECTION */(function(crossfilter, dc, introJs, d3, _, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__dchelpers__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chartSpecs__ = __webpack_require__("K62J");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__("mtWM");
@@ -28802,6 +28954,19 @@ if (false) {(function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_toastr__ = __webpack_require__("vQJi");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_toastr__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -29006,6 +29171,10 @@ if (false) {(function () {
             dc.filterAll();
             //dc.redrawAll()
         },
+        startDemo: function startDemo() {
+            introJs().start();
+        },
+
         resetChart: function resetChart(id) {
             dc.chartRegistry.list().filter(function (chart) {
                 return chart.anchorName() == id;
@@ -29362,7 +29531,7 @@ if (false) {(function () {
         console.log("destroyed");
     }
 });
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("JowF"), __webpack_require__("iEPi"), __webpack_require__("Za4h"), __webpack_require__("M4fF"), __webpack_require__("lDdF")))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("JowF"), __webpack_require__("iEPi"), __webpack_require__("iGUu"), __webpack_require__("Za4h"), __webpack_require__("M4fF"), __webpack_require__("lDdF")))
 
 /***/ }),
 
@@ -29417,9 +29586,31 @@ var render = function() {
                     {
                       staticClass:
                         "btn btn-info btn-rounded btn-sm waves-effect",
+                      attrs: { type: "button", id: "demo", title: "Demo" },
+                      on: { click: _vm.startDemo }
+                    },
+                    [
+                      _c("p", { staticClass: "d-none d-md-inline" }, [
+                        _vm._v("Demo  ")
+                      ]),
+                      _vm._v(" "),
+                      _c("FontAwesomeIcon", {
+                        attrs: { icon: "eye", size: "lg" }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "btn btn-info btn-rounded btn-sm waves-effect",
                       attrs: {
                         type: "button",
                         id: "showMyFilters",
+                        "data-step": "7",
+                        "data-intro": "See the currently applied filters here!",
                         title: "Filter"
                       }
                     },
@@ -29443,6 +29634,8 @@ var render = function() {
                       attrs: {
                         type: "button",
                         id: "download",
+                        "data-step": "6",
+                        "data-intro": "Download data in tabular form here!",
                         title: "Download Raw Data"
                       }
                     },
@@ -29463,7 +29656,13 @@ var render = function() {
                     {
                       staticClass:
                         "btn btn-danger btn-rounded btn-sm waves-effect",
-                      attrs: { type: "button", title: "Reset All" },
+                      attrs: {
+                        type: "button",
+                        "data-step": "4",
+                        "data-intro":
+                          "Click here to reset filters on all charts.",
+                        title: "Reset All"
+                      },
                       on: { click: _vm.resetAll }
                     },
                     [
@@ -29484,28 +29683,40 @@ var render = function() {
                 _c("div", { staticClass: "col-auto" })
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-auto" }, [
-                  _vm._v(
-                    "\n                        Selects:        \n                        "
-                  ),
-                  _c("span", { attrs: { id: "sel" } })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _vm._v(
-                    "\n                        Eligibles: \n                        "
-                  ),
-                  _c("span", { attrs: { id: "elig" } })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _vm._v(
-                    "\n                        Promotion Rate: \n                        "
-                  ),
-                  _c("span", { attrs: { id: "selRate" } })
-                ])
-              ]),
+              _c(
+                "div",
+                {
+                  staticClass: "row",
+                  attrs: {
+                    id: "counts",
+                    "data-step": "1",
+                    "data-intro":
+                      "Summary statistics for the data elements are shown here. These numbers change as filters are applied."
+                  }
+                },
+                [
+                  _c("div", { staticClass: "col-auto" }, [
+                    _vm._v(
+                      "\n                        Selects:        \n                        "
+                    ),
+                    _c("span", { attrs: { id: "sel" } })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-auto" }, [
+                    _vm._v(
+                      "\n                        Eligibles: \n                        "
+                    ),
+                    _c("span", { attrs: { id: "elig" } })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-auto" }, [
+                    _vm._v(
+                      "\n                        Promotion Rate: \n                        "
+                    ),
+                    _c("span", { attrs: { id: "selRate" } })
+                  ])
+                ]
+              ),
               _vm._v(" "),
               _c(
                 "div",
@@ -29555,37 +29766,49 @@ var render = function() {
                     attrs: { id: "grade" }
                   },
                   [
-                    _c("div", { attrs: { id: "dc-grade-barchart" } }, [
-                      _c("h3", { staticClass: "mb-0" }, [
-                        _vm._v("Grade "),
-                        _c(
-                          "span",
-                          {
-                            staticStyle: {
-                              "font-size": "14pt",
-                              opacity: "0.87"
-                            }
-                          },
-                          [_vm._v(_vm._s(_vm.ylabel))]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "btn btn-danger btn-sm btn-rounded reset",
-                            staticStyle: { visibility: "hidden" },
-                            attrs: { type: "button" },
-                            on: {
-                              click: function($event) {
-                                _vm.resetChart("dc-grade-barchart")
+                    _c(
+                      "div",
+                      {
+                        attrs: {
+                          id: "dc-grade-barchart",
+                          "data-step": "2",
+                          "data-intro":
+                            "Clicking the bars applies filters to the chart. Click on one of the bars and watch the other charts update!"
+                        }
+                      },
+                      [
+                        _vm._v(">>\n                            "),
+                        _c("h3", { staticClass: "mb-0" }, [
+                          _vm._v("Grade "),
+                          _c(
+                            "span",
+                            {
+                              staticStyle: {
+                                "font-size": "14pt",
+                                opacity: "0.87"
                               }
-                            }
-                          },
-                          [_vm._v("Reset")]
-                        )
-                      ])
-                    ])
+                            },
+                            [_vm._v(_vm._s(_vm.ylabel))]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "btn btn-danger btn-sm btn-rounded reset",
+                              staticStyle: { visibility: "hidden" },
+                              attrs: { type: "button" },
+                              on: {
+                                click: function($event) {
+                                  _vm.resetChart("dc-grade-barchart")
+                                }
+                              }
+                            },
+                            [_vm._v("Reset")]
+                          )
+                        ])
+                      ]
+                    )
                   ]
                 ),
                 _vm._v(" "),
@@ -29823,25 +30046,39 @@ var render = function() {
                 )
               ]),
               _vm._v(" "),
-              _c("overviewBarChart", {
-                attrs: {
-                  id: "core",
-                  dimension: _vm.coreDim,
-                  aspectRatio: _vm.chartSpecs.coreChart.aspectRatio,
-                  minHeight: _vm.chartSpecs.coreChart.minHeight,
-                  normalToOverviewFactor: 2.5,
-                  selected: _vm.selected,
-                  ylabel: _vm.ylabel,
-                  reducerAdd: _vm.promoAdd,
-                  reducerRemove: _vm.promoRemove,
-                  accumulator: _vm.promoInitial,
-                  numBars: 15,
-                  margin: _vm.chartSpecs.coreChart.margins,
-                  colorScale: _vm.coreColorScale,
-                  title: "Core",
-                  loaded: _vm.loaded
-                }
-              }),
+              _c(
+                "div",
+                {
+                  staticClass: "row",
+                  attrs: {
+                    "data-step": "3",
+                    "data-intro":
+                      "Click on the little black ball to learn more about the sliding brush barchart!"
+                  }
+                },
+                [
+                  _c("overviewBarChart", {
+                    attrs: {
+                      id: "core",
+                      dimension: _vm.coreDim,
+                      aspectRatio: _vm.chartSpecs.coreChart.aspectRatio,
+                      minHeight: _vm.chartSpecs.coreChart.minHeight,
+                      normalToOverviewFactor: 2.5,
+                      selected: _vm.selected,
+                      ylabel: _vm.ylabel,
+                      reducerAdd: _vm.promoAdd,
+                      reducerRemove: _vm.promoRemove,
+                      accumulator: _vm.promoInitial,
+                      numBars: 15,
+                      margin: _vm.chartSpecs.coreChart.margins,
+                      colorScale: _vm.coreColorScale,
+                      title: "Core",
+                      loaded: _vm.loaded
+                    }
+                  })
+                ],
+                1
+              ),
               _vm._v(" "),
               _c("overviewBarChart", {
                 attrs: {
@@ -33475,7 +33712,7 @@ if(false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(d3, crossfilter, dc, _, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
+/* WEBPACK VAR INJECTION */(function(d3, crossfilter, dc, introJs, _, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__dchelpers__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chartSpecs__ = __webpack_require__("K62J");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__("mtWM");
@@ -33493,6 +33730,19 @@ if(false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_toastr__);
 var _this2 = this;
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -33797,6 +34047,9 @@ var _this2 = this;
             this.singleSubmit('1ST TERM', 'dc-cat-rowchart');
         },
 
+        startDemo: function startDemo() {
+            introJs().start();
+        },
         resetChart: function resetChart(id) {
             dc.chartRegistry.list().filter(function (chart) {
                 return chart.anchorName().indexOf(id) !== -1;
@@ -34149,7 +34402,7 @@ var _this2 = this;
         console.log("destroyed");
     }
 });
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("Za4h"), __webpack_require__("JowF"), __webpack_require__("iEPi"), __webpack_require__("M4fF"), __webpack_require__("lDdF")))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("Za4h"), __webpack_require__("JowF"), __webpack_require__("iEPi"), __webpack_require__("iGUu"), __webpack_require__("M4fF"), __webpack_require__("lDdF")))
 
 /***/ }),
 
@@ -35545,7 +35798,7 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  /*should be scoped*/\n#radioSelect div,input,label{\n    cursor: pointer;\n}\n.fade-enter-active {\n    -webkit-transition: all 0.5s;\n    transition: all 0.5s;\n}\n.fade-leave-active {\n    -webkit-transition: all 0.2s;\n    transition: all 0.2s;\n}\n.fade-enter, .fade-leave-to {\n    opacity: 0;\n}\n.fade-enter-to, .fade-leave {\n    opacity: 1;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  /*should be scoped*/\n#radioSelect div,input,label{\n    cursor: pointer;\n}\n.fade-enter-active {\n    -webkit-transition: all 0.5s;\n    transition: all 0.5s;\n}\n.fade-leave-active {\n    -webkit-transition: all 0.2s;\n    transition: all 0.2s;\n}\n.fade-enter, .fade-leave-to {\n    opacity: 0;\n}\n.fade-enter-to, .fade-leave {\n    opacity: 1;\n}\n", ""]);
 
 // exports
 
@@ -38702,7 +38955,15 @@ var render = function() {
               _c("div", { staticClass: "row pt-2" }, [
                 _c(
                   "div",
-                  { staticClass: "col", attrs: { id: "radioSelect" } },
+                  {
+                    staticClass: "col",
+                    attrs: {
+                      id: "radioSelect",
+                      "data-step": "1",
+                      "data-intro":
+                        "Toggle the radio buttons to change the data element being shown in the charts."
+                    }
+                  },
                   [
                     _c(
                       "div",
@@ -38810,9 +39071,31 @@ var render = function() {
                     {
                       staticClass:
                         "btn btn-info btn-rounded btn-sm waves-effect",
+                      attrs: { type: "button", id: "demo", title: "Demo" },
+                      on: { click: _vm.startDemo }
+                    },
+                    [
+                      _c("p", { staticClass: "d-none d-md-inline" }, [
+                        _vm._v("Demo  ")
+                      ]),
+                      _vm._v(" "),
+                      _c("FontAwesomeIcon", {
+                        attrs: { icon: "eye", size: "lg" }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "btn btn-info btn-rounded btn-sm waves-effect",
                       attrs: {
                         type: "button",
                         id: "showMyFilters",
+                        "data-step": "7",
+                        "data-intro": "See the currently applied filters here!",
                         title: "Filter"
                       }
                     },
@@ -38836,6 +39119,8 @@ var render = function() {
                       attrs: {
                         type: "button",
                         id: "download",
+                        "data-step": "6",
+                        "data-intro": "Download data in tabular form here!",
                         title: "Download Raw Data"
                       }
                     },
@@ -38856,7 +39141,13 @@ var render = function() {
                     {
                       staticClass:
                         "btn btn-danger btn-rounded btn-sm waves-effect",
-                      attrs: { type: "button", title: "Reset All" },
+                      attrs: {
+                        type: "button",
+                        "data-step": "4",
+                        "data-intro":
+                          "Click here to reset filters on all charts.",
+                        title: "Reset All"
+                      },
                       on: {
                         click: function($event) {
                           _vm.searchAfsc = ""
@@ -38880,82 +39171,94 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-auto" }, [
-                  _vm._v(
-                    "\n                        Inventory:\n                        "
-                  ),
-                  _c("span", { attrs: { id: "inv" } })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _vm._v(
-                    "\n                        Eligible:\n                        "
-                  ),
-                  _c("span", { attrs: { id: "elig" } })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _vm._v(
-                    "\n                        Keep:\n                        "
-                  ),
-                  _c("span", { attrs: { id: "keep" } })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _vm._v(
-                    "\n                        Re-Enlist Rate:\n                        "
-                  ),
-                  _c("span", { attrs: { id: "reEnlRate" } })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _vm._v(
-                    "\n                        Keep Rate:\n                        "
-                  ),
-                  _c("span", { attrs: { id: "keepRate" } }),
+              _c(
+                "div",
+                {
+                  staticClass: "row",
+                  attrs: {
+                    id: "counts",
+                    "data-step": "2",
+                    "data-intro":
+                      "Summary statistics for the data elements are shown here. These numbers change as filters are applied."
+                  }
+                },
+                [
+                  _c("div", { staticClass: "col-auto" }, [
+                    _vm._v(
+                      "\n                        Inventory:\n                        "
+                    ),
+                    _c("span", { attrs: { id: "inv" } })
+                  ]),
                   _vm._v(" "),
-                  _c("span", { staticClass: "h3 mt-0 pt-0 align-middle" }, [
-                    _c(
-                      "span",
-                      {
-                        staticClass: "ico-tooltip",
-                        attrs: {
-                          "data-toggle": "tooltip",
-                          title:
-                            "This is the percentage of people who reenlisted out of those who are eligible to reenlist or separate within the term."
-                        }
-                      },
-                      [
-                        _c(
-                          "svg",
-                          {
-                            staticStyle: {
-                              "vertical-align": "top",
-                              "margin-top": "2px"
-                            },
-                            attrs: {
-                              version: "1.1",
-                              xmlns: "http://www.w3.org/2000/svg",
-                              width: "20px",
-                              height: "25px",
-                              viewBox: "0 0 512 512"
-                            }
-                          },
-                          [
-                            _c("path", {
+                  _c("div", { staticClass: "col-auto" }, [
+                    _vm._v(
+                      "\n                        Eligible:\n                        "
+                    ),
+                    _c("span", { attrs: { id: "elig" } })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-auto" }, [
+                    _vm._v(
+                      "\n                        Keep:\n                        "
+                    ),
+                    _c("span", { attrs: { id: "keep" } })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-auto" }, [
+                    _vm._v(
+                      "\n                        Re-Enlist Rate:\n                        "
+                    ),
+                    _c("span", { attrs: { id: "reEnlRate" } })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-auto" }, [
+                    _vm._v(
+                      "\n                        Keep Rate:\n                        "
+                    ),
+                    _c("span", { attrs: { id: "keepRate" } }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "h3 mt-0 pt-0 align-middle" }, [
+                      _c(
+                        "span",
+                        {
+                          staticClass: "ico-tooltip",
+                          attrs: {
+                            "data-toggle": "tooltip",
+                            title:
+                              "This is the percentage of people who reenlisted out of those who are eligible to reenlist or separate within the term."
+                          }
+                        },
+                        [
+                          _c(
+                            "svg",
+                            {
+                              staticStyle: {
+                                "vertical-align": "top",
+                                "margin-top": "2px"
+                              },
                               attrs: {
-                                d:
-                                  "M256,0C114.613,0,0,114.617,0,256c0,141.391,114.613,256,256,256s256-114.609,256-256C512,114.617,397.387,0,256,0z   M256,128c17.674,0,32,14.328,32,32c0,17.68-14.326,32-32,32s-32-14.32-32-32C224,142.328,238.326,128,256,128z M304,384h-96  c-8.836,0-16-7.156-16-16c0-8.836,7.164-16,16-16h16v-96h-16c-8.836,0-16-7.156-16-16c0-8.836,7.164-16,16-16h64  c8.836,0,16,7.164,16,16v112h16c8.836,0,16,7.164,16,16C320,376.844,312.836,384,304,384z"
+                                version: "1.1",
+                                xmlns: "http://www.w3.org/2000/svg",
+                                width: "20px",
+                                height: "25px",
+                                viewBox: "0 0 512 512"
                               }
-                            })
-                          ]
-                        )
-                      ]
-                    )
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M256,0C114.613,0,0,114.617,0,256c0,141.391,114.613,256,256,256s256-114.609,256-256C512,114.617,397.387,0,256,0z   M256,128c17.674,0,32,14.328,32,32c0,17.68-14.326,32-32,32s-32-14.32-32-32C224,142.328,238.326,128,256,128z M304,384h-96  c-8.836,0-16-7.156-16-16c0-8.836,7.164-16,16-16h16v-96h-16c-8.836,0-16-7.156-16-16c0-8.836,7.164-16,16-16h64  c8.836,0,16,7.164,16,16v112h16c8.836,0,16,7.164,16,16C320,376.844,312.836,384,304,384z"
+                                }
+                              })
+                            ]
+                          )
+                        ]
+                      )
+                    ])
                   ])
-                ])
-              ]),
+                ]
+              ),
               _vm._v(" "),
               _c(
                 "div",
@@ -38971,21 +39274,35 @@ var render = function() {
                         "div",
                         { staticClass: "col-12", attrs: { id: "year" } },
                         [
-                          _c("div", { attrs: { id: "dc-year-rowchart" } }, [
-                            _c("h3", [
-                              _vm._v("Year"),
-                              _c(
-                                "span",
-                                {
-                                  staticStyle: {
-                                    "font-size": "14pt",
-                                    opacity: "0.87"
-                                  }
-                                },
-                                [_vm._v("   " + _vm._s(_vm.ylabel))]
-                              )
-                            ])
-                          ])
+                          _c(
+                            "div",
+                            {
+                              attrs: {
+                                id: "dc-year-rowchart",
+                                "data-step": "3",
+                                "data-intro":
+                                  "Clicking the bars applies filters to the chart. Click on one of the bars and watch the other charts update!"
+                              }
+                            },
+                            [
+                              _vm._v(
+                                ">>\n                                    "
+                              ),
+                              _c("h3", [
+                                _vm._v("Year"),
+                                _c(
+                                  "span",
+                                  {
+                                    staticStyle: {
+                                      "font-size": "14pt",
+                                      opacity: "0.87"
+                                    }
+                                  },
+                                  [_vm._v("   " + _vm._s(_vm.ylabel))]
+                                )
+                              ])
+                            ]
+                          )
                         ]
                       ),
                       _vm._v(" "),
@@ -39917,7 +40234,7 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* need to make this scoped */\n#radioSelect div[data-v-76d32ee7],input[data-v-76d32ee7],label[data-v-76d32ee7]{\n    cursor: pointer;\n}\n.form-group[data-v-76d32ee7]{\n    -ms-flex-line-pack: center;\n        align-content: center;\n}\n.fade-enter-active[data-v-76d32ee7] {\n    -webkit-transition: all 0.5s;\n    transition: all 0.5s;\n}\n.fade-leave-active[data-v-76d32ee7] {\n    -webkit-transition: all 0.2s;\n    transition: all 0.2s;\n}\n.fade-enter[data-v-76d32ee7], .fade-leave-to[data-v-76d32ee7] {\n    opacity: 0;\n}\n.fade-enter-to[data-v-76d32ee7], .fade-leave[data-v-76d32ee7] {\n    opacity: 1;\n}\n#category .custom-control-input:checked~.custom-control-indicator[data-v-76d32ee7] {\n    background-color: rgb(18, 153, 60);\n}\n#category .custom-control-input:focus~.custom-control-indicator[data-v-76d32ee7] {\n    -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(18, 153, 60,.25);\n            box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(18, 153, 60,.25);\n}\n#category[data-v-76d32ee7]{\n    margin-top: .5rem;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* need to make this scoped */\n#radioSelect div[data-v-76d32ee7],input[data-v-76d32ee7],label[data-v-76d32ee7]{\n    cursor: pointer;\n}\n.form-group[data-v-76d32ee7]{\n    -ms-flex-line-pack: center;\n        align-content: center;\n}\n.fade-enter-active[data-v-76d32ee7] {\n    -webkit-transition: all 0.5s;\n    transition: all 0.5s;\n}\n.fade-leave-active[data-v-76d32ee7] {\n    -webkit-transition: all 0.2s;\n    transition: all 0.2s;\n}\n.fade-enter[data-v-76d32ee7], .fade-leave-to[data-v-76d32ee7] {\n    opacity: 0;\n}\n.fade-enter-to[data-v-76d32ee7], .fade-leave[data-v-76d32ee7] {\n    opacity: 1;\n}\n#category .custom-control-input:checked~.custom-control-indicator[data-v-76d32ee7] {\n    background-color: rgb(18, 153, 60);\n}\n#category .custom-control-input:focus~.custom-control-indicator[data-v-76d32ee7] {\n    -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(18, 153, 60,.25);\n            box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(18, 153, 60,.25);\n}\n#category[data-v-76d32ee7]{\n    margin-top: .5rem;\n}\n", ""]);
 
 // exports
 
@@ -42177,11 +42494,23 @@ var render = function() {
             staticStyle: { "margin-top": "15px" }
           },
           [
-            _vm._v("\n                    Data as of: \n                    "),
             _c(
               "span",
-              { staticStyle: { "font-weight": "bold", color: "#4d8bf9" } },
-              [_vm._v(" " + _vm._s(_vm.asDate) + " ")]
+              {
+                attrs: {
+                  "data-step": "5",
+                  "data-intro":
+                    "The data on this page is current as of the date shown here."
+                }
+              },
+              [
+                _vm._v("\n                Data as of: \n                "),
+                _c(
+                  "span",
+                  { staticStyle: { "font-weight": "bold", color: "#4d8bf9" } },
+                  [_vm._v(" " + _vm._s(_vm.asDate) + " ")]
+                )
+              ]
             )
           ]
         )
@@ -44323,4 +44652,4 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.6e4f2cdca43a785b6fc8.js.map
+//# sourceMappingURL=app.77c9cc27b1d5477f9bd1.js.map
