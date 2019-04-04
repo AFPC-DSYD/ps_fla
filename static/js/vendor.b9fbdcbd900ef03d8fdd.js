@@ -112728,6 +112728,13 @@ module.exports = function isInteger(it) {
 
 /***/ }),
 
+/***/ "nCDS":
+/***/ (function(module, exports) {
+
+module.exports = { prefix: 'fas', iconName: 'plus', icon: [448, 512, [], "f067", "M448 294.2v-76.4c0-13.3-10.7-24-24-24H286.2V56c0-13.3-10.7-24-24-24h-76.4c-13.3 0-24 10.7-24 24v137.8H24c-13.3 0-24 10.7-24 24v76.4c0 13.3 10.7 24 24 24h137.8V456c0 13.3 10.7 24 24 24h76.4c13.3 0 24-10.7 24-24V318.2H424c13.3 0 24-10.7 24-24z"] };
+
+/***/ }),
+
 /***/ "nErl":
 /***/ (function(module, exports) {
 
@@ -114760,7 +114767,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
                     },
                     iconClass: 'toast-info',
                     positionClass: 'toast-top-right',
-                    //timeOut: 0,
+                    //timeOut: 0, 
                     timeOut: 5000, // Set timeOut and extendedTimeOut to 0 to make it sticky
                     titleClass: 'toast-title',
                     messageClass: 'toast-message',
@@ -116234,4 +116241,4 @@ module.exports = function (it, TYPE) {
 /***/ })
 
 });
-//# sourceMappingURL=vendor.6ccb3f82d2b6e05a2ca8.js.map
+//# sourceMappingURL=vendor.b9fbdcbd900ef03d8fdd.js.map
