@@ -1877,7 +1877,90 @@ var render = function() {
     _vm._v(" "),
     _vm._m(1),
     _vm._v(" "),
-    _vm._m(2),
+    _c("div", { staticClass: "row mt-3", attrs: { role: "alert" } }, [
+      _c("div", { staticClass: "col" }, [
+        _c(
+          "div",
+          { staticClass: "card alert alert-dismissible alert-success" },
+          [
+            _vm._m(2),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body row" }, [
+              _c("h4", { staticClass: "col-lg-12 col-md-12 col-sm-12 pl-3" }, [
+                _vm._v("New PERS-STAT Items\n                        "),
+                _c("br"),
+                _vm._v(" "),
+                _c("h6", [
+                  _vm._v(
+                    "New items have been added to the PERS-STAT website.  "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("hr"),
+                _vm._v(" "),
+                _c("h6", [_vm._v("New ANG section has been added.")]),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(" "),
+                _c(
+                  "h6",
+                  [
+                    _vm._v(
+                      "On pages with interactive charts, click on the floating action button         \n                            "
+                    ),
+                    _c("fab", {
+                      staticClass: "noselect",
+                      attrs: {
+                        "position-Type": _vm.inherit,
+                        position: _vm.inherit,
+                        "bg-color": _vm.bgColor,
+                        actions: _vm.fabActions
+                      },
+                      on: {
+                        reset: _vm.reset,
+                        download: _vm.download,
+                        demo: _vm.demo,
+                        showMyFilters: _vm.filter
+                      }
+                    }),
+                    _vm._v(
+                      '                             \n                        to see the following buttons: Reset All, Download Raw Data, Demo the page, View current filters."'
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(" "),
+                _c("h6", [
+                  _vm._v(
+                    'The "Reset All" Button resets all chart selections to a default state.'
+                  )
+                ]),
+                _vm._v(" "),
+                _c("h6", [
+                  _vm._v(
+                    'The "Download Raw Data" Button allows you to save a file with the raw data we use to build the charts on this page.'
+                  )
+                ]),
+                _vm._v(" "),
+                _c("h6", [
+                  _vm._v(
+                    'The "Demo" Button allows you to observe important aspects on the particular page.'
+                  )
+                ]),
+                _vm._v(" "),
+                _c("h6", [
+                  _vm._v(
+                    'The "View current Filters" Button allows you to quickly see all applied filters on the respective page.'
+                  )
+                ])
+              ])
+            ])
+          ]
+        )
+      ])
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "row mt-3" }, [
       _c(
@@ -2159,67 +2242,18 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row mt-3", attrs: { role: "alert" } }, [
-      _c("div", { staticClass: "col" }, [
-        _c(
-          "div",
-          { staticClass: "card alert alert-dismissible alert-success" },
-          [
-            _c(
-              "button",
-              {
-                staticClass: "close",
-                attrs: {
-                  type: "button",
-                  "data-dismiss": "alert",
-                  "aria-label": "Close"
-                }
-              },
-              [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body row" }, [
-              _c("h4", { staticClass: "col-lg-12 col-md-12 col-sm-12 pl-3" }, [
-                _vm._v("New PERS-STAT Items\n                        "),
-                _c("br"),
-                _vm._v(" "),
-                _c("h6", [
-                  _vm._v(
-                    "New items have been added to the PERS-STAT website.  "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("hr"),
-                _vm._v(" "),
-                _c("h6", [_vm._v("New ANG section has been added.")]),
-                _vm._v(" "),
-                _c("br"),
-                _vm._v(" "),
-                _c("h6", [
-                  _vm._v(
-                    'On pages with interactive charts, there are two new buttons at the top one titled "Demo", and another titled "View Filters."'
-                  )
-                ]),
-                _vm._v(" "),
-                _c("br"),
-                _vm._v(" "),
-                _c("h6", [
-                  _vm._v(
-                    'The "Demo" Button allows you to observe important aspects on the page.'
-                  )
-                ]),
-                _vm._v(" "),
-                _c("h6", [
-                  _vm._v(
-                    'The "View Filter" Button allows you to quickly see all applied filters on the respective page.'
-                  )
-                ])
-              ])
-            ])
-          ]
-        )
-      ])
-    ])
+    return _c(
+      "button",
+      {
+        staticClass: "close",
+        attrs: {
+          type: "button",
+          "data-dismiss": "alert",
+          "aria-label": "Close"
+        }
+      },
+      [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+    )
   },
   function() {
     var _vm = this
@@ -11805,7 +11839,7 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 
 // module
-exports.push([module.i, "\n.click[data-v-61c6c871] { \n    cursor: pointer;\n}\n.elevate-2[data-v-61c6c871] {\n    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0px 3px 6px rgba(0,0,0,0.23);\n            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0px 3px 6px rgba(0,0,0,0.23);\n}\n    \n", ""]);
+exports.push([module.i, "\n.click[data-v-61c6c871] { \n    cursor: pointer;\n}\n.elevate-2[data-v-61c6c871] {\n    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0px 3px 6px rgba(0,0,0,0.23);\n            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0px 3px 6px rgba(0,0,0,0.23);\n}\n#bottom-right-wrapper[data-v-61c6c871] {\n    float: right;\n    position: inherit !important;\n}\n    \n", ""]);
 
 // exports
 
@@ -25117,6 +25151,216 @@ module.exports = __webpack_require__.p + "static/img/education.87a7250.jpg";
 
 /***/ }),
 
+/***/ "ZyW/":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__fortawesome_vue_fontawesome__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_FAB__ = __webpack_require__("yfIS");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    data: function data() {
+        return {
+            pageName: 'Total Force Active Duty',
+            /* FAB items */
+            bgColor: '#333333',
+            positionType: 'inherit',
+            position: 'bottom-right',
+            iconSize: 'md',
+            // FontAwesomeIcon plus download search-filters eye redo-alt
+            // Material Icons add cloud_download filter_list remove_red_eye auto-renew
+            fabActions: [{ name: 'reset', icon: 'redo-alt', tooltip: 'Reset All', color: '#FF3547' }, { name: 'download', icon: 'download', tooltip: 'Download Raw Data', color: '#2F96B4' }, { name: 'demo', icon: 'eye', tooltip: 'Demo the page', color: '#2F96B4' }, { name: 'showMyFilters', icon: 'search-filters', tooltip: 'View current Filters', color: '#2F96B4' }],
+            mainIcon: 'plus'
+        };
+    },
+
+    components: {
+        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_0__fortawesome_vue_fontawesome___default.a,
+        fab: __WEBPACK_IMPORTED_MODULE_1__components_FAB__["a" /* default */]
+    },
+    methods: {
+        reset: function reset() {
+            alert('Clicking this button on an Interactive page will Reset All Filters applied to charts on the page.');
+        },
+        download: function download() {
+            alert('Clicking this button on an Interactive page will Download Raw Data from the selections made on the page.');
+        },
+        demo: function demo() {
+            alert('Clicking this button on an Interactive page will Demonstrate important aspects of the page.');
+        },
+        filter: function filter() {
+            alert('Clicking this button on an Interactive page will pop up a message with the currently selected filters for the page.');
+        }
+    }
+});
+
+/***/ }),
+
 /***/ "aH20":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -33840,7 +34084,8 @@ if(false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_template_compiler_index_id_data_v_61c6c871_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Home_vue__ = __webpack_require__("1RlY");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Home_vue__ = __webpack_require__("ZyW/");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_61c6c871_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Home_vue__ = __webpack_require__("1RlY");
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
@@ -33848,7 +34093,7 @@ function injectStyle (ssrContext) {
 }
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
-var __vue_script__ = null
+
 /* template */
 
 /* template functional */
@@ -33860,8 +34105,8 @@ var __vue_scopeId__ = "data-v-61c6c871"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __vue_script__,
-  __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_template_compiler_index_id_data_v_61c6c871_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Home_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Home_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_61c6c871_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Home_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -43994,4 +44239,4 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.9cf85386ee4f8e1c81f9.js.map
+//# sourceMappingURL=app.aaa6e4e047ffc3d8e0b6.js.map
