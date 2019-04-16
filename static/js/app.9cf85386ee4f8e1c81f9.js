@@ -89,9 +89,9 @@ var render = function() {
                   "div",
                   {
                     staticClass:
-                      "custom-control custom-radio custom-control-inline",
+                      "custom-control custom-radio custom-control-inline col-auto",
                     attrs: {
-                      "data-step": "1",
+                      "data-step": "3",
                       "data-intro": "STEM and Non-STEM totals."
                     }
                   },
@@ -121,108 +121,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "col" }),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: { type: "button", id: "demo", title: "Demo" },
-                      on: { click: _vm.startDemo }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Demo  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "eye", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        id: "showMyFilters",
-                        "data-step": "6",
-                        "data-intro": "See the currently applied filters here!",
-                        title: "Filter"
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("View Filters  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "search-filters", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        id: "download",
-                        "data-step": "5",
-                        "data-intro": "Download data in tabular form here!",
-                        title: "Download Raw Data"
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Download  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "download", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-danger btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        "data-step": "3",
-                        "data-intro":
-                          "Click here to reset filters on all charts.",
-                        title: "Reset All"
-                      },
-                      on: {
-                        click: function($event) {
-                          _vm.searchCore = ""
-                          _vm.resetAll()
-                        }
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Reset All  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "redo-alt", size: "lg" }
-                      })
-                    ],
-                    1
-                  )
-                ])
+                _c("div", { staticClass: "col-auto" })
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
@@ -238,7 +137,7 @@ var render = function() {
                       {
                         attrs: {
                           id: "dc-fyr-barchart",
-                          "data-step": "2",
+                          "data-step": "4",
                           "data-intro":
                             "Clicking the bars applies filters to the chart. Click on one of the bars and watch the other charts update!"
                         }
@@ -393,7 +292,25 @@ var render = function() {
           )
         ],
         1
-      )
+      ),
+      _vm._v(" "),
+      _c("fab", {
+        staticClass: "noselect",
+        attrs: {
+          "data-step": "2",
+          "data-intro":
+            "Click here to Reset all filters for all charts, Download raw data in tab form, or View current filters applied to all charts.",
+          position: _vm.position,
+          "bg-color": _vm.bgColor,
+          actions: _vm.fabActions
+        },
+        on: {
+          reset: _vm.resetAll,
+          download: _vm.fabDownload,
+          demo: _vm.startDemo,
+          showMyFilters: _vm.fabFilter
+        }
+      })
     ],
     1
   )
@@ -613,10 +530,10 @@ var render = function() {
                   _c(
                     "div",
                     {
-                      staticClass: "col",
+                      staticClass: "col-auto",
                       attrs: {
                         id: "radioSelect",
-                        "data-step": "1",
+                        "data-step": "3",
                         "data-intro": "Assignment action total."
                       }
                     },
@@ -632,111 +549,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("div", { staticClass: "col" }),
                   _vm._v(" "),
-                  _c("div", { staticClass: "col-auto" }, [
-                    _c(
-                      "button",
-                      {
-                        staticClass:
-                          "btn btn-info btn-rounded btn-sm waves-effect",
-                        attrs: { type: "button", id: "demo", title: "Demo" },
-                        on: { click: _vm.startDemo }
-                      },
-                      [
-                        _c("p", { staticClass: "d-none d-md-inline" }, [
-                          _vm._v("Demo  ")
-                        ]),
-                        _vm._v(" "),
-                        _c("FontAwesomeIcon", {
-                          attrs: { icon: "eye", size: "lg" }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass:
-                          "btn btn-info btn-rounded btn-sm waves-effect",
-                        attrs: {
-                          type: "button",
-                          id: "showMyFilters",
-                          "data-step": "7",
-                          "data-intro":
-                            "See the currently applied filters here!",
-                          title: "Filter"
-                        }
-                      },
-                      [
-                        _c("p", { staticClass: "d-none d-md-inline" }, [
-                          _vm._v("View Filters  ")
-                        ]),
-                        _vm._v(" "),
-                        _c("FontAwesomeIcon", {
-                          attrs: { icon: "search-filters", size: "lg" }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass:
-                          "btn btn-info btn-rounded btn-sm waves-effect",
-                        attrs: {
-                          type: "button",
-                          id: "download",
-                          "data-step": "6",
-                          "data-intro": "Download data in tabular form here!",
-                          title: "Download Raw Data"
-                        }
-                      },
-                      [
-                        _c("p", { staticClass: "d-none d-md-inline" }, [
-                          _vm._v("Download  ")
-                        ]),
-                        _vm._v(" "),
-                        _c("FontAwesomeIcon", {
-                          attrs: { icon: "download", size: "lg" }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass:
-                          "btn btn-danger btn-rounded btn-sm waves-effect",
-                        attrs: {
-                          type: "button",
-                          "data-step": "4",
-                          "data-intro":
-                            "Click here to reset filters on all charts.",
-                          title: "Reset All"
-                        },
-                        on: {
-                          click: function($event) {
-                            _vm.searchAfsc = ""
-                            _vm.searchMajcom = ""
-                            _vm.searchBase = ""
-                            _vm.resetAll()
-                          }
-                        }
-                      },
-                      [
-                        _c("p", { staticClass: "d-none d-md-inline" }, [
-                          _vm._v("Reset All  ")
-                        ]),
-                        _vm._v(" "),
-                        _c("FontAwesomeIcon", {
-                          attrs: { icon: "redo-alt", size: "lg" }
-                        })
-                      ],
-                      1
-                    )
-                  ])
+                  _c("div", { staticClass: "col-auto" })
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "row" }, [
@@ -752,7 +565,7 @@ var render = function() {
                         {
                           attrs: {
                             id: "dc-year-rowchart",
-                            "data-step": "2",
+                            "data-step": "4",
                             "data-intro":
                               "Clicking the bars applies filters to the chart. Click on one of the bars and watch the other charts update!"
                           }
@@ -950,7 +763,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("overviewBarChart", {
                   attrs: {
-                    "data-step": "3",
+                    "data-step": "5",
                     "data-intro":
                       "Sliding scale chart.  Click the black circle for more info.",
                     id: "base",
@@ -975,7 +788,25 @@ var render = function() {
             )
           ],
           1
-        )
+        ),
+        _vm._v(" "),
+        _c("fab", {
+          staticClass: "noselect",
+          attrs: {
+            "data-step": "2",
+            "data-intro":
+              "Click here to Reset all filters for all charts, Download raw data in tab form, or View current filters applied to all charts.",
+            position: _vm.position,
+            "bg-color": _vm.bgColor,
+            actions: _vm.fabActions
+          },
+          on: {
+            reset: _vm.resetAll,
+            download: _vm.fabDownload,
+            demo: _vm.startDemo,
+            showMyFilters: _vm.fabFilter
+          }
+        })
       ],
       1
     )
@@ -1005,15 +836,14 @@ if (false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_format__ = __webpack_require__("XCdN");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_AutoComplete__ = __webpack_require__("nObl");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_searchBox__ = __webpack_require__("CjlA");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_Loader__ = __webpack_require__("wd27");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__store_store__ = __webpack_require__("wtEF");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_largeBarChart__ = __webpack_require__("A1IL");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_overviewBarChart__ = __webpack_require__("Kvlx");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_toastr__ = __webpack_require__("vQJi");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_toastr__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_Loader__ = __webpack_require__("wd27");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__store_store__ = __webpack_require__("wtEF");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_overviewBarChart__ = __webpack_require__("Kvlx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_toastr__ = __webpack_require__("vQJi");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_toastr__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_FAB__ = __webpack_require__("yfIS");
 //
 //
 //
@@ -1147,62 +977,6 @@ if (false) {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
 
 
 
@@ -1228,7 +1002,15 @@ if (false) {
             majcomColor: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].majcomChart.color,
             chartSpecs: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */],
             locColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color]),
-            majcomColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].majcomChart.color])
+            majcomColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].majcomChart.color]),
+            /* FAB items */
+            bgColor: '#333333',
+            position: 'bottom-right',
+            iconSize: 'md',
+            // FontAwesomeIcon plus download search-filters eye redo-alt
+            // Material Icons add cloud_download filter_list remove_red_eye auto-renew
+            fabActions: [{ name: 'reset', icon: 'redo-alt', tooltip: 'Reset All', color: '#FF3547' }, { name: 'download', icon: 'download', tooltip: 'Download Raw Data', color: '#2F96B4' }, { name: 'demo', icon: 'eye', tooltip: 'Demo the page', color: '#2F96B4' }, { name: 'showMyFilters', icon: 'search-filters', tooltip: 'View current Filters', color: '#2F96B4' }],
+            mainIcon: 'plus'
         };
     },
 
@@ -1237,7 +1019,7 @@ if (false) {
             return crossfilter(this.data);
         },
         asDate: function asDate() {
-            return __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate;
+            return __WEBPACK_IMPORTED_MODULE_6__store_store__["a" /* store */].state.asDate;
         },
         allGroup: function allGroup() {
             return this.ndx.groupAll();
@@ -1326,15 +1108,59 @@ if (false) {
             return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
                 return $1.toUpperCase();
             });
+        },
+        fabDownload: function fabDownload() {
+            var data = this.downloadDim.top(Infinity);
+            var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
+
+            var myFilters = '';
+            dc.chartRegistry.list().forEach(function (d) {
+                if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
+            });
+
+            FileSaver.saveAs(blob, 'PERSTAT ' + this.pageName + ' ' + __WEBPACK_IMPORTED_MODULE_6__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
+        },
+        fabFilter: function fabFilter() {
+            //Curent Filters button
+            var myFilters = this.toProperCase(this.pageLabel) + ' filters ';
+            dc.chartRegistry.list().forEach(function (d) {
+                //console.log("d.filter(): "+d.filter())
+                //if (d.hasFilter()) {console.log("d.filter(): "+d.filters())}
+                if (d.hasFilter() && d.anchor() != '#dc-overviewmajcom-barchart' && d.anchor() != '#dc-overviewbase-barchart') {
+                    //console.log(d.anchor(), d.filters())
+                    myFilters += '\n (' + d.filters() + ')';
+                }
+            });
+            if (myFilters !== undefined) {
+                var counterVars = inv.innerText;
+                console.log("counterVars.value: " + counterVars);
+                // Override global options
+                __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.options = {
+                    "positionClass": "toast-bottom-full-width",
+                    "closeButton": "true",
+                    "preventDuplicates": "true"
+                };
+                if (counterVars == 0) {
+                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.warning('Your ' + this.toProperCase(this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                } else if (counterVars == 1) {
+                    myFilters += ' return ' + counterVars + ' result.';
+                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.info(myFilters);
+                } else {
+                    myFilters += ' return ' + counterVars + ' results.';
+                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.info(myFilters);
+                }
+            }
+            if (myFilters == 'undefined' || myFilters == undefined) {
+                __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.error('Something went wrong. Please reset and try again.');
+            }
         }
     },
     components: {
         'autocomplete': __WEBPACK_IMPORTED_MODULE_4__components_AutoComplete__["a" /* default */],
-        'loader': __WEBPACK_IMPORTED_MODULE_6__components_Loader__["a" /* default */],
-        searchBox: __WEBPACK_IMPORTED_MODULE_5__components_searchBox__["a" /* default */],
-        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome___default.a,
-        largeBarChart: __WEBPACK_IMPORTED_MODULE_8__components_largeBarChart__["a" /* default */],
-        overviewBarChart: __WEBPACK_IMPORTED_MODULE_9__components_overviewBarChart__["a" /* default */]
+        'loader': __WEBPACK_IMPORTED_MODULE_5__components_Loader__["a" /* default */],
+        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome___default.a,
+        overviewBarChart: __WEBPACK_IMPORTED_MODULE_7__components_overviewBarChart__["a" /* default */],
+        fab: __WEBPACK_IMPORTED_MODULE_10__components_FAB__["a" /* default */]
     },
     created: function created() {
         console.log('created');
@@ -1348,7 +1174,7 @@ if (false) {
 
         //TEST AXIOS CALL:
         __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post("https://stars.afpc.randolph.af.mil/FLA/perstat_json/ps_civilian_inv.json").then(function (response) {
-            __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate = response.data.ASOFDATE;
+            __WEBPACK_IMPORTED_MODULE_6__store_store__["a" /* store */].state.asDate = response.data.ASOFDATE;
             var invData = response.data.data;
             var objData = makeObject(invData);
             _this.data = objData;
@@ -1537,52 +1363,6 @@ if (false) {
             priorConfig.colors = d3.scale.ordinal().range([c.brighter(0.5).toString(), c.toString(), c.darker(0.5).toString(), c.darker(1).toString()]);
             var priorChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getRowChart(priorConfig);
 
-            //Curent Filters button
-            d3.select('#showMyFilters').on('click', function () {
-                var myFilters = _this.toProperCase(_this.pageLabel) + ' filters ';
-
-                dc.chartRegistry.list().forEach(function (d) {
-                    if (d.hasFilter() && d.anchor() != '#dc-overviewmajcom-barchart' && d.anchor() != '#dc-overviewloc-barchart') {
-                        //console.log(d.anchor(), d.filters())
-                        myFilters += '\n (' + d.filters() + ')';
-                    }
-                });
-                if (myFilters !== undefined) {
-                    var counterVars = invND;
-                    // Override global options
-                    __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.options = {
-                        "positionClass": "toast-bottom-full-width",
-                        "closeButton": "true",
-                        "preventDuplicates": "true"
-                    };
-                    if (counterVars.value() == 0) {
-                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.warning('Your ' + _this.toProperCase(_this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
-                    } else if (counterVars.value() == 1) {
-                        myFilters += ' return ' + counterVars.value() + ' result.';
-                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.info(myFilters);
-                    } else {
-                        myFilters += ' return ' + counterVars.value() + ' results.';
-                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.info(myFilters);
-                    }
-                }
-                if (myFilters == 'undefined' || myFilters == undefined) {
-                    __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.error('Something went wrong. Please reset and try again.');
-                }
-            });
-
-            //Download Raw Data button
-            d3.select('#download').on('click', function () {
-                var data = _this.downloadDim.top(Infinity);
-                var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
-
-                var myFilters = '';
-                dc.chartRegistry.list().forEach(function (d) {
-                    if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
-                });
-
-                FileSaver.saveAs(blob, 'PERSTAT Civilian_Inventory' + ' ' + __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
-            });
-
             // after DOM updated redraw to make chart widths update
             _this.$nextTick(function () {
                 dc.redrawAll();
@@ -1606,7 +1386,7 @@ if (false) {
     beforeDestroy: function beforeDestroy() {
         console.log("beforeDestroy");
         dc.chartRegistry.clear();
-        __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate = 'Undetermined';
+        __WEBPACK_IMPORTED_MODULE_6__store_store__["a" /* store */].state.asDate = 'Undetermined';
     },
     destroyed: function destroyed() {
         console.log("destroyed");
@@ -2537,6 +2317,7 @@ exports.push([module.i, "\n.toast-title {\n  font-weight: bold;\n}\n.toast-messa
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr__ = __webpack_require__("vQJi");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_toastr__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_FAB__ = __webpack_require__("yfIS");
 
 //
 //
@@ -2682,33 +2463,7 @@ exports.push([module.i, "\n.toast-title {\n  font-weight: bold;\n}\n.toast-messa
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 
 
@@ -2729,7 +2484,13 @@ exports.push([module.i, "\n.toast-title {\n  font-weight: bold;\n}\n.toast-messa
             baseColor: __WEBPACK_IMPORTED_MODULE_3__chartSpecs__["a" /* default */].baseChart.color,
             pageName: 'Average Time On Station',
             conusFiltered: false,
-            oconusFiltered: false
+            oconusFiltered: false,
+            /* FAB items */
+            bgColor: '#333333',
+            position: 'bottom-right',
+            iconSize: 'md',
+            fabActions: [{ name: 'reset', icon: 'redo-alt', tooltip: 'Reset All', color: '#FF3547' }, { name: 'download', icon: 'download', tooltip: 'Download Raw Data', color: '#2F96B4' }, { name: 'demo', icon: 'eye', tooltip: 'Demo the page', color: '#2F96B4' }, { name: 'showMyFilters', icon: 'search-filters', tooltip: 'View current Filters', color: '#2F96B4' }],
+            mainIcon: 'plus'
         };
     },
 
@@ -2745,6 +2506,11 @@ exports.push([module.i, "\n.toast-title {\n  font-weight: bold;\n}\n.toast-messa
         },
         pageLabel: function pageLabel() {
             return this.pageName;
+        },
+        downloadDim: function downloadDim() {
+            return this.ndx.dimension(function (d) {
+                return d;
+            });
         }
     },
     methods: {
@@ -2789,13 +2555,102 @@ exports.push([module.i, "\n.toast-title {\n  font-weight: bold;\n}\n.toast-messa
             return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
                 return $1.toUpperCase();
             });
+        },
+        fabDownload: function fabDownload() {
+            var data = this.downloadDim.top(Infinity);
+
+            //goes here
+            //var data = tourConfig.dim.top(Infinity);
+            //console.log(data)
+            data.forEach(function (d) {
+                if (!d.Country && !d.State) {
+                    //console.log("Country_State already defined.")
+                    delete d.State;delete d.Country;
+                } else {
+                    if (d.Country == "02") {
+                        d.Country = '';
+                        d.State = 'AK';
+                    }
+                    if (d.Country == "15") {
+                        d.Country = '';
+                        d.State = 'HI';
+                    }
+                    if (d.Country == "AL") {
+                        d.Country = 'ALB';
+                        d.State = '';
+                    }
+                    //if (formats.countryLong[d.Country] == 'undefined' ) {console.log(d.Country)}//AL albania
+                    //if (formats.stateLong[d.State] == 'undefined' ) {console.log(d.State);}
+                    if (d.State !== 'undefined' && d.State.length > 0) {
+                        d.Country_State = __WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].stateLong[d.State].toUpperCase();
+                    } else if (d.Country !== 'undefined' && d.Country.length > 0) {
+                        d.Country_State = __WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].countryLong[d.Country].toUpperCase();
+                    } else {
+                        d.Country_State = '';
+                    }
+
+                    if (d.State) {
+                        delete d.State;delete d.Country;
+                    }
+                    if (d.Country) {
+                        delete d.State;delete d.Country;
+                    } else {
+                        delete d.State;delete d.Country;
+                    }
+                }
+            });
+            var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
+
+            var myFilters = '';
+            dc.chartRegistry.list().forEach(function (d) {
+                if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
+            });
+
+            FileSaver.saveAs(blob, 'PERSTAT ' + this.pageName + ' ' + __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
+        },
+        fabFilter: function fabFilter() {
+            //Curent Filters button
+            var myFilters = this.toProperCase(this.pageLabel) + ' filters ';
+            dc.chartRegistry.list().forEach(function (d) {
+                //console.log("d.filter(): "+d.filter())
+                if (d.hasFilter()) {
+                    //console.log(d.anchor(), d.filters())
+                    myFilters += '\n (' + d.filters() + ')';
+                }
+            });
+            if (myFilters !== undefined) {
+                var counterVars = this.ndx.groupAll().reduceSum(function (d) {
+                    return +d.Inventory;
+                });
+                //console.log("counterVars.value: "+counterVars.value());
+                // Override global options
+                __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.options = {
+                    "positionClass": "toast-bottom-full-width",
+                    "closeButton": "true",
+                    "preventDuplicates": "true"
+                };
+                if (counterVars.value() == 0) {
+                    __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.warning('Your ' + this.toProperCase(this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                } else if (counterVars.value() == 1) {
+                    myFilters += ' return ' + counterVars.value() + ' result.';
+                    __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
+                } else {
+                    myFilters += ' return ' + counterVars.value() + ' results.';
+                    __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
+                }
+            }
+            if (myFilters == 'undefined' || myFilters == undefined) {
+                __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.error('Something went wrong. Please reset and try again.');
+            }
         }
+
     },
     components: {
         'autocomplete': __WEBPACK_IMPORTED_MODULE_5__components_AutoComplete__["a" /* default */],
         'loader': __WEBPACK_IMPORTED_MODULE_6__components_Loader__["a" /* default */],
         FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default.a,
-        searchBox: __WEBPACK_IMPORTED_MODULE_8__components_searchBox__["a" /* default */]
+        searchBox: __WEBPACK_IMPORTED_MODULE_8__components_searchBox__["a" /* default */],
+        fab: __WEBPACK_IMPORTED_MODULE_11__components_FAB__["a" /* default */]
     },
     created: function created() {
         console.log('created');
@@ -3337,90 +3192,6 @@ exports.push([module.i, "\n.toast-title {\n  font-weight: bold;\n}\n.toast-messa
                 }));
             });
 
-            //Curent Filters button
-            d3.select('#showMyFilters').on('click', function () {
-                var myFilters = _this.toProperCase(_this.pageLabel) + ' filters ';
-
-                dc.chartRegistry.list().forEach(function (d) {
-                    if (d.hasFilter()) {
-                        myFilters += '\n (' + d.filters() + ')';
-                    }
-                });
-                if (myFilters !== undefined) {
-                    var counterVars = invND;
-                    // Override global options
-                    __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.options = {
-                        "positionClass": "toast-bottom-full-width",
-                        "closeButton": "true",
-                        "preventDuplicates": "true"
-                    };
-                    if (counterVars.value() == 0) {
-                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.warning('Your ' + _this.toProperCase(_this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
-                    } else if (counterVars.value() == 1) {
-                        myFilters += ' return ' + counterVars.value() + ' result.';
-                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
-                    } else {
-                        myFilters += ' return ' + counterVars.value() + ' results.';
-                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
-                    }
-                }
-                if (myFilters == 'undefined' || myFilters == undefined) {
-                    __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.error('Something went wrong. Please reset and try again.');
-                }
-            });
-
-            //Download Raw Data button
-            d3.select('#download').on('click', function () {
-                var data = tourConfig.dim.top(Infinity);
-                console.log(data);
-                data.forEach(function (d) {
-                    if (!d.Country && !d.State) {
-                        //console.log("Country_State already defined.")
-                        delete d.State;delete d.Country;
-                    } else {
-                        if (d.Country == "02") {
-                            d.Country = '';
-                            d.State = 'AK';
-                        }
-                        if (d.Country == "15") {
-                            d.Country = '';
-                            d.State = 'HI';
-                        }
-                        if (d.Country == "AL") {
-                            d.Country = 'ALB';
-                            d.State = '';
-                        }
-                        //if (formats.countryLong[d.Country] == 'undefined' ) {console.log(d.Country)}//AL albania
-                        //if (formats.stateLong[d.State] == 'undefined' ) {console.log(d.State);}
-                        if (d.State !== 'undefined' && d.State.length > 0) {
-                            d.Country_State = __WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].stateLong[d.State].toUpperCase();
-                        } else if (d.Country !== 'undefined' && d.Country.length > 0) {
-                            d.Country_State = __WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].countryLong[d.Country].toUpperCase();
-                        } else {
-                            d.Country_State = '';
-                        }
-
-                        if (d.State) {
-                            delete d.State;delete d.Country;
-                        }
-                        if (d.Country) {
-                            delete d.State;delete d.Country;
-                        } else {
-                            delete d.State;delete d.Country;
-                        }
-                    }
-                });
-                var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
-
-                var myFilters = '';
-                dc.chartRegistry.list().forEach(function (d) {
-                    if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
-                });
-
-                console.log(myFilters);
-                FileSaver.saveAs(blob, 'PERSTAT Officer_Average_TOS' + ' ' + __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
-            });
-
             // after DOM updated redraw to make chart widths update
             _this.$nextTick(function () {
                 dc.redrawAll();
@@ -3880,21 +3651,6 @@ if(false) {
 
 /***/ }),
 
-/***/ "2vRR":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("FZ+f")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.custom-control.custom-radio[data-v-9b0c2fd6]{\n    padding-left:20px;\n    padding-right:10px;\n    margin-right: 0;\n    cursor:pointer;\n}\n.fade-enter-active[data-v-9b0c2fd6] {\n    -webkit-transition: all 0.5s;\n    transition: all 0.5s;\n}\n.fade-leave-active[data-v-9b0c2fd6] {\n    -webkit-transition: all 0.2s;\n    transition: all 0.2s;\n}\n.fade-enter[data-v-9b0c2fd6], .fade-leave-to[data-v-9b0c2fd6] {\n    opacity: 0;\n}\n.fade-enter-to[data-v-9b0c2fd6], .fade-leave[data-v-9b0c2fd6] {\n    opacity: 1;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
 /***/ "2wGS":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3923,65 +3679,12 @@ exports.push([module.i, "\n#tour, #type, #grade, #base, #us, #jp {\n    margin-t
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_AutoComplete__ = __webpack_require__("nObl");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_Loader__ = __webpack_require__("wd27");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__store_store__ = __webpack_require__("wtEF");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_largeBarChart__ = __webpack_require__("A1IL");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_overviewBarChart__ = __webpack_require__("Kvlx");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr__ = __webpack_require__("vQJi");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_toastr__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_overviewBarChart__ = __webpack_require__("Kvlx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_toastr__ = __webpack_require__("vQJi");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_toastr__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_FAB__ = __webpack_require__("yfIS");
 //
 //
 //
@@ -4195,7 +3898,12 @@ exports.push([module.i, "\n#tour, #type, #grade, #base, #us, #jp {\n    margin-t
             chartSpecs: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */],
             coreColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].coreChart.color]),
             boardColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].boardChart.color]),
-            pageName: 'Officer Promotions'
+            pageName: 'Officer Promotions',
+            /* FAB items */
+            bgColor: '#333333',
+            position: 'bottom-right',
+            fabActions: [{ name: 'reset', icon: 'redo-alt', tooltip: 'Reset All', color: '#FF3547' }, { name: 'download', icon: 'download', tooltip: 'Download Raw Data', color: '#2F96B4' }, { name: 'demo', icon: 'eye', tooltip: 'Demo the page', color: '#2F96B4' }, { name: 'showMyFilters', icon: 'search-filters', tooltip: 'View current Filters', color: '#2F96B4' }],
+            mainIcon: 'plus'
         };
     },
 
@@ -4208,7 +3916,7 @@ exports.push([module.i, "\n#tour, #type, #grade, #base, #us, #jp {\n    margin-t
         },
         ylabel: function ylabel() {
             if (this.selected === "percent") {
-                return "(%)";
+                return "%";
             } else if (this.selected === "sel") {
                 return "Selects";
             } else if (this.selected === "elig") {
@@ -4306,14 +4014,58 @@ exports.push([module.i, "\n#tour, #type, #grade, #base, #us, #jp {\n    margin-t
             return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
                 return $1.toUpperCase();
             });
+        },
+        fabDownload: function fabDownload() {
+            var data = this.downloadDim.top(Infinity);
+            var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
+
+            var myFilters = '';
+            dc.chartRegistry.list().forEach(function (d) {
+                if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
+            });
+
+            FileSaver.saveAs(blob, 'PERSTAT ' + this.pageName + ' ' + __WEBPACK_IMPORTED_MODULE_6__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
+        },
+        fabFilter: function fabFilter() {
+            //Curent Filters button
+            var myFilters = this.toProperCase(this.pageLabel) + ' filters ';
+            dc.chartRegistry.list().forEach(function (d) {
+                //console.log("d.filter(): "+d.filter())
+                if (d.hasFilter()) {
+                    //console.log(d.anchor(), d.filters())
+                    myFilters += '\n (' + d.filters() + ')';
+                }
+            });
+            if (myFilters !== undefined) {
+                var counterVars = selRate.innerText.substr(0, selRate.innerText.length - 1);
+                console.log("counterVars.value: " + counterVars);
+                // Override global options
+                __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.options = {
+                    "positionClass": "toast-bottom-full-width",
+                    "closeButton": "true",
+                    "preventDuplicates": "true"
+                };
+                if (counterVars == 0) {
+                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.warning('Your ' + this.toProperCase(this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                } else if (counterVars == 1) {
+                    myFilters += ' return ' + counterVars + this.ylabel + ' result.';
+                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.info(myFilters);
+                } else {
+                    myFilters += ' return ' + counterVars + this.ylabel + ' results.';
+                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.info(myFilters);
+                }
+            }
+            if (myFilters == 'undefined' || myFilters == undefined) {
+                __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.error('Something went wrong. Please reset and try again.');
+            }
         }
     },
     components: {
         'autocomplete': __WEBPACK_IMPORTED_MODULE_4__components_AutoComplete__["a" /* default */],
         'loader': __WEBPACK_IMPORTED_MODULE_5__components_Loader__["a" /* default */],
-        largeBarChart: __WEBPACK_IMPORTED_MODULE_7__components_largeBarChart__["a" /* default */],
-        overviewBarChart: __WEBPACK_IMPORTED_MODULE_8__components_overviewBarChart__["a" /* default */],
-        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default.a
+        overviewBarChart: __WEBPACK_IMPORTED_MODULE_7__components_overviewBarChart__["a" /* default */],
+        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome___default.a,
+        fab: __WEBPACK_IMPORTED_MODULE_10__components_FAB__["a" /* default */]
     },
     created: function created() {
         console.log('created');
@@ -4590,48 +4342,6 @@ exports.push([module.i, "\n#tour, #type, #grade, #base, #us, #jp {\n    margin-t
                 return d.value[_this.selected];
             }).ordering(function (d) {
                 return pmeMethodOrder[d.key];
-            });
-
-            //Curent Filters button
-            d3.select('#showMyFilters').on('click', function () {
-                var myFilters = _this.toProperCase(_this.pageLabel) + ' filters ';
-
-                dc.chartRegistry.list().forEach(function (d) {
-                    if (d.hasFilter()) {
-                        myFilters += '\n (' + d.filters() + ')';
-                    }
-                });
-                if (myFilters !== undefined) {
-                    var counterVars = selRateND;
-                    // Override global options
-                    __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.options = {
-                        "positionClass": "toast-bottom-full-width",
-                        "closeButton": "true",
-                        "preventDuplicates": "true"
-                    };
-                    if (counterVars.value() == 0) {
-                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.warning('Your ' + _this.toProperCase(_this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
-                    } else {
-                        myFilters += ' return a Promotion Rate of ' + counterVars.value() + '%.';
-                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
-                    }
-                }
-                if (myFilters == 'undefined' || myFilters == undefined) {
-                    __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.error('Something went wrong. Please reset and try again.');
-                }
-            });
-
-            //Download Raw Data button
-            d3.select('#download').on('click', function () {
-                var data = _this.downloadDim.top(Infinity);
-                var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
-
-                var myFilters = '';
-                dc.chartRegistry.list().forEach(function (d) {
-                    if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
-                });
-
-                FileSaver.saveAs(blob, 'PERSTAT Officer_Promotion' + ' ' + __WEBPACK_IMPORTED_MODULE_6__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
             });
 
             // after DOM updated redraw to make chart widths update
@@ -5601,7 +5311,7 @@ var render = function() {
               "span",
               {
                 attrs: {
-                  "data-step": "6",
+                  "data-step": "1",
                   "data-intro":
                     "The data on this page is current as of the date shown here."
                 }
@@ -5865,6 +5575,21 @@ if(false) {
  // When the module is disposed, remove the <style> tags
  module.hot.dispose(function() { update(); });
 }
+
+/***/ }),
+
+/***/ "72+S":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("FZ+f")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.myBtn[data-v-7d75ec3f]{\n\t\twidth: 100px;\n}\n#radioSelect div[data-v-7d75ec3f],input[data-v-7d75ec3f],label[data-v-7d75ec3f]{\n        cursor: pointer;\n}\n#bar[data-v-7d75ec3f]{\n\t\theight: 200px;\n}\n.expand-enter-active[data-v-7d75ec3f], .expand-leave-active[data-v-7d75ec3f] {\n      -webkit-transition: all 0.8s ease;\n      transition: all 0.8s ease;\n      max-height: 200px;\n      overflow: hidden;\n}\n.expand-enter[data-v-7d75ec3f], .expand-leave-to[data-v-7d75ec3f] {\n      max-height: 0;\n      opacity: 0;\n}\n.expandMid-enter-active[data-v-7d75ec3f], .expandMid-leave-active[data-v-7d75ec3f] {\n      -webkit-transition: all 2s ease;\n      transition: all 2s ease;\n  \n      overflow: hidden;\n      margin-left: 0;\n}\n.expandMid-enter[data-v-7d75ec3f], .expandMid-leave-to[data-v-7d75ec3f] {\n      margin-left: 200px;\n      opacity: 0;\n}\n.expandSlow-enter-active[data-v-7d75ec3f], .expandSlow-leave-active[data-v-7d75ec3f] {\n      -webkit-transition: all 1s ease;\n      transition: all 1s ease;\n      max-height: 1200px;\n      overflow: hidden;\n}\n.expandSlow-enter[data-v-7d75ec3f], .expandSlow-leave-to[data-v-7d75ec3f] {\n      max-height: 0;\n      opacity: 0;\n}\n.fade-enter-active[data-v-7d75ec3f] {\n        -webkit-transition: all 0.5s;\n        transition: all 0.5s;\n}\n.fade-leave-active[data-v-7d75ec3f] {\n        -webkit-transition: all 0.2s;\n        transition: all 0.2s;\n}\n.fade-enter[data-v-7d75ec3f], .fade-leave-to[data-v-7d75ec3f] {\n        opacity: 0;\n}\n.fade-enter-to[data-v-7d75ec3f], .fade-leave[data-v-7d75ec3f] {\n        opacity: 1;\n}\n\n", ""]);
+
+// exports
+
 
 /***/ }),
 
@@ -6525,7 +6250,7 @@ var render = function() {
               "span",
               {
                 attrs: {
-                  "data-step": "5",
+                  "data-step": "1",
                   "data-intro":
                     "The data on this page is current as of the date shown here."
                 }
@@ -7143,10 +6868,10 @@ var render = function() {
                 _c(
                   "div",
                   {
-                    staticClass: "col",
+                    staticClass: "col-auto",
                     attrs: {
                       id: "radioSelect",
-                      "data-step": "1",
+                      "data-step": "3",
                       "data-intro":
                         "Toggle the radio buttons to change the data element being shown in the charts."
                     }
@@ -7364,144 +7089,56 @@ var render = function() {
                   ]
                 ),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: { type: "button", id: "demo", title: "Demo" },
-                      on: { click: _vm.startDemo }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Demo  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "eye", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        id: "showMyFilters",
-                        "data-step": "7",
-                        "data-intro": "See the currently applied filters here!",
-                        title: "View Current Filter(s)"
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("View Filters  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "search-filters", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        id: "download",
-                        "data-step": "6",
-                        "data-intro": "Download data in tabular form here!",
-                        title: "Download Raw Data"
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Download  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "download", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-danger btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        "data-step": "4",
-                        "data-intro":
-                          "Click here to reset filters on all charts.",
-                        title: "Reset All"
-                      },
-                      on: { click: _vm.resetAll }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Reset All  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "redo-alt", size: "lg" }
-                      })
-                    ],
-                    1
-                  )
-                ])
+                _c("div", { staticClass: "col" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-auto" })
               ]),
               _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "row",
-                  attrs: {
-                    id: "counts",
-                    "data-step": "2",
-                    "data-intro":
-                      "Summary statistics for the data elements are shown here. These numbers change as filters are applied."
-                  }
-                },
-                [
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                    Assigned:\n                    "
-                    ),
-                    _c("span", { attrs: { id: "asgn" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v("\n                    STP:\n                    "),
-                    _c("span", { attrs: { id: "stp" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                    Authorized:\n                    "
-                    ),
-                    _c("span", { attrs: { id: "auth" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                    Manning Percent:\n                    "
-                    ),
-                    _c("span", { attrs: { id: "percent" } })
-                  ])
-                ]
-              ),
+              _c("div", { staticClass: "row pt-2" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "row col-auto",
+                    attrs: {
+                      id: "counts",
+                      "data-step": "4",
+                      "data-intro":
+                        "Summary statistics for the data elements are shown here. These numbers change as filters are applied."
+                    }
+                  },
+                  [
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                        Assigned:\n                        "
+                      ),
+                      _c("span", { attrs: { id: "asgn" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                        STP:\n                        "
+                      ),
+                      _c("span", { attrs: { id: "stp" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                        Authorized:\n                        "
+                      ),
+                      _c("span", { attrs: { id: "auth" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                        Manning Percent:\n                        "
+                      ),
+                      _c("span", { attrs: { id: "percent" } })
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "row col" })
+              ]),
               _vm._v(" "),
               _c("overviewBarChart", {
                 attrs: {
@@ -7536,7 +7173,7 @@ var render = function() {
                       {
                         attrs: {
                           id: "dc-grade-rowchart",
-                          "data-step": "3",
+                          "data-step": "5",
                           "data-intro":
                             "Clicking the bars applies filters to the chart. Click on one of the bars and watch the other charts update!"
                         }
@@ -7651,7 +7288,25 @@ var render = function() {
           )
         ],
         1
-      )
+      ),
+      _vm._v(" "),
+      _c("fab", {
+        staticClass: "noselect",
+        attrs: {
+          "data-step": "2",
+          "data-intro":
+            "Click here to Reset all filters for all charts, Download raw data in tab form, or View current filters applied to all charts.",
+          position: _vm.position,
+          "bg-color": _vm.bgColor,
+          actions: _vm.fabActions
+        },
+        on: {
+          reset: _vm.resetAll,
+          download: _vm.fabDownload,
+          demo: _vm.startDemo,
+          showMyFilters: _vm.fabFilter
+        }
+      })
     ],
     1
   )
@@ -7758,9 +7413,9 @@ var render = function() {
                   "div",
                   {
                     staticClass:
-                      "custom-control custom-radio custom-control-inline",
+                      "col-auto custom-control custom-radio custom-control-inline",
                     attrs: {
-                      "data-step": "1",
+                      "data-step": "3",
                       "data-intro": "Average TOS and Total Completed Tours."
                     }
                   },
@@ -7800,103 +7455,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "col" }),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: { type: "button", id: "demo", title: "Demo" },
-                      on: { click: _vm.startDemo }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Demo  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "eye", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        id: "showMyFilters",
-                        "data-step": "7",
-                        "data-intro": "See the currently applied filters here!",
-                        title: "Filter"
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("View Filters  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "search-filters", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        id: "download",
-                        "data-step": "6",
-                        "data-intro": "Download data in tabular form here!",
-                        title: "Download Raw Data"
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Download  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "download", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-danger btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        "data-step": "4",
-                        "data-intro":
-                          "Click here to reset filters on all charts.",
-                        title: "Reset All"
-                      },
-                      on: { click: _vm.resetAll }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Reset All  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "redo-alt", size: "lg" }
-                      })
-                    ],
-                    1
-                  )
-                ])
+                _c("div", { staticClass: "col-auto" })
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
@@ -7912,7 +7471,7 @@ var render = function() {
                       {
                         attrs: {
                           id: "dc-tour-rowchart",
-                          "data-step": "2",
+                          "data-step": "4",
                           "data-intro":
                             "Clicking the bars applies filters to the chart. Click on one of the bars and watch the other charts update!"
                         }
@@ -8122,7 +7681,7 @@ var render = function() {
                       {
                         attrs: {
                           id: "dc-us-geoChoroplethChart",
-                          "data-step": "3",
+                          "data-step": "5",
                           "data-intro":
                             "You can mouse over a state, territory, or country on the maps to see the personnel total or click on it to apply filters and update the other charts!"
                         }
@@ -8207,7 +7766,25 @@ var render = function() {
           )
         ],
         1
-      )
+      ),
+      _vm._v(" "),
+      _c("fab", {
+        staticClass: "noselect",
+        attrs: {
+          "data-step": "2",
+          "data-intro":
+            "Click here to Reset all filters for all charts, Download raw data in tab form, or View current filters applied to all charts.",
+          position: _vm.position,
+          "bg-color": _vm.bgColor,
+          actions: _vm.fabActions
+        },
+        on: {
+          reset: _vm.resetAll,
+          download: _vm.fabDownload,
+          demo: _vm.startDemo,
+          showMyFilters: _vm.fabFilter
+        }
+      })
     ],
     1
   )
@@ -8222,6 +7799,21 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-1628e1dd", esExports)
   }
 }
+
+/***/ }),
+
+/***/ "FB8E":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("FZ+f")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.toast-title {\n  font-weight: bold;\n}\n.toast-message {\n  -ms-word-wrap: break-word;\n  word-wrap: break-word;\n}\n.toast-message a,\n.toast-message label {\n  color: #FFFFFF;\n}\n.toast-message a:hover {\n  color: #CCCCCC;\n  text-decoration: none;\n}\n.toast-close-button {\n  position: relative;\n  right: -0.3em;\n  top: -0.3em;\n  float: right;\n  font-size: 20px;\n  font-weight: bold;\n  color: #FFFFFF;\n  -webkit-text-shadow: 0 1px 0 #ffffff;\n  text-shadow: 0 1px 0 #ffffff;\n  opacity: 0.8;\n  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);\n  filter: alpha(opacity=80);\n  line-height: 1;\n}\n.toast-close-button:hover,\n.toast-close-button:focus {\n  color: #000000;\n  text-decoration: none;\n  cursor: pointer;\n  opacity: 0.4;\n  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);\n  filter: alpha(opacity=40);\n}\n.rtl .toast-close-button {\n  left: -0.3em;\n  float: left;\n  right: 0.3em;\n}\n/*Additional properties for button version\n iOS requires the button element instead of an anchor tag.\n If you want the anchor version, it requires `href=\"#\"`.*/\nbutton.toast-close-button {\n  padding: 0;\n  cursor: pointer;\n  background: transparent;\n  border: 0;\n  -webkit-appearance: none;\n}\n.toast-top-center {\n  top: 0;\n  right: 0;\n  width: 100%;\n}\n.toast-bottom-center {\n  bottom: 0;\n  right: 0;\n  width: 100%;\n}\n.toast-top-full-width {\n  top: 0;\n  right: 0;\n  width: 100%;\n}\n.toast-bottom-full-width {\n  bottom: 0;\n  right: 0;\n  width: 100%;\n}\n.toast-top-left {\n  top: 12px;\n  left: 12px;\n}\n.toast-top-right {\n  top: 12px;\n  right: 12px;\n}\n.toast-bottom-right {\n  right: 12px;\n  bottom: 12px;\n}\n.toast-bottom-left {\n  bottom: 12px;\n  left: 12px;\n}\n#toast-container {\n  position: fixed;\n  z-index: 999999;\n  pointer-events: none;\n  /*overrides*/\n}\n#toast-container * {\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n}\n#toast-container > div {\n  position: relative;\n  pointer-events: auto;\n  overflow: hidden;\n  margin: 0 0 6px;\n  padding: 15px 15px 15px 50px;\n  width: 300px;\n  border-radius: 3px 3px 3px 3px;\n  background-position: 15px center;\n  background-repeat: no-repeat;\n  -webkit-box-shadow: 0 0 12px #999999;\n  box-shadow: 0 0 12px #999999;\n  color: #FFFFFF;\n  opacity: 0.8;\n  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);\n  filter: alpha(opacity=80);\n}\n#toast-container > div.rtl {\n  direction: rtl;\n  padding: 15px 50px 15px 15px;\n  background-position: right 15px center;\n}\n#toast-container > div:hover {\n  -webkit-box-shadow: 0 0 12px #000000;\n  box-shadow: 0 0 12px #000000;\n  opacity: 1;\n  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);\n  filter: alpha(opacity=100);\n  cursor: pointer;\n}\n#toast-container > .toast-info {\n  background-image: url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGwSURBVEhLtZa9SgNBEMc9sUxxRcoUKSzSWIhXpFMhhYWFhaBg4yPYiWCXZxBLERsLRS3EQkEfwCKdjWJAwSKCgoKCcudv4O5YLrt7EzgXhiU3/4+b2ckmwVjJSpKkQ6wAi4gwhT+z3wRBcEz0yjSseUTrcRyfsHsXmD0AmbHOC9Ii8VImnuXBPglHpQ5wwSVM7sNnTG7Za4JwDdCjxyAiH3nyA2mtaTJufiDZ5dCaqlItILh1NHatfN5skvjx9Z38m69CgzuXmZgVrPIGE763Jx9qKsRozWYw6xOHdER+nn2KkO+Bb+UV5CBN6WC6QtBgbRVozrahAbmm6HtUsgtPC19tFdxXZYBOfkbmFJ1VaHA1VAHjd0pp70oTZzvR+EVrx2Ygfdsq6eu55BHYR8hlcki+n+kERUFG8BrA0BwjeAv2M8WLQBtcy+SD6fNsmnB3AlBLrgTtVW1c2QN4bVWLATaIS60J2Du5y1TiJgjSBvFVZgTmwCU+dAZFoPxGEEs8nyHC9Bwe2GvEJv2WXZb0vjdyFT4Cxk3e/kIqlOGoVLwwPevpYHT+00T+hWwXDf4AJAOUqWcDhbwAAAAASUVORK5CYII=\") !important;\n}\n#toast-container > .toast-error {\n  background-image: url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHOSURBVEhLrZa/SgNBEMZzh0WKCClSCKaIYOED+AAKeQQLG8HWztLCImBrYadgIdY+gIKNYkBFSwu7CAoqCgkkoGBI/E28PdbLZmeDLgzZzcx83/zZ2SSXC1j9fr+I1Hq93g2yxH4iwM1vkoBWAdxCmpzTxfkN2RcyZNaHFIkSo10+8kgxkXIURV5HGxTmFuc75B2RfQkpxHG8aAgaAFa0tAHqYFfQ7Iwe2yhODk8+J4C7yAoRTWI3w/4klGRgR4lO7Rpn9+gvMyWp+uxFh8+H+ARlgN1nJuJuQAYvNkEnwGFck18Er4q3egEc/oO+mhLdKgRyhdNFiacC0rlOCbhNVz4H9FnAYgDBvU3QIioZlJFLJtsoHYRDfiZoUyIxqCtRpVlANq0EU4dApjrtgezPFad5S19Wgjkc0hNVnuF4HjVA6C7QrSIbylB+oZe3aHgBsqlNqKYH48jXyJKMuAbiyVJ8KzaB3eRc0pg9VwQ4niFryI68qiOi3AbjwdsfnAtk0bCjTLJKr6mrD9g8iq/S/B81hguOMlQTnVyG40wAcjnmgsCNESDrjme7wfftP4P7SP4N3CJZdvzoNyGq2c/HWOXJGsvVg+RA/k2MC/wN6I2YA2Pt8GkAAAAASUVORK5CYII=\") !important;\n}\n#toast-container > .toast-success {\n  background-image: url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADsSURBVEhLY2AYBfQMgf///3P8+/evAIgvA/FsIF+BavYDDWMBGroaSMMBiE8VC7AZDrIFaMFnii3AZTjUgsUUWUDA8OdAH6iQbQEhw4HyGsPEcKBXBIC4ARhex4G4BsjmweU1soIFaGg/WtoFZRIZdEvIMhxkCCjXIVsATV6gFGACs4Rsw0EGgIIH3QJYJgHSARQZDrWAB+jawzgs+Q2UO49D7jnRSRGoEFRILcdmEMWGI0cm0JJ2QpYA1RDvcmzJEWhABhD/pqrL0S0CWuABKgnRki9lLseS7g2AlqwHWQSKH4oKLrILpRGhEQCw2LiRUIa4lwAAAABJRU5ErkJggg==\") !important;\n}\n#toast-container > .toast-warning {\n  background-image: url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGYSURBVEhL5ZSvTsNQFMbXZGICMYGYmJhAQIJAICYQPAACiSDB8AiICQQJT4CqQEwgJvYASAQCiZiYmJhAIBATCARJy+9rTsldd8sKu1M0+dLb057v6/lbq/2rK0mS/TRNj9cWNAKPYIJII7gIxCcQ51cvqID+GIEX8ASG4B1bK5gIZFeQfoJdEXOfgX4QAQg7kH2A65yQ87lyxb27sggkAzAuFhbbg1K2kgCkB1bVwyIR9m2L7PRPIhDUIXgGtyKw575yz3lTNs6X4JXnjV+LKM/m3MydnTbtOKIjtz6VhCBq4vSm3ncdrD2lk0VgUXSVKjVDJXJzijW1RQdsU7F77He8u68koNZTz8Oz5yGa6J3H3lZ0xYgXBK2QymlWWA+RWnYhskLBv2vmE+hBMCtbA7KX5drWyRT/2JsqZ2IvfB9Y4bWDNMFbJRFmC9E74SoS0CqulwjkC0+5bpcV1CZ8NMej4pjy0U+doDQsGyo1hzVJttIjhQ7GnBtRFN1UarUlH8F3xict+HY07rEzoUGPlWcjRFRr4/gChZgc3ZL2d8oAAAAASUVORK5CYII=\") !important;\n}\n#toast-container.toast-top-center > div,\n#toast-container.toast-bottom-center > div {\n  width: 300px;\n  margin-left: auto;\n  margin-right: auto;\n}\n#toast-container.toast-top-full-width > div,\n#toast-container.toast-bottom-full-width > div {\n  width: 96%;\n  margin-left: auto;\n  margin-right: auto;\n}\n.toast {\n  background-color: #030303;\n}\n.toast-success {\n  background-color: #51A351;\n}\n.toast-error {\n  background-color: #BD362F;\n}\n.toast-info {\n  background-color: #2F96B4;\n}\n.toast-warning {\n  background-color: #F89406;\n}\n.toast-progress {\n  position: absolute;\n  left: 0;\n  bottom: 0;\n  height: 4px;\n  background-color: #000000;\n  opacity: 0.4;\n  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);\n  filter: alpha(opacity=40);\n}\n/*Responsive Design*/\n@media all and (max-width: 240px) {\n#toast-container > div {\n    padding: 8px 8px 8px 50px;\n    width: 11em;\n}\n#toast-container > div.rtl {\n    padding: 8px 50px 8px 8px;\n}\n#toast-container .toast-close-button {\n    right: -0.2em;\n    top: -0.2em;\n}\n#toast-container .rtl .toast-close-button {\n    left: -0.2em;\n    right: 0.2em;\n}\n}\n@media all and (min-width: 241px) and (max-width: 480px) {\n#toast-container > div {\n    padding: 8px 8px 8px 50px;\n    width: 18em;\n}\n#toast-container > div.rtl {\n    padding: 8px 50px 8px 8px;\n}\n#toast-container .toast-close-button {\n    right: -0.2em;\n    top: -0.2em;\n}\n#toast-container .rtl .toast-close-button {\n    left: -0.2em;\n    right: 0.2em;\n}\n}\n@media all and (min-width: 481px) and (max-width: 768px) {\n#toast-container > div {\n    padding: 15px 15px 15px 50px;\n    width: 25em;\n}\n#toast-container > div.rtl {\n    padding: 15px 50px 15px 15px;\n}\n}\n", ""]);
+
+// exports
+
 
 /***/ }),
 
@@ -9705,6 +9297,21 @@ if (false) {
 
 /***/ }),
 
+/***/ "GCLi":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("FZ+f")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.custom-control.custom-radio[data-v-9b0c2fd6]{\n    padding-left:20px;\n    padding-right:10px;\n    margin-right: 0;\n    cursor:pointer;\n}\n.fade-enter-active[data-v-9b0c2fd6] {\n    -webkit-transition: all 0.5s;\n    transition: all 0.5s;\n}\n.fade-leave-active[data-v-9b0c2fd6] {\n    -webkit-transition: all 0.2s;\n    transition: all 0.2s;\n}\n.fade-enter[data-v-9b0c2fd6], .fade-leave-to[data-v-9b0c2fd6] {\n    opacity: 0;\n}\n.fade-enter-to[data-v-9b0c2fd6], .fade-leave[data-v-9b0c2fd6] {\n    opacity: 1;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "GPBA":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10357,37 +9964,18 @@ if(false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__store_format__ = __webpack_require__("XCdN");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_AutoComplete__ = __webpack_require__("nObl");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_searchBox__ = __webpack_require__("CjlA");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_Loader__ = __webpack_require__("wd27");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__store_store__ = __webpack_require__("wtEF");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_overviewBarChart__ = __webpack_require__("Kvlx");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_toastr__ = __webpack_require__("vQJi");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_toastr__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_Loader__ = __webpack_require__("wd27");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__store_store__ = __webpack_require__("wtEF");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_overviewBarChart__ = __webpack_require__("Kvlx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr__ = __webpack_require__("vQJi");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_toastr__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_FAB__ = __webpack_require__("yfIS");
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+var _methods;
+
 //
 //
 //
@@ -10560,7 +10148,13 @@ if(false) {
             searchYRGP: "",
             chartSpecs: __WEBPACK_IMPORTED_MODULE_2__chartSpecs__["a" /* default */],
             baseColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_2__chartSpecs__["a" /* default */].baseChart.color]),
-            pageName: 'ANG Enlisted Education'
+            pageName: 'ANG Enlisted Education',
+            /* FAB items */
+            bgColor: '#333333',
+            position: 'bottom-right',
+            iconSize: 'md',
+            fabActions: [{ name: 'reset', icon: 'redo-alt', tooltip: 'Reset All', color: '#FF3547' }, { name: 'download', icon: 'download', tooltip: 'Download Raw Data', color: '#2F96B4' }, { name: 'demo', icon: 'eye', tooltip: 'Demo the page', color: '#2F96B4' }, { name: 'showMyFilters', icon: 'search-filters', tooltip: 'View current Filters', color: '#2F96B4' }],
+            mainIcon: 'plus'
         };
     },
 
@@ -10570,7 +10164,7 @@ if(false) {
             return crossfilter(this.data);
         },
         asDate: function asDate() {
-            return __WEBPACK_IMPORTED_MODULE_8__store_store__["a" /* store */].state.asDate;
+            return __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate;
         },
         allGroup: function allGroup() {
             return this.ndx.groupAll();
@@ -10596,13 +10190,18 @@ if(false) {
                 return "% Non-STEM";
             }
         },
+        downloadDim: function downloadDim() {
+            return this.ndx.dimension(function (d) {
+                return d;
+            });
+        },
         pageLabel: function pageLabel() {
             return this.pageName;
         }
 
     },
 
-    methods: __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty___default()({
+    methods: (_methods = {
         resetAll: function resetAll() {
             dc.filterAll();
             dc.redrawAll();
@@ -10690,18 +10289,76 @@ if(false) {
                 nonStemPercent: 0
             };
         }
-    }, 'toProperCase', function toProperCase(s) {
+    }, __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty___default()(_methods, 'toProperCase', function toProperCase(s) {
         return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
             return $1.toUpperCase();
         });
-    }),
+    }), __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty___default()(_methods, 'fabDownload', function fabDownload() {
+        var data = this.downloadDim.top(Infinity);
+        var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
+
+        var myFilters = '';
+        dc.chartRegistry.list().forEach(function (d) {
+            if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
+        });
+
+        FileSaver.saveAs(blob, 'PERSTAT ' + this.pageName + ' ' + __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
+    }), __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty___default()(_methods, 'fabFilter', function fabFilter() {
+        //Curent Filters button
+        var myFilters = this.toProperCase(this.pageLabel) + ' filters ';
+        dc.chartRegistry.list().forEach(function (d) {
+            //console.log("d.filter(): "+d.filter())
+            if (d.hasFilter() && d.anchor() != '#dc-overviewmpf-barchart') {
+                //console.log(d.anchor(), d.filters())
+                myFilters += '\n (' + d.filters() + ')';
+            }
+        });
+        if (myFilters !== undefined) {
+            var myCheckValue = '0';
+
+            if (this.selected == "totalCount") {
+                myCheckValue = totalCount.innerText;
+            }
+            if (this.selected == "stem") {
+                myCheckValue = stemTotal.innerText;
+            }
+            if (this.selected == "nonStem") {
+                myCheckValue = nonStemTotal.innerText;
+            }
+            if (this.selected == "stemPercent") {
+                myCheckValue = percentStem.innerText.substr(0, percentStem.innerText.length - 1);
+            };
+            if (this.selected == "nonStemPercent") {
+                myCheckValue = percentNonStem.innerText.substr(0, percentNonStem.innerText.length - 1);
+            };
+            //console.log("myCheckvalue: "+ myCheckValue );
+            // Override global options
+            __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.options = {
+                "positionClass": "toast-bottom-full-width",
+                "closeButton": "true",
+                "preventDuplicates": "true"
+            };
+            if (myCheckValue == '0.0%' || myCheckValue == 0) {
+                __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.warning('Your ' + this.toProperCase(this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+            } else if (myCheckValue == '1') {
+                myFilters += ' return ' + myCheckValue + ' ' + this.ylabel + ' result.';
+                __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
+            } else {
+                myFilters += ' return ' + myCheckValue + ' ' + this.ylabel + ' results.';
+                __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
+            }
+        }
+        if (myFilters == 'undefined' || myFilters == undefined) {
+            __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.error('Something went wrong. Please reset and try again.');
+        }
+    }), _methods),
 
     components: {
         'AutoComplete': __WEBPACK_IMPORTED_MODULE_5__components_AutoComplete__["a" /* default */],
-        'Loader': __WEBPACK_IMPORTED_MODULE_7__components_Loader__["a" /* default */],
-        searchBox: __WEBPACK_IMPORTED_MODULE_6__components_searchBox__["a" /* default */],
-        overviewBarChart: __WEBPACK_IMPORTED_MODULE_9__components_overviewBarChart__["a" /* default */],
-        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome___default.a
+        'Loader': __WEBPACK_IMPORTED_MODULE_6__components_Loader__["a" /* default */],
+        overviewBarChart: __WEBPACK_IMPORTED_MODULE_8__components_overviewBarChart__["a" /* default */],
+        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default.a,
+        fab: __WEBPACK_IMPORTED_MODULE_11__components_FAB__["a" /* default */]
     },
 
     created: function created() {
@@ -10715,7 +10372,7 @@ if(false) {
 
         //test AXIOS Call:
         __WEBPACK_IMPORTED_MODULE_3_axios___default.a.post("https://stars.afpc.randolph.af.mil/FLA/perstat_json/ps_high_ed_level_ang.js").then(function (response) {
-            __WEBPACK_IMPORTED_MODULE_8__store_store__["a" /* store */].state.asDate = response.data.ASOFDATE;
+            __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate = response.data.ASOFDATE;
             var invData = response.data.data;
             //console.log(invData)
             var objData = makeObject(invData);
@@ -10979,68 +10636,6 @@ if(false) {
 
             usChart.controlsUseVisibility(true);
 
-            //Curent Filters button
-            d3.select('#showMyFilters').on('click', function () {
-                var myFilters = _this.toProperCase(_this.pageLabel) + ' filters ';
-
-                dc.chartRegistry.list().forEach(function (d) {
-
-                    if (d.hasFilter() && d.anchor() != '#dc-overviewmpf-barchart') {
-                        //console.log(d.anchor(), d.filters())
-                        myFilters += '\n (' + d.filters() + ')';
-                    }
-                });
-                if (myFilters !== undefined) {
-                    var myCheckValue = 0;
-                    if (_this.selected == "totalCount") {
-                        myCheckValue = totalCountND.value;
-                    };
-                    if (_this.selected == "stem") {
-                        myCheckValue = stemTotalND.value;
-                    };
-                    if (_this.selected == "nonStem") {
-                        myCheckValue = nonStemTotalND.value;
-                    };
-                    if (_this.selected == "stemPercent") {
-                        myCheckValue = percentStemND.value;
-                    };
-                    if (_this.selected == "nonStemPercent") {
-                        myCheckValue = percentNonStemND.value;
-                    };
-                    // Override global options
-                    __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.options = {
-                        "positionClass": "toast-bottom-full-width",
-                        "closeButton": "true",
-                        "preventDuplicates": "true"
-                    };
-                    if (myCheckValue() == '0.0%' || myCheckValue() == 0) {
-                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.warning('Your ' + _this.toProperCase(_this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
-                    } else if (myCheckValue() == '1') {
-                        myFilters += ' return ' + myCheckValue() + ' ' + _this.ylabel + ' result.';
-                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.info(myFilters);
-                    } else {
-                        myFilters += ' return ' + myCheckValue() + ' ' + _this.ylabel + ' results.';
-                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.info(myFilters);
-                    }
-                }
-                if (myFilters == 'undefined' || myFilters == undefined) {
-                    __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.error('Something went wrong. Please reset and try again.');
-                }
-            });
-
-            //Download Raw Data button
-            d3.select('#download').on('click', function () {
-                var data = gradeConfig.dim.top(Infinity);
-                var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
-
-                var myFilters = '';
-                dc.chartRegistry.list().forEach(function (d) {
-                    if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
-                });
-
-                FileSaver.saveAs(blob, 'PERSTAT Enlisted Education' + ' ' + __WEBPACK_IMPORTED_MODULE_8__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
-            });
-
             // after DOM updated redraw to make chart widths update
             _this.$nextTick(function () {
                 dc.redrawAll();
@@ -11064,7 +10659,7 @@ if(false) {
     beforeDestroy: function beforeDestroy() {
         console.log("beforeDestroy");
         dc.chartRegistry.clear();
-        __WEBPACK_IMPORTED_MODULE_8__store_store__["a" /* store */].state.asDate = 'Undetermined';
+        __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate = 'Undetermined';
     },
     destroyed: function destroyed() {
         console.log("destroyed");
@@ -12289,143 +11884,53 @@ var render = function() {
               _c("div", { staticClass: "row pt-2" }, [
                 _c("div", { staticClass: "col" }),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: { type: "button", id: "demo", title: "Demo" },
-                      on: { click: _vm.startDemo }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Demo  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "eye", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        id: "showMyFilters",
-                        "data-step": "6",
-                        "data-intro": "See the currently applied filters here!",
-                        title: "Filter"
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Filter  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "filter", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        id: "download",
-                        "data-step": "4",
-                        "data-intro": "Download data in tabular form here!",
-                        title: "Download Raw Data"
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Download  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "download", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-danger btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        "data-step": "3",
-                        "data-intro":
-                          "Click here to reset filters on all charts.",
-                        title: "Reset All"
-                      },
-                      on: { click: _vm.resetAll }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Reset All  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "redo-alt", size: "lg" }
-                      })
-                    ],
-                    1
-                  )
-                ])
+                _c("div", { staticClass: "col-auto" })
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
                 _c("div", { staticClass: "col-auto" })
               ]),
               _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "row",
-                  attrs: {
-                    id: "counts",
-                    "data-step": "1",
-                    "data-intro":
-                      "Summary statistics for the data elements are shown here. These numbers change as filters are applied."
-                  }
-                },
-                [
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                        Selects:        \n                        "
-                    ),
-                    _c("span", { attrs: { id: "Selects" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                        Eligibles: \n                        "
-                    ),
-                    _c("span", { attrs: { id: "Eligible" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                        Promotion Rate: \n                        "
-                    ),
-                    _c("span", { attrs: { id: "SelectsRate" } })
-                  ])
-                ]
-              ),
+              _c("div", { staticClass: "row" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "row col-auto",
+                    attrs: {
+                      id: "counts",
+                      "data-step": "3",
+                      "data-intro":
+                        "Summary statistics for the data elements are shown here. These numbers change as filters are applied."
+                    }
+                  },
+                  [
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                            Selects:        \n                            "
+                      ),
+                      _c("span", { attrs: { id: "Selects" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                            Eligibles: \n                            "
+                      ),
+                      _c("span", { attrs: { id: "Eligible" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                            Promotion Rate: \n                            "
+                      ),
+                      _c("span", { attrs: { id: "SelectsRate" } })
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "col" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-auto" })
+              ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
                 _c(
@@ -12440,13 +11945,12 @@ var render = function() {
                       {
                         attrs: {
                           id: "dc-grade-rowchart",
-                          "data-step": "2",
+                          "data-step": "4",
                           "data-intro":
                             "Clicking the bars applies filters to the chart. Click on one of the bars and watch the other charts update!"
                         }
                       },
                       [
-                        _vm._v(">>>\n                            "),
                         _c("h3", [
                           _vm._v("Grade "),
                           _c(
@@ -12682,7 +12186,25 @@ var render = function() {
           )
         ],
         1
-      )
+      ),
+      _vm._v(" "),
+      _c("fab", {
+        staticClass: "noselect",
+        attrs: {
+          "data-step": "2",
+          "data-intro":
+            "Click here to Reset all filters for all charts, Download raw data in tab form, or View current filters applied to all charts.",
+          position: _vm.position,
+          "bg-color": _vm.bgColor,
+          actions: _vm.fabActions
+        },
+        on: {
+          reset: _vm.resetAll,
+          download: _vm.fabDownload,
+          demo: _vm.startDemo,
+          showMyFilters: _vm.fabFilter
+        }
+      })
     ],
     1
   )
@@ -12963,10 +12485,10 @@ var render = function() {
                 _c(
                   "div",
                   {
-                    staticClass: "col",
+                    staticClass: "col-auto",
                     attrs: {
                       id: "radioSelect",
-                      "data-step": "1",
+                      "data-step": "3",
                       "data-intro":
                         "Toggle the radio buttons to change the data element being shown in the charts."
                     }
@@ -13217,159 +12739,62 @@ var render = function() {
                   ]
                 ),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: { type: "button", id: "demo", title: "Demo" },
-                      on: { click: _vm.startDemo }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Demo  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "eye", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        id: "showMyFilters",
-                        "data-step": "8",
-                        "data-intro": "See the currently applied filters here!",
-                        title: "Filter"
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("View Filters  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "search-filters", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        id: "download",
-                        "data-step": "7",
-                        "data-intro": "Download data in tabular form here!",
-                        title: "Download Raw Data"
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Download  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "download", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-danger btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        "data-step": "5",
-                        "data-intro":
-                          "Click here to reset filters on all charts.",
-                        title: "Reset All"
-                      },
-                      on: {
-                        click: function($event) {
-                          _vm.searchCore = ""
-                          _vm.resetAll()
-                        }
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Reset All  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "redo-alt", size: "lg" }
-                      })
-                    ],
-                    1
-                  )
-                ])
+                _c("div", { staticClass: "col-auto" })
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }),
               _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "row",
-                  attrs: {
-                    "data-step": "2",
-                    "data-intro":
-                      "Summary statistics for the data elements are shown here. These numbers change as filters are applied."
-                  }
-                },
-                [
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                        Total:\n                        "
-                    ),
-                    _c("span", { attrs: { id: "totalCount" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                        STEM:\n                        "
-                    ),
-                    _c("span", { attrs: { id: "stemTotal" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                        Non-STEM:\n                        "
-                    ),
-                    _c("span", { attrs: { id: "nonStemTotal" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                        Percent STEM:\n                        "
-                    ),
-                    _c("span", { attrs: { id: "percentStem" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                        Percent Non-STEM:\n                        "
-                    ),
-                    _c("span", { attrs: { id: "percentNonStem" } })
-                  ])
-                ]
-              ),
+              _c("div", { staticClass: "row" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "row col-auto",
+                    attrs: {
+                      "data-step": "4",
+                      "data-intro":
+                        "Summary statistics for the data elements are shown here. These numbers change as filters are applied."
+                    }
+                  },
+                  [
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                          Total:\n                          "
+                      ),
+                      _c("span", { attrs: { id: "totalCount" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                          STEM:\n                          "
+                      ),
+                      _c("span", { attrs: { id: "stemTotal" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                          Non-STEM:\n                          "
+                      ),
+                      _c("span", { attrs: { id: "nonStemTotal" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                          Percent STEM:\n                          "
+                      ),
+                      _c("span", { attrs: { id: "percentStem" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                          Percent Non-STEM:\n                          "
+                      ),
+                      _c("span", { attrs: { id: "percentNonStem" } })
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-auto" })
+              ]),
               _vm._v(" "),
               _c("overviewBarChart", {
                 attrs: {
@@ -13486,7 +12911,7 @@ var render = function() {
                       {
                         attrs: {
                           id: "dc-edlevel-barchart",
-                          "data-step": "3",
+                          "data-step": "5",
                           "data-intro":
                             "Clicking the bars applies filters to the chart. Click on one of the bars and watch the other charts update!"
                         }
@@ -13539,7 +12964,7 @@ var render = function() {
                         staticClass: "center-block clearfix",
                         attrs: {
                           id: "dc-us-geoChoroplethChart",
-                          "data-step": "4",
+                          "data-step": "6",
                           "data-intro":
                             "You can zoom in and out, mouse over a state or territory on the maps to see the personnel total, or click on it to apply filters and update the other charts!"
                         }
@@ -13584,7 +13009,25 @@ var render = function() {
           )
         ],
         1
-      )
+      ),
+      _vm._v(" "),
+      _c("fab", {
+        staticClass: "noselect",
+        attrs: {
+          "data-step": "2",
+          "data-intro":
+            "Click here to Reset all filters for all charts, Download raw data in tab form, or View current filters applied to all charts.",
+          position: _vm.position,
+          "bg-color": _vm.bgColor,
+          actions: _vm.fabActions
+        },
+        on: {
+          reset: _vm.resetAll,
+          download: _vm.fabDownload,
+          demo: _vm.startDemo,
+          showMyFilters: _vm.fabFilter
+        }
+      })
     ],
     1
   )
@@ -14332,13 +13775,12 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_format__ = __webpack_require__("XCdN");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_Loader__ = __webpack_require__("wd27");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__store_store__ = __webpack_require__("wtEF");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_searchBox__ = __webpack_require__("CjlA");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_largeBarChart__ = __webpack_require__("A1IL");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_overviewBarChart__ = __webpack_require__("Kvlx");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr__ = __webpack_require__("vQJi");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_toastr__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_overviewBarChart__ = __webpack_require__("Kvlx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_toastr__ = __webpack_require__("vQJi");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_toastr__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_FAB__ = __webpack_require__("yfIS");
 //
 //
 //
@@ -14480,45 +13922,6 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
 
 
 
@@ -14543,7 +13946,13 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
             baseColor: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color,
             majcomColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].majcomChart.color]),
             baseColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color]),
-            pageName: 'Enlisted Manning'
+            pageName: 'Enlisted Manning',
+            /* FAB items */
+            bgColor: '#333333',
+            position: 'bottom-right',
+            iconSize: 'md',
+            fabActions: [{ name: 'reset', icon: 'redo-alt', tooltip: 'Reset All', color: '#FF3547' }, { name: 'download', icon: 'download', tooltip: 'Download Raw Data', color: '#2F96B4' }, { name: 'demo', icon: 'eye', tooltip: 'Demo the page', color: '#2F96B4' }, { name: 'showMyFilters', icon: 'search-filters', tooltip: 'View current Filters', color: '#2F96B4' }],
+            mainIcon: 'plus'
         };
     },
 
@@ -14671,15 +14080,79 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
             return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
                 return $1.toUpperCase();
             });
-        }
+        },
+        fabDownload: function fabDownload() {
+            var data = this.downloadDim.top(Infinity);
+            var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
 
+            var myFilters = '';
+            dc.chartRegistry.list().forEach(function (d) {
+                if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
+            });
+
+            FileSaver.saveAs(blob, 'PERSTAT ' + this.pageName + ' ' + __WEBPACK_IMPORTED_MODULE_5__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
+        },
+        fabFilter: function fabFilter() {
+            //Curent Filters button
+            var myFilters = this.toProperCase(this.pageLabel) + ' filters ';
+            dc.chartRegistry.list().forEach(function (d) {
+                //console.log("d.filter(): "+d.filter())
+                if (d.hasFilter() && d.anchor() != '#dc-overviewmajcom-barchart' && d.anchor() != '#dc-overviewmpf-barchart') {
+                    //console.log(d.anchor(), d.filters())
+                    myFilters += '\n (' + d.filters() + ')';
+                }
+            });
+            if (myFilters !== undefined) {
+                var myCheckValue = '0';
+
+                if (this.selected == "asgn") {
+                    var asgn = this.ndx.groupAll().reduceSum(function (d) {
+                        return +d.Assigned;
+                    });
+                    myCheckValue = asgn.value();
+                };
+                if (this.selected == "stp") {
+                    var stp = this.ndx.groupAll().reduceSum(function (d) {
+                        return +d.STP;
+                    });
+                    myCheckValue = stp.value();
+                };
+                if (this.selected == "auth") {
+                    var auth = this.ndx.groupAll().reduceSum(function (d) {
+                        return +d.Authorized;
+                    });
+                    myCheckValue = auth.value();
+                };
+                if (this.selected == "percent") {
+                    myCheckValue = percent.innerText.substr(0, percent.innerText.length - 1);
+                };
+                //console.log("myCheckvalue: "+ myCheckValue );
+                // Override global options
+                __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.options = {
+                    "positionClass": "toast-bottom-full-width",
+                    "closeButton": "true",
+                    "preventDuplicates": "true"
+                };
+                if (myCheckValue == '0.0%' || myCheckValue == 0) {
+                    __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.warning('Your ' + this.toProperCase(this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                } else if (myCheckValue == '1') {
+                    myFilters += ' return ' + myCheckValue + ' ' + this.ylabel + ' result.';
+                    __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.info(myFilters);
+                } else {
+                    myFilters += ' return ' + myCheckValue + ' ' + this.ylabel + ' results.';
+                    __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.info(myFilters);
+                }
+            }
+            if (myFilters == 'undefined' || myFilters == undefined) {
+                __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.error('Something went wrong. Please reset and try again.');
+            }
+        }
     },
     components: {
         'loader': __WEBPACK_IMPORTED_MODULE_4__components_Loader__["a" /* default */],
-        searchBox: __WEBPACK_IMPORTED_MODULE_6__components_searchBox__["a" /* default */],
-        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default.a,
-        largeBarChart: __WEBPACK_IMPORTED_MODULE_7__components_largeBarChart__["a" /* default */],
-        overviewBarChart: __WEBPACK_IMPORTED_MODULE_8__components_overviewBarChart__["a" /* default */]
+        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome___default.a,
+        overviewBarChart: __WEBPACK_IMPORTED_MODULE_6__components_overviewBarChart__["a" /* default */],
+        fab: __WEBPACK_IMPORTED_MODULE_9__components_FAB__["a" /* default */]
     },
     created: function created() {
         console.log('created');
@@ -14800,7 +14273,7 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
             gradeConfig.dim = _this.ndx.dimension(function (d) {
                 return d.Grade;
             });
-            gradeConfig.group = gradeConfig.dim.group().reduce(_this.manningAdd, _this.manningRemove, _this.manningInitial);
+            gradeConfig.group = removeEmptyBins(gradeConfig.dim.group().reduce(_this.manningAdd, _this.manningRemove, _this.manningInitial));
             gradeConfig.minHeight = 267;
             gradeConfig.aspectRatio = 4;
             gradeConfig.margins = { top: 10, left: 50, right: 30, bottom: 20 };
@@ -14833,65 +14306,6 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
                     chart.filter(d);
                     dc.redrawAll();
                 });
-            });
-
-            //Curent Filters button
-            d3.select('#showMyFilters').on('click', function () {
-
-                var myFilters = _this.toProperCase(_this.pageLabel) + ' filters ';
-
-                dc.chartRegistry.list().forEach(function (d) {
-
-                    if (d.hasFilter() && d.anchor() != '#dc-overviewmajcom-barchart' && d.anchor() != '#dc-overviewmpf-barchart') {
-                        myFilters += '\n (' + d.filters() + ')';
-                    }
-                });
-                if (myFilters !== undefined) {
-                    var myCheckValue = 0;
-                    if (_this.selected == "percent") {
-                        myCheckValue = percentND.value;
-                    };
-                    if (_this.selected == "auth") {
-                        myCheckValue = authND.value;
-                    };
-                    if (_this.selected == "asgn") {
-                        myCheckValue = asgnND.value;
-                    };
-                    if (_this.selected == "stp") {
-                        myCheckValue = stpND.value;
-                    };
-                    // Override global options
-                    __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.options = {
-                        "positionClass": "toast-bottom-full-width",
-                        "closeButton": "true",
-                        "preventDuplicates": "true"
-                    };
-                    if (myCheckValue() == '0.0%' || myCheckValue() == 0) {
-                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.warning('Your ' + _this.toProperCase(_this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
-                    } else if (myCheckValue() == '1') {
-                        myFilters += ' return ' + myCheckValue() + ' ' + _this.ylabel + ' result.';
-                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
-                    } else {
-                        myFilters += ' return ' + myCheckValue() + ' ' + _this.ylabel + ' results.';
-                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
-                    }
-                }
-                if (myFilters == 'undefined' || myFilters == undefined) {
-                    __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.error('Something went wrong. Please reset and try again.');
-                }
-            });
-
-            //Download Raw Data button
-            d3.select('#download').on('click', function () {
-                var data = _this.downloadDim.top(Infinity);
-                var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
-
-                var myFilters = '';
-                dc.chartRegistry.list().forEach(function (d) {
-                    if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
-                });
-
-                FileSaver.saveAs(blob, 'PERSTAT Enlisted_Manning' + ' ' + __WEBPACK_IMPORTED_MODULE_5__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
             });
 
             // after DOM updated redraw to make chart widths update
@@ -15009,13 +14423,12 @@ if(false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_AutoComplete__ = __webpack_require__("nObl");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_Loader__ = __webpack_require__("wd27");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__store_store__ = __webpack_require__("wtEF");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_searchBox__ = __webpack_require__("CjlA");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_largeBarChart__ = __webpack_require__("A1IL");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_overviewBarChart__ = __webpack_require__("Kvlx");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_toastr__ = __webpack_require__("vQJi");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_toastr__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_overviewBarChart__ = __webpack_require__("Kvlx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_toastr__ = __webpack_require__("vQJi");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_toastr__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_FAB__ = __webpack_require__("yfIS");
 //
 //
 //
@@ -15162,28 +14575,6 @@ if(false) {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
 
 
 
@@ -15209,7 +14600,13 @@ if(false) {
             majcomColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].majcomChart.color]),
             baseColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color]),
             pageName: 'Officer Manning',
-            afscGroupChart: {}
+            afscGroupChart: {},
+            /* FAB items */
+            bgColor: '#333333',
+            position: 'bottom-right',
+            iconSize: 'md',
+            fabActions: [{ name: 'reset', icon: 'redo-alt', tooltip: 'Reset All', color: '#FF3547' }, { name: 'download', icon: 'download', tooltip: 'Download Raw Data', color: '#2F96B4' }, { name: 'demo', icon: 'eye', tooltip: 'Demo the page', color: '#2F96B4' }, { name: 'showMyFilters', icon: 'search-filters', tooltip: 'View current Filters', color: '#2F96B4' }],
+            mainIcon: 'plus'
         };
     },
 
@@ -15402,6 +14799,72 @@ if(false) {
             }
             return output;
         },
+        fabDownload: function fabDownload() {
+            var data = this.downloadDim.top(Infinity);
+            var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
+
+            var myFilters = '';
+            dc.chartRegistry.list().forEach(function (d) {
+                if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
+            });
+
+            FileSaver.saveAs(blob, 'PERSTAT ' + this.pageName + ' ' + __WEBPACK_IMPORTED_MODULE_6__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
+        },
+        fabFilter: function fabFilter() {
+            //Curent Filters button
+            var myFilters = this.toProperCase(this.pageLabel) + ' filters ';
+            dc.chartRegistry.list().forEach(function (d) {
+                //console.log("d.filter(): "+d.filter())
+                if (d.hasFilter()) {
+                    //console.log(d.anchor(), d.filters())
+                    myFilters += '\n (' + d.filters() + ')';
+                }
+            });
+            if (myFilters !== undefined) {
+                var myCheckValue = '0';
+
+                if (this.selected == "asgn") {
+                    var asgn = this.ndx.groupAll().reduceSum(function (d) {
+                        return +d.Assigned;
+                    });
+                    myCheckValue = asgn.value();
+                };
+                if (this.selected == "stp") {
+                    var stp = this.ndx.groupAll().reduceSum(function (d) {
+                        return +d.STP;
+                    });
+                    myCheckValue = stp.value();
+                };
+                if (this.selected == "auth") {
+                    var auth = this.ndx.groupAll().reduceSum(function (d) {
+                        return +d.Authorized;
+                    });
+                    myCheckValue = auth.value();
+                };
+                if (this.selected == "percent") {
+                    myCheckValue = percent.innerText.substr(0, percent.innerText.length - 1);
+                };
+                //console.log("myCheckvalue: "+ myCheckValue );
+                // Override global options
+                __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.options = {
+                    "positionClass": "toast-bottom-full-width",
+                    "closeButton": "true",
+                    "preventDuplicates": "true"
+                };
+                if (myCheckValue == '0.0%' || myCheckValue == 0) {
+                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.warning('Your ' + this.toProperCase(this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                } else if (myCheckValue == '1') {
+                    myFilters += ' return ' + myCheckValue + ' ' + this.ylabel + ' result.';
+                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.info(myFilters);
+                } else {
+                    myFilters += ' return ' + myCheckValue + ' ' + this.ylabel + ' results.';
+                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.info(myFilters);
+                }
+            }
+            if (myFilters == 'undefined' || myFilters == undefined) {
+                __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.error('Something went wrong. Please reset and try again.');
+            }
+        },
         renderCharts: function renderCharts() {
             var _this2 = this;
 
@@ -15461,65 +14924,6 @@ if(false) {
             });
             this.afscGroupChart = afscGroupChart;
 
-            //Curent Filters button
-            d3.select('#showMyFilters').on('click', function () {
-                var myFilters = _this2.toProperCase(_this2.pageLabel) + ' filters ';
-
-                dc.chartRegistry.list().forEach(function (d) {
-
-                    if (d.hasFilter()) {
-                        myFilters += '\n (' + d.filters() + ')';
-                    }
-                });
-                if (myFilters !== undefined) {
-                    var myCheckValue = '0';
-                    if (_this2.selected == "asgn") {
-                        myCheckValue = asgn.value();
-                    };
-                    if (_this2.selected == "stp") {
-                        myCheckValue = stp.value();
-                    };
-                    if (_this2.selected == "auth") {
-                        myCheckValue = auth.value();
-                    };
-                    if (_this2.selected == "percent") {
-                        myCheckValue = percent.innerText.substr(0, percent.innerText.length - 1);
-                    };
-                    //console.log("myCheckvalue: "+ myCheckValue );
-                    // Override global options
-                    __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.options = {
-                        "positionClass": "toast-bottom-full-width",
-                        "closeButton": "true",
-                        "preventDuplicates": "true"
-                    };
-                    if (myCheckValue == '0.0%' || myCheckValue == 0) {
-                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.warning('Your ' + _this2.toProperCase(_this2.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
-                    } else if (myCheckValue == '1') {
-                        myFilters += ' return ' + myCheckValue + ' ' + _this2.ylabel + ' result.';
-                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.info(myFilters);
-                    } else {
-                        myFilters += ' return ' + myCheckValue + ' ' + _this2.ylabel + ' results.';
-                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.info(myFilters);
-                    }
-                }
-                if (myFilters == 'undefined' || myFilters == undefined) {
-                    __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.error('Something went wrong. Please reset and try again.');
-                }
-            });
-
-            //Download Raw Data button
-            d3.select('#download').on('click', function () {
-                var data = _this2.downloadDim.top(Infinity);
-                var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
-
-                var myFilters = '';
-                dc.chartRegistry.list().forEach(function (d) {
-                    if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
-                });
-
-                FileSaver.saveAs(blob, 'PERSTAT Officer_Manning' + ' ' + __WEBPACK_IMPORTED_MODULE_6__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
-            });
-
             // after DOM updated redraw to make chart widths update
             this.$nextTick(function () {
                 dc.redrawAll();
@@ -15541,10 +14945,9 @@ if(false) {
     components: {
         'autocomplete': __WEBPACK_IMPORTED_MODULE_4__components_AutoComplete__["a" /* default */],
         'loader': __WEBPACK_IMPORTED_MODULE_5__components_Loader__["a" /* default */],
-        searchBox: __WEBPACK_IMPORTED_MODULE_7__components_searchBox__["a" /* default */],
-        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome___default.a,
-        largeBarChart: __WEBPACK_IMPORTED_MODULE_8__components_largeBarChart__["a" /* default */],
-        overviewBarChart: __WEBPACK_IMPORTED_MODULE_9__components_overviewBarChart__["a" /* default */]
+        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome___default.a,
+        overviewBarChart: __WEBPACK_IMPORTED_MODULE_7__components_overviewBarChart__["a" /* default */],
+        fab: __WEBPACK_IMPORTED_MODULE_10__components_FAB__["a" /* default */]
     },
     created: function created() {},
     mounted: function mounted() {
@@ -15598,13 +15001,12 @@ if(false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_format__ = __webpack_require__("XCdN");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_Loader__ = __webpack_require__("wd27");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__store_store__ = __webpack_require__("wtEF");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_searchBox__ = __webpack_require__("CjlA");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_largeBarChart__ = __webpack_require__("A1IL");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_overviewBarChart__ = __webpack_require__("Kvlx");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr__ = __webpack_require__("vQJi");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_toastr__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_overviewBarChart__ = __webpack_require__("Kvlx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_toastr__ = __webpack_require__("vQJi");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_toastr__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_FAB__ = __webpack_require__("yfIS");
 //
 //
 //
@@ -15735,49 +15137,6 @@ if(false) {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
 
 
 
@@ -15800,7 +15159,13 @@ if(false) {
             chartSpecs: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */],
             pageName: 'Exceptional Family Member Program & Humanitarian',
             baseColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color]),
-            majcomColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].majcomChart.color])
+            majcomColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].majcomChart.color]),
+            /* FAB items */
+            bgColor: '#333333',
+            position: 'bottom-right',
+            iconSize: 'md',
+            fabActions: [{ name: 'reset', icon: 'redo-alt', tooltip: 'Reset All', color: '#FF3547' }, { name: 'download', icon: 'download', tooltip: 'Download Raw Data', color: '#2F96B4' }, { name: 'demo', icon: 'eye', tooltip: 'Demo the page', color: '#2F96B4' }, { name: 'showMyFilters', icon: 'search-filters', tooltip: 'View current Filters', color: '#2F96B4' }],
+            mainIcon: 'plus'
         };
     },
 
@@ -15885,6 +15250,52 @@ if(false) {
             return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
                 return $1.toUpperCase();
             });
+        },
+        fabDownload: function fabDownload() {
+            var data = this.downloadDim.top(Infinity);
+            var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
+
+            var myFilters = '';
+            dc.chartRegistry.list().forEach(function (d) {
+                if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
+            });
+
+            FileSaver.saveAs(blob, 'PERSTAT ' + this.pageName + ' ' + __WEBPACK_IMPORTED_MODULE_5__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
+        },
+        fabFilter: function fabFilter() {
+            //Curent Filters button
+            var myFilters = this.toProperCase(this.pageLabel) + ' filters ';
+            dc.chartRegistry.list().forEach(function (d) {
+                //console.log("d.filter(): "+d.filter())
+                if (d.hasFilter() && d.anchor() != '#dc-overviewmajcom-barchart' && d.anchor() != '#dc-overviewbase-barchart') {
+                    //console.log(d.anchor(), d.filters())
+                    myFilters += '\n (' + d.filters() + ')';
+                }
+            });
+            if (myFilters !== undefined) {
+                var counterVars = this.ndx.groupAll().reduceSum(function (d) {
+                    return +d.Count;
+                });
+                //console.log("counterVars.value: "+counterVars.value());
+                // Override global options
+                __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.options = {
+                    "positionClass": "toast-bottom-full-width",
+                    "closeButton": "true",
+                    "preventDuplicates": "true"
+                };
+                if (counterVars.value() == 0) {
+                    __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.warning('Your ' + this.toProperCase(this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                } else if (counterVars.value() == 1) {
+                    myFilters += ' return ' + counterVars.value() + ' result.';
+                    __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.info(myFilters);
+                } else {
+                    myFilters += ' return ' + counterVars.value() + ' results.';
+                    __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.info(myFilters);
+                }
+            }
+            if (myFilters == 'undefined' || myFilters == undefined) {
+                __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.error('Something went wrong. Please reset and try again.');
+            }
         }
     },
     mounted: function mounted() {
@@ -15969,9 +15380,9 @@ if(false) {
             yearConfig.dim = _this.ndx.dimension(function (d) {
                 return d.Year;
             });
-            yearConfig.group = yearConfig.dim.group().reduceSum(function (d) {
+            yearConfig.group = _this.removeEmptyBins(yearConfig.dim.group().reduceSum(function (d) {
                 return d.Count;
-            });
+            }));
             yearConfig.minHeight = 270;
             yearConfig.aspectRatio = 1.5;
             yearConfig.margins = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].standardRowChart.margins;
@@ -15985,9 +15396,9 @@ if(false) {
             typeConfig.dim = _this.ndx.dimension(function (d) {
                 return d.Type;
             });
-            typeConfig.group = typeConfig.dim.group().reduceSum(function (d) {
+            typeConfig.group = _this.removeEmptyBins(typeConfig.dim.group().reduceSum(function (d) {
                 return d.Count;
-            });
+            }));
             typeConfig.minHeight = 270;
             typeConfig.aspectRatio = 1.5;
             typeConfig.margins = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].standardRowChart.margins;
@@ -16045,52 +15456,6 @@ if(false) {
                 return -d.value;
             });
 
-            //Curent Filters button
-            d3.select('#showMyFilters').on('click', function () {
-                var myFilters = _this.toProperCase(_this.pageLabel) + ' filters ';
-
-                dc.chartRegistry.list().forEach(function (d) {
-                    if (d.hasFilter() && d.anchor() != '#dc-overviewmajcom-barchart' && d.anchor() != '#dc-overviewbase-barchart') {
-                        //console.log(d.anchor(), d.filters())
-                        myFilters += '\n (' + d.filters() + ')';
-                    }
-                });
-                if (myFilters !== undefined) {
-                    var counterVars = invND;
-                    // Override global options
-                    __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.options = {
-                        "positionClass": "toast-bottom-full-width",
-                        "closeButton": "true",
-                        "preventDuplicates": "true"
-                    };
-                    if (counterVars.value() == 0) {
-                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.warning('Your ' + _this.toProperCase(_this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
-                    } else if (counterVars.value() == 1) {
-                        myFilters += ' return ' + counterVars.value() + ' result.';
-                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
-                    } else {
-                        myFilters += ' return ' + counterVars.value() + ' results.';
-                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
-                    }
-                }
-                if (myFilters == 'undefined' || myFilters == undefined) {
-                    __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.error('Something went wrong. Please reset and try again.');
-                }
-            });
-
-            //Download Raw Data button
-            d3.select('#download').on('click', function () {
-                var data = _this.downloadDim.top(Infinity);
-                var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
-
-                var myFilters = '';
-                dc.chartRegistry.list().forEach(function (d) {
-                    if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
-                });
-
-                FileSaver.saveAs(blob, 'PERSTAT EFMP' + ' ' + __WEBPACK_IMPORTED_MODULE_5__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
-            });
-
             // after DOM updated redraw to make chart widths update
             _this.$nextTick(function () {
                 dc.redrawAll();
@@ -16122,10 +15487,9 @@ if(false) {
 
     components: {
         'loader': __WEBPACK_IMPORTED_MODULE_4__components_Loader__["a" /* default */],
-        searchBox: __WEBPACK_IMPORTED_MODULE_6__components_searchBox__["a" /* default */],
-        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default.a,
-        largeBarChart: __WEBPACK_IMPORTED_MODULE_7__components_largeBarChart__["a" /* default */],
-        overviewBarChart: __WEBPACK_IMPORTED_MODULE_8__components_overviewBarChart__["a" /* default */]
+        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome___default.a,
+        overviewBarChart: __WEBPACK_IMPORTED_MODULE_6__components_overviewBarChart__["a" /* default */],
+        fab: __WEBPACK_IMPORTED_MODULE_9__components_FAB__["a" /* default */]
     }
 });
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("Za4h"), __webpack_require__("JowF"), __webpack_require__("iEPi"), __webpack_require__("iGUu"), __webpack_require__("lDdF")))
@@ -16177,10 +15541,10 @@ var render = function() {
                 _c(
                   "div",
                   {
-                    staticClass: "col",
+                    staticClass: "col-auto",
                     attrs: {
                       id: "radioSelect",
-                      "data-step": "1",
+                      "data-step": "3",
                       "data-intro":
                         "Toggle the radio buttons to change the data element being shown in the charts."
                     }
@@ -16228,7 +15592,7 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                                Percentage\n                            "
+                              "\n                            Percentage\n                        "
                             )
                           ]
                         )
@@ -16275,7 +15639,7 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                                Assigned \n                            "
+                              "\n                            Assigned \n                        "
                             )
                           ]
                         )
@@ -16322,7 +15686,7 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                                Authorized \n                            "
+                              "\n                            Authorized \n                        "
                             )
                           ]
                         )
@@ -16369,7 +15733,7 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                                STP \n                            "
+                              "\n                            STP \n                        "
                             )
                           ]
                         ),
@@ -16398,146 +15762,54 @@ var render = function() {
                   ]
                 ),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: { type: "button", id: "demo", title: "Demo" },
-                      on: { click: _vm.startDemo }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Demo  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "eye", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        id: "showMyFilters",
-                        "data-step": "7",
-                        "data-intro": "See the currently applied filters here!",
-                        title: "Filter"
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Filter  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "filter", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        id: "download",
-                        "data-step": "6",
-                        "data-intro": "Download data in tabular form here!",
-                        title: "Download Raw Data"
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Download  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "download", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-danger btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        "data-step": "4",
-                        "data-intro":
-                          "Click here to reset filters on all charts.",
-                        title: "Reset All"
-                      },
-                      on: { click: _vm.resetAll }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Reset All  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "redo-alt", size: "lg" }
-                      })
-                    ],
-                    1
-                  )
-                ])
+                _c("div", { staticClass: "col-auto" })
               ]),
               _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "row",
-                  attrs: {
-                    id: "counts",
-                    "data-step": "2",
-                    "data-intro":
-                      "Summary statistics for the data elements are shown here. These numbers change as filters are applied."
-                  }
-                },
-                [
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                        Assigned:\n                        "
-                    ),
-                    _c("span", { attrs: { id: "asgn" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                        STP:\n                        "
-                    ),
-                    _c("span", { attrs: { id: "stp" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                        Authorized:\n                        "
-                    ),
-                    _c("span", { attrs: { id: "auth" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                        Manning Percent:\n                        "
-                    ),
-                    _c("span", { attrs: { id: "percent" } })
-                  ])
-                ]
-              ),
+              _c("div", { staticClass: "row" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "row col-auto",
+                    attrs: {
+                      id: "counts",
+                      "data-step": "4",
+                      "data-intro":
+                        "Summary statistics for the data elements are shown here. These numbers change as filters are applied."
+                    }
+                  },
+                  [
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                        Assigned:\n                        "
+                      ),
+                      _c("span", { attrs: { id: "asgn" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                        STP:\n                        "
+                      ),
+                      _c("span", { attrs: { id: "stp" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                        Authorized:\n                        "
+                      ),
+                      _c("span", { attrs: { id: "auth" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                        Manning Percent:\n                        "
+                      ),
+                      _c("span", { attrs: { id: "percent" } })
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-auto" })
+              ]),
               _vm._v(" "),
               _c("overviewBarChart", {
                 attrs: {
@@ -16572,13 +15844,12 @@ var render = function() {
                       {
                         attrs: {
                           id: "dc-grade-rowchart",
-                          "data-step": "3",
+                          "data-step": "5",
                           "data-intro":
                             "Clicking the bars applies filters to the chart. Click on one of the bars and watch the other charts update!"
                         }
                       },
                       [
-                        _vm._v(">\n                            "),
                         _c("h3", [
                           _vm._v("Grade "),
                           _c(
@@ -16679,7 +15950,25 @@ var render = function() {
           )
         ],
         1
-      )
+      ),
+      _vm._v(" "),
+      _c("fab", {
+        staticClass: "noselect",
+        attrs: {
+          "data-step": "2",
+          "data-intro":
+            "Click here to Reset all filters for all charts, Download raw data in tab form, or View current filters applied to all charts.",
+          position: _vm.position,
+          "bg-color": _vm.bgColor,
+          actions: _vm.fabActions
+        },
+        on: {
+          reset: _vm.resetAll,
+          download: _vm.fabDownload,
+          demo: _vm.startDemo,
+          showMyFilters: _vm.fabFilter
+        }
+      })
     ],
     1
   )
@@ -16721,8 +16010,9 @@ exports.push([module.i, "\n#edlevel, #grade, #dafsc, #us {\n    margin-top: 1rem
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
+  __webpack_require__("aiGb")
   __webpack_require__("ertY")
-  __webpack_require__("oTky")
+  __webpack_require__("hqXP")
 }
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
@@ -16780,15 +16070,14 @@ if (false) {(function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_format__ = __webpack_require__("XCdN");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_AutoComplete__ = __webpack_require__("nObl");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_searchBox__ = __webpack_require__("CjlA");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_Loader__ = __webpack_require__("wd27");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__store_store__ = __webpack_require__("wtEF");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_largeBarChart__ = __webpack_require__("A1IL");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_overviewBarChart__ = __webpack_require__("Kvlx");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr__ = __webpack_require__("vQJi");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_toastr__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__fortawesome_vue_fontawesome__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_Loader__ = __webpack_require__("wd27");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__store_store__ = __webpack_require__("wtEF");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_overviewBarChart__ = __webpack_require__("Kvlx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_toastr__ = __webpack_require__("vQJi");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_toastr__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_FAB__ = __webpack_require__("yfIS");
 //
 //
 //
@@ -16949,63 +16238,6 @@ if (false) {(function () {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
 
 
 
@@ -17030,7 +16262,13 @@ if (false) {(function () {
             chartSpecs: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */],
             coreColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].coreChart.color]),
             yrgpColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].yrgpChart.color]),
-            pageName: 'Officer Education'
+            pageName: 'Officer Education',
+            /* FAB items */
+            bgColor: '#333333',
+            position: 'bottom-right',
+            iconSize: 'md',
+            fabActions: [{ name: 'reset', icon: 'redo-alt', tooltip: 'Reset All', color: '#FF3547' }, { name: 'download', icon: 'download', tooltip: 'Download Raw Data', color: '#2F96B4' }, { name: 'demo', icon: 'eye', tooltip: 'Demo the page', color: '#2F96B4' }, { name: 'showMyFilters', icon: 'search-filters', tooltip: 'View current Filters', color: '#2F96B4' }],
+            mainIcon: 'plus'
         };
     },
 
@@ -17040,7 +16278,7 @@ if (false) {(function () {
             return crossfilter(this.data);
         },
         asDate: function asDate() {
-            return __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate;
+            return __WEBPACK_IMPORTED_MODULE_6__store_store__["a" /* store */].state.asDate;
         },
         allGroup: function allGroup() {
             return this.ndx.groupAll();
@@ -17052,6 +16290,11 @@ if (false) {(function () {
         },
         coreGroup: function coreGroup() {
             return this.coreDim.group().reduce(this.edAdd, this.edRemoveLarge, this.edInitial);
+        },
+        downloadDim: function downloadDim() {
+            return this.ndx.dimension(function (d) {
+                return d;
+            });
         },
         yrgpDim: function yrgpDim() {
             return this.ndx.dimension(function (d) {
@@ -17147,16 +16390,75 @@ if (false) {(function () {
             return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
                 return $1.toUpperCase();
             });
+        },
+        fabDownload: function fabDownload() {
+            var data = this.downloadDim.top(Infinity);
+            var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
+
+            var myFilters = '';
+            dc.chartRegistry.list().forEach(function (d) {
+                if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
+            });
+
+            FileSaver.saveAs(blob, 'PERSTAT ' + this.pageName + ' ' + __WEBPACK_IMPORTED_MODULE_6__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
+        },
+        fabFilter: function fabFilter() {
+            //Curent Filters button
+            var myFilters = this.toProperCase(this.pageLabel) + ' filters ';
+            dc.chartRegistry.list().forEach(function (d) {
+                //console.log("d.filter(): "+d.filter())
+                if (d.hasFilter() && d.anchor() != '#dc-overviewyrgp-barchart' && d.anchor() != '#dc-overviewcore-barchart') {
+                    //console.log(d.anchor(), d.filters())
+                    myFilters += '\n (' + d.filters() + ')';
+                }
+            });
+            if (myFilters !== undefined) {
+                var myCheckValue = '0';
+
+                if (this.selected == "totalCount") {
+                    myCheckValue = totalCount.innerText;
+                }
+                if (this.selected == "stem") {
+                    myCheckValue = stemTotal.innerText;
+                }
+                if (this.selected == "nonStem") {
+                    myCheckValue = nonStemTotal.innerText;
+                }
+                if (this.selected == "stemPercent") {
+                    myCheckValue = percentStem.innerText.substr(0, percentStem.innerText.length - 1);
+                };
+                if (this.selected == "nonStemPercent") {
+                    myCheckValue = percentNonStem.innerText.substr(0, percentNonStem.innerText.length - 1);
+                };
+                //console.log("myCheckvalue: "+ myCheckValue );
+                // Override global options
+                __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.options = {
+                    "positionClass": "toast-bottom-full-width",
+                    "closeButton": "true",
+                    "preventDuplicates": "true"
+                };
+                if (myCheckValue == '0.0%' || myCheckValue == 0) {
+                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.warning('Your ' + this.toProperCase(this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                } else if (myCheckValue == '1') {
+                    myFilters += ' return ' + myCheckValue + ' ' + this.ylabel + ' result.';
+                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.info(myFilters);
+                } else {
+                    myFilters += ' return ' + myCheckValue + ' ' + this.ylabel + ' results.';
+                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.info(myFilters);
+                }
+            }
+            if (myFilters == 'undefined' || myFilters == undefined) {
+                __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.error('Something went wrong. Please reset and try again.');
+            }
         }
     },
 
     components: {
         'AutoComplete': __WEBPACK_IMPORTED_MODULE_4__components_AutoComplete__["a" /* default */],
-        'Loader': __WEBPACK_IMPORTED_MODULE_6__components_Loader__["a" /* default */],
-        searchBox: __WEBPACK_IMPORTED_MODULE_5__components_searchBox__["a" /* default */],
-        largeBarChart: __WEBPACK_IMPORTED_MODULE_8__components_largeBarChart__["a" /* default */],
-        overviewBarChart: __WEBPACK_IMPORTED_MODULE_9__components_overviewBarChart__["a" /* default */],
-        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_11__fortawesome_vue_fontawesome___default.a
+        'Loader': __WEBPACK_IMPORTED_MODULE_5__components_Loader__["a" /* default */],
+        overviewBarChart: __WEBPACK_IMPORTED_MODULE_7__components_overviewBarChart__["a" /* default */],
+        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome___default.a,
+        fab: __WEBPACK_IMPORTED_MODULE_10__components_FAB__["a" /* default */]
     },
 
     created: function created() {
@@ -17170,7 +16472,7 @@ if (false) {(function () {
 
         //test AXIOS Call:
         __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post("https://stars.afpc.randolph.af.mil/FLA/perstat_json/ps_prom_year_group.js").then(function (response) {
-            __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate = response.data.ASOFDATE;
+            __WEBPACK_IMPORTED_MODULE_6__store_store__["a" /* store */].state.asDate = response.data.ASOFDATE;
             var invData = response.data.data;
             var objData = makeObject(invData);
             _this.data = objData;
@@ -17352,66 +16654,6 @@ if (false) {(function () {
                 return __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].gradeOrder[d.key];
             });
 
-            //Current Filters button
-            d3.select('#showMyFilters').on('click', function () {
-                var myFilters = _this.toProperCase(_this.pageLabel) + ' filters ';
-
-                dc.chartRegistry.list().forEach(function (d) {
-
-                    if (d.hasFilter() && d.anchor() != '#dc-overviewyrgp-barchart' && d.anchor() != '#dc-overviewcore-barchart') {
-                        myFilters += '\n (' + d.filters() + ')';
-                    }
-                });
-                if (myFilters !== undefined) {
-                    var myCheckValue = 0;
-                    if (_this.selected == "totalCount") {
-                        myCheckValue = totalCountND.value;
-                    };
-                    if (_this.selected == "stem") {
-                        myCheckValue = stemTotalND.value;
-                    };
-                    if (_this.selected == "nonStem") {
-                        myCheckValue = nonStemTotalND.value;
-                    };
-                    if (_this.selected == "stemPercent") {
-                        myCheckValue = percentStemND.value;
-                    };
-                    if (_this.selected == "nonStemPercent") {
-                        myCheckValue = percentNonStemND.value;
-                    };
-                    // Override global options
-                    __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.options = {
-                        "positionClass": "toast-bottom-full-width",
-                        "closeButton": "true",
-                        "preventDuplicates": "true"
-                    };
-                    if (myCheckValue() == '0.0%' || myCheckValue() == 0) {
-                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.warning('Your ' + _this.toProperCase(_this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
-                    } else if (myCheckValue() == '1') {
-                        myFilters += ' return ' + myCheckValue() + ' ' + _this.ylabel + ' result.';
-                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
-                    } else {
-                        myFilters += ' return ' + myCheckValue() + ' ' + _this.ylabel + ' results.';
-                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
-                    }
-                }
-                if (myFilters == 'undefined' || myFilters == undefined) {
-                    __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.error('Something went wrong. Please reset and try again.');
-                }
-            });
-
-            //Download Raw Data button
-            d3.select('#download').on('click', function () {
-                var data = gradeConfig.dim.top(Infinity);
-                var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
-                var myFilters = '';
-                dc.chartRegistry.list().forEach(function (d) {
-                    if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
-                });
-
-                FileSaver.saveAs(blob, 'PERSTAT Officer Year Group' + ' ' + __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
-            });
-
             // after DOM updated redraw to make chart widths update
             _this.$nextTick(function () {
                 dc.redrawAll();
@@ -17435,7 +16677,7 @@ if (false) {(function () {
     beforeDestroy: function beforeDestroy() {
         console.log("beforeDestroy");
         dc.chartRegistry.clear();
-        __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate = 'Undetermined';
+        __WEBPACK_IMPORTED_MODULE_6__store_store__["a" /* store */].state.asDate = 'Undetermined';
     },
     destroyed: function destroyed() {
         console.log("destroyed");
@@ -18871,38 +18113,12 @@ if (false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_AutoComplete__ = __webpack_require__("nObl");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_Loader__ = __webpack_require__("wd27");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__store_store__ = __webpack_require__("wtEF");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_searchBox__ = __webpack_require__("CjlA");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_overviewBarChart__ = __webpack_require__("Kvlx");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr__ = __webpack_require__("vQJi");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_toastr__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_overviewBarChart__ = __webpack_require__("Kvlx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_toastr__ = __webpack_require__("vQJi");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_toastr__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_FAB__ = __webpack_require__("yfIS");
 //
 //
 //
@@ -19059,7 +18275,13 @@ if (false) {
             chartSpecs: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */],
             baseColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color]),
             pageName: 'ANG Officer Manning',
-            afscGroupChart: {}
+            afscGroupChart: {},
+            /* FAB items */
+            bgColor: '#333333',
+            position: 'bottom-right',
+            iconSize: 'md',
+            fabActions: [{ name: 'reset', icon: 'redo-alt', tooltip: 'Reset All', color: '#FF3547' }, { name: 'download', icon: 'download', tooltip: 'Download Raw Data', color: '#2F96B4' }, { name: 'demo', icon: 'eye', tooltip: 'Demo the page', color: '#2F96B4' }, { name: 'showMyFilters', icon: 'search-filters', tooltip: 'View current Filters', color: '#2F96B4' }],
+            mainIcon: 'plus'
         };
     },
 
@@ -19187,14 +18409,94 @@ if (false) {
             return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
                 return $1.toUpperCase();
             });
+        },
+        fabDownload: function fabDownload() {
+            var data = this.downloadDim.top(Infinity);
+            var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
+
+            var myFilters = '';
+            dc.chartRegistry.list().forEach(function (d) {
+                if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
+            });
+
+            FileSaver.saveAs(blob, 'PERSTAT ' + this.pageName + ' ' + __WEBPACK_IMPORTED_MODULE_6__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
+        },
+        fabFilter: function fabFilter() {
+            //Curent Filters button
+            var myFilters = this.toProperCase(this.pageLabel) + ' filters ';
+            dc.chartRegistry.list().forEach(function (d) {
+                //console.log("d.filter(): "+d.filter())
+                if (d.hasFilter() && d.anchor() != '#dc-overviewmpf-barchart') {
+                    //console.log(d.anchor(), d.filters())
+                    myFilters += '\n (' + d.filters() + ')';
+                }
+            });
+            if (myFilters !== undefined) {
+                var myCheckValue = '0';
+                if (this.selected == "auth") {
+                    var auth = this.ndx.groupAll().reduceSum(function (d) {
+                        return +d.Authorized;
+                    });
+                    myCheckValue = auth.value();
+                };
+                if (this.selected == "asgn") {
+                    var asgn = this.ndx.groupAll().reduceSum(function (d) {
+                        return +d.Assigned;
+                    });
+                    myCheckValue = asgn.value();
+                };
+                if (this.selected == "gains") {
+                    var gains = this.ndx.groupAll().reduceSum(function (d) {
+                        return +d.Gains;
+                    });
+                    myCheckValue = gains.value();
+                };
+                if (this.selected == "losses") {
+                    var losses = this.ndx.groupAll().reduceSum(function (d) {
+                        return +d.Losses;
+                    });
+                    myCheckValue = losses.value();
+                };
+                if (this.selected == "vacancies") {
+                    var vacancies = this.ndx.groupAll().reduceSum(function (d) {
+                        return +d.Vacancies;
+                    });
+                    myCheckValue = vacancies.value();
+                };
+                if (this.selected == "excess") {
+                    var excess = this.ndx.groupAll().reduceSum(function (d) {
+                        return +d.Excess;
+                    });
+                    myCheckValue = excess.value();
+                };
+                //console.log("myCheckvalue: "+ myCheckValue );
+                // Override global options
+                __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.options = {
+                    "positionClass": "toast-bottom-full-width",
+                    "closeButton": "true",
+                    "preventDuplicates": "true"
+                };
+                if (myCheckValue == 0) {
+                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.warning('Your ' + this.toProperCase(this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                } else if (myCheckValue == '1') {
+                    myFilters += ' return ' + myCheckValue + ' ' + this.ylabel + ' result.';
+                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.info(myFilters);
+                } else {
+                    myFilters += ' return ' + myCheckValue + ' ' + this.ylabel + ' results.';
+                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.info(myFilters);
+                }
+            }
+            if (myFilters == 'undefined' || myFilters == undefined) {
+                __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.error('Something went wrong. Please reset and try again.');
+            }
         }
     },
     components: {
         'autocomplete': __WEBPACK_IMPORTED_MODULE_4__components_AutoComplete__["a" /* default */],
         'loader': __WEBPACK_IMPORTED_MODULE_5__components_Loader__["a" /* default */],
-        searchBox: __WEBPACK_IMPORTED_MODULE_7__components_searchBox__["a" /* default */],
-        overviewBarChart: __WEBPACK_IMPORTED_MODULE_8__components_overviewBarChart__["a" /* default */],
-        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default.a
+        overviewBarChart: __WEBPACK_IMPORTED_MODULE_7__components_overviewBarChart__["a" /* default */],
+        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome___default.a,
+        fab: __WEBPACK_IMPORTED_MODULE_10__components_FAB__["a" /* default */]
     },
     created: function created() {},
     mounted: function mounted() {
@@ -19448,72 +18750,6 @@ if (false) {
 
             usChart.controlsUseVisibility(true);
 
-            //Curent Filters button
-            d3.select('#showMyFilters').on('click', function () {
-                var myFilters = _this2.toProperCase(_this2.pageLabel) + ' filters ';
-
-                dc.chartRegistry.list().forEach(function (d) {
-
-                    if (d.hasFilter() && d.anchor() != '#dc-overviewmpf-barchart') {
-                        //console.log(d.anchor(), d.filters())
-                        myFilters += '\n (' + d.filters() + ')';
-                    }
-                });
-                if (myFilters !== undefined) {
-                    var myCheckValue = '0';
-                    if (_this2.selected == "asgn") {
-                        myCheckValue = asgn.value();
-                    };
-                    if (_this2.selected == "auth") {
-                        myCheckValue = auth.value();
-                    };
-                    if (_this2.selected == "gains") {
-                        myCheckValue = gains.value();
-                    };
-                    if (_this2.selected == "losses") {
-                        myCheckValue = losses.value();
-                    };
-                    if (_this2.selected == "vacancies") {
-                        myCheckValue = vacancies.value();
-                    };
-                    if (_this2.selected == "excess") {
-                        myCheckValue = excess.value();
-                    };
-                    //console.log("myCheckValue.value: "+myCheckValue.value());
-                    // Override global options
-                    __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.options = {
-                        "positionClass": "toast-bottom-full-width",
-                        "closeButton": "true",
-                        "preventDuplicates": "true"
-                    };
-                    if (myCheckValue == 0) {
-                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.warning('Your ' + _this2.toProperCase(_this2.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
-                    } else if (myCheckValue == 1) {
-                        myFilters += ' return ' + myCheckValue + ' ' + _this2.ylabel + ' result.';
-                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
-                    } else {
-                        myFilters += ' return ' + myCheckValue + ' ' + _this2.ylabel + ' results.';
-                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
-                    }
-                }
-                if (myFilters == 'undefined' || myFilters == undefined) {
-                    __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.error('Something went wrong. Please reset and try again.');
-                }
-            });
-
-            //Download Raw Data button
-            d3.select('#download').on('click', function () {
-                var data = _this2.downloadDim.top(Infinity);
-                var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
-
-                var myFilters = '';
-                dc.chartRegistry.list().forEach(function (d) {
-                    if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
-                });
-
-                FileSaver.saveAs(blob, 'PERSTAT ANG_Officer_Manning' + ' ' + __WEBPACK_IMPORTED_MODULE_6__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
-            });
-
             // after DOM updated redraw to make chart widths update
             _this2.$nextTick(function () {
                 dc.redrawAll();
@@ -19619,7 +18855,7 @@ var render = function() {
               "span",
               {
                 attrs: {
-                  "data-step": "4",
+                  "data-step": "1",
                   "data-intro":
                     "The data on this page is current as of the date shown here."
                 }
@@ -19805,7 +19041,7 @@ var render = function() {
               "span",
               {
                 attrs: {
-                  "data-step": "6",
+                  "data-step": "1",
                   "data-intro":
                     "The data on this page is current as of the date shown here."
                 }
@@ -20819,7 +20055,7 @@ var render = function() {
                                             _c("FontAwesomeIcon", {
                                               attrs: {
                                                 icon: action.icon,
-                                                size: _vm.iconSize
+                                                size: action.iconSize
                                               }
                                             })
                                           ],
@@ -20858,7 +20094,7 @@ var render = function() {
                                             _c("FontAwesomeIcon", {
                                               attrs: {
                                                 icon: action.icon,
-                                                size: _vm.iconSize
+                                                size: action.iconSize
                                               }
                                             })
                                           ],
@@ -21464,9 +20700,9 @@ var render = function() {
                   "div",
                   {
                     staticClass:
-                      "custom-control custom-radio custom-control-inline",
+                      "custom-control custom-radio custom-control-inline col-auto",
                     attrs: {
-                      "data-step": "1",
+                      "data-step": "3",
                       "data-intro": "STEM and Non-STEM totals."
                     }
                   },
@@ -21496,108 +20732,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "col" }),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: { type: "button", id: "demo", title: "Demo" },
-                      on: { click: _vm.startDemo }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Demo  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "eye", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        id: "showMyFilters",
-                        "data-step": "6",
-                        "data-intro": "See the currently applied filters here!",
-                        title: "Filter"
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("View Filters  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "search-filters", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        id: "download",
-                        "data-step": "5",
-                        "data-intro": "Download data in tabular form here!",
-                        title: "Download Raw Data"
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Download  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "download", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-danger btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        "data-step": "3",
-                        "data-intro":
-                          "Click here to reset filters on all charts.",
-                        title: "Reset All"
-                      },
-                      on: {
-                        click: function($event) {
-                          _vm.searchCore = ""
-                          _vm.resetAll()
-                        }
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Reset All  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "redo-alt", size: "lg" }
-                      })
-                    ],
-                    1
-                  )
-                ])
+                _c("div", { staticClass: "col-auto" })
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
@@ -21613,7 +20748,7 @@ var render = function() {
                       {
                         attrs: {
                           id: "dc-fyr-barchart",
-                          "data-step": "2",
+                          "data-step": "4",
                           "data-intro":
                             "Clicking the bars applies filters to the chart. Click on one of the bars and watch the other charts update!"
                         }
@@ -21787,7 +20922,25 @@ var render = function() {
           )
         ],
         1
-      )
+      ),
+      _vm._v(" "),
+      _c("fab", {
+        staticClass: "noselect",
+        attrs: {
+          "data-step": "2",
+          "data-intro":
+            "Click here to Reset all filters for all charts, Download raw data in tab form, or View current filters applied to all charts.",
+          position: _vm.position,
+          "bg-color": _vm.bgColor,
+          actions: _vm.fabActions
+        },
+        on: {
+          reset: _vm.resetAll,
+          download: _vm.fabDownload,
+          demo: _vm.startDemo,
+          showMyFilters: _vm.fabFilter
+        }
+      })
     ],
     1
   )
@@ -21856,6 +21009,21 @@ if (false) {(function () {
 
 /***/ }),
 
+/***/ "URcA":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("FZ+f")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.toast-title {\n  font-weight: bold;\n}\n.toast-message {\n  -ms-word-wrap: break-word;\n  word-wrap: break-word;\n}\n.toast-message a,\n.toast-message label {\n  color: #FFFFFF;\n}\n.toast-message a:hover {\n  color: #CCCCCC;\n  text-decoration: none;\n}\n.toast-close-button {\n  position: relative;\n  right: -0.3em;\n  top: -0.3em;\n  float: right;\n  font-size: 20px;\n  font-weight: bold;\n  color: #FFFFFF;\n  -webkit-text-shadow: 0 1px 0 #ffffff;\n  text-shadow: 0 1px 0 #ffffff;\n  opacity: 0.8;\n  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);\n  filter: alpha(opacity=80);\n  line-height: 1;\n}\n.toast-close-button:hover,\n.toast-close-button:focus {\n  color: #000000;\n  text-decoration: none;\n  cursor: pointer;\n  opacity: 0.4;\n  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);\n  filter: alpha(opacity=40);\n}\n.rtl .toast-close-button {\n  left: -0.3em;\n  float: left;\n  right: 0.3em;\n}\n/*Additional properties for button version\n iOS requires the button element instead of an anchor tag.\n If you want the anchor version, it requires `href=\"#\"`.*/\nbutton.toast-close-button {\n  padding: 0;\n  cursor: pointer;\n  background: transparent;\n  border: 0;\n  -webkit-appearance: none;\n}\n.toast-top-center {\n  top: 0;\n  right: 0;\n  width: 100%;\n}\n.toast-bottom-center {\n  bottom: 0;\n  right: 0;\n  width: 100%;\n}\n.toast-top-full-width {\n  top: 0;\n  right: 0;\n  width: 100%;\n}\n.toast-bottom-full-width {\n  bottom: 0;\n  right: 0;\n  width: 100%;\n}\n.toast-top-left {\n  top: 12px;\n  left: 12px;\n}\n.toast-top-right {\n  top: 12px;\n  right: 12px;\n}\n.toast-bottom-right {\n  right: 12px;\n  bottom: 12px;\n}\n.toast-bottom-left {\n  bottom: 12px;\n  left: 12px;\n}\n#toast-container {\n  position: fixed;\n  z-index: 999999;\n  pointer-events: none;\n  /*overrides*/\n}\n#toast-container * {\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n}\n#toast-container > div {\n  position: relative;\n  pointer-events: auto;\n  overflow: hidden;\n  margin: 0 0 6px;\n  padding: 15px 15px 15px 50px;\n  width: 300px;\n  border-radius: 3px 3px 3px 3px;\n  background-position: 15px center;\n  background-repeat: no-repeat;\n  -webkit-box-shadow: 0 0 12px #999999;\n  box-shadow: 0 0 12px #999999;\n  color: #FFFFFF;\n  opacity: 0.8;\n  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);\n  filter: alpha(opacity=80);\n}\n#toast-container > div.rtl {\n  direction: rtl;\n  padding: 15px 50px 15px 15px;\n  background-position: right 15px center;\n}\n#toast-container > div:hover {\n  -webkit-box-shadow: 0 0 12px #000000;\n  box-shadow: 0 0 12px #000000;\n  opacity: 1;\n  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);\n  filter: alpha(opacity=100);\n  cursor: pointer;\n}\n#toast-container > .toast-info {\n  background-image: url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGwSURBVEhLtZa9SgNBEMc9sUxxRcoUKSzSWIhXpFMhhYWFhaBg4yPYiWCXZxBLERsLRS3EQkEfwCKdjWJAwSKCgoKCcudv4O5YLrt7EzgXhiU3/4+b2ckmwVjJSpKkQ6wAi4gwhT+z3wRBcEz0yjSseUTrcRyfsHsXmD0AmbHOC9Ii8VImnuXBPglHpQ5wwSVM7sNnTG7Za4JwDdCjxyAiH3nyA2mtaTJufiDZ5dCaqlItILh1NHatfN5skvjx9Z38m69CgzuXmZgVrPIGE763Jx9qKsRozWYw6xOHdER+nn2KkO+Bb+UV5CBN6WC6QtBgbRVozrahAbmm6HtUsgtPC19tFdxXZYBOfkbmFJ1VaHA1VAHjd0pp70oTZzvR+EVrx2Ygfdsq6eu55BHYR8hlcki+n+kERUFG8BrA0BwjeAv2M8WLQBtcy+SD6fNsmnB3AlBLrgTtVW1c2QN4bVWLATaIS60J2Du5y1TiJgjSBvFVZgTmwCU+dAZFoPxGEEs8nyHC9Bwe2GvEJv2WXZb0vjdyFT4Cxk3e/kIqlOGoVLwwPevpYHT+00T+hWwXDf4AJAOUqWcDhbwAAAAASUVORK5CYII=\") !important;\n}\n#toast-container > .toast-error {\n  background-image: url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHOSURBVEhLrZa/SgNBEMZzh0WKCClSCKaIYOED+AAKeQQLG8HWztLCImBrYadgIdY+gIKNYkBFSwu7CAoqCgkkoGBI/E28PdbLZmeDLgzZzcx83/zZ2SSXC1j9fr+I1Hq93g2yxH4iwM1vkoBWAdxCmpzTxfkN2RcyZNaHFIkSo10+8kgxkXIURV5HGxTmFuc75B2RfQkpxHG8aAgaAFa0tAHqYFfQ7Iwe2yhODk8+J4C7yAoRTWI3w/4klGRgR4lO7Rpn9+gvMyWp+uxFh8+H+ARlgN1nJuJuQAYvNkEnwGFck18Er4q3egEc/oO+mhLdKgRyhdNFiacC0rlOCbhNVz4H9FnAYgDBvU3QIioZlJFLJtsoHYRDfiZoUyIxqCtRpVlANq0EU4dApjrtgezPFad5S19Wgjkc0hNVnuF4HjVA6C7QrSIbylB+oZe3aHgBsqlNqKYH48jXyJKMuAbiyVJ8KzaB3eRc0pg9VwQ4niFryI68qiOi3AbjwdsfnAtk0bCjTLJKr6mrD9g8iq/S/B81hguOMlQTnVyG40wAcjnmgsCNESDrjme7wfftP4P7SP4N3CJZdvzoNyGq2c/HWOXJGsvVg+RA/k2MC/wN6I2YA2Pt8GkAAAAASUVORK5CYII=\") !important;\n}\n#toast-container > .toast-success {\n  background-image: url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADsSURBVEhLY2AYBfQMgf///3P8+/evAIgvA/FsIF+BavYDDWMBGroaSMMBiE8VC7AZDrIFaMFnii3AZTjUgsUUWUDA8OdAH6iQbQEhw4HyGsPEcKBXBIC4ARhex4G4BsjmweU1soIFaGg/WtoFZRIZdEvIMhxkCCjXIVsATV6gFGACs4Rsw0EGgIIH3QJYJgHSARQZDrWAB+jawzgs+Q2UO49D7jnRSRGoEFRILcdmEMWGI0cm0JJ2QpYA1RDvcmzJEWhABhD/pqrL0S0CWuABKgnRki9lLseS7g2AlqwHWQSKH4oKLrILpRGhEQCw2LiRUIa4lwAAAABJRU5ErkJggg==\") !important;\n}\n#toast-container > .toast-warning {\n  background-image: url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGYSURBVEhL5ZSvTsNQFMbXZGICMYGYmJhAQIJAICYQPAACiSDB8AiICQQJT4CqQEwgJvYASAQCiZiYmJhAIBATCARJy+9rTsldd8sKu1M0+dLb057v6/lbq/2rK0mS/TRNj9cWNAKPYIJII7gIxCcQ51cvqID+GIEX8ASG4B1bK5gIZFeQfoJdEXOfgX4QAQg7kH2A65yQ87lyxb27sggkAzAuFhbbg1K2kgCkB1bVwyIR9m2L7PRPIhDUIXgGtyKw575yz3lTNs6X4JXnjV+LKM/m3MydnTbtOKIjtz6VhCBq4vSm3ncdrD2lk0VgUXSVKjVDJXJzijW1RQdsU7F77He8u68koNZTz8Oz5yGa6J3H3lZ0xYgXBK2QymlWWA+RWnYhskLBv2vmE+hBMCtbA7KX5drWyRT/2JsqZ2IvfB9Y4bWDNMFbJRFmC9E74SoS0CqulwjkC0+5bpcV1CZ8NMej4pjy0U+doDQsGyo1hzVJttIjhQ7GnBtRFN1UarUlH8F3xict+HY07rEzoUGPlWcjRFRr4/gChZgc3ZL2d8oAAAAASUVORK5CYII=\") !important;\n}\n#toast-container.toast-top-center > div,\n#toast-container.toast-bottom-center > div {\n  width: 300px;\n  margin-left: auto;\n  margin-right: auto;\n}\n#toast-container.toast-top-full-width > div,\n#toast-container.toast-bottom-full-width > div {\n  width: 96%;\n  margin-left: auto;\n  margin-right: auto;\n}\n.toast {\n  background-color: #030303;\n}\n.toast-success {\n  background-color: #51A351;\n}\n.toast-error {\n  background-color: #BD362F;\n}\n.toast-info {\n  background-color: #2F96B4;\n}\n.toast-warning {\n  background-color: #F89406;\n}\n.toast-progress {\n  position: absolute;\n  left: 0;\n  bottom: 0;\n  height: 4px;\n  background-color: #000000;\n  opacity: 0.4;\n  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);\n  filter: alpha(opacity=40);\n}\n/*Responsive Design*/\n@media all and (max-width: 240px) {\n#toast-container > div {\n    padding: 8px 8px 8px 50px;\n    width: 11em;\n}\n#toast-container > div.rtl {\n    padding: 8px 50px 8px 8px;\n}\n#toast-container .toast-close-button {\n    right: -0.2em;\n    top: -0.2em;\n}\n#toast-container .rtl .toast-close-button {\n    left: -0.2em;\n    right: 0.2em;\n}\n}\n@media all and (min-width: 241px) and (max-width: 480px) {\n#toast-container > div {\n    padding: 8px 8px 8px 50px;\n    width: 18em;\n}\n#toast-container > div.rtl {\n    padding: 8px 50px 8px 8px;\n}\n#toast-container .toast-close-button {\n    right: -0.2em;\n    top: -0.2em;\n}\n#toast-container .rtl .toast-close-button {\n    left: -0.2em;\n    right: 0.2em;\n}\n}\n@media all and (min-width: 481px) and (max-width: 768px) {\n#toast-container > div {\n    padding: 15px 15px 15px 50px;\n    width: 25em;\n}\n#toast-container > div.rtl {\n    padding: 15px 50px 15px 15px;\n}\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "Uosr":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -21902,10 +21070,10 @@ var render = function() {
                 _c(
                   "div",
                   {
-                    staticClass: "col",
+                    staticClass: "col-auto",
                     attrs: {
                       id: "radioSelect",
-                      "data-step": "1",
+                      "data-step": "3",
                       "data-intro":
                         "Toggle the radio buttons to change the data element being shown in the charts."
                     }
@@ -22197,168 +21365,69 @@ var render = function() {
                   ]
                 ),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: { type: "button", id: "demo", title: "Demo" },
-                      on: { click: _vm.startDemo }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Demo  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "eye", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        id: "showMyFilters",
-                        "data-step": "8",
-                        "data-intro": "See the currently applied filters here!",
-                        title: "Filter"
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("View Filters  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "search-filters", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        id: "download",
-                        "data-step": "7",
-                        "data-intro": "Download data in tabular form here!",
-                        title: "Download Raw Data"
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Download  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "download", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-danger btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        "data-step": "5",
-                        "data-intro":
-                          "Click here to reset filters on all charts.",
-                        title: "Reset All"
-                      },
-                      on: {
-                        click: function($event) {
-                          _vm.searchCore = ""
-                          _vm.resetAll()
-                        }
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Reset All  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "redo-alt", size: "lg" }
-                      })
-                    ],
-                    1
-                  )
-                ])
+                _c("div", { staticClass: "col-auto" })
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
                 _c("div", { staticClass: "col-auto" })
               ]),
               _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "row",
-                  attrs: {
-                    "data-step": "2",
-                    "data-intro":
-                      "Summary statistics for the data elements are shown here. These numbers change as filters are applied."
-                  }
-                },
-                [
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                    Assigned:\n                    "
-                    ),
-                    _c("span", { attrs: { id: "asgn" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                    Authorized:\n                    "
-                    ),
-                    _c("span", { attrs: { id: "auth" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                    Gains:\n                    "
-                    ),
-                    _c("span", { attrs: { id: "gains" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                    Losses:\n                    "
-                    ),
-                    _c("span", { attrs: { id: "losses" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                    Vacancies:\n                    "
-                    ),
-                    _c("span", { attrs: { id: "vacancies" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                    Excess:\n                    "
-                    ),
-                    _c("span", { attrs: { id: "excess" } })
-                  ])
-                ]
-              ),
+              _c("div", { staticClass: "row" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "row col-auto",
+                    attrs: {
+                      "data-step": "4",
+                      "data-intro":
+                        "Summary statistics for the data elements are shown here. These numbers change as filters are applied."
+                    }
+                  },
+                  [
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                        Assigned:\n                        "
+                      ),
+                      _c("span", { attrs: { id: "asgn" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                        Authorized:\n                        "
+                      ),
+                      _c("span", { attrs: { id: "auth" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                        Gains:\n                        "
+                      ),
+                      _c("span", { attrs: { id: "gains" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                        Losses:\n                        "
+                      ),
+                      _c("span", { attrs: { id: "losses" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                        Vacancies:\n                        "
+                      ),
+                      _c("span", { attrs: { id: "vacancies" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                        Excess:\n                        "
+                      ),
+                      _c("span", { attrs: { id: "excess" } })
+                    ])
+                  ]
+                )
+              ]),
               _vm._v(" "),
               _c("overviewBarChart", {
                 attrs: {
@@ -22393,7 +21462,7 @@ var render = function() {
                       {
                         attrs: {
                           id: "dc-afscGroup-barchart",
-                          "data-step": "3",
+                          "data-step": "5",
                           "data-intro":
                             "Clicking the bars applies filters to the chart. Click on one of the bars and watch the other charts update!"
                         }
@@ -22487,7 +21556,7 @@ var render = function() {
                         staticClass: "center-block clearfix",
                         attrs: {
                           id: "dc-us-geoChoroplethChart",
-                          "data-step": "4",
+                          "data-step": "6",
                           "data-intro":
                             "You can zoom in and out, mouse over a state or territory on the maps to see the personnel total, or click on it to apply filters and update the other charts!"
                         }
@@ -22532,7 +21601,25 @@ var render = function() {
           )
         ],
         1
-      )
+      ),
+      _vm._v(" "),
+      _c("fab", {
+        staticClass: "noselect",
+        attrs: {
+          "data-step": "2",
+          "data-intro":
+            "Click here to Reset all filters for all charts, Download raw data in tab form, or View current filters applied to all charts.",
+          position: _vm.position,
+          "bg-color": _vm.bgColor,
+          actions: _vm.fabActions
+        },
+        on: {
+          reset: _vm.resetAll,
+          download: _vm.fabDownload,
+          demo: _vm.startDemo,
+          showMyFilters: _vm.fabFilter
+        }
+      })
     ],
     1
   )
@@ -23100,6 +22187,33 @@ exports.push([module.i, "\n.axis line[data-v-1b760aa6],\n.axis path[data-v-1b760
 
 // exports
 
+
+/***/ }),
+
+/***/ "XCYi":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("GCLi");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("rjj0")("83403256", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../node_modules/css-loader/index.js?{\"minimize\":false,\"sourceMap\":false}!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-9b0c2fd6\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=2&bustCache!./Civilian.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js?{\"minimize\":false,\"sourceMap\":false}!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-9b0c2fd6\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=2&bustCache!./Civilian.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
 
 /***/ }),
 
@@ -26105,6 +25219,33 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 
 /***/ }),
 
+/***/ "aiGb":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("FB8E");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("rjj0")("9cc68b16", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../css-loader/index.js?{\"minimize\":false,\"sourceMap\":false}!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7d75ec3f\",\"scoped\":false,\"hasInlineConfig\":false}!./toastr.css", function() {
+     var newContent = require("!!../../css-loader/index.js?{\"minimize\":false,\"sourceMap\":false}!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7d75ec3f\",\"scoped\":false,\"hasInlineConfig\":false}!./toastr.css");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
 /***/ "alux":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -26993,7 +26134,14 @@ var render = function() {
               _c("div", { staticClass: "row pt-2" }, [
                 _c(
                   "div",
-                  { staticClass: "col", attrs: { id: "radioSelect" } },
+                  {
+                    staticClass: "col-auto",
+                    attrs: {
+                      id: "radioSelect",
+                      "data-step": "3",
+                      "data-intro": "Number of Marriages and Match Percentage."
+                    }
+                  },
                   [
                     _c(
                       "div",
@@ -27095,18 +26243,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "col" }),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-danger btn-rounded btn-sm waves-effect",
-                      attrs: { type: "button" },
-                      on: { click: _vm.resetAll }
-                    },
-                    [_vm._v("Reset All")]
-                  )
-                ])
+                _c("div", { staticClass: "col-auto" })
               ]),
               _vm._v(" "),
               _c(
@@ -27150,19 +26287,36 @@ var render = function() {
               ),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-auto" }, [
-                  _vm._v(
-                    "\n                        Marriages (RegAF to RegAF):\n                        "
-                  ),
-                  _c("span", { attrs: { id: "count" } })
-                ]),
+                _c(
+                  "div",
+                  {
+                    staticClass: "row col-auto",
+                    attrs: {
+                      "data-step": "4",
+                      "data-intro":
+                        "Summary statistics for the data elements are shown here. These numbers change as filters are applied."
+                    }
+                  },
+                  [
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                            Marriages (RegAF to RegAF):\n                            "
+                      ),
+                      _c("span", { attrs: { id: "count" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                            Matched:\n                            "
+                      ),
+                      _c("span", { attrs: { id: "percent" } })
+                    ])
+                  ]
+                ),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _vm._v(
-                    "\n                        Matched:\n                        "
-                  ),
-                  _c("span", { attrs: { id: "percent" } })
-                ])
+                _c("div", { staticClass: "col" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-auto" })
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
@@ -27204,177 +26358,189 @@ var render = function() {
                   ]
                 ),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-sm-6 col-12" }, [
-                  _c("h3", [
-                    _vm._v(" Grade \n\t\t\t\t\t\t\t"),
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-sm-6 col-12",
+                    attrs: {
+                      "data-step": "5",
+                      "data-intro":
+                        "Clicking a Grade Button applies filters to the Join Type chart. Click on one of the buttons below to see what updates!"
+                    }
+                  },
+                  [
+                    _c("h3", [
+                      _vm._v(" Grade \n\t\t\t\t\t\t\t"),
+                      _c(
+                        "button",
+                        {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: _vm.gradeHasFilter,
+                              expression: "gradeHasFilter"
+                            }
+                          ],
+                          staticClass:
+                            "btn btn-danger btn-sm btn-rounded reset",
+                          attrs: { type: "button" },
+                          on: {
+                            click: function($event) {
+                              _vm.gradeHasFilter = false
+                              _vm.select = ""
+                              _vm.resetChart("dc-gradeA-barchart")
+                              _vm.resetChart("dc-bar-barchart")
+                            }
+                          }
+                        },
+                        [_vm._v("Reset")]
+                      )
+                    ]),
+                    _vm._v(" "),
                     _c(
-                      "button",
+                      "div",
+                      { staticClass: "well" },
+                      [
+                        _c("transition-group", { attrs: { name: "expand" } }, [
+                          _c(
+                            "div",
+                            {
+                              directives: [
+                                {
+                                  name: "show",
+                                  rawName: "v-show",
+                                  value: _vm.grp >= 1,
+                                  expression: "grp>=1"
+                                }
+                              ],
+                              key: "1"
+                            },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "btn-grade" },
+                                _vm._l(_vm.gradesOff, function(g) {
+                                  return _c(
+                                    "button",
+                                    {
+                                      class: [
+                                        "btn",
+                                        g == _vm.select
+                                          ? "btn-success"
+                                          : "btn-info",
+                                        "btn-sm",
+                                        "myBtn"
+                                      ],
+                                      on: {
+                                        click: function($event) {
+                                          if (
+                                            !("button" in $event) &&
+                                            _vm._k(
+                                              $event.keyCode,
+                                              "cancel",
+                                              undefined,
+                                              $event.key,
+                                              undefined
+                                            )
+                                          ) {
+                                            return null
+                                          }
+                                          $event.preventDefault()
+                                          _vm.selectGrd(g)
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n\t\t\t\t\t\t\t                " +
+                                          _vm._s(g) +
+                                          "  \n\t\t\t\t\t\t\t        "
+                                      )
+                                    ]
+                                  )
+                                })
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              directives: [
+                                {
+                                  name: "show",
+                                  rawName: "v-show",
+                                  value: _vm.grp <= 1,
+                                  expression: "grp<=1"
+                                }
+                              ],
+                              key: "2"
+                            },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "btn-grade" },
+                                _vm._l(_vm.gradesEnl, function(g) {
+                                  return _c(
+                                    "button",
+                                    {
+                                      class: [
+                                        "btn",
+                                        g == _vm.select
+                                          ? "btn-success"
+                                          : "btn-info",
+                                        "btn-sm",
+                                        "myBtn"
+                                      ],
+                                      on: {
+                                        click: function($event) {
+                                          if (
+                                            !("button" in $event) &&
+                                            _vm._k(
+                                              $event.keyCode,
+                                              "cancel",
+                                              undefined,
+                                              $event.key,
+                                              undefined
+                                            )
+                                          ) {
+                                            return null
+                                          }
+                                          $event.preventDefault()
+                                          _vm.selectGrd(g)
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n\t\t\t\t\t\t\t                " +
+                                          _vm._s(g) +
+                                          "  \n\t\t\t\t\t\t\t        "
+                                      )
+                                    ]
+                                  )
+                                })
+                              )
+                            ]
+                          )
+                        ])
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
                       {
-                        directives: [
-                          {
-                            name: "show",
-                            rawName: "v-show",
-                            value: _vm.gradeHasFilter,
-                            expression: "gradeHasFilter"
-                          }
-                        ],
-                        staticClass: "btn btn-danger btn-sm btn-rounded reset",
-                        attrs: { type: "button" },
-                        on: {
-                          click: function($event) {
-                            _vm.gradeHasFilter = false
-                            _vm.select = ""
-                            _vm.resetChart("dc-gradeA-barchart")
-                            _vm.resetChart("dc-bar-barchart")
-                          }
-                        }
+                        staticClass: "col-1",
+                        staticStyle: { display: "none" },
+                        attrs: { id: "gradeA" }
                       },
-                      [_vm._v("Reset")]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "well" },
-                    [
-                      _c("transition-group", { attrs: { name: "expand" } }, [
-                        _c(
-                          "div",
-                          {
-                            directives: [
-                              {
-                                name: "show",
-                                rawName: "v-show",
-                                value: _vm.grp >= 1,
-                                expression: "grp>=1"
-                              }
-                            ],
-                            key: "1"
-                          },
-                          [
-                            _c(
-                              "div",
-                              { staticClass: "btn-grade" },
-                              _vm._l(_vm.gradesOff, function(g) {
-                                return _c(
-                                  "button",
-                                  {
-                                    class: [
-                                      "btn",
-                                      g == _vm.select
-                                        ? "btn-success"
-                                        : "btn-info",
-                                      "btn-sm",
-                                      "myBtn"
-                                    ],
-                                    on: {
-                                      click: function($event) {
-                                        if (
-                                          !("button" in $event) &&
-                                          _vm._k(
-                                            $event.keyCode,
-                                            "cancel",
-                                            undefined,
-                                            $event.key,
-                                            undefined
-                                          )
-                                        ) {
-                                          return null
-                                        }
-                                        $event.preventDefault()
-                                        _vm.selectGrd(g)
-                                      }
-                                    }
-                                  },
-                                  [
-                                    _vm._v(
-                                      "\n\t\t\t\t\t\t\t                " +
-                                        _vm._s(g) +
-                                        "  \n\t\t\t\t\t\t\t        "
-                                    )
-                                  ]
-                                )
-                              })
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            directives: [
-                              {
-                                name: "show",
-                                rawName: "v-show",
-                                value: _vm.grp <= 1,
-                                expression: "grp<=1"
-                              }
-                            ],
-                            key: "2"
-                          },
-                          [
-                            _c(
-                              "div",
-                              { staticClass: "btn-grade" },
-                              _vm._l(_vm.gradesEnl, function(g) {
-                                return _c(
-                                  "button",
-                                  {
-                                    class: [
-                                      "btn",
-                                      g == _vm.select
-                                        ? "btn-success"
-                                        : "btn-info",
-                                      "btn-sm",
-                                      "myBtn"
-                                    ],
-                                    on: {
-                                      click: function($event) {
-                                        if (
-                                          !("button" in $event) &&
-                                          _vm._k(
-                                            $event.keyCode,
-                                            "cancel",
-                                            undefined,
-                                            $event.key,
-                                            undefined
-                                          )
-                                        ) {
-                                          return null
-                                        }
-                                        $event.preventDefault()
-                                        _vm.selectGrd(g)
-                                      }
-                                    }
-                                  },
-                                  [
-                                    _vm._v(
-                                      "\n\t\t\t\t\t\t\t                " +
-                                        _vm._s(g) +
-                                        "  \n\t\t\t\t\t\t\t        "
-                                    )
-                                  ]
-                                )
-                              })
-                            )
-                          ]
-                        )
-                      ])
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "col-1",
-                      staticStyle: { display: "none" },
-                      attrs: { id: "gradeA" }
-                    },
-                    [_c("div", { attrs: { id: "dc-gradeA-barchart" } })]
-                  ),
-                  _vm._v("\n\t\t\t\t    \t" + _vm._s() + "\n\t\t\t        ")
-                ]),
+                      [_c("div", { attrs: { id: "dc-gradeA-barchart" } })]
+                    ),
+                    _vm._v("\n\t\t\t\t    \t" + _vm._s() + "\n\t\t\t        ")
+                  ]
+                ),
                 _vm._v(" "),
                 _c(
                   "div",
@@ -27436,7 +26602,25 @@ var render = function() {
           )
         ],
         1
-      )
+      ),
+      _vm._v(" "),
+      _c("fab", {
+        staticClass: "noselect",
+        attrs: {
+          "data-step": "2",
+          "data-intro":
+            "Click here to Reset all filters for all charts, Download raw data in tab form, or View current filters applied to all charts.",
+          position: _vm.position,
+          "bg-color": _vm.bgColor,
+          actions: _vm.fabActions
+        },
+        on: {
+          reset: _vm.resetAll,
+          download: _vm.fabDownload,
+          demo: _vm.startDemo,
+          showMyFilters: _vm.fabFilter
+        }
+      })
     ],
     1
   )
@@ -27609,7 +26793,7 @@ if(false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(crossfilter, dc, d3) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
+/* WEBPACK VAR INJECTION */(function(crossfilter, introJs, dc, d3, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__dchelpers__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chartSpecs__ = __webpack_require__("K62J");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__("mtWM");
@@ -27617,6 +26801,11 @@ if(false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_format__ = __webpack_require__("XCdN");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_Loader__ = __webpack_require__("wd27");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__store_store__ = __webpack_require__("wtEF");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__fortawesome_vue_fontawesome__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_toastr__ = __webpack_require__("vQJi");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_toastr__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_FAB__ = __webpack_require__("yfIS");
 //
 //
 //
@@ -27724,6 +26913,23 @@ if(false) {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
 
 
 
@@ -27740,6 +26946,7 @@ if(false) {
             select: '',
             grp: 1,
             selected: 'count',
+            pageName: 'Join Spouse',
             gradeADim: {},
             gradeHasFilter: false,
             gradeAGroup: { all: function all() {
@@ -27748,7 +26955,13 @@ if(false) {
             grades: [],
             gradesAll: ["(01) 2LT", "(02) 1LT", "(03) CPT", "(04) MAJ", "(05) LTC", "(E1) AB", "(E2) AMN", "(E3) A1C", "(E4) SRA", "(E5) SSG", "(E6) TSG", "(E7) MSG", "(E8) SMS"],
             gradesOff: ["(01) 2LT", "(02) 1LT", "(03) CPT", "(04) MAJ", "(05) LTC"],
-            gradesEnl: ["(E1) AB", "(E2) AMN", "(E3) A1C", "(E4) SRA", "(E5) SSG", "(E6) TSG", "(E7) MSG", "(E8) SMS"]
+            gradesEnl: ["(E1) AB", "(E2) AMN", "(E3) A1C", "(E4) SRA", "(E5) SSG", "(E6) TSG", "(E7) MSG", "(E8) SMS"],
+            /* FAB items */
+            bgColor: '#333333',
+            position: 'bottom-right',
+            iconSize: 'md',
+            fabActions: [{ name: 'reset', icon: 'redo-alt', tooltip: 'Reset All', color: '#FF3547' }, { name: 'download', icon: 'download', tooltip: 'Download Raw Data', color: '#2F96B4' }, { name: 'demo', icon: 'eye', tooltip: 'Demo the page', color: '#2F96B4' }, { name: 'showMyFilters', icon: 'search-filters', tooltip: 'View current Filters', color: '#2F96B4' }],
+            mainIcon: 'plus'
         };
     },
 
@@ -27790,9 +27003,20 @@ if(false) {
             } else if (this.selected === "count") {
                 return "(Count)";
             }
+        },
+        pageLabel: function pageLabel() {
+            return this.pageName;
+        },
+        downloadDim: function downloadDim() {
+            return this.ndx.dimension(function (d) {
+                return d;
+            });
         }
     },
     methods: {
+        startDemo: function startDemo() {
+            introJs().start();
+        },
         selectGrd: function selectGrd(g) {
             this.select = g;
             this.submit(g, 'dc-gradeA-barchart');
@@ -27863,10 +27087,72 @@ if(false) {
                     });
                 }
             };
+        },
+        toProperCase: function toProperCase(s) {
+            return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
+                return $1.toUpperCase();
+            });
+        },
+        fabDownload: function fabDownload() {
+            var data = this.downloadDim.top(Infinity);
+            var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
+
+            var myFilters = '';
+            dc.chartRegistry.list().forEach(function (d) {
+                if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
+            });
+
+            FileSaver.saveAs(blob, 'PERSTAT ' + this.pageName + ' ' + __WEBPACK_IMPORTED_MODULE_5__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
+        },
+        fabFilter: function fabFilter() {
+            //Curent Filters button
+            var myFilters = this.toProperCase(this.pageLabel) + ' filters ';
+            dc.chartRegistry.list().forEach(function (d) {
+                //console.log("d.filter(): "+d.filter())
+                if (d.hasFilter()) {
+                    //console.log(d.anchor(), d.filters())
+                    myFilters += '\n (' + d.filters() + ')';
+                }
+            });
+            if (myFilters !== undefined) {
+                var myCheckValue = '0';
+
+                if (this.selected == "count") {
+                    var count = this.ndx.groupAll().reduceSum(function (d) {
+                        return +d.count;
+                    });
+                    myCheckValue = count.value();
+                };
+                if (this.selected == "percent") {
+                    myCheckValue = percent.innerText.substr(0, percent.innerText.length - 1);
+                };
+                //console.log("counterVars.value: "+counterVars.value());
+                // Override global options
+                __WEBPACK_IMPORTED_MODULE_7_toastr___default.a.options = {
+                    "positionClass": "toast-bottom-full-width",
+                    "closeButton": "true",
+                    "preventDuplicates": "true"
+                };
+                if (myCheckValue == '0.0%' || myCheckValue == 0) {
+                    __WEBPACK_IMPORTED_MODULE_7_toastr___default.a.warning('Your ' + this.toProperCase(this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                } else if (myCheckValue == '1') {
+                    myFilters += ' return ' + myCheckValue + ' ' + this.ylabel + ' result.';
+                    __WEBPACK_IMPORTED_MODULE_7_toastr___default.a.info(myFilters);
+                } else {
+                    myFilters += ' return ' + myCheckValue + ' ' + this.ylabel + ' results.';
+                    __WEBPACK_IMPORTED_MODULE_7_toastr___default.a.info(myFilters);
+                }
+            }
+            if (myFilters == 'undefined' || myFilters == undefined) {
+                __WEBPACK_IMPORTED_MODULE_7_toastr___default.a.error('Something went wrong. Please reset and try again.');
+            }
         }
+
     },
     components: {
-        'loader': __WEBPACK_IMPORTED_MODULE_4__components_Loader__["a" /* default */]
+        'loader': __WEBPACK_IMPORTED_MODULE_4__components_Loader__["a" /* default */],
+        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_6__fortawesome_vue_fontawesome___default.a,
+        fab: __WEBPACK_IMPORTED_MODULE_8__components_FAB__["a" /* default */]
     },
     created: function created() {
         console.log('created');
@@ -28160,7 +27446,7 @@ if(false) {
         console.log("destroyed");
     }
 });
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("JowF"), __webpack_require__("iEPi"), __webpack_require__("Za4h")))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("JowF"), __webpack_require__("iGUu"), __webpack_require__("iEPi"), __webpack_require__("Za4h"), __webpack_require__("lDdF")))
 
 /***/ }),
 
@@ -29266,6 +28552,7 @@ if (false) {(function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_toastr__ = __webpack_require__("vQJi");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_toastr__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_FAB__ = __webpack_require__("yfIS");
 //
 //
 //
@@ -29407,27 +28694,7 @@ if (false) {(function () {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 
 
@@ -29450,7 +28717,13 @@ if (false) {(function () {
             loaded: false,
             chartSpecs: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */],
             boardColor: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].boardChart.color,
-            pageName: 'Enlisted Promotions'
+            pageName: 'Enlisted Promotions',
+            /* FAB items */
+            bgColor: '#333333',
+            position: 'bottom-right',
+            iconSize: 'md',
+            fabActions: [{ name: 'reset', icon: 'redo-alt', tooltip: 'Reset All', color: '#FF3547' }, { name: 'download', icon: 'download', tooltip: 'Download Raw Data', color: '#2F96B4' }, { name: 'demo', icon: 'eye', tooltip: 'Demo the page', color: '#2F96B4' }, { name: 'showMyFilters', icon: 'search-filters', tooltip: 'View current Filters', color: '#2F96B4' }],
+            mainIcon: 'plus'
         };
     },
 
@@ -29471,6 +28744,11 @@ if (false) {(function () {
             } else {
                 return "PME Complete Rate (%)";
             }
+        },
+        downloadDim: function downloadDim() {
+            return this.ndx.dimension(function (d) {
+                return d;
+            });
         },
         pageLabel: function pageLabel() {
             return this.pageName;
@@ -29545,13 +28823,71 @@ if (false) {(function () {
             return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
                 return $1.toUpperCase();
             });
+        },
+        fabDownload: function fabDownload() {
+            var _this = this;
+
+            var data = this.downloadDim.top(Infinity);
+            var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
+
+            var myFilters = '';
+            dc.chartRegistry.list().forEach(function (d) {
+                //console.log(d.anchorName().toUpperCase())
+                if (_.includes(d.anchorName().toUpperCase(), 'AFSC')) {
+                    //console.log('AFSC Filter: ' + this.sa)
+                    if (_.includes(d.anchorName().toUpperCase(), 'ROW') && _this.sa) {
+                        if (_this.sa.length < 6) {
+                            var num = 6 - _this.sa.length;
+                            var txt = Array(num).join("X");
+                            myFilters += ' (AFSC_' + _this.sa + txt + ')';
+                        } else myFilters += ' (' + _this.sa + ')';
+                    }
+                } else if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
+            });
+
+            FileSaver.saveAs(blob, 'PERSTAT ' + this.pageName + ' ' + __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
+        },
+        fabFilter: function fabFilter() {
+            //Curent Filters button
+            var myFilters = this.toProperCase(this.pageLabel) + ' filters ';
+            dc.chartRegistry.list().forEach(function (d) {
+                //console.log("d.filter(): "+d.filter())
+                if (d.hasFilter() && d.anchor() != '#dc-afsc-select') {
+                    //console.log(d.anchor(), d.filters())
+                    myFilters += '\n (' + d.filters() + ')';
+                }
+            });
+            if (myFilters !== undefined) {
+                var myCheckValue = SelectsRate.innerText.substr(0, SelectsRate.innerText.length - 1);
+                //console.log("myCheckValue.value: "+myCheckValue.value());
+                // Override global options
+                __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.options = {
+                    "positionClass": "toast-bottom-full-width",
+                    "closeButton": "true",
+                    "preventDuplicates": "true"
+                };
+                if (myCheckValue == '0.0%' || myCheckValue == 0) {
+                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.warning('Your ' + this.toProperCase(this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                } else if (myCheckValue == 1) {
+                    myFilters += ' return ' + myCheckValue + ' ' + this.ylabel + ' result.';
+                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.info(myFilters);
+                } else {
+                    myFilters += ' return ' + myCheckValue + ' ' + this.ylabel + ' results.';
+                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.info(myFilters);
+                }
+            }
+            if (myFilters == 'undefined' || myFilters == undefined) {
+                __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.error('Something went wrong. Please reset and try again.');
+            }
         }
+
     },
     components: {
         'autocomplete': __WEBPACK_IMPORTED_MODULE_4__components_AutoComplete__["a" /* default */],
         'loader': __WEBPACK_IMPORTED_MODULE_5__components_Loader__["a" /* default */],
         'afsc': __WEBPACK_IMPORTED_MODULE_6__components_afsc__["a" /* default */],
-        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome___default.a
+        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome___default.a,
+        fab: __WEBPACK_IMPORTED_MODULE_10__components_FAB__["a" /* default */]
     },
     created: function created() {
         console.log('created');
@@ -29559,7 +28895,7 @@ if (false) {(function () {
         //this.data = data
     },
     mounted: function mounted() {
-        var _this = this;
+        var _this2 = this;
 
         console.log('mounted');
 
@@ -29568,9 +28904,9 @@ if (false) {(function () {
             var promoData = response.data.data;
             __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate = response.data.ASOFDATE; //TODO: properly set with mutation
             var objData = makeObject(promoData);
-            _this.data = objData;
-            _this.loaded = true;
-            _this.startAfsc = true;
+            _this2.data = objData;
+            _this2.loaded = true;
+            _this2.startAfsc = true;
             renderCharts();
         }).catch(console.error);
 
@@ -29623,7 +28959,7 @@ if (false) {(function () {
         };
 
         var renderCharts = function renderCharts() {
-            dc.dataCount(".dc-data-count").dimension(_this.ndx).group(_this.allGroup);
+            dc.dataCount(".dc-data-count").dimension(_this2.ndx).group(_this2.allGroup);
 
             //reduce functions
             function promoAdd(p, v) {
@@ -29652,14 +28988,14 @@ if (false) {(function () {
                 return {
                     all: function all() {
                         return source_group.all().filter(function (d) {
-                            return d.value[_this.selected] != 0;
+                            return d.value[_this2.selected] != 0;
                         });
                     }
                 };
             };
 
             //Number Display for Selects, Eligible, Selects rate - show total for filtered content
-            var numberGroup = _this.ndx.groupAll().reduce(promoAdd, promoRemove, promoInitial);
+            var numberGroup = _this2.ndx.groupAll().reduce(promoAdd, promoRemove, promoInitial);
             var SelectsND = dc.numberDisplay("#Selects");
             SelectsND.group(numberGroup).formatNumber(d3.format("d")).valueAccessor(function (d) {
                 return d.Selects;
@@ -29684,17 +29020,17 @@ if (false) {(function () {
             //grade
             var gradeConfig = {};
             gradeConfig.id = 'grade';
-            gradeConfig.dim = _this.ndx.dimension(function (d) {
+            gradeConfig.dim = _this2.ndx.dimension(function (d) {
                 return d.Grade;
             });
             gradeConfig.group = gradeConfig.dim.group().reduce(promoAdd, promoRemove, promoInitial);
             gradeConfig.minHeight = 323;
             gradeConfig.aspectRatio = 2;
             gradeConfig.margins = { top: 10, left: 40, right: 30, bottom: 20 };
-            gradeConfig.colors = _this.chartSpecs.gradeChartColorScale;
+            gradeConfig.colors = _this2.chartSpecs.gradeChartColorScale;
             var gradeChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getRowChart(gradeConfig);
             gradeChart.valueAccessor(function (d) {
-                return d.value[_this.selected];
+                return d.value[_this2.selected];
             }).colorAccessor(function (d) {
                 return d.key;
             }).ordering(function (d) {
@@ -29704,7 +29040,7 @@ if (false) {(function () {
             //look
             var lookConfig = {};
             lookConfig.id = 'look';
-            lookConfig.dim = _this.ndx.dimension(function (d) {
+            lookConfig.dim = _this2.ndx.dimension(function (d) {
                 return d.Look;
             });
             lookConfig.group = lookConfig.dim.group().reduce(promoAdd, promoRemove, promoInitial);
@@ -29714,13 +29050,13 @@ if (false) {(function () {
             lookConfig.colors = d3.scale.category10().domain([100, 0]);
             var lookChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getRowChart(lookConfig);
             lookChart.valueAccessor(function (d) {
-                return d.value[_this.selected];
+                return d.value[_this2.selected];
             });
 
             //recommend
             var recommendConfig = {};
             recommendConfig.id = 'recommend';
-            recommendConfig.dim = _this.ndx.dimension(function (d) {
+            recommendConfig.dim = _this2.ndx.dimension(function (d) {
                 return d.Recommendation;
             });
             recommendConfig.group = recommendConfig.dim.group().reduce(promoAdd, promoRemove, promoInitial);
@@ -29730,7 +29066,7 @@ if (false) {(function () {
             recommendConfig.colors = d3.scale.ordinal().range(["#1a9850", "#91cf60", "#d9ef8b", "#fee08b", "#fc8d59", "#d73027"]);
             var recommendChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getRowChart(recommendConfig);
             recommendChart.valueAccessor(function (d) {
-                return d.value[_this.selected];
+                return d.value[_this2.selected];
             }).ordering(function (d) {
                 return __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].enlRecommendOrder[d.key];
             });
@@ -29738,7 +29074,7 @@ if (false) {(function () {
             //board
             var boardConfig = {};
             boardConfig.id = 'board';
-            boardConfig.dim = _this.ndx.dimension(function (d) {
+            boardConfig.dim = _this2.ndx.dimension(function (d) {
                 return d.Board;
             });
             var boardGroup = boardConfig.dim.group().reduce(promoAdd, promoRemove, promoInitial);
@@ -29749,7 +29085,7 @@ if (false) {(function () {
             boardConfig.colors = ["#1976d2"];
             var boardChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getOrdinalBarChart(boardConfig);
             boardChart.valueAccessor(function (d) {
-                return d.value[_this.selected];
+                return d.value[_this2.selected];
             }).elasticX(true).ordinalColors(["#1976d2", "#ff4500"]).ordering(function (d) {
                 return __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].gradeOrder[d.key.substring(0, 3)] + d.key.substring(3, 7);
             }).on('pretransition', function (chart) {
@@ -29759,63 +29095,8 @@ if (false) {(function () {
                 });
             });
 
-            //Curent Filters button
-            d3.select('#showMyFilters').on('click', function () {
-                var myFilters = _this.toProperCase(_this.pageLabel) + ' filters ';
-
-                dc.chartRegistry.list().forEach(function (d) {
-                    if (d.hasFilter() && d.anchor() != '#dc-afsc-select') {
-                        myFilters += '\n (' + d.filters() + ')';
-                    }
-                });
-                if (myFilters !== undefined) {
-                    var counterVars = SelectsRateND;
-                    // Override global options
-                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.options = {
-                        "positionClass": "toast-bottom-full-width",
-                        "closeButton": "true",
-                        "preventDuplicates": "true"
-                    };
-                    if (counterVars.value() == 0) {
-                        __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.warning('Your ' + _this.toProperCase(_this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
-                    } else if (counterVars.value() == 1) {
-                        myFilters += ' return ' + counterVars.value() + ' ' + _this.ylabel + ' result.';
-                        __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.info(myFilters);
-                    } else {
-                        myFilters += ' return ' + counterVars.value() + ' ' + _this.ylabel + ' results.';
-                        __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.info(myFilters);
-                    }
-                }
-                if (myFilters == 'undefined' || myFilters == undefined) {
-                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.error('Something went wrong. Please reset and try again.');
-                }
-            });
-
-            //Download Raw Data button
-            d3.select('#download').on('click', function () {
-                var data = boardConfig.dim.top(Infinity);
-                var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
-
-                var myFilters = '';
-                dc.chartRegistry.list().forEach(function (d) {
-                    //console.log(d.anchorName().toUpperCase())
-                    if (_.includes(d.anchorName().toUpperCase(), 'AFSC')) {
-                        //console.log('AFSC Filter: ' + this.sa)
-                        if (_.includes(d.anchorName().toUpperCase(), 'ROW') && _this.sa) {
-                            if (_this.sa.length < 6) {
-                                var num = 6 - _this.sa.length;
-                                var txt = Array(num).join("X");
-                                myFilters += ' (AFSC_' + _this.sa + txt + ')';
-                            } else myFilters += ' (' + _this.sa + ')';
-                        }
-                    } else if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
-                });
-
-                FileSaver.saveAs(blob, 'PERSTAT Enlisted_Promotion' + ' ' + __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate + myFilters + '.csv');
-            });
-
             // after DOM updated redraw to make chart widths update
-            _this.$nextTick(function () {
+            _this2.$nextTick(function () {
                 dc.redrawAll();
             });
 
@@ -29892,143 +29173,53 @@ var render = function() {
               _c("div", { staticClass: "row pt-2" }, [
                 _c("div", { staticClass: "col" }),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: { type: "button", id: "demo", title: "Demo" },
-                      on: { click: _vm.startDemo }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Demo  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "eye", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        id: "showMyFilters",
-                        "data-step": "7",
-                        "data-intro": "See the currently applied filters here!",
-                        title: "Filter"
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("View Filters  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "search-filters", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        id: "download",
-                        "data-step": "6",
-                        "data-intro": "Download data in tabular form here!",
-                        title: "Download Raw Data"
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Download  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "download", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-danger btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        "data-step": "4",
-                        "data-intro":
-                          "Click here to reset filters on all charts.",
-                        title: "Reset All"
-                      },
-                      on: { click: _vm.resetAll }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Reset All  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "redo-alt", size: "lg" }
-                      })
-                    ],
-                    1
-                  )
-                ])
+                _c("div", { staticClass: "col-auto" })
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
                 _c("div", { staticClass: "col-auto" })
               ]),
               _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "row",
-                  attrs: {
-                    id: "counts",
-                    "data-step": "1",
-                    "data-intro":
-                      "Summary statistics for the data elements are shown here. These numbers change as filters are applied."
-                  }
-                },
-                [
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                        Selects:        \n                        "
-                    ),
-                    _c("span", { attrs: { id: "sel" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                        Eligibles: \n                        "
-                    ),
-                    _c("span", { attrs: { id: "elig" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                        Promotion Rate: \n                        "
-                    ),
-                    _c("span", { attrs: { id: "selRate" } })
-                  ])
-                ]
-              ),
+              _c("div", { staticClass: "row" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "row col-auto",
+                    attrs: {
+                      id: "counts",
+                      "data-step": "3",
+                      "data-intro":
+                        "Summary statistics for the data elements are shown here. These numbers change as filters are applied."
+                    }
+                  },
+                  [
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                        Selects:        \n                        "
+                      ),
+                      _c("span", { attrs: { id: "sel" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                        Eligibles: \n                        "
+                      ),
+                      _c("span", { attrs: { id: "elig" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                        Promotion Rate: \n                        "
+                      ),
+                      _c("span", { attrs: { id: "selRate" } })
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "col" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-auto" })
+              ]),
               _vm._v(" "),
               _c(
                 "div",
@@ -30083,13 +29274,12 @@ var render = function() {
                       {
                         attrs: {
                           id: "dc-grade-barchart",
-                          "data-step": "2",
+                          "data-step": "4",
                           "data-intro":
                             "Clicking the bars applies filters to the chart. Click on one of the bars and watch the other charts update!"
                         }
                       },
                       [
-                        _vm._v(">>\n                            "),
                         _c("h3", { staticClass: "mb-0" }, [
                           _vm._v("Grade "),
                           _c(
@@ -30361,9 +29551,8 @@ var render = function() {
               _c(
                 "div",
                 {
-                  staticClass: "row",
                   attrs: {
-                    "data-step": "3",
+                    "data-step": "5",
                     "data-intro":
                       "Click on the black information 'i' ball to learn more about the sliding brush barchart!"
                   }
@@ -30416,7 +29605,25 @@ var render = function() {
           )
         ],
         1
-      )
+      ),
+      _vm._v(" "),
+      _c("fab", {
+        staticClass: "noselect",
+        attrs: {
+          "data-step": "2",
+          "data-intro":
+            "Click here to Reset all filters for all charts, Download raw data in tab form, or View current filters applied to all charts.",
+          position: _vm.position,
+          "bg-color": _vm.bgColor,
+          actions: _vm.fabActions
+        },
+        on: {
+          reset: _vm.resetAll,
+          download: _vm.fabDownload,
+          demo: _vm.startDemo,
+          showMyFilters: _vm.fabFilter
+        }
+      })
     ],
     1
   )
@@ -30984,23 +30191,23 @@ var render = function() {
     { staticClass: "container-fluid" },
     [
       _c("div", { staticClass: "row" }, [
-        _c("h1", { staticClass: "col" }, [_vm._v("Civilian")]),
+        _c("h1", { staticClass: "col-auto" }, [_vm._v("Civilian")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col" }),
         _vm._v(" "),
         _c(
           "div",
           {
-            staticClass: "col-4 text-right",
+            staticClass: "col-auto text-right",
             staticStyle: { "margin-top": "15px" },
             attrs: {
-              "data-step": "3",
+              "data-step": "1",
               "data-intro":
                 "The data on this page is current as of the date shown here."
             }
           },
           [
-            _vm._v(
-              "\n                        Data as of: \n                        "
-            ),
+            _vm._v("\n                    Data as of: \n                    "),
             _c(
               "span",
               { staticStyle: { "font-weight": "bold", color: "#4d8bf9" } },
@@ -31044,17 +30251,17 @@ var render = function() {
                 _c(
                   "div",
                   {
-                    staticClass: "col",
+                    staticClass: "col-auto",
                     attrs: {
                       id: "radioSelect",
-                      "data-step": "1",
+                      "data-step": "3",
                       "data-intro": "Total number of Civilian personnel."
                     }
                   },
                   [
                     _c("div", { staticClass: "col-auto" }, [
                       _vm._v(
-                        "\n                            Inventory:        \n                            "
+                        "\n                        Inventory:        \n                        "
                       ),
                       _c("span", { attrs: { id: "inv" } })
                     ])
@@ -31063,103 +30270,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "col" }),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: { type: "button", id: "demo", title: "Demo" },
-                      on: { click: _vm.startDemo }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Demo  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "eye", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        id: "showMyFilters",
-                        "data-step": "6",
-                        "data-intro": "See the currently applied filters here!",
-                        title: "Filter"
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("View Filters  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "search-filters", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        id: "download",
-                        "data-step": "5",
-                        "data-intro": "Download data in tabular form here!",
-                        title: "Download Raw Data"
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Download  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "download", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-danger btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        "data-step": "4",
-                        "data-intro":
-                          "Click here to reset filters on all charts.",
-                        title: "Reset All"
-                      },
-                      on: { click: _vm.resetAll }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Reset All  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "redo-alt", size: "lg" }
-                      })
-                    ],
-                    1
-                  )
-                ])
+                _c("div", { staticClass: "col-auto" })
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
@@ -31223,7 +30334,7 @@ var render = function() {
                             {
                               attrs: {
                                 id: "dc-careerField-barchart",
-                                "data-step": "2",
+                                "data-step": "4",
                                 "data-intro":
                                   "Clicking the bars applies filters to the chart. Click on one of the bars and watch the other charts update!"
                               }
@@ -31437,7 +30548,25 @@ var render = function() {
           )
         ],
         1
-      )
+      ),
+      _vm._v(" "),
+      _c("fab", {
+        staticClass: "noselect",
+        attrs: {
+          "data-step": "2",
+          "data-intro":
+            "Click here to Reset all filters for all charts, Download raw data in tab form, or View current filters applied to all charts.",
+          position: _vm.position,
+          "bg-color": _vm.bgColor,
+          actions: _vm.fabActions
+        },
+        on: {
+          reset: _vm.resetAll,
+          download: _vm.fabDownload,
+          demo: _vm.startDemo,
+          showMyFilters: _vm.fabFilter
+        }
+      })
     ],
     1
   )
@@ -31724,6 +30853,33 @@ if(false) {
 
 /***/ }),
 
+/***/ "gORn":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("URcA");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("rjj0")("5b509f9b", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../css-loader/index.js?{\"minimize\":false,\"sourceMap\":false}!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-9b0c2fd6\",\"scoped\":false,\"hasInlineConfig\":false}!./toastr.css", function() {
+     var newContent = require("!!../../css-loader/index.js?{\"minimize\":false,\"sourceMap\":false}!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-9b0c2fd6\",\"scoped\":false,\"hasInlineConfig\":false}!./toastr.css");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
 /***/ "gV6Y":
 /***/ (function(module, exports) {
 
@@ -31814,38 +30970,13 @@ if(false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_format__ = __webpack_require__("XCdN");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_AutoComplete__ = __webpack_require__("nObl");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_searchBox__ = __webpack_require__("CjlA");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_Loader__ = __webpack_require__("wd27");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__store_store__ = __webpack_require__("wtEF");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_toastr__ = __webpack_require__("vQJi");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_toastr__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_Loader__ = __webpack_require__("wd27");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__store_store__ = __webpack_require__("wtEF");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_toastr__ = __webpack_require__("vQJi");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_toastr__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_FAB__ = __webpack_require__("yfIS");
 //
 //
 //
@@ -31951,7 +31082,13 @@ if(false) {
             loaded: false,
             fyr: '2018',
             searchCAFSC: "",
-            pageName: 'Enlisted Education'
+            pageName: 'Enlisted Education',
+            /* FAB items */
+            bgColor: '#333333',
+            position: 'bottom-right',
+            iconSize: 'md',
+            fabActions: [{ name: 'reset', icon: 'redo-alt', tooltip: 'Reset All', color: '#FF3547' }, { name: 'download', icon: 'download', tooltip: 'Download Raw Data', color: '#2F96B4' }, { name: 'demo', icon: 'eye', tooltip: 'Demo the page', color: '#2F96B4' }, { name: 'showMyFilters', icon: 'search-filters', tooltip: 'View current Filters', color: '#2F96B4' }],
+            mainIcon: 'plus'
         };
     },
 
@@ -31961,13 +31098,18 @@ if(false) {
             return crossfilter(this.data);
         },
         asDate: function asDate() {
-            return __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate;
+            return __WEBPACK_IMPORTED_MODULE_6__store_store__["a" /* store */].state.asDate;
         },
         allGroup: function allGroup() {
             return this.ndx.groupAll();
         },
         ylabel: function ylabel() {
             return "(Count)";
+        },
+        downloadDim: function downloadDim() {
+            return this.ndx.dimension(function (d) {
+                return d;
+            });
         },
         pageLabel: function pageLabel() {
             return this.pageName;
@@ -32032,14 +31174,60 @@ if(false) {
             return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
                 return $1.toUpperCase();
             });
+        },
+        fabDownload: function fabDownload() {
+            var data = this.downloadDim.top(Infinity);
+            var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
+
+            var myFilters = '';
+            dc.chartRegistry.list().forEach(function (d) {
+                if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
+            });
+
+            FileSaver.saveAs(blob, 'PERSTAT ' + this.pageName + ' ' + __WEBPACK_IMPORTED_MODULE_6__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
+        },
+        fabFilter: function fabFilter() {
+            //Curent Filters button
+            var myFilters = this.toProperCase(this.pageLabel) + ' filters ';
+            dc.chartRegistry.list().forEach(function (d) {
+                //console.log("d.filter(): "+d.filter())
+                if (d.hasFilter()) {
+                    //console.log(d.anchor(), d.filters())
+                    myFilters += '\n (' + d.filters() + ')';
+                }
+            });
+            if (myFilters !== undefined) {
+                var counterVars = this.ndx.groupAll().reduceSum(function (d) {
+                    return +d.count;
+                });
+                //console.log("counterVars.value: "+counterVars.value());
+                // Override global options
+                __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.options = {
+                    "positionClass": "toast-bottom-full-width",
+                    "closeButton": "true",
+                    "preventDuplicates": "true"
+                };
+                if (counterVars.value() == 0) {
+                    __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.warning('Your ' + this.toProperCase(this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                } else if (counterVars.value() == 1) {
+                    myFilters += ' return ' + counterVars.value() + ' result.';
+                    __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.info(myFilters);
+                } else {
+                    myFilters += ' return ' + counterVars.value() + ' results.';
+                    __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.info(myFilters);
+                }
+            }
+            if (myFilters == 'undefined' || myFilters == undefined) {
+                __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.error('Something went wrong. Please reset and try again.');
+            }
         }
     },
 
     components: {
         'AutoComplete': __WEBPACK_IMPORTED_MODULE_4__components_AutoComplete__["a" /* default */],
-        'Loader': __WEBPACK_IMPORTED_MODULE_6__components_Loader__["a" /* default */],
-        searchBox: __WEBPACK_IMPORTED_MODULE_5__components_searchBox__["a" /* default */],
-        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome___default.a
+        'Loader': __WEBPACK_IMPORTED_MODULE_5__components_Loader__["a" /* default */],
+        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome___default.a,
+        fab: __WEBPACK_IMPORTED_MODULE_9__components_FAB__["a" /* default */]
     },
 
     created: function created() {
@@ -32053,7 +31241,7 @@ if(false) {
 
         //test AXIOS Call:
         __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post("https://stars.afpc.randolph.af.mil/FLA/perstat_json/ps_high_ed_level.js").then(function (response) {
-            __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate = response.data.ASOFDATE;
+            __WEBPACK_IMPORTED_MODULE_6__store_store__["a" /* store */].state.asDate = response.data.ASOFDATE;
             var invData = response.data.data;
             console.log(invData);
             var objData = makeObject(invData);
@@ -32239,7 +31427,7 @@ if(false) {
             cafscConfig.dim = _this.ndx.dimension(function (d) {
                 return d.cafsc;
             });
-            var cafscGroup = cafscConfig.dim.group().reduce(highEdAdd, highEdRemove, highEdInitial);
+            var cafscGroup = removeEmptyBins(cafscConfig.dim.group().reduce(highEdAdd, highEdRemove, highEdInitial));
             cafscConfig.group = removeError(cafscGroup);
             cafscConfig.minHeight = 260;
             cafscConfig.aspectRatio = 3;
@@ -32248,52 +31436,6 @@ if(false) {
             var cafscChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getRowChart(cafscConfig);
             cafscChart.controlsUseVisibility(true).valueAccessor(function (d) {
                 return d.value.totalCount;
-            });
-
-            //Curent Filters button
-            d3.select('#showMyFilters').on('click', function () {
-                var myFilters = _this.toProperCase(_this.pageLabel) + ' filters ';
-
-                dc.chartRegistry.list().forEach(function (d) {
-                    if (d.hasFilter()) {
-                        //console.log(d.anchor(), d.filters())
-                        myFilters += '\n (' + d.filters() + ')';
-                    }
-                });
-                if (myFilters !== undefined) {
-                    var counterVars = totalCountND;
-                    // Override global options
-                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.options = {
-                        "positionClass": "toast-bottom-full-width",
-                        "closeButton": "true",
-                        "preventDuplicates": "true"
-                    };
-                    if (counterVars.value() == 0) {
-                        __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.warning('Your ' + _this.toProperCase(_this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
-                    } else if (counterVars.value() == 1) {
-                        myFilters += ' return ' + counterVars.value() + ' result.';
-                        __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.info(myFilters);
-                    } else {
-                        myFilters += ' return ' + counterVars.value() + ' results.';
-                        __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.info(myFilters);
-                    }
-                }
-                if (myFilters == 'undefined' || myFilters == undefined) {
-                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.error('Something went wrong. Please reset and try again.');
-                }
-            });
-
-            //Download Raw Data button
-            d3.select('#download').on('click', function () {
-                var data = gradeConfig.dim.top(Infinity);
-                var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
-
-                var myFilters = '';
-                dc.chartRegistry.list().forEach(function (d) {
-                    if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
-                });
-
-                FileSaver.saveAs(blob, 'PERSTAT High Education' + ' ' + __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
             });
 
             //Filters data to count Officer only
@@ -32364,7 +31506,7 @@ if(false) {
     beforeDestroy: function beforeDestroy() {
         console.log("beforeDestroy");
         dc.chartRegistry.clear();
-        __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate = 'Undetermined';
+        __WEBPACK_IMPORTED_MODULE_6__store_store__["a" /* store */].state.asDate = 'Undetermined';
     },
     destroyed: function destroyed() {
         console.log("destroyed");
@@ -32447,10 +31589,10 @@ var render = function() {
                 _c(
                   "div",
                   {
-                    staticClass: "col-7",
+                    staticClass: "col-auto",
                     attrs: {
                       id: "radioSelect",
-                      "data-step": "1",
+                      "data-step": "3",
                       "data-intro":
                         "Toggle the radio buttons to change the data element being shown in the charts."
                     }
@@ -32701,159 +31843,66 @@ var render = function() {
                   ]
                 ),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-5", attrs: { align: "right" } }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: { type: "button", id: "demo", title: "Demo" },
-                      on: { click: _vm.startDemo }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Demo  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "eye", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        id: "showMyFilters",
-                        "data-step": "7",
-                        "data-intro": "See the currently applied filters here!",
-                        title: "Filter"
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("View Filters  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "search-filters", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        id: "download",
-                        "data-step": "6",
-                        "data-intro": "Download data in tabular form here!",
-                        title: "Download Raw Data"
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Download  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "download", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-danger btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        "data-step": "4",
-                        "data-intro":
-                          "Click here to reset filters on all charts.",
-                        title: "Reset All"
-                      },
-                      on: {
-                        click: function($event) {
-                          _vm.searchCore = ""
-                          _vm.resetAll()
-                        }
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Reset All  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "redo-alt", size: "lg" }
-                      })
-                    ],
-                    1
-                  )
-                ])
+                _c("div", { staticClass: "col" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-auto" })
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }),
               _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "row",
-                  attrs: {
-                    "data-step": "2",
-                    "data-intro":
-                      "Summary statistics for the data elements are shown here. These numbers change as filters are applied."
-                  }
-                },
-                [
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                        Total:\n                        "
-                    ),
-                    _c("span", { attrs: { id: "totalCount" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                        STEM:\n                        "
-                    ),
-                    _c("span", { attrs: { id: "stemTotal" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                        Non-STEM:\n                        "
-                    ),
-                    _c("span", { attrs: { id: "nonStemTotal" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                        Percent STEM:\n                        "
-                    ),
-                    _c("span", { attrs: { id: "percentStem" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                        Percent Non-STEM:\n                        "
-                    ),
-                    _c("span", { attrs: { id: "percentNonStem" } })
-                  ])
-                ]
-              ),
+              _c("div", { staticClass: "row" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "row col-auto",
+                    attrs: {
+                      "data-step": "4",
+                      "data-intro":
+                        "Summary statistics for the data elements are shown here. These numbers change as filters are applied."
+                    }
+                  },
+                  [
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                          Total:\n                          "
+                      ),
+                      _c("span", { attrs: { id: "totalCount" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                          STEM:\n                          "
+                      ),
+                      _c("span", { attrs: { id: "stemTotal" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                          Non-STEM:\n                          "
+                      ),
+                      _c("span", { attrs: { id: "nonStemTotal" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                          Percent STEM:\n                          "
+                      ),
+                      _c("span", { attrs: { id: "percentStem" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                          Percent Non-STEM:\n                          "
+                      ),
+                      _c("span", { attrs: { id: "percentNonStem" } })
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "col" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-auto" })
+              ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
                 _c(
@@ -32950,7 +31999,7 @@ var render = function() {
                       {
                         attrs: {
                           id: "dc-edlevel-barchart",
-                          "data-step": "3",
+                          "data-step": "5",
                           "data-intro":
                             "Clicking the bars applies filters to the chart. Click on one of the bars and watch the other charts update!"
                         }
@@ -33036,7 +32085,25 @@ var render = function() {
           )
         ],
         1
-      )
+      ),
+      _vm._v(" "),
+      _c("fab", {
+        staticClass: "noselect",
+        attrs: {
+          "data-step": "2",
+          "data-intro":
+            "Click here to Reset all filters for all charts, Download raw data in tab form, or View current filters applied to all charts.",
+          position: _vm.position,
+          "bg-color": _vm.bgColor,
+          actions: _vm.fabActions
+        },
+        on: {
+          reset: _vm.resetAll,
+          download: _vm.fabDownload,
+          demo: _vm.startDemo,
+          showMyFilters: _vm.fabFilter
+        }
+      })
     ],
     1
   )
@@ -33066,6 +32133,33 @@ exports.push([module.i, "\n.custom-control.custom-radio[data-v-151def3b]{\n    p
 
 // exports
 
+
+/***/ }),
+
+/***/ "hqXP":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("72+S");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("rjj0")("9735f65a", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../node_modules/css-loader/index.js?{\"minimize\":false,\"sourceMap\":false}!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7d75ec3f\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=2&bustCache!./Joint.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js?{\"minimize\":false,\"sourceMap\":false}!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7d75ec3f\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=2&bustCache!./Joint.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
 
 /***/ }),
 
@@ -33142,10 +32236,10 @@ var render = function() {
                 _c(
                   "div",
                   {
-                    staticClass: "col",
+                    staticClass: "col-auto",
                     attrs: {
                       id: "radioSelect",
-                      "data-step": "1",
+                      "data-step": "3",
                       "data-intro":
                         "Toggle the radio buttons to change the data element being shown in the charts."
                     }
@@ -33396,161 +32490,64 @@ var render = function() {
                   ]
                 ),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: { type: "button", id: "demo", title: "Demo" },
-                      on: { click: _vm.startDemo }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Demo  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "eye", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        id: "showMyFilters",
-                        "data-step": "8",
-                        "data-intro": "See the currently applied filters here!",
-                        title: "Filter"
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("View Filters  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "search-filters", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        id: "download",
-                        "data-step": "7",
-                        "data-intro": "Download data in tabular form here!",
-                        title: "Download Raw Data"
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Download  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "download", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-danger btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        "data-step": "5",
-                        "data-intro":
-                          "Click here to reset filters on all charts.",
-                        title: "Reset All"
-                      },
-                      on: {
-                        click: function($event) {
-                          _vm.searchCore = ""
-                          _vm.resetAll()
-                        }
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Reset All  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "redo-alt", size: "lg" }
-                      })
-                    ],
-                    1
-                  )
-                ])
+                _c("div", { staticClass: "col-auto" })
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
                 _c("div", { staticClass: "col-auto" })
               ]),
               _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "row",
-                  attrs: {
-                    "data-step": "2",
-                    "data-intro":
-                      "Summary statistics for the data elements are shown here. These numbers change as filters are applied."
-                  }
-                },
-                [
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                        Total:\n                        "
-                    ),
-                    _c("span", { attrs: { id: "totalCount" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                        STEM:\n                        "
-                    ),
-                    _c("span", { attrs: { id: "stemTotal" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                        Non-STEM:\n                        "
-                    ),
-                    _c("span", { attrs: { id: "nonStemTotal" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                        Percent STEM:\n                        "
-                    ),
-                    _c("span", { attrs: { id: "percentStem" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                        Percent Non-STEM:\n                        "
-                    ),
-                    _c("span", { attrs: { id: "percentNonStem" } })
-                  ])
-                ]
-              ),
+              _c("div", { staticClass: "row" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "row col-auto",
+                    attrs: {
+                      "data-step": "4",
+                      "data-intro":
+                        "Summary statistics for the data elements are shown here. These numbers change as filters are applied."
+                    }
+                  },
+                  [
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                          Total:\n                          "
+                      ),
+                      _c("span", { attrs: { id: "totalCount" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                          STEM:\n                          "
+                      ),
+                      _c("span", { attrs: { id: "stemTotal" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                          Non-STEM:\n                          "
+                      ),
+                      _c("span", { attrs: { id: "nonStemTotal" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                          Percent STEM:\n                          "
+                      ),
+                      _c("span", { attrs: { id: "percentStem" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                          Percent Non-STEM:\n                          "
+                      ),
+                      _c("span", { attrs: { id: "percentNonStem" } })
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-auto" })
+              ]),
               _vm._v(" "),
               _c("overviewBarChart", {
                 attrs: {
@@ -33669,7 +32666,7 @@ var render = function() {
                       {
                         attrs: {
                           id: "dc-edlevel-barchart",
-                          "data-step": "3",
+                          "data-step": "5",
                           "data-intro":
                             "Clicking the bars applies filters to the chart. Click on one of the bars and watch the other charts update!"
                         }
@@ -33722,7 +32719,7 @@ var render = function() {
                         staticClass: "center-block clearfix",
                         attrs: {
                           id: "dc-us-geoChoroplethChart",
-                          "data-step": "4",
+                          "data-step": "6",
                           "data-intro":
                             "You can zoom in and out, mouse over a state or territory on the maps to see the personnel total, or click on it to apply filters and update the other charts!"
                         }
@@ -33769,7 +32766,25 @@ var render = function() {
           )
         ],
         1
-      )
+      ),
+      _vm._v(" "),
+      _c("fab", {
+        staticClass: "noselect",
+        attrs: {
+          "data-step": "2",
+          "data-intro":
+            "Click here to Reset all filters for all charts, Download raw data in tab form, or View current filters applied to all charts.",
+          position: _vm.position,
+          "bg-color": _vm.bgColor,
+          actions: _vm.fabActions
+        },
+        on: {
+          reset: _vm.resetAll,
+          download: _vm.fabDownload,
+          demo: _vm.startDemo,
+          showMyFilters: _vm.fabFilter
+        }
+      })
     ],
     1
   )
@@ -34041,13 +33056,12 @@ if(false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_afsc__ = __webpack_require__("MqMl");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__store_store__ = __webpack_require__("wtEF");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_Loader__ = __webpack_require__("wd27");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_searchBox__ = __webpack_require__("CjlA");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_largeBarChart__ = __webpack_require__("A1IL");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_overviewBarChart__ = __webpack_require__("Kvlx");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_toastr__ = __webpack_require__("vQJi");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_toastr__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_overviewBarChart__ = __webpack_require__("Kvlx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_toastr__ = __webpack_require__("vQJi");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_toastr__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_FAB__ = __webpack_require__("yfIS");
 var _this2 = this;
 
 //
@@ -34215,61 +33229,6 @@ var _this2 = this;
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
 
 
 
@@ -34299,17 +33258,22 @@ var _this2 = this;
             majcomColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].majcomChart.color]),
             pageName: 'Enlisted Retention',
             category: '1ST TERM',
-            year: '2018'
+            year: '2018',
+            /* FAB items */
+            bgColor: '#333333',
+            position: 'bottom-right',
+            iconSize: 'md',
+            fabActions: [{ name: 'reset', icon: 'redo-alt', tooltip: 'Reset All', color: '#FF3547' }, { name: 'download', icon: 'download', tooltip: 'Download Raw Data', color: '#2F96B4' }, { name: 'demo', icon: 'eye', tooltip: 'Demo the page', color: '#2F96B4' }, { name: 'showMyFilters', icon: 'search-filters', tooltip: 'View current Filters', color: '#2F96B4' }],
+            mainIcon: 'plus'
         };
     },
 
     components: {
         'afsc': __WEBPACK_IMPORTED_MODULE_4__components_afsc__["a" /* default */],
         'loader': __WEBPACK_IMPORTED_MODULE_6__components_Loader__["a" /* default */],
-        'searchBox': __WEBPACK_IMPORTED_MODULE_7__components_searchBox__["a" /* default */],
-        largeBarChart: __WEBPACK_IMPORTED_MODULE_8__components_largeBarChart__["a" /* default */],
-        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default.a,
-        overviewBarChart: __WEBPACK_IMPORTED_MODULE_10__components_overviewBarChart__["a" /* default */]
+        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome___default.a,
+        overviewBarChart: __WEBPACK_IMPORTED_MODULE_8__components_overviewBarChart__["a" /* default */],
+        fab: __WEBPACK_IMPORTED_MODULE_10__components_FAB__["a" /* default */]
     },
     computed: {
         ndx: function ndx() {
@@ -34477,6 +33441,69 @@ var _this2 = this;
             return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
                 return $1.toUpperCase();
             });
+        },
+        fabDownload: function fabDownload() {
+            var _this3 = this;
+
+            var data = this.downloadDim.top(Infinity);
+            var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
+
+            var myFilters = '';
+            dc.chartRegistry.list().forEach(function (d) {
+                //console.log(d.anchorName().toUpperCase())
+                if (_.includes(d.anchorName().toUpperCase(), 'AFSC')) {
+                    //console.log('AFSC Filter: ' + this.sa)
+                    if (_.includes(d.anchorName().toUpperCase(), 'ROW') && _this3.sa) {
+                        if (_this3.sa.length < 6) {
+                            var num = 6 - _this3.sa.length;
+                            var txt = Array(num).join("X");
+                            myFilters += ' (AFSC_' + _this3.sa + txt + ')';
+                        } else myFilters += ' (' + _this3.sa + ')';
+                    }
+                } else if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
+            });
+
+            FileSaver.saveAs(blob, 'PERSTAT ' + this.pageName + ' ' + __WEBPACK_IMPORTED_MODULE_5__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
+        },
+        fabFilter: function fabFilter() {
+            //Curent Filters button
+            var myFilters = this.toProperCase(this.pageLabel) + ' filters ';
+            dc.chartRegistry.list().forEach(function (d) {
+                //console.log("d.filter(): "+d.filter())
+                if (d.hasFilter() && d.anchor() != '#dc-overviewmajcom-barchart' && d.anchor() != '#dc-overviewmpf-barchart') {
+                    //console.log(d.anchor(), d.filters())
+                    myFilters += '\n (' + d.filters() + ')';
+                }
+            });
+            if (myFilters !== undefined) {
+                var myCheckValue = '0';
+                if (this.selected == "reEnlRate") {
+                    myCheckValue = reEnlRate.innerText.substr(0, reEnlRate.innerText.length - 1);
+                };
+                if (this.selected == "keepRate") {
+                    myCheckValue = keepRate.innerText.substr(0, keepRate.innerText.length - 1);
+                };
+
+                //console.log("myCheckvalue: "+ myCheckValue );
+                // Override global options
+                __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.options = {
+                    "positionClass": "toast-bottom-full-width",
+                    "closeButton": "true",
+                    "preventDuplicates": "true"
+                };
+                if (myCheckValue == '0.0%' || myCheckValue == 0) {
+                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.warning('Your ' + this.toProperCase(this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                } else if (myCheckValue == '1') {
+                    myFilters += ' return ' + myCheckValue + ' ' + this.ylabel + ' result.';
+                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.info(myFilters);
+                } else {
+                    myFilters += ' return ' + myCheckValue + ' ' + this.ylabel + ' results.';
+                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.info(myFilters);
+                }
+            }
+            if (myFilters == 'undefined' || myFilters == undefined) {
+                __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.error('Something went wrong. Please reset and try again.');
+            }
         }
     },
     created: function created() {
@@ -34485,7 +33512,7 @@ var _this2 = this;
         //this.data = data
     },
     mounted: function mounted() {
-        var _this3 = this;
+        var _this4 = this;
 
         console.log('mounted');
         //TEST AXIOS CALL:
@@ -34493,8 +33520,8 @@ var _this2 = this;
             var axiosData = response.data.data;
             __WEBPACK_IMPORTED_MODULE_5__store_store__["a" /* store */].state.asDate = response.data.ASOFDATE;
             var objData = makeObject(axiosData);
-            _this3.data = objData;
-            _this3.loaded = true;
+            _this4.data = objData;
+            _this4.loaded = true;
             renderCharts();
         }).catch(console.error);
 
@@ -34547,10 +33574,10 @@ var _this2 = this;
         };
 
         var renderCharts = function renderCharts() {
-            dc.dataCount(".dc-data-count").dimension(_this3.ndx).group(_this3.allGroup);
+            dc.dataCount(".dc-data-count").dimension(_this4.ndx).group(_this4.allGroup);
 
             //***Totals***
-            var tots = _this3.ndx.groupAll().reduce(_this3.retentionAdd, _this3.retentionRemove, _this3.retentionInitial);
+            var tots = _this4.ndx.groupAll().reduce(_this4.retentionAdd, _this4.retentionRemove, _this4.retentionInitial);
             //INV
             var invND = dc.numberDisplay("#inv");
             invND.group(tots).formatNumber(d3.format("d")).valueAccessor(function (d) {
@@ -34590,21 +33617,21 @@ var _this2 = this;
             //YEAR
             var yearConfig = {};
             yearConfig.id = 'year';
-            yearConfig.dim = _this3.ndx.dimension(function (d) {
+            yearConfig.dim = _this4.ndx.dimension(function (d) {
                 return d.Year;
             });
-            yearConfig.group = yearConfig.dim.group().reduce(_this3.retentionAdd, _this3.retentionRemove, _this3.retentionInitial);
+            yearConfig.group = yearConfig.dim.group().reduce(_this4.retentionAdd, _this4.retentionRemove, _this4.retentionInitial);
             yearConfig.minHeight = 150;
             yearConfig.aspectRatio = __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.aspectRatio;
             yearConfig.margins = { top: 10, left: 40, right: 20, bottom: 20 };
             yearConfig.colors = [__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color];
             var yearChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getRowChart(yearConfig);
             yearChart.elasticX(true).valueAccessor(function (d) {
-                return d.value[_this3.selected];
+                return d.value[_this4.selected];
             }).on('pretransition', function (chart) {
                 chart.selectAll("rect").on("click", function (d) {
-                    _this3.year = d.key;
-                    _this3.singleSubmit(d.key, 'dc-year-rowchart');
+                    _this4.year = d.key;
+                    _this4.singleSubmit(d.key, 'dc-year-rowchart');
                 });
             }).controlsUseVisibility(true);
             yearChart.filter('2018');
@@ -34612,92 +33639,31 @@ var _this2 = this;
             //CAT
             var catConfig = {};
             catConfig.id = 'cat';
-            catConfig.dim = _this3.ndx.dimension(function (d) {
+            catConfig.dim = _this4.ndx.dimension(function (d) {
                 return d.Category;
             });
-            catConfig.group = catConfig.dim.group().reduce(_this3.retentionAdd, _this3.retentionRemove, _this3.retentionInitial);
+            catConfig.group = catConfig.dim.group().reduce(_this4.retentionAdd, _this4.retentionRemove, _this4.retentionInitial);
             catConfig.minHeight = 210;
             catConfig.aspectRatio = 3;
             catConfig.margins = { top: 10, left: 40, right: 20, bottom: 20 };
             catConfig.colors = d3.scale.category10();
             var catChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getRowChart(catConfig);
             catChart.valueAccessor(function (d) {
-                return d.value[_this3.selected];
+                return d.value[_this4.selected];
             }).on('pretransition', function (chart) {
                 chart.selectAll("rect").on("click", function (d) {
-                    _this3.year = d.key;
-                    _this3.singleSubmit(d.key, 'dc-cat-rowchart');
+                    _this4.year = d.key;
+                    _this4.singleSubmit(d.key, 'dc-cat-rowchart');
                 });
             }).controlsUseVisibility(true);
 
             catChart.filter('1ST TERM');
 
             //Call The AFSC Component HERE
-            _this3.startAfsc = true;
-
-            //Curent Filters button
-            d3.select('#showMyFilters').on('click', function () {
-                var myFilters = _this3.toProperCase(_this3.pageLabel) + ' filters ';
-
-                dc.chartRegistry.list().forEach(function (d) {
-                    if (d.hasFilter() && d.anchor() != '#dc-overviewmajcom-barchart' && d.anchor() != '#dc-overviewmpf-barchart') {
-                        myFilters += '\n (' + d.filters() + ')';
-                    }
-                });
-                if (myFilters !== undefined) {
-                    var myCheckValue = 0;
-                    if (_this3.selected == "reEnlRate") {
-                        myCheckValue = reEnlRateND.value;
-                    };
-                    if (_this3.selected == "keepRate") {
-                        myCheckValue = keepRateND.value;
-                    };
-                    // Override global options
-                    __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.options = {
-                        "positionClass": "toast-bottom-full-width",
-                        "closeButton": "true",
-                        "preventDuplicates": "true"
-                    };
-                    if (myCheckValue() <= '0') {
-                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.warning('Your ' + _this3.toProperCase(_this3.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
-                    } else if (myCheckValue() == '1') {
-                        myFilters += ' return ' + myCheckValue() + ' ' + _this3.ylabel + ' result.';
-                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.info(myFilters);
-                    } else {
-                        myFilters += ' return ' + myCheckValue() + ' ' + _this3.ylabel + ' results.';
-                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.info(myFilters);
-                    }
-                }
-                if (myFilters == 'undefined' || myFilters == undefined) {
-                    __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.error('Something went wrong. Please reset and try again.');
-                }
-            });
-
-            //Download Raw Data button
-            d3.select('#download').on('click', function () {
-                var data = _this3.downloadDim.top(Infinity);
-                var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
-
-                var myFilters = '';
-                dc.chartRegistry.list().forEach(function (d) {
-                    console.log(d.anchorName().toUpperCase());
-                    if (_.includes(d.anchorName().toUpperCase(), 'AFSC')) {
-                        //console.log('AFSC Filter: ' + this.sa)
-                        if (_.includes(d.anchorName().toUpperCase(), 'ROW') && _this3.sa) {
-                            if (_this3.sa.length < 6) {
-                                var num = 6 - _this3.sa.length;
-                                var txt = Array(num).join("X");
-                                myFilters += ' (AFSC_' + _this3.sa + txt + ')';
-                            } else myFilters += ' (' + _this3.sa + ')';
-                        }
-                    } else if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
-                });
-
-                FileSaver.saveAs(blob, 'PERSTAT Enlisted_Retention' + ' ' + __WEBPACK_IMPORTED_MODULE_5__store_store__["a" /* store */].state.asDate + myFilters + '.csv');
-            });
+            _this4.startAfsc = true;
 
             // after DOM updated redraw to make chart widths update
-            _this3.$nextTick(function () {
+            _this4.$nextTick(function () {
                 dc.redrawAll();
             });
 
@@ -35112,33 +34078,6 @@ if(false) {
 
 /***/ }),
 
-/***/ "mKkK":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("2vRR");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__("rjj0")("f5e253d8", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../node_modules/css-loader/index.js?{\"minimize\":false,\"sourceMap\":false}!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-9b0c2fd6\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=1&bustCache!./Civilian.vue", function() {
-     var newContent = require("!!../../node_modules/css-loader/index.js?{\"minimize\":false,\"sourceMap\":false}!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-9b0c2fd6\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=1&bustCache!./Civilian.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
 /***/ "mLtw":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -35227,10 +34166,10 @@ var render = function() {
                 _c(
                   "div",
                   {
-                    staticClass: "col",
+                    staticClass: "col-auto",
                     attrs: {
                       id: "radioSelect",
-                      "data-step": "1",
+                      "data-step": "3",
                       "data-intro":
                         "Toggle the radio buttons to change the data element being shown in the charts."
                     }
@@ -35522,108 +34461,7 @@ var render = function() {
                   ]
                 ),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: { type: "button", id: "demo", title: "Demo" },
-                      on: { click: _vm.startDemo }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Demo  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "eye", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        id: "showMyFilters",
-                        "data-step": "8",
-                        "data-intro": "See the currently applied filters here!",
-                        title: "Filter"
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("View Filters  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "search-filters", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        id: "download",
-                        "data-step": "7",
-                        "data-intro": "Download data in tabular form here!",
-                        title: "Download Raw Data"
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Download  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "download", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-danger btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        "data-step": "5",
-                        "data-intro":
-                          "Click here to reset filters on all charts.",
-                        title: "Reset All"
-                      },
-                      on: {
-                        click: function($event) {
-                          _vm.searchCore = ""
-                          _vm.resetAll()
-                        }
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Reset All  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "redo-alt", size: "lg" }
-                      })
-                    ],
-                    1
-                  )
-                ])
+                _c("div", { staticClass: "col-auto" })
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
@@ -35635,7 +34473,7 @@ var render = function() {
                 {
                   staticClass: "row",
                   attrs: {
-                    "data-step": "2",
+                    "data-step": "4",
                     "data-intro":
                       "Summary statistics for the data elements are shown here. These numbers change as filters are applied."
                   }
@@ -35718,7 +34556,7 @@ var render = function() {
                       {
                         attrs: {
                           id: "dc-afscGroup-barchart",
-                          "data-step": "3",
+                          "data-step": "5",
                           "data-intro":
                             "Clicking the bars applies filters to the chart. Click on one of the bars and watch the other charts update!"
                         }
@@ -35771,7 +34609,7 @@ var render = function() {
                         staticClass: "center-block clearfix",
                         attrs: {
                           id: "dc-us-geoChoroplethChart",
-                          "data-step": "4",
+                          "data-step": "6",
                           "data-intro":
                             "You can zoom in and out, mouse over a state or territory on the maps to see the personnel total, or click on it to apply filters and update the other charts!"
                         }
@@ -35816,7 +34654,25 @@ var render = function() {
           )
         ],
         1
-      )
+      ),
+      _vm._v(" "),
+      _c("fab", {
+        staticClass: "noselect",
+        attrs: {
+          "data-step": "2",
+          "data-intro":
+            "Click here to Reset all filters for all charts, Download raw data in tab form, or View current filters applied to all charts.",
+          position: _vm.position,
+          "bg-color": _vm.bgColor,
+          actions: _vm.fabActions
+        },
+        on: {
+          reset: _vm.resetAll,
+          download: _vm.fabDownload,
+          demo: _vm.startDemo,
+          showMyFilters: _vm.fabFilter
+        }
+      })
     ],
     1
   )
@@ -36145,7 +35001,7 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  /*should be scoped*/\n#radioSelect div,input,label{\n    cursor: pointer;\n}\n.fade-enter-active {\n    -webkit-transition: all 0.5s;\n    transition: all 0.5s;\n}\n.fade-leave-active {\n    -webkit-transition: all 0.2s;\n    transition: all 0.2s;\n}\n.fade-enter, .fade-leave-to {\n    opacity: 0;\n}\n.fade-enter-to, .fade-leave {\n    opacity: 1;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  /*should be scoped*/\n#radioSelect div,input,label{\n    cursor: pointer;\n}\n.fade-enter-active {\n    -webkit-transition: all 0.5s;\n    transition: all 0.5s;\n}\n.fade-leave-active {\n    -webkit-transition: all 0.2s;\n    transition: all 0.2s;\n}\n.fade-enter, .fade-leave-to {\n    opacity: 0;\n}\n.fade-enter-to, .fade-leave {\n    opacity: 1;\n}\n", ""]);
 
 // exports
 
@@ -36421,33 +35277,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 /***/ }),
 
-/***/ "oTky":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("qYIR");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__("rjj0")("8f391418", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../node_modules/css-loader/index.js?{\"minimize\":false,\"sourceMap\":false}!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7d75ec3f\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1&bustCache!./Joint.vue", function() {
-     var newContent = require("!!../../../node_modules/css-loader/index.js?{\"minimize\":false,\"sourceMap\":false}!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7d75ec3f\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1&bustCache!./Joint.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
 /***/ "p5/d":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -36488,36 +35317,12 @@ if(false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_AutoComplete__ = __webpack_require__("nObl");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_Loader__ = __webpack_require__("wd27");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__store_store__ = __webpack_require__("wtEF");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_searchBox__ = __webpack_require__("CjlA");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_overviewBarChart__ = __webpack_require__("Kvlx");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr__ = __webpack_require__("vQJi");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_toastr__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_overviewBarChart__ = __webpack_require__("Kvlx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_toastr__ = __webpack_require__("vQJi");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_toastr__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_FAB__ = __webpack_require__("yfIS");
 //
 //
 //
@@ -36687,7 +35492,13 @@ if(false) {
             baseColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color]),
             pageName: 'ANG Enlisted Manning',
             afscGroupChart: {},
-            skillLevelChart: {}
+            skillLevelChart: {},
+            /* FAB items */
+            bgColor: '#333333',
+            position: 'bottom-right',
+            iconSize: 'md',
+            fabActions: [{ name: 'reset', icon: 'redo-alt', tooltip: 'Reset All', color: '#FF3547' }, { name: 'download', icon: 'download', tooltip: 'Download Raw Data', color: '#2F96B4' }, { name: 'demo', icon: 'eye', tooltip: 'Demo the page', color: '#2F96B4' }, { name: 'showMyFilters', icon: 'search-filters', tooltip: 'View current Filters', color: '#2F96B4' }],
+            mainIcon: 'plus'
         };
     },
 
@@ -36832,14 +35643,94 @@ if(false) {
             return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
                 return $1.toUpperCase();
             });
+        },
+        fabDownload: function fabDownload() {
+            var data = this.downloadDim.top(Infinity);
+            var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
+
+            var myFilters = '';
+            dc.chartRegistry.list().forEach(function (d) {
+                if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
+            });
+
+            FileSaver.saveAs(blob, 'PERSTAT ' + this.pageName + ' ' + __WEBPACK_IMPORTED_MODULE_6__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
+        },
+        fabFilter: function fabFilter() {
+            //Curent Filters button
+            var myFilters = this.toProperCase(this.pageLabel) + ' filters ';
+            dc.chartRegistry.list().forEach(function (d) {
+                //console.log("d.filter(): "+d.filter())
+                if (d.hasFilter() && d.anchor() != '#dc-overviewmpf-barchart') {
+                    //console.log(d.anchor(), d.filters())
+                    myFilters += '\n (' + d.filters() + ')';
+                }
+            });
+            if (myFilters !== undefined) {
+                var myCheckValue = '0';
+                if (this.selected == "auth") {
+                    var auth = this.ndx.groupAll().reduceSum(function (d) {
+                        return +d.Authorized;
+                    });
+                    myCheckValue = auth.value();
+                };
+                if (this.selected == "asgn") {
+                    var asgn = this.ndx.groupAll().reduceSum(function (d) {
+                        return +d.Assigned;
+                    });
+                    myCheckValue = asgn.value();
+                };
+                if (this.selected == "gains") {
+                    var gains = this.ndx.groupAll().reduceSum(function (d) {
+                        return +d.Gains;
+                    });
+                    myCheckValue = gains.value();
+                };
+                if (this.selected == "losses") {
+                    var losses = this.ndx.groupAll().reduceSum(function (d) {
+                        return +d.Losses;
+                    });
+                    myCheckValue = losses.value();
+                };
+                if (this.selected == "vacancies") {
+                    var vacancies = this.ndx.groupAll().reduceSum(function (d) {
+                        return +d.Vacancies;
+                    });
+                    myCheckValue = vacancies.value();
+                };
+                if (this.selected == "excess") {
+                    var excess = this.ndx.groupAll().reduceSum(function (d) {
+                        return +d.Excess;
+                    });
+                    myCheckValue = excess.value();
+                };
+                //console.log("myCheckvalue: "+ myCheckValue );
+                // Override global options
+                __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.options = {
+                    "positionClass": "toast-bottom-full-width",
+                    "closeButton": "true",
+                    "preventDuplicates": "true"
+                };
+                if (myCheckValue == 0) {
+                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.warning('Your ' + this.toProperCase(this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                } else if (myCheckValue == '1') {
+                    myFilters += ' return ' + myCheckValue + ' ' + this.ylabel + ' result.';
+                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.info(myFilters);
+                } else {
+                    myFilters += ' return ' + myCheckValue + ' ' + this.ylabel + ' results.';
+                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.info(myFilters);
+                }
+            }
+            if (myFilters == 'undefined' || myFilters == undefined) {
+                __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.error('Something went wrong. Please reset and try again.');
+            }
         }
     },
     components: {
         'autocomplete': __WEBPACK_IMPORTED_MODULE_4__components_AutoComplete__["a" /* default */],
         'loader': __WEBPACK_IMPORTED_MODULE_5__components_Loader__["a" /* default */],
-        searchBox: __WEBPACK_IMPORTED_MODULE_7__components_searchBox__["a" /* default */],
-        overviewBarChart: __WEBPACK_IMPORTED_MODULE_8__components_overviewBarChart__["a" /* default */],
-        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_9__fortawesome_vue_fontawesome___default.a
+        overviewBarChart: __WEBPACK_IMPORTED_MODULE_7__components_overviewBarChart__["a" /* default */],
+        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome___default.a,
+        fab: __WEBPACK_IMPORTED_MODULE_10__components_FAB__["a" /* default */]
     },
     created: function created() {},
     mounted: function mounted() {
@@ -37101,72 +35992,6 @@ if(false) {
             });
 
             usChart.controlsUseVisibility(true);
-
-            //Curent Filters button
-            d3.select('#showMyFilters').on('click', function () {
-                var myFilters = _this2.toProperCase(_this2.pageLabel) + ' filters ';
-
-                dc.chartRegistry.list().forEach(function (d) {
-
-                    if (d.hasFilter() && d.anchor() != '#dc-overviewmpf-barchart') {
-                        //console.log(d.anchor(), d.filters())
-                        myFilters += '\n (' + d.filters() + ')';
-                    }
-                });
-                if (myFilters !== undefined) {
-                    var myCheckValue = '0';
-                    if (_this2.selected == "asgn") {
-                        myCheckValue = asgn.value();
-                    };
-                    if (_this2.selected == "auth") {
-                        myCheckValue = auth.value();
-                    };
-                    if (_this2.selected == "gains") {
-                        myCheckValue = gains.value();
-                    };
-                    if (_this2.selected == "losses") {
-                        myCheckValue = losses.value();
-                    };
-                    if (_this2.selected == "vacancies") {
-                        myCheckValue = vacancies.value();
-                    };
-                    if (_this2.selected == "excess") {
-                        myCheckValue = excess.value();
-                    };
-                    //console.log("myCheckValue.value: "+myCheckValue.value());
-                    // Override global options
-                    __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.options = {
-                        "positionClass": "toast-bottom-full-width",
-                        "closeButton": "true",
-                        "preventDuplicates": "true"
-                    };
-                    if (myCheckValue == 0) {
-                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.warning('Your ' + _this2.toProperCase(_this2.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
-                    } else if (myCheckValue == 1) {
-                        myFilters += ' return ' + myCheckValue + ' ' + _this2.ylabel + ' result.';
-                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
-                    } else {
-                        myFilters += ' return ' + myCheckValue + ' ' + _this2.ylabel + ' results.';
-                        __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.info(myFilters);
-                    }
-                }
-                if (myFilters == 'undefined' || myFilters == undefined) {
-                    __WEBPACK_IMPORTED_MODULE_10_toastr___default.a.error('Something went wrong. Please reset and try again.');
-                }
-            });
-
-            //Download Raw Data button
-            d3.select('#download').on('click', function () {
-                var data = _this2.downloadDim.top(Infinity);
-                var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
-
-                var myFilters = '';
-                dc.chartRegistry.list().forEach(function (d) {
-                    if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
-                });
-
-                FileSaver.saveAs(blob, 'PERSTAT ANG_Enlisted_Manning' + ' ' + __WEBPACK_IMPORTED_MODULE_6__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
-            });
 
             // after DOM updated redraw to make chart widths update
             _this2.$nextTick(function () {
@@ -38416,8 +37241,9 @@ exports.push([module.i, "\n.nav-tabs .nav-link[data-v-475f910d]{\n    color:blac
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
+  __webpack_require__("gORn")
   __webpack_require__("Whg8")
-  __webpack_require__("mKkK")
+  __webpack_require__("XCYi")
 }
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
@@ -38510,46 +37336,21 @@ if(false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(d3, crossfilter, dc, introJs, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty__ = __webpack_require__("bOdI");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dchelpers__ = __webpack_require__("3VWa");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dchelpers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__dchelpers__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__chartSpecs__ = __webpack_require__("K62J");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_axios__ = __webpack_require__("mtWM");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__store_format__ = __webpack_require__("XCdN");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_AutoComplete__ = __webpack_require__("nObl");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_searchBox__ = __webpack_require__("CjlA");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_Loader__ = __webpack_require__("wd27");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__store_store__ = __webpack_require__("wtEF");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_overviewBarChart__ = __webpack_require__("Kvlx");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_toastr__ = __webpack_require__("vQJi");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_toastr__);
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* WEBPACK VAR INJECTION */(function(d3, crossfilter, dc, introJs, FileSaver) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__dchelpers__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chartSpecs__ = __webpack_require__("K62J");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__("mtWM");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_format__ = __webpack_require__("XCdN");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_AutoComplete__ = __webpack_require__("nObl");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_Loader__ = __webpack_require__("wd27");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__store_store__ = __webpack_require__("wtEF");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_overviewBarChart__ = __webpack_require__("Kvlx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_toastr__ = __webpack_require__("vQJi");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_toastr__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_FAB__ = __webpack_require__("yfIS");
 //
 //
 //
@@ -38725,11 +37526,17 @@ if(false) {
             selected: "totalCount",
             searchCore: "",
             searchYRGP: "",
-            chartSpecs: __WEBPACK_IMPORTED_MODULE_2__chartSpecs__["a" /* default */],
-            coreColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_2__chartSpecs__["a" /* default */].coreChart.color]),
-            baseColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_2__chartSpecs__["a" /* default */].baseChart.color]),
-            pageName: 'ANG Officer Education'
-            // yrgpColorScale: d3.scale.ordinal().range([chartSpecs.yrgpChart.color]),                    
+            chartSpecs: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */],
+            coreColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].coreChart.color]),
+            baseColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].baseChart.color]),
+            pageName: 'ANG Officer Education',
+            // yrgpColorScale: d3.scale.ordinal().range([chartSpecs.yrgpChart.color]), 
+            /* FAB items */
+            bgColor: '#333333',
+            position: 'bottom-right',
+            iconSize: 'md',
+            fabActions: [{ name: 'reset', icon: 'redo-alt', tooltip: 'Reset All', color: '#FF3547' }, { name: 'download', icon: 'download', tooltip: 'Download Raw Data', color: '#2F96B4' }, { name: 'demo', icon: 'eye', tooltip: 'Demo the page', color: '#2F96B4' }, { name: 'showMyFilters', icon: 'search-filters', tooltip: 'View current Filters', color: '#2F96B4' }],
+            mainIcon: 'plus'
         };
     },
 
@@ -38739,7 +37546,7 @@ if(false) {
             return crossfilter(this.data);
         },
         asDate: function asDate() {
-            return __WEBPACK_IMPORTED_MODULE_8__store_store__["a" /* store */].state.asDate;
+            return __WEBPACK_IMPORTED_MODULE_6__store_store__["a" /* store */].state.asDate;
         },
         allGroup: function allGroup() {
             return this.ndx.groupAll();
@@ -38751,6 +37558,11 @@ if(false) {
         },
         coreGroup: function coreGroup() {
             return this.coreDim.group().reduce(this.edAdd, this.edRemove, this.edInitial);
+        },
+        downloadDim: function downloadDim() {
+            return this.ndx.dimension(function (d) {
+                return d;
+            });
         },
         mpfDim: function mpfDim() {
             return this.ndx.dimension(function (d) {
@@ -38784,7 +37596,7 @@ if(false) {
         }
     },
 
-    methods: __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty___default()({
+    methods: {
         resetAll: function resetAll() {
             dc.filterAll();
             dc.redrawAll();
@@ -38815,11 +37627,6 @@ if(false) {
                     });
                 }
             };
-        },
-        toProperCase: function toProperCase(s) {
-            return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
-                return $1.toUpperCase();
-            });
         },
         //reduce functions
         edAdd: function edAdd(p, v) {
@@ -38871,19 +37678,80 @@ if(false) {
                 stemPercent: 0,
                 nonStemPercent: 0
             };
+        },
+        toProperCase: function toProperCase(s) {
+            return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
+                return $1.toUpperCase();
+            });
+        },
+        fabDownload: function fabDownload() {
+            var data = this.downloadDim.top(Infinity);
+            var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
+
+            var myFilters = '';
+            dc.chartRegistry.list().forEach(function (d) {
+                if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
+            });
+
+            FileSaver.saveAs(blob, 'PERSTAT ' + this.pageName + ' ' + __WEBPACK_IMPORTED_MODULE_6__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
+        },
+        fabFilter: function fabFilter() {
+            //Curent Filters button
+            var myFilters = this.toProperCase(this.pageLabel) + ' filters ';
+            dc.chartRegistry.list().forEach(function (d) {
+                //console.log("d.filter(): "+d.filter())
+                if (d.hasFilter() && d.anchor() != '#dc-overviewmpf-barchart') {
+                    //console.log(d.anchor(), d.filters())
+                    myFilters += '\n (' + d.filters() + ')';
+                }
+            });
+            if (myFilters !== undefined) {
+                var myCheckValue = '0';
+
+                if (this.selected == "totalCount") {
+                    myCheckValue = totalCount.innerText;
+                }
+                if (this.selected == "stem") {
+                    myCheckValue = stemTotal.innerText;
+                }
+                if (this.selected == "nonStem") {
+                    myCheckValue = nonStemTotal.innerText;
+                }
+                if (this.selected == "stemPercent") {
+                    myCheckValue = percentStem.innerText.substr(0, percentStem.innerText.length - 1);
+                };
+                if (this.selected == "nonStemPercent") {
+                    myCheckValue = percentNonStem.innerText.substr(0, percentNonStem.innerText.length - 1);
+                };
+                //console.log("myCheckvalue: "+ myCheckValue );
+                // Override global options
+                __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.options = {
+                    "positionClass": "toast-bottom-full-width",
+                    "closeButton": "true",
+                    "preventDuplicates": "true"
+                };
+                if (myCheckValue == '0.0%' || myCheckValue == 0) {
+                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.warning('Your ' + this.toProperCase(this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                } else if (myCheckValue == '1') {
+                    myFilters += ' return ' + myCheckValue + ' ' + this.ylabel + ' result.';
+                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.info(myFilters);
+                } else {
+                    myFilters += ' return ' + myCheckValue + ' ' + this.ylabel + ' results.';
+                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.info(myFilters);
+                }
+            }
+            if (myFilters == 'undefined' || myFilters == undefined) {
+                __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.error('Something went wrong. Please reset and try again.');
+            }
         }
-    }, 'toProperCase', function toProperCase(s) {
-        return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
-            return $1.toUpperCase();
-        });
-    }),
+    },
 
     components: {
-        'AutoComplete': __WEBPACK_IMPORTED_MODULE_5__components_AutoComplete__["a" /* default */],
-        'Loader': __WEBPACK_IMPORTED_MODULE_7__components_Loader__["a" /* default */],
-        searchBox: __WEBPACK_IMPORTED_MODULE_6__components_searchBox__["a" /* default */],
-        overviewBarChart: __WEBPACK_IMPORTED_MODULE_9__components_overviewBarChart__["a" /* default */],
-        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome___default.a
+        'AutoComplete': __WEBPACK_IMPORTED_MODULE_4__components_AutoComplete__["a" /* default */],
+        'Loader': __WEBPACK_IMPORTED_MODULE_5__components_Loader__["a" /* default */],
+        overviewBarChart: __WEBPACK_IMPORTED_MODULE_7__components_overviewBarChart__["a" /* default */],
+        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome___default.a,
+        fab: __WEBPACK_IMPORTED_MODULE_10__components_FAB__["a" /* default */]
     },
 
     created: function created() {
@@ -38896,8 +37764,8 @@ if(false) {
         console.log('mounted');
 
         //test AXIOS Call:
-        __WEBPACK_IMPORTED_MODULE_3_axios___default.a.post("https://stars.afpc.randolph.af.mil/FLA/perstat_json/ps_high_ed_level_ang.js").then(function (response) {
-            __WEBPACK_IMPORTED_MODULE_8__store_store__["a" /* store */].state.asDate = response.data.ASOFDATE;
+        __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post("https://stars.afpc.randolph.af.mil/FLA/perstat_json/ps_high_ed_level_ang.js").then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_6__store_store__["a" /* store */].state.asDate = response.data.ASOFDATE;
             var invData = response.data.data;
             //console.log(invData)
             var objData = makeObject(invData);
@@ -38933,13 +37801,13 @@ if(false) {
             obj.count = given.count;
             obj.edlevel = given.edlevel;
             obj.core = given.core;
-            obj.grade = __WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].gradeFormat[given.grd];
+            obj.grade = __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].gradeFormat[given.grd];
             obj.group = given.grp;
             obj.type = given.type;
             obj.stem = given.stem;
             obj.nonstem = given.non_stem;
             obj.state = given.ang_state;
-            obj.mpf = __WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].mpfFormat[given.mpf];
+            obj.mpf = __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].mpfFormat[given.mpf];
             // obj.yrgp = given.year_grp
 
             return obj;
@@ -39024,7 +37892,7 @@ if(false) {
             groupConfig.aspectRatio = 2.5;
             groupConfig.margins = { top: 10, left: 50, right: 30, bottom: 50 };
             groupConfig.colors = ["#5F9EA0"];
-            var groupChart = __WEBPACK_IMPORTED_MODULE_1__dchelpers___default.a.getOrdinalBarChart(groupConfig).valueAccessor(function (d) {
+            var groupChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getOrdinalBarChart(groupConfig).valueAccessor(function (d) {
                 return d.value[_this.selected];
             }).controlsUseVisibility(true).elasticX(true).on('pretransition', function (chart) {
                 chart.selectAll('g.x text').attr('transform', 'translate(-8,0)rotate(-45)');
@@ -39044,7 +37912,7 @@ if(false) {
             edLevelConfig.aspectRatio = 2.5;
             edLevelConfig.margins = { top: 10, left: 50, right: 30, bottom: 50 };
             edLevelConfig.colors = ["#cc5500"];
-            var edLevelChart = __WEBPACK_IMPORTED_MODULE_1__dchelpers___default.a.getOrdinalBarChart(edLevelConfig);
+            var edLevelChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getOrdinalBarChart(edLevelConfig);
             edLevelChart.valueAccessor(function (d) {
                 return d.value[_this.selected];
             }).controlsUseVisibility(true).elasticX(true).on('pretransition', function (chart) {
@@ -39054,7 +37922,7 @@ if(false) {
             });
 
             edLevelChart.ordering(function (d) {
-                return __WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].edLevelOrder[d.key];
+                return __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].edLevelOrder[d.key];
             });
 
             //Grade Rowchart               
@@ -39070,12 +37938,12 @@ if(false) {
             gradeConfig.margins = { top: 10, left: 50, right: 30, bottom: 50 };
             var c = d3.rgb(51, 172, 255);
             gradeConfig.colors = _this.chartSpecs.gradeChartColorScale;
-            var gradeChart = __WEBPACK_IMPORTED_MODULE_1__dchelpers___default.a.getRowChart(gradeConfig);
+            var gradeChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getRowChart(gradeConfig);
 
             gradeChart.valueAccessor(function (d) {
                 return d.value[_this.selected];
             }).controlsUseVisibility(true).ordering(function (d) {
-                return __WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].gradeOrder[d.key];
+                return __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].gradeOrder[d.key];
             });
 
             //CONUS 
@@ -39111,7 +37979,7 @@ if(false) {
             usConfig.propName = 'name';
             usConfig.projection = d3.geo.albersUsa();
 
-            var usChart = __WEBPACK_IMPORTED_MODULE_1__dchelpers___default.a.getGeoChart(usConfig);
+            var usChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getGeoChart(usConfig);
             usChart.title(function (d) {
                 //console.log("**************************************************");
                 // d.key = AA from json file
@@ -39126,7 +37994,7 @@ if(false) {
                 if (d.value == undefined) {
                     d.value = '0';
                 }
-                return __WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].geoCS[__WEBPACK_IMPORTED_MODULE_4__store_format__["a" /* default */].stateFormat[d.key]] + ": " + d.value;
+                return __WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].geoCS[__WEBPACK_IMPORTED_MODULE_3__store_format__["a" /* default */].stateFormat[d.key]] + ": " + d.value;
             });
 
             usChart.on('pretransition', function (chart) {
@@ -39174,68 +38042,6 @@ if(false) {
 
             usChart.controlsUseVisibility(true);
 
-            //Curent Filters button
-            d3.select('#showMyFilters').on('click', function () {
-                var myFilters = _this.toProperCase(_this.pageLabel) + ' filters ';
-
-                dc.chartRegistry.list().forEach(function (d) {
-
-                    if (d.hasFilter() && d.anchor() != '#dc-overviewmpf-barchart') {
-                        //console.log(d.anchor(), d.filters())
-                        myFilters += '\n (' + d.filters() + ')';
-                    }
-                });
-                if (myFilters !== undefined) {
-                    var myCheckValue = 0;
-                    if (_this.selected == "totalCount") {
-                        myCheckValue = totalCountND.value;
-                    };
-                    if (_this.selected == "stem") {
-                        myCheckValue = stemTotalND.value;
-                    };
-                    if (_this.selected == "nonStem") {
-                        myCheckValue = nonStemTotalND.value;
-                    };
-                    if (_this.selected == "stemPercent") {
-                        myCheckValue = percentStemND.value;
-                    };
-                    if (_this.selected == "nonStemPercent") {
-                        myCheckValue = percentNonStemND.value;
-                    };
-                    // Override global options
-                    __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.options = {
-                        "positionClass": "toast-bottom-full-width",
-                        "closeButton": "true",
-                        "preventDuplicates": "true"
-                    };
-                    if (myCheckValue() == '0.0%' || myCheckValue() == 0) {
-                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.warning('Your ' + _this.toProperCase(_this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
-                    } else if (myCheckValue() == '1') {
-                        myFilters += ' return ' + myCheckValue() + ' ' + _this.ylabel + ' result.';
-                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.info(myFilters);
-                    } else {
-                        myFilters += ' return ' + myCheckValue() + ' ' + _this.ylabel + ' results.';
-                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.info(myFilters);
-                    }
-                }
-                if (myFilters == 'undefined' || myFilters == undefined) {
-                    __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.error('Something went wrong. Please reset and try again.');
-                }
-            });
-
-            //Download Raw Data button
-            d3.select('#download').on('click', function () {
-                var data = gradeConfig.dim.top(Infinity);
-                var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
-
-                var myFilters = '';
-                dc.chartRegistry.list().forEach(function (d) {
-                    if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
-                });
-
-                FileSaver.saveAs(blob, 'PERSTAT Officer Year Group' + ' ' + __WEBPACK_IMPORTED_MODULE_8__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
-            });
-
             // after DOM updated redraw to make chart widths update
             _this.$nextTick(function () {
                 dc.redrawAll();
@@ -39259,7 +38065,7 @@ if(false) {
     beforeDestroy: function beforeDestroy() {
         console.log("beforeDestroy");
         dc.chartRegistry.clear();
-        __WEBPACK_IMPORTED_MODULE_8__store_store__["a" /* store */].state.asDate = 'Undetermined';
+        __WEBPACK_IMPORTED_MODULE_6__store_store__["a" /* store */].state.asDate = 'Undetermined';
     },
     destroyed: function destroyed() {
         console.log("destroyed");
@@ -39330,10 +38136,10 @@ var render = function() {
                 _c(
                   "div",
                   {
-                    staticClass: "col",
+                    staticClass: "col-auto",
                     attrs: {
                       id: "radioSelect",
-                      "data-step": "1",
+                      "data-step": "3",
                       "data-intro":
                         "Toggle the radio buttons to change the data element being shown in the charts."
                     }
@@ -39381,7 +38187,7 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                                Reenlistment Rate \n                            "
+                              "\n                            Reenlistment Rate \n                        "
                             )
                           ]
                         )
@@ -39430,7 +38236,7 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                                Keep Rate \n                            "
+                              "\n                            Keep Rate \n                        "
                             )
                           ]
                         )
@@ -39439,200 +38245,101 @@ var render = function() {
                   ]
                 ),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-auto" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: { type: "button", id: "demo", title: "Demo" },
-                      on: { click: _vm.startDemo }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Demo  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "eye", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        id: "showMyFilters",
-                        "data-step": "7",
-                        "data-intro": "See the currently applied filters here!",
-                        title: "Filter"
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Filter  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "filter", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-info btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        id: "download",
-                        "data-step": "6",
-                        "data-intro": "Download data in tabular form here!",
-                        title: "Download Raw Data"
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Download  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "download", size: "lg" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-danger btn-rounded btn-sm waves-effect",
-                      attrs: {
-                        type: "button",
-                        "data-step": "4",
-                        "data-intro":
-                          "Click here to reset filters on all charts.",
-                        title: "Reset All"
-                      },
-                      on: {
-                        click: function($event) {
-                          _vm.searchAfsc = ""
-                          _vm.searchMajcom = ""
-                          _vm.searchBase = ""
-                          _vm.resetAll()
-                        }
-                      }
-                    },
-                    [
-                      _c("p", { staticClass: "d-none d-md-inline" }, [
-                        _vm._v("Reset All  ")
-                      ]),
-                      _vm._v(" "),
-                      _c("FontAwesomeIcon", {
-                        attrs: { icon: "redo-alt", size: "lg" }
-                      })
-                    ],
-                    1
-                  )
-                ])
+                _c("div", { staticClass: "col-auto" })
               ]),
               _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "row",
-                  attrs: {
-                    id: "counts",
-                    "data-step": "2",
-                    "data-intro":
-                      "Summary statistics for the data elements are shown here. These numbers change as filters are applied."
-                  }
-                },
-                [
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                        Inventory:\n                        "
-                    ),
-                    _c("span", { attrs: { id: "inv" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                        Eligible:\n                        "
-                    ),
-                    _c("span", { attrs: { id: "elig" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                        Keep:\n                        "
-                    ),
-                    _c("span", { attrs: { id: "keep" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                        Re-Enlist Rate:\n                        "
-                    ),
-                    _c("span", { attrs: { id: "reEnlRate" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-auto" }, [
-                    _vm._v(
-                      "\n                        Keep Rate:\n                        "
-                    ),
-                    _c("span", { attrs: { id: "keepRate" } }),
+              _c("div", { staticClass: "row" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "row col-auto",
+                    attrs: {
+                      id: "counts",
+                      "data-step": "4",
+                      "data-intro":
+                        "Summary statistics for the data elements are shown here. These numbers change as filters are applied."
+                    }
+                  },
+                  [
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                      Inventory:\n                      "
+                      ),
+                      _c("span", { attrs: { id: "inv" } })
+                    ]),
                     _vm._v(" "),
-                    _c("span", { staticClass: "h3 mt-0 pt-0 align-middle" }, [
-                      _c(
-                        "span",
-                        {
-                          staticClass: "ico-tooltip",
-                          attrs: {
-                            "data-toggle": "tooltip",
-                            title:
-                              "This is the percentage of people who reenlisted out of those who are eligible to reenlist or separate within the term."
-                          }
-                        },
-                        [
-                          _c(
-                            "svg",
-                            {
-                              staticStyle: {
-                                "vertical-align": "top",
-                                "margin-top": "2px"
-                              },
-                              attrs: {
-                                version: "1.1",
-                                xmlns: "http://www.w3.org/2000/svg",
-                                width: "20px",
-                                height: "25px",
-                                viewBox: "0 0 512 512"
-                              }
-                            },
-                            [
-                              _c("path", {
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                      Eligible:\n                      "
+                      ),
+                      _c("span", { attrs: { id: "elig" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                      Keep:\n                      "
+                      ),
+                      _c("span", { attrs: { id: "keep" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                      Re-Enlist Rate:\n                      "
+                      ),
+                      _c("span", { attrs: { id: "reEnlRate" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-auto" }, [
+                      _vm._v(
+                        "\n                      Keep Rate:\n                      "
+                      ),
+                      _c("span", { attrs: { id: "keepRate" } }),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "h3 mt-0 pt-0 align-middle" }, [
+                        _c(
+                          "span",
+                          {
+                            staticClass: "ico-tooltip",
+                            attrs: {
+                              "data-toggle": "tooltip",
+                              title:
+                                "This is the percentage of people who reenlisted out of those who are eligible to reenlist or separate within the term."
+                            }
+                          },
+                          [
+                            _c(
+                              "svg",
+                              {
+                                staticStyle: {
+                                  "vertical-align": "top",
+                                  "margin-top": "2px"
+                                },
                                 attrs: {
-                                  d:
-                                    "M256,0C114.613,0,0,114.617,0,256c0,141.391,114.613,256,256,256s256-114.609,256-256C512,114.617,397.387,0,256,0z   M256,128c17.674,0,32,14.328,32,32c0,17.68-14.326,32-32,32s-32-14.32-32-32C224,142.328,238.326,128,256,128z M304,384h-96  c-8.836,0-16-7.156-16-16c0-8.836,7.164-16,16-16h16v-96h-16c-8.836,0-16-7.156-16-16c0-8.836,7.164-16,16-16h64  c8.836,0,16,7.164,16,16v112h16c8.836,0,16,7.164,16,16C320,376.844,312.836,384,304,384z"
+                                  version: "1.1",
+                                  xmlns: "http://www.w3.org/2000/svg",
+                                  width: "20px",
+                                  height: "25px",
+                                  viewBox: "0 0 512 512"
                                 }
-                              })
-                            ]
-                          )
-                        ]
-                      )
+                              },
+                              [
+                                _c("path", {
+                                  attrs: {
+                                    d:
+                                      "M256,0C114.613,0,0,114.617,0,256c0,141.391,114.613,256,256,256s256-114.609,256-256C512,114.617,397.387,0,256,0z   M256,128c17.674,0,32,14.328,32,32c0,17.68-14.326,32-32,32s-32-14.32-32-32C224,142.328,238.326,128,256,128z M304,384h-96  c-8.836,0-16-7.156-16-16c0-8.836,7.164-16,16-16h16v-96h-16c-8.836,0-16-7.156-16-16c0-8.836,7.164-16,16-16h64  c8.836,0,16,7.164,16,16v112h16c8.836,0,16,7.164,16,16C320,376.844,312.836,384,304,384z"
+                                  }
+                                })
+                              ]
+                            )
+                          ]
+                        )
+                      ])
                     ])
-                  ])
-                ]
-              ),
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-auto" })
+              ]),
               _vm._v(" "),
               _c(
                 "div",
@@ -39653,15 +38360,12 @@ var render = function() {
                             {
                               attrs: {
                                 id: "dc-year-rowchart",
-                                "data-step": "3",
+                                "data-step": "5",
                                 "data-intro":
                                   "Clicking the bars applies filters to the chart. Click on one of the bars and watch the other charts update!"
                               }
                             },
                             [
-                              _vm._v(
-                                ">>\n                                    "
-                              ),
                               _c("h3", [
                                 _vm._v("Year"),
                                 _c(
@@ -39727,7 +38431,7 @@ var render = function() {
                           [
                             _c("h3", [
                               _vm._v(
-                                "\n                                AFSC \n                                "
+                                "\n                            AFSC \n                            "
                               ),
                               _c(
                                 "span",
@@ -39834,7 +38538,25 @@ var render = function() {
           )
         ],
         1
-      )
+      ),
+      _vm._v(" "),
+      _c("fab", {
+        staticClass: "noselect",
+        attrs: {
+          "data-step": "2",
+          "data-intro":
+            "Click here to Reset all filters for all charts, Download raw data in tab form, or View current filters applied to all charts.",
+          position: _vm.position,
+          "bg-color": _vm.bgColor,
+          actions: _vm.fabActions
+        },
+        on: {
+          reset: _vm.resetAll,
+          download: _vm.fabDownload,
+          demo: _vm.startDemo,
+          showMyFilters: _vm.fabFilter
+        }
+      })
     ],
     1
   )
@@ -39849,21 +38571,6 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-76d32ee7", esExports)
   }
 }
-
-/***/ }),
-
-/***/ "qYIR":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("FZ+f")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.myBtn[data-v-7d75ec3f]{\n\t\twidth: 100px;\n}\n#radioSelect div[data-v-7d75ec3f],input[data-v-7d75ec3f],label[data-v-7d75ec3f]{\n        cursor: pointer;\n}\n#bar[data-v-7d75ec3f]{\n\t\theight: 200px;\n}\n.expand-enter-active[data-v-7d75ec3f], .expand-leave-active[data-v-7d75ec3f] {\n      -webkit-transition: all 0.8s ease;\n      transition: all 0.8s ease;\n      max-height: 200px;\n      overflow: hidden;\n}\n.expand-enter[data-v-7d75ec3f], .expand-leave-to[data-v-7d75ec3f] {\n      max-height: 0;\n      opacity: 0;\n}\n.expandMid-enter-active[data-v-7d75ec3f], .expandMid-leave-active[data-v-7d75ec3f] {\n      -webkit-transition: all 2s ease;\n      transition: all 2s ease;\n  \n      overflow: hidden;\n      margin-left: 0;\n}\n.expandMid-enter[data-v-7d75ec3f], .expandMid-leave-to[data-v-7d75ec3f] {\n      margin-left: 200px;\n      opacity: 0;\n}\n.expandSlow-enter-active[data-v-7d75ec3f], .expandSlow-leave-active[data-v-7d75ec3f] {\n      -webkit-transition: all 1s ease;\n      transition: all 1s ease;\n      max-height: 1200px;\n      overflow: hidden;\n}\n.expandSlow-enter[data-v-7d75ec3f], .expandSlow-leave-to[data-v-7d75ec3f] {\n      max-height: 0;\n      opacity: 0;\n}\n.fade-enter-active[data-v-7d75ec3f] {\n        -webkit-transition: all 0.5s;\n        transition: all 0.5s;\n}\n.fade-leave-active[data-v-7d75ec3f] {\n        -webkit-transition: all 0.2s;\n        transition: all 0.2s;\n}\n.fade-enter[data-v-7d75ec3f], .fade-leave-to[data-v-7d75ec3f] {\n        opacity: 0;\n}\n.fade-enter-to[data-v-7d75ec3f], .fade-leave[data-v-7d75ec3f] {\n        opacity: 1;\n}\n\n", ""]);
-
-// exports
-
 
 /***/ }),
 
@@ -40434,7 +39141,7 @@ var render = function() {
               "span",
               {
                 attrs: {
-                  "data-step": "5",
+                  "data-step": "1",
                   "data-intro":
                     "The data on this page is current as of the date shown here."
                 }
@@ -40601,7 +39308,7 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* need to make this scoped */\n#radioSelect div[data-v-76d32ee7],input[data-v-76d32ee7],label[data-v-76d32ee7]{\n    cursor: pointer;\n}\n.form-group[data-v-76d32ee7]{\n    -ms-flex-line-pack: center;\n        align-content: center;\n}\n.fade-enter-active[data-v-76d32ee7] {\n    -webkit-transition: all 0.5s;\n    transition: all 0.5s;\n}\n.fade-leave-active[data-v-76d32ee7] {\n    -webkit-transition: all 0.2s;\n    transition: all 0.2s;\n}\n.fade-enter[data-v-76d32ee7], .fade-leave-to[data-v-76d32ee7] {\n    opacity: 0;\n}\n.fade-enter-to[data-v-76d32ee7], .fade-leave[data-v-76d32ee7] {\n    opacity: 1;\n}\n#category .custom-control-input:checked~.custom-control-indicator[data-v-76d32ee7] {\n    background-color: rgb(18, 153, 60);\n}\n#category .custom-control-input:focus~.custom-control-indicator[data-v-76d32ee7] {\n    -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(18, 153, 60,.25);\n            box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(18, 153, 60,.25);\n}\n#category[data-v-76d32ee7]{\n    margin-top: .5rem;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* need to make this scoped */\n#radioSelect div[data-v-76d32ee7],input[data-v-76d32ee7],label[data-v-76d32ee7]{\n    cursor: pointer;\n}\n.form-group[data-v-76d32ee7]{\n    -ms-flex-line-pack: center;\n        align-content: center;\n}\n.fade-enter-active[data-v-76d32ee7] {\n    -webkit-transition: all 0.5s;\n    transition: all 0.5s;\n}\n.fade-leave-active[data-v-76d32ee7] {\n    -webkit-transition: all 0.2s;\n    transition: all 0.2s;\n}\n.fade-enter[data-v-76d32ee7], .fade-leave-to[data-v-76d32ee7] {\n    opacity: 0;\n}\n.fade-enter-to[data-v-76d32ee7], .fade-leave[data-v-76d32ee7] {\n    opacity: 1;\n}\n#category .custom-control-input:checked~.custom-control-indicator[data-v-76d32ee7] {\n    background-color: rgb(18, 153, 60);\n}\n#category .custom-control-input:focus~.custom-control-indicator[data-v-76d32ee7] {\n    -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(18, 153, 60,.25);\n            box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(18, 153, 60,.25);\n}\n#category[data-v-76d32ee7]{\n    margin-top: .5rem;\n}\n", ""]);
 
 // exports
 
@@ -42784,7 +41491,7 @@ var render = function() {
               "span",
               {
                 attrs: {
-                  "data-step": "5",
+                  "data-step": "1",
                   "data-intro":
                     "The data on this page is current as of the date shown here."
                 }
@@ -43565,13 +42272,12 @@ if(false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_format__ = __webpack_require__("XCdN");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_Loader__ = __webpack_require__("wd27");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__store_store__ = __webpack_require__("wtEF");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_searchBox__ = __webpack_require__("CjlA");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_overviewBarChart__ = __webpack_require__("Kvlx");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_toastr__ = __webpack_require__("vQJi");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_toastr__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_FAB__ = __webpack_require__("yfIS");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_overviewBarChart__ = __webpack_require__("Kvlx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_toastr__ = __webpack_require__("vQJi");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_toastr__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_FAB__ = __webpack_require__("yfIS");
 //
 //
 //
@@ -43663,7 +42369,6 @@ if(false) {
 //
 //
 //
-
 
 
 
@@ -43903,7 +42608,6 @@ if(false) {
 
             FileSaver.saveAs(blob, 'PERSTAT ' + this.pageName + ' ' + __WEBPACK_IMPORTED_MODULE_5__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
         },
-
         fabFilter: function fabFilter() {
             //Curent Filters button
             var myFilters = this.toProperCase(this.pageLabel) + ' filters ';
@@ -43921,23 +42625,23 @@ if(false) {
                 });
                 //console.log("counterVars.value: "+counterVars.value());
                 // Override global options
-                __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.options = {
+                __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.options = {
                     "positionClass": "toast-bottom-full-width",
                     "closeButton": "true",
                     "preventDuplicates": "true"
                 };
                 if (counterVars.value() == 0) {
-                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.warning('Your ' + this.toProperCase(this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                    __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.warning('Your ' + this.toProperCase(this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
                 } else if (counterVars.value() == 1) {
                     myFilters += ' return ' + counterVars.value() + ' result.';
-                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.info(myFilters);
+                    __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.info(myFilters);
                 } else {
                     myFilters += ' return ' + counterVars.value() + ' results.';
-                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.info(myFilters);
+                    __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.info(myFilters);
                 }
             }
             if (myFilters == 'undefined' || myFilters == undefined) {
-                __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.error('Something went wrong. Please reset and try again.');
+                __WEBPACK_IMPORTED_MODULE_8_toastr___default.a.error('Something went wrong. Please reset and try again.');
             }
         },
 
@@ -44003,10 +42707,9 @@ if(false) {
     },
     components: {
         'loader': __WEBPACK_IMPORTED_MODULE_4__components_Loader__["a" /* default */],
-        searchBox: __WEBPACK_IMPORTED_MODULE_6__components_searchBox__["a" /* default */],
-        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome___default.a,
-        overviewBarChart: __WEBPACK_IMPORTED_MODULE_7__components_overviewBarChart__["a" /* default */],
-        fab: __WEBPACK_IMPORTED_MODULE_10__components_FAB__["a" /* default */]
+        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_7__fortawesome_vue_fontawesome___default.a,
+        overviewBarChart: __WEBPACK_IMPORTED_MODULE_6__components_overviewBarChart__["a" /* default */],
+        fab: __WEBPACK_IMPORTED_MODULE_9__components_FAB__["a" /* default */]
     },
     created: function created() {
         console.log('created');
@@ -44521,15 +43224,14 @@ if (false) {(function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_format__ = __webpack_require__("XCdN");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_AutoComplete__ = __webpack_require__("nObl");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_searchBox__ = __webpack_require__("CjlA");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_Loader__ = __webpack_require__("wd27");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__store_store__ = __webpack_require__("wtEF");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_largeBarChart__ = __webpack_require__("A1IL");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_overviewBarChart__ = __webpack_require__("Kvlx");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_toastr__ = __webpack_require__("vQJi");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_toastr__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_Loader__ = __webpack_require__("wd27");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__store_store__ = __webpack_require__("wtEF");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_overviewBarChart__ = __webpack_require__("Kvlx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_toastr__ = __webpack_require__("vQJi");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_toastr__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_FAB__ = __webpack_require__("yfIS");
 //
 //
 //
@@ -44633,46 +43335,6 @@ if (false) {(function () {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
 
 
 
@@ -44695,7 +43357,13 @@ if (false) {(function () {
             selected: "Count",
             chartSpecs: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */],
             pageName: 'Officer Education',
-            coreColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].coreChart.color])
+            coreColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].coreChart.color]),
+            /* FAB items */
+            bgColor: '#333333',
+            position: 'bottom-right',
+            iconSize: 'md',
+            fabActions: [{ name: 'reset', icon: 'redo-alt', tooltip: 'Reset All', color: '#FF3547' }, { name: 'download', icon: 'download', tooltip: 'Download Raw Data', color: '#2F96B4' }, { name: 'demo', icon: 'eye', tooltip: 'Demo the page', color: '#2F96B4' }, { name: 'showMyFilters', icon: 'search-filters', tooltip: 'View current Filters', color: '#2F96B4' }],
+            mainIcon: 'plus'
         };
     },
 
@@ -44705,7 +43373,7 @@ if (false) {(function () {
             return crossfilter(this.data);
         },
         asDate: function asDate() {
-            return __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate;
+            return __WEBPACK_IMPORTED_MODULE_6__store_store__["a" /* store */].state.asDate;
         },
         allGroup: function allGroup() {
             return this.ndx.groupAll();
@@ -44721,6 +43389,11 @@ if (false) {(function () {
         },
         ylabel: function ylabel() {
             return "(Count)";
+        },
+        downloadDim: function downloadDim() {
+            return this.ndx.dimension(function (d) {
+                return d;
+            });
         },
         pageLabel: function pageLabel() {
             return this.pageName;
@@ -44808,16 +43481,62 @@ if (false) {(function () {
             return s.toLowerCase().replace(/^(.)|\s(.)/g, function ($1) {
                 return $1.toUpperCase();
             });
+        },
+        fabDownload: function fabDownload() {
+            var data = this.downloadDim.top(Infinity);
+            var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
+
+            var myFilters = '';
+            dc.chartRegistry.list().forEach(function (d) {
+                if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
+            });
+
+            FileSaver.saveAs(blob, 'PERSTAT ' + this.pageName + ' ' + __WEBPACK_IMPORTED_MODULE_6__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
+        },
+        fabFilter: function fabFilter() {
+            //Curent Filters button
+            var myFilters = this.toProperCase(this.pageLabel) + ' filters ';
+            dc.chartRegistry.list().forEach(function (d) {
+                //console.log("d.filter(): "+d.filter())
+                if (d.hasFilter() && d.anchor() != '#dc-overviewcore-barchart') {
+                    //console.log(d.anchor(), d.filters())
+                    myFilters += '\n (' + d.filters() + ')';
+                }
+            });
+            if (myFilters !== undefined) {
+                var counterVars = this.ndx.groupAll().reduceSum(function (d) {
+                    return +d.count;
+                });
+                //console.log("counterVars.value: "+counterVars.value());
+                // Override global options
+                __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.options = {
+                    "positionClass": "toast-bottom-full-width",
+                    "closeButton": "true",
+                    "preventDuplicates": "true"
+                };
+                if (counterVars.value() == 0) {
+                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.warning('Your ' + this.toProperCase(this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
+                } else if (counterVars.value() == 1) {
+                    myFilters += ' return ' + counterVars.value() + ' result.';
+                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.info(myFilters);
+                } else {
+                    myFilters += ' return ' + counterVars.value() + ' results.';
+                    __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.info(myFilters);
+                }
+            }
+            if (myFilters == 'undefined' || myFilters == undefined) {
+                __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.error('Something went wrong. Please reset and try again.');
+            }
         }
+
     },
 
     components: {
         'AutoComplete': __WEBPACK_IMPORTED_MODULE_4__components_AutoComplete__["a" /* default */],
-        'Loader': __WEBPACK_IMPORTED_MODULE_6__components_Loader__["a" /* default */],
-        searchBox: __WEBPACK_IMPORTED_MODULE_5__components_searchBox__["a" /* default */],
-        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_10__fortawesome_vue_fontawesome___default.a,
-        largeBarChart: __WEBPACK_IMPORTED_MODULE_8__components_largeBarChart__["a" /* default */],
-        overviewBarChart: __WEBPACK_IMPORTED_MODULE_9__components_overviewBarChart__["a" /* default */]
+        'Loader': __WEBPACK_IMPORTED_MODULE_5__components_Loader__["a" /* default */],
+        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome___default.a,
+        overviewBarChart: __WEBPACK_IMPORTED_MODULE_7__components_overviewBarChart__["a" /* default */],
+        fab: __WEBPACK_IMPORTED_MODULE_10__components_FAB__["a" /* default */]
     },
 
     created: function created() {
@@ -44831,7 +43550,7 @@ if (false) {(function () {
 
         //test AXIOS Call:
         __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post("https://stars.afpc.randolph.af.mil/FLA/perstat_json/ps_high_ed_level.js").then(function (response) {
-            __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate = response.data.ASOFDATE;
+            __WEBPACK_IMPORTED_MODULE_6__store_store__["a" /* store */].state.asDate = response.data.ASOFDATE;
             var invData = response.data.data;
             //console.log(invData)
             var objData = makeObject(invData);
@@ -45058,52 +43777,6 @@ if (false) {(function () {
                                 .yAxis().tickFormat(function(v) {return v + "%";})
              */
 
-            //Curent Filters button
-            d3.select('#showMyFilters').on('click', function () {
-                var myFilters = _this.toProperCase(_this.pageLabel) + ' filters ';
-
-                dc.chartRegistry.list().forEach(function (d) {
-                    if (d.hasFilter() && d.anchor() != '#dc-overviewcore-barchart') {
-                        //console.log(d.anchor(), d.filters())
-                        myFilters += '\n (' + d.filters() + ')';
-                    }
-                });
-                if (myFilters !== undefined) {
-                    var counterVars = totalCountND;
-                    // Override global options
-                    __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.options = {
-                        "positionClass": "toast-bottom-full-width",
-                        "closeButton": "true",
-                        "preventDuplicates": "true"
-                    };
-                    if (counterVars.value() == 0) {
-                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.warning('Your ' + _this.toProperCase(_this.pageLabel) + ' filter(s) returned no results. Please reset and try again.');
-                    } else if (counterVars.value() == 1) {
-                        myFilters += ' return ' + counterVars.value() + ' result.';
-                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.info(myFilters);
-                    } else {
-                        myFilters += ' return ' + counterVars.value() + ' results.';
-                        __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.info(myFilters);
-                    }
-                }
-                if (myFilters == 'undefined' || myFilters == undefined) {
-                    __WEBPACK_IMPORTED_MODULE_11_toastr___default.a.error('Something went wrong. Please reset and try again.');
-                }
-            });
-
-            //Download Raw Data button
-            d3.select('#download').on('click', function () {
-                var data = gradeConfig.dim.top(Infinity);
-                var blob = new Blob([d3.csv.format(data)], { type: "text/csv;charset=utf-8" });
-
-                var myFilters = '';
-                dc.chartRegistry.list().forEach(function (d) {
-                    if (d.filters()[0]) myFilters += ' (' + d.filters() + ')';
-                });
-
-                FileSaver.saveAs(blob, 'PERSTAT High Education' + ' ' + __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate + myFilters + ' .csv');
-            });
-
             //Filters data to count Officer only
             var filtering = _this.ndx.dimension(function (d) {
                 return d.type;
@@ -45172,7 +43845,7 @@ if (false) {(function () {
     beforeDestroy: function beforeDestroy() {
         console.log("beforeDestroy");
         dc.chartRegistry.clear();
-        __WEBPACK_IMPORTED_MODULE_7__store_store__["a" /* store */].state.asDate = 'Undetermined';
+        __WEBPACK_IMPORTED_MODULE_6__store_store__["a" /* store */].state.asDate = 'Undetermined';
     },
     destroyed: function destroyed() {
         console.log("destroyed");
@@ -45321,4 +43994,4 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.7b7143b3230c5f2a1f27.js.map
+//# sourceMappingURL=app.9cf85386ee4f8e1c81f9.js.map
