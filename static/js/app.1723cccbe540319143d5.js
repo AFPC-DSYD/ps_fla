@@ -1890,7 +1890,7 @@ var render = function() {
                 _vm._v("New PERS-STAT Items\n                        "),
                 _c("br"),
                 _vm._v(" "),
-                _c("h6", [
+                _c("h6", { staticClass: "row ml-3" }, [
                   _vm._v(
                     "New items have been added to the PERS-STAT website.  "
                   )
@@ -1898,61 +1898,297 @@ var render = function() {
                 _vm._v(" "),
                 _c("hr"),
                 _vm._v(" "),
-                _c("h6", [_vm._v("New ANG section has been added.")]),
+                _c("h6", { staticClass: "row ml-3" }, [
+                  _vm._v("ANG Enlisted and Officer sections have been added.")
+                ]),
                 _vm._v(" "),
                 _c("br"),
                 _vm._v(" "),
-                _c(
-                  "h6",
-                  [
-                    _vm._v(
-                      "On pages with interactive charts, click on the floating action button         \n                            "
-                    ),
-                    _c("fab", {
-                      staticClass: "noselect",
-                      attrs: {
-                        "position-Type": _vm.inherit,
-                        position: _vm.inherit,
-                        "bg-color": _vm.bgColor,
-                        actions: _vm.fabActions
+                _c("h6", { staticClass: "row ml-3" }, [
+                  _vm._v(
+                    "A floating ation button (fab) has been added to pages with interactive charts."
+                  )
+                ]),
+                _vm._v(" "),
+                _c("h6", { staticClass: "row ml-3" }, [
+                  _c(
+                    "span",
+                    {
+                      staticClass: "fab-main pointer fabulouso",
+                      staticStyle: {
+                        "background-color": "rgb(51, 51, 51)",
+                        padding: "20px !important"
                       },
-                      on: {
-                        reset: _vm.reset,
-                        download: _vm.download,
-                        demo: _vm.demo,
-                        showMyFilters: _vm.filter
+                      attrs: {
+                        "data-v-da8e8336": "",
+                        title:
+                          "This what the fab looks like. Try clicking on it on the interactive pages to see what it does."
                       }
-                    }),
+                    },
+                    [
+                      _c(
+                        "i",
+                        {
+                          staticClass: "md-24 material-icons main",
+                          staticStyle: { "font-size": "0px" },
+                          attrs: { "data-v-da8e8336": "" }
+                        },
+                        [
+                          _c(
+                            "svg",
+                            {
+                              staticClass:
+                                "svg-inline--fa fa-plus fa-w-14 fa-sm",
+                              attrs: {
+                                "data-v-da8e8336": "",
+                                "aria-hidden": "true",
+                                "data-prefix": "fas",
+                                "data-icon": "plus",
+                                role: "img",
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 448 512"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  "data-v-da8e8336": "",
+                                  fill: "currentColor",
+                                  d:
+                                    "M448 294.2v-76.4c0-13.3-10.7-24-24-24H286.2V56c0-13.3-10.7-24-24-24h-76.4c-13.3 0-24 10.7-24 24v137.8H24c-13.3 0-24 10.7-24 24v76.4c0 13.3 10.7 24 24 24h137.8V456c0 13.3 10.7 24 24 24h76.4c13.3 0 24-10.7 24-24V318.2H424c13.3 0 24-10.7 24-24z"
+                                }
+                              })
+                            ]
+                          )
+                        ]
+                      )
+                    ]
+                  ),
+                  _c("span", [
                     _vm._v(
-                      '                             \n                        to see the following buttons: Reset All, Download Raw Data, Demo the page, View current filters."'
+                      ' Click on the fab button to see the following items: Reset All, Download Raw Data, Demo the page, View current filters."'
                     )
-                  ],
-                  1
-                ),
+                  ])
+                ]),
                 _vm._v(" "),
-                _c("br"),
-                _vm._v(" "),
-                _c("h6", [
+                _c("h6", { staticClass: "row ml-3" }, [
+                  _c(
+                    "span",
+                    {
+                      staticClass: "fab-main pointer fabulouso",
+                      staticStyle: { "background-color": "rgb(255, 53, 71)" },
+                      attrs: {
+                        "data-v-da8e8336": "",
+                        title:
+                          "This is the Reset All button, try it out on the interactive pages after you have applied filters to see what it does."
+                      }
+                    },
+                    [
+                      _c(
+                        "i",
+                        {
+                          staticClass: "md-18 material-icons",
+                          staticStyle: { "font-size": "14px" },
+                          attrs: { "data-v-da8e8336": "" }
+                        },
+                        [
+                          _c(
+                            "svg",
+                            {
+                              staticClass: "svg-inline--fa fa-redo-alt fa-w-16",
+                              attrs: {
+                                "data-v-da8e8336": "",
+                                "aria-hidden": "true",
+                                "data-prefix": "fas",
+                                "data-icon": "redo-alt",
+                                role: "img",
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 512 512"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  "data-v-da8e8336": "",
+                                  fill: "currentColor",
+                                  d:
+                                    "M256.455 8c66.269.119 126.437 26.233 170.859 68.685l35.715-35.715C478.149 25.851 504 36.559 504 57.941V192c0 13.255-10.745 24-24 24H345.941c-21.382 0-32.09-25.851-16.971-40.971l41.75-41.75c-30.864-28.899-70.801-44.907-113.23-45.273-92.398-.798-170.283 73.977-169.484 169.442C88.764 348.009 162.184 424 256 424c41.127 0 79.997-14.678 110.629-41.556 4.743-4.161 11.906-3.908 16.368.553l39.662 39.662c4.872 4.872 4.631 12.815-.482 17.433C378.202 479.813 319.926 504 256 504 119.034 504 8.001 392.967 8 256.002 7.999 119.193 119.646 7.755 256.455 8z"
+                                }
+                              })
+                            ]
+                          )
+                        ]
+                      )
+                    ]
+                  ),
                   _vm._v(
-                    'The "Reset All" Button resets all chart selections to a default state.'
+                    ' The "Reset All" Button resets all chart selections to a default state.'
                   )
                 ]),
                 _vm._v(" "),
-                _c("h6", [
+                _c("h6", { staticClass: "row ml-3" }, [
+                  _c(
+                    "span",
+                    {
+                      staticClass: "fab-main pointer fabulouso",
+                      staticStyle: { "background-color": "rgb(47, 150, 180)" },
+                      attrs: {
+                        "data-v-da8e8336": "",
+                        title:
+                          "This is the Download Raw Data button, try it out on the interactive pages to see what it does."
+                      }
+                    },
+                    [
+                      _c(
+                        "i",
+                        {
+                          staticClass: "md-18 material-icons",
+                          staticStyle: { "font-size": "14px" },
+                          attrs: { "data-v-da8e8336": "" }
+                        },
+                        [
+                          _c(
+                            "svg",
+                            {
+                              staticClass: "svg-inline--fa fa-download fa-w-16",
+                              attrs: {
+                                "data-v-da8e8336": "",
+                                "aria-hidden": "true",
+                                "data-prefix": "fas",
+                                "data-icon": "download",
+                                role: "img",
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 512 512"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  "data-v-da8e8336": "",
+                                  fill: "currentColor",
+                                  d:
+                                    "M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"
+                                }
+                              })
+                            ]
+                          )
+                        ]
+                      )
+                    ]
+                  ),
                   _vm._v(
-                    'The "Download Raw Data" Button allows you to save a file with the raw data we use to build the charts on this page.'
+                    ' \n                        The "Download Raw Data" Button allows you to save a file with the raw data we use to build the charts on this page.'
                   )
                 ]),
                 _vm._v(" "),
-                _c("h6", [
+                _c("h6", { staticClass: "row ml-3" }, [
+                  _c(
+                    "span",
+                    {
+                      staticClass: "fab-main pointer fabulouso",
+                      staticStyle: { "background-color": "rgb(47, 150, 180)" },
+                      attrs: {
+                        "data-v-da8e8336": "",
+                        title:
+                          "This is the Demo button, try it out on the interactive pages if you don't know where to start."
+                      }
+                    },
+                    [
+                      _c(
+                        "i",
+                        {
+                          staticClass: "md-18 material-icons",
+                          staticStyle: { "font-size": "14px" },
+                          attrs: { "data-v-da8e8336": "" }
+                        },
+                        [
+                          _c(
+                            "svg",
+                            {
+                              staticClass: "svg-inline--fa fa-eye fa-w-18",
+                              attrs: {
+                                "data-v-da8e8336": "",
+                                "aria-hidden": "true",
+                                "data-prefix": "fas",
+                                "data-icon": "eye",
+                                role: "img",
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 576 512"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  "data-v-da8e8336": "",
+                                  fill: "currentColor",
+                                  d:
+                                    "M569.354 231.631C512.969 135.949 407.81 72 288 72 168.14 72 63.004 135.994 6.646 231.631a47.999 47.999 0 0 0 0 48.739C63.031 376.051 168.19 440 288 440c119.86 0 224.996-63.994 281.354-159.631a47.997 47.997 0 0 0 0-48.738zM288 392c-75.162 0-136-60.827-136-136 0-75.162 60.826-136 136-136 75.162 0 136 60.826 136 136 0 75.162-60.826 136-136 136zm104-136c0 57.438-46.562 104-104 104s-104-46.562-104-104c0-17.708 4.431-34.379 12.236-48.973l-.001.032c0 23.651 19.173 42.823 42.824 42.823s42.824-19.173 42.824-42.823c0-23.651-19.173-42.824-42.824-42.824l-.032.001C253.621 156.431 270.292 152 288 152c57.438 0 104 46.562 104 104z"
+                                }
+                              })
+                            ]
+                          )
+                        ]
+                      )
+                    ]
+                  ),
                   _vm._v(
-                    'The "Demo" Button allows you to observe important aspects on the particular page.'
+                    ' The "Demo" Button allows you to observe important aspects on the particular page.'
                   )
                 ]),
                 _vm._v(" "),
-                _c("h6", [
+                _c("h6", { staticClass: "row ml-3" }, [
+                  _c(
+                    "span",
+                    {
+                      staticClass: "fab-main pointer fabulouso",
+                      staticStyle: { "background-color": "rgb(47, 150, 180)" },
+                      attrs: {
+                        "data-v-da8e8336": "",
+                        title:
+                          "This is the View current Filters button, try it out on the interactive pages to see what filters are being applied to the dataset."
+                      }
+                    },
+                    [
+                      _c(
+                        "i",
+                        {
+                          staticClass: "md-18 material-icons",
+                          staticStyle: { "font-size": "14px" },
+                          attrs: { "data-v-da8e8336": "" }
+                        },
+                        [
+                          _c(
+                            "svg",
+                            {
+                              staticClass:
+                                "svg-inline--fa fa-search-filters fa-w-16",
+                              attrs: {
+                                "data-v-da8e8336": "",
+                                "aria-hidden": "true",
+                                "data-prefix": "fas",
+                                "data-icon": "search-filters",
+                                role: "img",
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 512 512"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  "data-v-da8e8336": "",
+                                  fill: "currentColor",
+                                  d:
+                                    "M304 142 H112 C110 142 106 143 110 148 L170 202 V282 c0 7 3 15 10 19 l54 25 C235 325 253 324 250 307 V202 l54-54 C305 148 308 143 304 142zm170 365.7L476.7 505c-9.4 9.4-24.6 9.4-33.9 0L343 405.3c-4.5-4.5-7-10.6-7-17V372c-35.3 27.6-79.7 44-128 44C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208c0 48.3-6.4 92.7-44 128h16.3c6.4 0 12.5 2.5 17 7l99.7 99.7c9.3 9.4 9.3 24.6 0 34zM344 208c0-75.2-60.8-136-136-136S72 132.8 72 208s60.8 136 136 136 136-60.8 136-136z"
+                                }
+                              })
+                            ]
+                          )
+                        ]
+                      )
+                    ]
+                  ),
                   _vm._v(
-                    'The "View current Filters" Button allows you to quickly see all applied filters on the respective page.'
+                    ' The "View current Filters" Button allows you to quickly see all applied filters on the respective page.'
                   )
                 ])
               ])
@@ -6380,6 +6616,33 @@ if (false) {
 
 /***/ }),
 
+/***/ "B/nx":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("H3Ro");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("rjj0")("71158351", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../node_modules/css-loader/index.js?{\"minimize\":false,\"sourceMap\":false}!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-61c6c871\",\"scoped\":false,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=2&bustCache!./Home.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js?{\"minimize\":false,\"sourceMap\":false}!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-61c6c871\",\"scoped\":false,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=2&bustCache!./Home.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
 /***/ "B3HA":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9698,6 +9961,21 @@ if(false) {
 
 /***/ }),
 
+/***/ "H3Ro":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("FZ+f")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.fab-tooltip.tooltip {\n    display: block !important;\n    padding: 4px;\n    z-index: 10000;\n}\n.fab-tooltip.tooltip .tooltip-inner {\n    background: #333333;\n    color: white;\n    border-radius: 0px;\n    padding: 5px 10px 4px;\n}\n.fab-tooltip.tooltip tooltip-arrow {\n    display: none;\n}\n.fab-tooltip.tooltip[aria-hidden='true'] {\n    visibility: hidden;\n    opacity: 0;\n    -webkit-transition: opacity .15s, visibility .15s;\n    transition: opacity .15s, visibility .15s;\n}\n.fab-tooltip.tooltip[aria-hidden='false'] {\n    visibility: visible;\n    opacity: 1;\n    -webkit-transition: opacity .15s;\n    transition: opacity .15s;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "H7z+":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9838,6 +10116,33 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 
 // exports
 
+
+/***/ }),
+
+/***/ "HH5E":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("conr");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("rjj0")("26e3ea10", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../node_modules/css-loader/index.js?{\"minimize\":false,\"sourceMap\":false}!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-61c6c871\",\"scoped\":false,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=1&bustCache!./Home.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js?{\"minimize\":false,\"sourceMap\":false}!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-61c6c871\",\"scoped\":false,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=1&bustCache!./Home.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
 
 /***/ }),
 
@@ -27694,6 +27999,21 @@ if(false) {
 
 /***/ }),
 
+/***/ "conr":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("FZ+f")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n /*@font-face{font-family:Material;src:url(/Material-Icons.woff2) format(\"woff2\");font-weight:400}*/\n.fabulouso {\n    padding: 10px !important;\n    /*height: 28px;*/\n    /*width: 28px;*/\n    top: -9px;\n}\n.material-icons {\n  /*font-family: Material;*/\n  font-weight: normal;\n  font-style: normal;\n  font-size: 24px;\n  line-height: 1;\n  letter-spacing: normal;\n  text-transform: none;\n  display: inline-block;\n  white-space: nowrap;\n  word-wrap: normal;\n  direction: ltr;\n  -moz-font-feature-settings: 'liga';\n  -moz-osx-font-smoothing: grayscale;\n}\n.noselect {\n  -webkit-touch-callout: none; /* iOS Safari */\n    -webkit-user-select: none; /* Safari */ /* Konqueror HTML */\n       -moz-user-select: none; /* Firefox */\n        -ms-user-select: none; /* Internet Explorer/Edge */\n            user-select: none; /* Non-prefixed version, currently\n                                  supported by Chrome and Opera */\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "cpgo":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -33174,6 +33494,33 @@ exports.push([module.i, "\n#base[data-v-0ddd8610] text{\n    font: 8px sans-seri
 
 /***/ }),
 
+/***/ "iskF":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("nUjW");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("rjj0")("9d6d8fc2", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../node_modules/css-loader/index.js?{\"minimize\":false,\"sourceMap\":false}!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-61c6c871\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=3&bustCache!./Home.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js?{\"minimize\":false,\"sourceMap\":false}!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-61c6c871\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=3&bustCache!./Home.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
 /***/ "jBjs":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -34090,6 +34437,9 @@ var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__("aQyO")
+  __webpack_require__("HH5E")
+  __webpack_require__("B/nx")
+  __webpack_require__("iskF")
 }
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
@@ -35129,6 +35479,21 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 // module
 exports.push([module.i, "\n.custom-control.custom-radio[data-v-577a59a0]{\n    padding-left:20px;\n    padding-right:10px;\n    margin-right: 0;\n    cursor:pointer;\n}\n.fade-enter-active[data-v-577a59a0] {\n    -webkit-transition: all 0.5s;\n    transition: all 0.5s;\n}\n.fade-leave-active[data-v-577a59a0] {\n    -webkit-transition: all 0.2s;\n    transition: all 0.2s;\n}\n.fade-enter[data-v-577a59a0], .fade-leave-to[data-v-577a59a0] {\n    opacity: 0;\n}\n.fade-enter-to[data-v-577a59a0], .fade-leave[data-v-577a59a0] {\n    opacity: 1;\n}\n.form-group[data-v-577a59a0] {\n    padding-left: 10px;\n}\n#grade[data-v-577a59a0] {\n    padding-left: 8px;\n}\n.stats[data-v-577a59a0] {\n    padding-left: 0;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "nUjW":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("FZ+f")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.animated.quick[data-v-61c6c871] {\n    -webkit-animation-duration: .7s !important;\n    animation-duration: .7s !important;\n}\n.fab-wrapper[data-v-61c6c871] {\n    z-index: 999;\n}\n.fab-main[data-v-61c6c871] {\n    border-radius: 100px;\n    width: 40px;/* this is where the small icons are sized */\n    height: 40px;/* this is where the small icons are sized */\n    padding: 30px;\n    position: relative;\n    overflow: hidden;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.20), 0 4px 4px rgba(0, 0, 0, 0.15);\n            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.20), 0 4px 4px rgba(0, 0, 0, 0.15);\n    z-index: 2;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n}\n.fab-main .material-icons[data-v-61c6c871] {\n    color: white;\n    -webkit-transition: .4s all;\n    transition: .4s all;\n    margin: 0px auto;\n}\n.fab-main[data-v-61c6c871], .fab-list li[data-v-61c6c871]{\n    opacity: 0.6;\n}\n.fab-main[data-v-61c6c871]:hover, .fab-list li[data-v-61c6c871]:hover {\n    opacity: 1;\n}\n.fab-main .material-icons.main[data-v-61c6c871] {\n    opacity: 1;\n    position: absolute;\n}\n.fab-main .material-icons.close[data-v-61c6c871] {\n    opacity: 0;\n    position: absolute;\n}\n.fab-main .material-icons.main.rotate[data-v-61c6c871] { /* IE 9 */\n    -webkit-transform: rotate(315deg); /* Chrome, Safari, Opera */\n    transform: rotate(315deg);\n    opacity: 0;\n    -webkit-transition: opacity .3s ease-in, -webkit-transform .4s; /* Safari */\n    transition: opacity .3s ease-in, -webkit-transform .4s;\n    transition: opacity .3s ease-in, transform .4s;\n    transition: opacity .3s ease-in, transform .4s, -webkit-transform .4s;\n}\n.fab-main .material-icons.close.rotate[data-v-61c6c871] { /* IE 9 */\n    -webkit-transform: rotate(315deg); /* Chrome, Safari, Opera */\n    transform: rotate(315deg);\n    opacity: 1;\n    -webkit-transition: opacity .3s ease-in, -webkit-transform .4s; /* Safari */\n    transition: opacity .3s ease-in, -webkit-transform .4s;\n    transition: opacity .3s ease-in, transform .4s;\n    transition: opacity .3s ease-in, transform .4s, -webkit-transform .4s;\n}\n.fab-list[data-v-61c6c871] {\n    position: relative;\n    z-index: 1;\n    margin: 2vh 0;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n.fab-list li[data-v-61c6c871] {\n    /*width: 50px;*/\n    /*height: 50px;*/\n    padding: 10px;\n    margin-top: 2vh;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    border-radius: 100px;\n    -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.20), 0 4px 4px rgba(0, 0, 0, 0.15);\n            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.20), 0 4px 4px rgba(0, 0, 0, 0.15);\n}\n.fab-list li .material-icons[data-v-61c6c871] {\n    color: white;\n    margin: 0px auto;\n}\n.pointer[data-v-61c6c871] {\n    cursor: pointer;\n}\nul[data-v-61c6c871] {\n    list-style-type: none;\n    padding: 0 !important;\n}\n.fab-wrapper .actions-container[data-v-61c6c871] {\n    overflow: hidden;\n    z-index: 0;\n    position: relative;\n}\n\n/* Rules for sizing the icon. */\n.material-icons.md-18[data-v-61c6c871] {\n    font-size: 18px;\n}\n.material-icons.md-24[data-v-61c6c871] {\n    font-size: 24px;\n}\n.material-icons.md-36[data-v-61c6c871] {\n    font-size: 36px;\n}\n.material-icons.md-48[data-v-61c6c871] {\n    font-size: 48px;\n}\n\n/* Rules for using icons as black on a light background. */\n.material-icons.md-dark[data-v-61c6c871] {\n    color: rgba(0, 0, 0, 0.54);\n}\n.material-icons.md-dark.md-inactive[data-v-61c6c871] {\n    color: rgba(0, 0, 0, 0.26);\n}\n\n/* Rules for using icons as white on a dark background. */\n.material-icons.md-light[data-v-61c6c871] {\n    color: rgba(255, 255, 255, 1);\n}\n.material-icons.md-light.md-inactive[data-v-61c6c871] {\n    color: rgba(255, 255, 255, 0.3);\n}\n@media screen and (max-width: 768px) {\n.fab-list[data-v-61c6c871] {\n        margin: 2vh 0;\n}\n.fab-list li[data-v-61c6c871] {\n        /*width: 40px;*/\n        /*height: 40px;*/\n        /*padding: .6rem;*/\n}\n.fab-list li i[data-v-61c6c871] {\n        /*font-size: 24px !important;*/\n}\n.fab-main[data-v-61c6c871] {\n        /*width: 55px;*/\n        /*height: 55px;*/\n        /*padding: 1.5rem;*/\n}\n.fab-main i[data-v-61c6c871] {\n        /*font-size: 34px !important;*/\n}\n}\n", ""]);
 
 // exports
 
@@ -44239,4 +44604,4 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.aaa6e4e047ffc3d8e0b6.js.map
+//# sourceMappingURL=app.1723cccbe540319143d5.js.map
