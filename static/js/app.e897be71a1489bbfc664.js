@@ -1919,7 +1919,7 @@ var render = function() {
                       _c(
                         "i",
                         {
-                          staticClass: "md-24 material-icons main",
+                          staticClass: "md-24 material-icons main nextInLine",
                           staticStyle: { "font-size": "14px" }
                         },
                         [
@@ -1971,7 +1971,7 @@ var render = function() {
                       _c(
                         "i",
                         {
-                          staticClass: "md-18 material-icons",
+                          staticClass: "md-18 material-icons nextInLine",
                           staticStyle: { "font-size": "14px" }
                         },
                         [
@@ -2022,7 +2022,7 @@ var render = function() {
                       _c(
                         "i",
                         {
-                          staticClass: "md-18 material-icons",
+                          staticClass: "md-18 material-icons nextInLine",
                           staticStyle: { "font-size": "14px" }
                         },
                         [
@@ -2073,7 +2073,7 @@ var render = function() {
                       _c(
                         "i",
                         {
-                          staticClass: "md-18 material-icons",
+                          staticClass: "md-18 material-icons nextInLine",
                           staticStyle: { "font-size": "14px" }
                         },
                         [
@@ -2124,7 +2124,7 @@ var render = function() {
                       _c(
                         "i",
                         {
-                          staticClass: "md-18 material-icons",
+                          staticClass: "md-18 material-icons nextInLine",
                           staticStyle: { "font-size": "14px" }
                         },
                         [
@@ -27978,7 +27978,7 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n /*@font-face{font-family:Material;src:url(/Material-Icons.woff2) format(\"woff2\");font-weight:400}*/\n.fabulouso {\n    padding: 10px !important;\n    top: -9px;\n}\n.fabuloso i {\n  height: 14px;\n  width: 14px;\n}\n.material-icons {\n  /*font-family: Material;*/\n  font-weight: normal;\n  font-style: normal;\n  font-size: 24px;\n  line-height: 1;\n  letter-spacing: normal;\n  text-transform: none;\n  display: inline-block;\n  white-space: nowrap;\n  word-wrap: normal;\n  direction: ltr;\n  -moz-font-feature-settings: 'liga';\n  -moz-osx-font-smoothing: grayscale;\n}\n.noselect {\n  -webkit-touch-callout: none; /* iOS Safari */\n    -webkit-user-select: none; /* Safari */ /* Konqueror HTML */\n       -moz-user-select: none; /* Firefox */\n        -ms-user-select: none; /* Internet Explorer/Edge */\n            user-select: none; /* Non-prefixed version, currently\n                                  supported by Chrome and Opera */\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n /*@font-face{font-family:Material;src:url(/Material-Icons.woff2) format(\"woff2\");font-weight:400}*/\n.fabulouso {\n    padding: 10px !important;\n    top: -9px;\n}\n.nextInLine {\n  height: 14px;\n  width: 14px;\n}\n.material-icons {\n  /*font-family: Material;*/\n  font-weight: normal;\n  font-style: normal;\n  font-size: 24px;\n  line-height: 1;\n  letter-spacing: normal;\n  text-transform: none;\n  display: inline-block;\n  white-space: nowrap;\n  word-wrap: normal;\n  direction: ltr;\n  -moz-font-feature-settings: 'liga';\n  -moz-osx-font-smoothing: grayscale;\n}\n.noselect {\n  -webkit-touch-callout: none; /* iOS Safari */\n    -webkit-user-select: none; /* Safari */ /* Konqueror HTML */\n       -moz-user-select: none; /* Firefox */\n        -ms-user-select: none; /* Internet Explorer/Edge */\n            user-select: none; /* Non-prefixed version, currently\n                                  supported by Chrome and Opera */\n}\n", ""]);
 
 // exports
 
@@ -44575,4 +44575,4 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.a62c9a45a41afa74ac3e.js.map
+//# sourceMappingURL=app.e897be71a1489bbfc664.js.map
