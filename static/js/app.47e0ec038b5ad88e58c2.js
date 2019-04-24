@@ -1914,7 +1914,6 @@ var render = function() {
                         padding: "20px !important"
                       },
                       attrs: {
-                        "data-v-da8e8336": "",
                         title:
                           "This what the floating action button (fab) looks like. Click on the fab to see the following items: Reset All, Download Raw Data, Demo the page, View current filters. Try clicking on it on the interactive pages to see it in action."
                       }
@@ -1924,8 +1923,7 @@ var render = function() {
                         "i",
                         {
                           staticClass: "md-24 material-icons main",
-                          staticStyle: { "font-size": "0px" },
-                          attrs: { "data-v-da8e8336": "" }
+                          staticStyle: { "font-size": "0px" }
                         },
                         [
                           _c(
@@ -1934,7 +1932,6 @@ var render = function() {
                               staticClass:
                                 "svg-inline--fa fa-plus fa-w-14 fa-sm",
                               attrs: {
-                                "data-v-da8e8336": "",
                                 "aria-hidden": "true",
                                 "data-prefix": "fas",
                                 "data-icon": "plus",
@@ -1946,7 +1943,6 @@ var render = function() {
                             [
                               _c("path", {
                                 attrs: {
-                                  "data-v-da8e8336": "",
                                   fill: "currentColor",
                                   d:
                                     "M448 294.2v-76.4c0-13.3-10.7-24-24-24H286.2V56c0-13.3-10.7-24-24-24h-76.4c-13.3 0-24 10.7-24 24v137.8H24c-13.3 0-24 10.7-24 24v76.4c0 13.3 10.7 24 24 24h137.8V456c0 13.3 10.7 24 24 24h76.4c13.3 0 24-10.7 24-24V318.2H424c13.3 0 24-10.7 24-24z"
@@ -1970,7 +1966,6 @@ var render = function() {
                       staticClass: "fab-main pointer fabulouso",
                       staticStyle: { "background-color": "rgb(255, 53, 71)" },
                       attrs: {
-                        "data-v-da8e8336": "",
                         title:
                           "This is the Reset All button. The Reset All Button resets all chart selections to a default state. Try it out on the interactive pages after you have applied filters to see it in action."
                       }
@@ -1980,8 +1975,7 @@ var render = function() {
                         "i",
                         {
                           staticClass: "md-18 material-icons",
-                          staticStyle: { "font-size": "14px" },
-                          attrs: { "data-v-da8e8336": "" }
+                          staticStyle: { "font-size": "14px" }
                         },
                         [
                           _c(
@@ -1989,7 +1983,6 @@ var render = function() {
                             {
                               staticClass: "svg-inline--fa fa-redo-alt fa-w-16",
                               attrs: {
-                                "data-v-da8e8336": "",
                                 "aria-hidden": "true",
                                 "data-prefix": "fas",
                                 "data-icon": "redo-alt",
@@ -2001,7 +1994,6 @@ var render = function() {
                             [
                               _c("path", {
                                 attrs: {
-                                  "data-v-da8e8336": "",
                                   fill: "currentColor",
                                   d:
                                     "M256.455 8c66.269.119 126.437 26.233 170.859 68.685l35.715-35.715C478.149 25.851 504 36.559 504 57.941V192c0 13.255-10.745 24-24 24H345.941c-21.382 0-32.09-25.851-16.971-40.971l41.75-41.75c-30.864-28.899-70.801-44.907-113.23-45.273-92.398-.798-170.283 73.977-169.484 169.442C88.764 348.009 162.184 424 256 424c41.127 0 79.997-14.678 110.629-41.556 4.743-4.161 11.906-3.908 16.368.553l39.662 39.662c4.872 4.872 4.631 12.815-.482 17.433C378.202 479.813 319.926 504 256 504 119.034 504 8.001 392.967 8 256.002 7.999 119.193 119.646 7.755 256.455 8z"
@@ -2025,7 +2017,6 @@ var render = function() {
                       staticClass: "fab-main pointer fabulouso",
                       staticStyle: { "background-color": "rgb(47, 150, 180)" },
                       attrs: {
-                        "data-v-da8e8336": "",
                         title:
                           "This is the Download Raw Data button. It allows you to save a file with the raw data we use to build the charts on this page. Try it out on the interactive pages to see it in action."
                       }
@@ -2035,8 +2026,7 @@ var render = function() {
                         "i",
                         {
                           staticClass: "md-18 material-icons",
-                          staticStyle: { "font-size": "14px" },
-                          attrs: { "data-v-da8e8336": "" }
+                          staticStyle: { "font-size": "14px" }
                         },
                         [
                           _c(
@@ -2044,7 +2034,6 @@ var render = function() {
                             {
                               staticClass: "svg-inline--fa fa-download fa-w-16",
                               attrs: {
-                                "data-v-da8e8336": "",
                                 "aria-hidden": "true",
                                 "data-prefix": "fas",
                                 "data-icon": "download",
@@ -2056,7 +2045,6 @@ var render = function() {
                             [
                               _c("path", {
                                 attrs: {
-                                  "data-v-da8e8336": "",
                                   fill: "currentColor",
                                   d:
                                     "M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"
@@ -2080,7 +2068,6 @@ var render = function() {
                       staticClass: "fab-main pointer fabulouso",
                       staticStyle: { "background-color": "rgb(47, 150, 180)" },
                       attrs: {
-                        "data-v-da8e8336": "",
                         title:
                           "This is the Demo button. It allows you to observe important aspects on the particular page. Try it out on the interactive pages if you don't know where to start."
                       }
@@ -2090,8 +2077,7 @@ var render = function() {
                         "i",
                         {
                           staticClass: "md-18 material-icons",
-                          staticStyle: { "font-size": "14px" },
-                          attrs: { "data-v-da8e8336": "" }
+                          staticStyle: { "font-size": "14px" }
                         },
                         [
                           _c(
@@ -2099,7 +2085,6 @@ var render = function() {
                             {
                               staticClass: "svg-inline--fa fa-eye fa-w-18",
                               attrs: {
-                                "data-v-da8e8336": "",
                                 "aria-hidden": "true",
                                 "data-prefix": "fas",
                                 "data-icon": "eye",
@@ -2111,7 +2096,6 @@ var render = function() {
                             [
                               _c("path", {
                                 attrs: {
-                                  "data-v-da8e8336": "",
                                   fill: "currentColor",
                                   d:
                                     "M569.354 231.631C512.969 135.949 407.81 72 288 72 168.14 72 63.004 135.994 6.646 231.631a47.999 47.999 0 0 0 0 48.739C63.031 376.051 168.19 440 288 440c119.86 0 224.996-63.994 281.354-159.631a47.997 47.997 0 0 0 0-48.738zM288 392c-75.162 0-136-60.827-136-136 0-75.162 60.826-136 136-136 75.162 0 136 60.826 136 136 0 75.162-60.826 136-136 136zm104-136c0 57.438-46.562 104-104 104s-104-46.562-104-104c0-17.708 4.431-34.379 12.236-48.973l-.001.032c0 23.651 19.173 42.823 42.824 42.823s42.824-19.173 42.824-42.823c0-23.651-19.173-42.824-42.824-42.824l-.032.001C253.621 156.431 270.292 152 288 152c57.438 0 104 46.562 104 104z"
@@ -2135,7 +2119,6 @@ var render = function() {
                       staticClass: "fab-main pointer fabulouso",
                       staticStyle: { "background-color": "rgb(47, 150, 180)" },
                       attrs: {
-                        "data-v-da8e8336": "",
                         title:
                           "This is the View current Filters button. It allows you to quickly see all applied filters on the respective page. Try it out on the interactive pages to see what filters are being applied to the dataset."
                       }
@@ -2145,8 +2128,7 @@ var render = function() {
                         "i",
                         {
                           staticClass: "md-18 material-icons",
-                          staticStyle: { "font-size": "14px" },
-                          attrs: { "data-v-da8e8336": "" }
+                          staticStyle: { "font-size": "14px" }
                         },
                         [
                           _c(
@@ -2155,7 +2137,6 @@ var render = function() {
                               staticClass:
                                 "svg-inline--fa fa-search-filters fa-w-16",
                               attrs: {
-                                "data-v-da8e8336": "",
                                 "aria-hidden": "true",
                                 "data-prefix": "fas",
                                 "data-icon": "search-filters",
@@ -2167,7 +2148,6 @@ var render = function() {
                             [
                               _c("path", {
                                 attrs: {
-                                  "data-v-da8e8336": "",
                                   fill: "currentColor",
                                   d:
                                     "M304 142 H112 C110 142 106 143 110 148 L170 202 V282 c0 7 3 15 10 19 l54 25 C235 325 253 324 250 307 V202 l54-54 C305 148 308 143 304 142zm170 365.7L476.7 505c-9.4 9.4-24.6 9.4-33.9 0L343 405.3c-4.5-4.5-7-10.6-7-17V372c-35.3 27.6-79.7 44-128 44C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208c0 48.3-6.4 92.7-44 128h16.3c6.4 0 12.5 2.5 17 7l99.7 99.7c9.3 9.4 9.3 24.6 0 34zM344 208c0-75.2-60.8-136-136-136S72 132.8 72 208s60.8 136 136 136 136-60.8 136-136z"
@@ -44599,4 +44579,4 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.cfde1eb89c1bcb825b2a.js.map
+//# sourceMappingURL=app.47e0ec038b5ad88e58c2.js.map
