@@ -1890,12 +1890,6 @@ var render = function() {
                 _vm._v("New PERS-STAT Items\n                        "),
                 _c("br"),
                 _vm._v(" "),
-                _c("h6", { staticClass: "row ml-3" }, [
-                  _vm._v(
-                    "New items have been added to the PERS-STAT website.  "
-                  )
-                ]),
-                _vm._v(" "),
                 _c("hr"),
                 _vm._v(" "),
                 _c("h6", { staticClass: "row ml-3" }, [
@@ -1906,11 +1900,11 @@ var render = function() {
                 _vm._v(" "),
                 _c("h6", { staticClass: "row ml-3" }, [
                   _vm._v(
-                    "A floating ation button (fab) has been added to pages with interactive charts."
+                    "The following buttons have been added to pages with interactive charts:"
                   )
                 ]),
                 _vm._v(" "),
-                _c("h6", { staticClass: "row ml-3" }, [
+                _c("h6", { staticClass: "row ml-5" }, [
                   _c(
                     "span",
                     {
@@ -1922,7 +1916,7 @@ var render = function() {
                       attrs: {
                         "data-v-da8e8336": "",
                         title:
-                          "This what the fab looks like. Try clicking on it on the interactive pages to see what it does."
+                          "This what the floating action button (fab) looks like. Click on the fab to see the following items: Reset All, Download Raw Data, Demo the page, View current filters. Try clicking on it on the interactive pages to see it in action."
                       }
                     },
                     [
@@ -1930,11 +1924,7 @@ var render = function() {
                         "i",
                         {
                           staticClass: "md-24 material-icons main",
-                          staticStyle: {
-                            "font-size": "0px",
-                            height: "14px !important",
-                            width: "14px !important"
-                          },
+                          staticStyle: { "font-size": "0px" },
                           attrs: { "data-v-da8e8336": "" }
                         },
                         [
@@ -1968,14 +1958,12 @@ var render = function() {
                       )
                     ]
                   ),
-                  _c("span", [
-                    _vm._v(
-                      ' Click on the fab button to see the following items: Reset All, Download Raw Data, Demo the page, View current filters."'
-                    )
+                  _c("span", { staticClass: "d-none d-sm-block" }, [
+                    _vm._v(" The floating action button (fab)")
                   ])
                 ]),
                 _vm._v(" "),
-                _c("h6", { staticClass: "row ml-3" }, [
+                _c("h6", { staticClass: "row ml-5" }, [
                   _c(
                     "span",
                     {
@@ -1984,7 +1972,7 @@ var render = function() {
                       attrs: {
                         "data-v-da8e8336": "",
                         title:
-                          "This is the Reset All button, try it out on the interactive pages after you have applied filters to see what it does."
+                          "This is the Reset All button. The Reset All Button resets all chart selections to a default state. Try it out on the interactive pages after you have applied filters to see it in action."
                       }
                     },
                     [
@@ -1992,11 +1980,7 @@ var render = function() {
                         "i",
                         {
                           staticClass: "md-18 material-icons",
-                          staticStyle: {
-                            "font-size": "14px",
-                            height: "14px !important",
-                            width: "14px !important"
-                          },
+                          staticStyle: { "font-size": "14px" },
                           attrs: { "data-v-da8e8336": "" }
                         },
                         [
@@ -2029,12 +2013,12 @@ var render = function() {
                       )
                     ]
                   ),
-                  _vm._v(
-                    ' The "Reset All" Button resets all chart selections to a default state.'
-                  )
+                  _c("span", { staticClass: "d-none d-sm-block" }, [
+                    _vm._v(" Reset All")
+                  ])
                 ]),
                 _vm._v(" "),
-                _c("h6", { staticClass: "row ml-3" }, [
+                _c("h6", { staticClass: "row ml-5" }, [
                   _c(
                     "span",
                     {
@@ -2043,7 +2027,7 @@ var render = function() {
                       attrs: {
                         "data-v-da8e8336": "",
                         title:
-                          "This is the Download Raw Data button, try it out on the interactive pages to see what it does."
+                          "This is the Download Raw Data button. It allows you to save a file with the raw data we use to build the charts on this page. Try it out on the interactive pages to see it in action."
                       }
                     },
                     [
@@ -2051,11 +2035,7 @@ var render = function() {
                         "i",
                         {
                           staticClass: "md-18 material-icons",
-                          staticStyle: {
-                            "font-size": "14px",
-                            height: "14px !important",
-                            width: "14px !important"
-                          },
+                          staticStyle: { "font-size": "14px" },
                           attrs: { "data-v-da8e8336": "" }
                         },
                         [
@@ -2088,12 +2068,12 @@ var render = function() {
                       )
                     ]
                   ),
-                  _vm._v(
-                    ' \n                        The "Download Raw Data" Button allows you to save a file with the raw data we use to build the charts on this page.'
-                  )
+                  _c("span", { staticClass: "d-none d-sm-block" }, [
+                    _vm._v(" \n                        Download Raw Data")
+                  ])
                 ]),
                 _vm._v(" "),
-                _c("h6", { staticClass: "row ml-3" }, [
+                _c("h6", { staticClass: "row ml-5" }, [
                   _c(
                     "span",
                     {
@@ -2102,7 +2082,7 @@ var render = function() {
                       attrs: {
                         "data-v-da8e8336": "",
                         title:
-                          "This is the Demo button, try it out on the interactive pages if you don't know where to start."
+                          "This is the Demo button. It allows you to observe important aspects on the particular page. Try it out on the interactive pages if you don't know where to start."
                       }
                     },
                     [
@@ -2110,11 +2090,7 @@ var render = function() {
                         "i",
                         {
                           staticClass: "md-18 material-icons",
-                          staticStyle: {
-                            "font-size": "14px",
-                            height: "14px !important",
-                            width: "14px !important"
-                          },
+                          staticStyle: { "font-size": "14px" },
                           attrs: { "data-v-da8e8336": "" }
                         },
                         [
@@ -2147,12 +2123,12 @@ var render = function() {
                       )
                     ]
                   ),
-                  _vm._v(
-                    ' The "Demo" Button allows you to observe important aspects on the particular page.'
-                  )
+                  _c("span", { staticClass: "d-none d-sm-block" }, [
+                    _vm._v(" Demo")
+                  ])
                 ]),
                 _vm._v(" "),
-                _c("h6", { staticClass: "row ml-3" }, [
+                _c("h6", { staticClass: "row ml-5" }, [
                   _c(
                     "span",
                     {
@@ -2161,7 +2137,7 @@ var render = function() {
                       attrs: {
                         "data-v-da8e8336": "",
                         title:
-                          "This is the View current Filters button, try it out on the interactive pages to see what filters are being applied to the dataset."
+                          "This is the View current Filters button. It allows you to quickly see all applied filters on the respective page. Try it out on the interactive pages to see what filters are being applied to the dataset."
                       }
                     },
                     [
@@ -2169,11 +2145,7 @@ var render = function() {
                         "i",
                         {
                           staticClass: "md-18 material-icons",
-                          staticStyle: {
-                            "font-size": "14px",
-                            height: "14px !important",
-                            width: "14px !important"
-                          },
+                          staticStyle: { "font-size": "14px" },
                           attrs: { "data-v-da8e8336": "" }
                         },
                         [
@@ -2207,9 +2179,9 @@ var render = function() {
                       )
                     ]
                   ),
-                  _vm._v(
-                    ' The "View current Filters" Button allows you to quickly see all applied filters on the respective page.'
-                  )
+                  _c("span", { staticClass: "d-none d-sm-block" }, [
+                    _vm._v(" View current Filters")
+                  ])
                 ])
               ])
             ])
@@ -25645,6 +25617,8 @@ module.exports = __webpack_require__.p + "static/img/education.87a7250.jpg";
 //
 //
 //
+//
+//
 
 
 
@@ -28028,7 +28002,7 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n /*@font-face{font-family:Material;src:url(/Material-Icons.woff2) format(\"woff2\");font-weight:400}*/\n.fabulouso {\n    padding: 10px !important;\n    top: -9px;\n}\n.material-icons {\n  /*font-family: Material;*/\n  font-weight: normal;\n  font-style: normal;\n  font-size: 24px;\n  line-height: 1;\n  letter-spacing: normal;\n  text-transform: none;\n  display: inline-block;\n  white-space: nowrap;\n  word-wrap: normal;\n  direction: ltr;\n  -moz-font-feature-settings: 'liga';\n  -moz-osx-font-smoothing: grayscale;\n}\n.noselect {\n  -webkit-touch-callout: none; /* iOS Safari */\n    -webkit-user-select: none; /* Safari */ /* Konqueror HTML */\n       -moz-user-select: none; /* Firefox */\n        -ms-user-select: none; /* Internet Explorer/Edge */\n            user-select: none; /* Non-prefixed version, currently\n                                  supported by Chrome and Opera */\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n /*@font-face{font-family:Material;src:url(/Material-Icons.woff2) format(\"woff2\");font-weight:400}*/\n.fabulouso {\n    padding: 10px !important;\n    top: -9px;\n}\n.material-icons {\n  /*font-family: Material;*/\n  font-weight: normal;\n  font-style: normal;\n  font-size: 24px;\n  line-height: 1;\n  letter-spacing: normal;\n  text-transform: none;\n  display: inline-block;\n  white-space: nowrap;\n  word-wrap: normal;\n  direction: ltr;\n  -moz-font-feature-settings: 'liga';\n  -moz-osx-font-smoothing: grayscale;\n}\n.noselect {\n  -webkit-touch-callout: none; /* iOS Safari */\n    -webkit-user-select: none; /* Safari */ /* Konqueror HTML */\n       -moz-user-select: none; /* Firefox */\n        -ms-user-select: none; /* Internet Explorer/Edge */\n            user-select: none; /* Non-prefixed version, currently\n                                  supported by Chrome and Opera */\n}\n", ""]);
 
 // exports
 
@@ -44625,4 +44599,4 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.6c3bc8e8531fe9e8d79f.js.map
+//# sourceMappingURL=app.e6b0c4e39a7450fa50ba.js.map
