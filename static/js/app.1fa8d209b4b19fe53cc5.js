@@ -2110,58 +2110,6 @@ var render = function() {
                   _c("span", { staticClass: "d-none d-sm-block" }, [
                     _vm._v(" Demo")
                   ])
-                ]),
-                _vm._v(" "),
-                _c("h6", { staticClass: "row ml-5" }, [
-                  _c(
-                    "span",
-                    {
-                      staticClass: "fab-main pointer fabulouso",
-                      staticStyle: { "background-color": "rgb(47, 150, 180)" },
-                      attrs: {
-                        title:
-                          "This is the View current Filters button. It allows you to quickly see all applied filters on the respective page. Try it out on the interactive pages to see what filters are being applied to the dataset."
-                      }
-                    },
-                    [
-                      _c(
-                        "i",
-                        {
-                          staticClass: "md-18 material-icons",
-                          staticStyle: { "font-size": "14px" }
-                        },
-                        [
-                          _c(
-                            "svg",
-                            {
-                              staticClass:
-                                "svg-inline--fa fa-search-filters fa-w-16",
-                              attrs: {
-                                "aria-hidden": "true",
-                                "data-prefix": "fas",
-                                "data-icon": "search-filters",
-                                role: "img",
-                                xmlns: "http://www.w3.org/2000/svg",
-                                viewBox: "0 0 512 512"
-                              }
-                            },
-                            [
-                              _c("path", {
-                                attrs: {
-                                  fill: "currentColor",
-                                  d:
-                                    "M304 142 H112 C110 142 106 143 110 148 L170 202 V282 c0 7 3 15 10 19 l54 25 C235 325 253 324 250 307 V202 l54-54 C305 148 308 143 304 142zm170 365.7L476.7 505c-9.4 9.4-24.6 9.4-33.9 0L343 405.3c-4.5-4.5-7-10.6-7-17V372c-35.3 27.6-79.7 44-128 44C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208c0 48.3-6.4 92.7-44 128h16.3c6.4 0 12.5 2.5 17 7l99.7 99.7c9.3 9.4 9.3 24.6 0 34zM344 208c0-75.2-60.8-136-136-136S72 132.8 72 208s60.8 136 136 136 136-60.8 136-136z"
-                                }
-                              })
-                            ]
-                          )
-                        ]
-                      )
-                    ]
-                  ),
-                  _c("span", { staticClass: "d-none d-sm-block" }, [
-                    _vm._v(" View current Filters")
-                  ])
                 ])
               ])
             ])
@@ -25598,7 +25546,6 @@ module.exports = __webpack_require__.p + "static/img/education.87a7250.jpg";
 //
 //
 //
-//
 
 
 
@@ -27982,7 +27929,7 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n /*@font-face{font-family:Material;src:url(/Material-Icons.woff2) format(\"woff2\");font-weight:400}*/\n.fabulouso {\n    padding: 10px !important;\n    top: -9px;\n}\n.material-icons {\n  /*font-family: Material;*/\n  height: 14px;\n  width: 14px;\n  font-weight: normal;\n  font-style: normal;\n  font-size: 24px;\n  line-height: 1;\n  letter-spacing: normal;\n  text-transform: none;\n  display: inline-block;\n  white-space: nowrap;\n  word-wrap: normal;\n  direction: ltr;\n  -moz-font-feature-settings: 'liga';\n  -moz-osx-font-smoothing: grayscale;\n}\n.noselect {\n  -webkit-touch-callout: none; /* iOS Safari */\n    -webkit-user-select: none; /* Safari */ /* Konqueror HTML */\n       -moz-user-select: none; /* Firefox */\n        -ms-user-select: none; /* Internet Explorer/Edge */\n            user-select: none; /* Non-prefixed version, currently\n                                  supported by Chrome and Opera */\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n /*@font-face{font-family:Material;src:url(/Material-Icons.woff2) format(\"woff2\");font-weight:400}*/\n.fabulouso {\n    padding: 10px !important;\n    top: -9px;\n}\n.material-icons {\n  /*font-family: Material;*/\n  height: 14px;\n  width: 14px;\n  font-weight: normal;\n  font-style: normal;\n  font-size: 24px;\n  line-height: 1;\n  letter-spacing: normal;\n  text-transform: none;\n  display: inline-block;\n  white-space: nowrap;\n  word-wrap: normal;\n  direction: ltr;\n  -moz-font-feature-settings: 'liga';\n  -moz-osx-font-smoothing: grayscale;\n}\n.noselect {\n  -webkit-touch-callout: none; /* iOS Safari */\n    -webkit-user-select: none; /* Safari */ /* Konqueror HTML */\n       -moz-user-select: none; /* Firefox */\n        -ms-user-select: none; /* Internet Explorer/Edge */\n            user-select: none; /* Non-prefixed version, currently\n                                  supported by Chrome and Opera */\n}\n", ""]);
 
 // exports
 
@@ -44579,4 +44526,4 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.47e0ec038b5ad88e58c2.js.map
+//# sourceMappingURL=app.1fa8d209b4b19fe53cc5.js.map
