@@ -7318,7 +7318,7 @@ var render = function() {
                           ]
                         ),
                         _vm._v(" "),
-                        _c("span", { staticClass: "h3 ml-2" }, [
+                        _c("span", { staticClass: "ml-2" }, [
                           _c(
                             "span",
                             {
@@ -7330,8 +7330,8 @@ var render = function() {
                             },
                             [
                               _c("FontAwesomeIcon", {
-                                staticStyle: { "vertical-align": "3px" },
-                                attrs: { icon: "info-circle", size: "xs" }
+                                staticStyle: { "vertical-align": "-3px" },
+                                attrs: { icon: "info-circle", size: "lg" }
                               })
                             ],
                             1
@@ -16033,7 +16033,7 @@ var render = function() {
                           ]
                         ),
                         _vm._v(" "),
-                        _c("span", { staticClass: "h3 ml-2" }, [
+                        _c("span", { staticClass: "ml-2" }, [
                           _c(
                             "span",
                             {
@@ -16045,8 +16045,8 @@ var render = function() {
                             },
                             [
                               _c("FontAwesomeIcon", {
-                                staticStyle: { "vertical-align": "3px" },
-                                attrs: { icon: "info-circle", size: "xs" }
+                                staticStyle: { "vertical-align": "-3px" },
+                                attrs: { icon: "info-circle", size: "lg" }
                               })
                             ],
                             1
@@ -44562,4 +44562,4 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.0be371c603ac04b9389b.js.map
+//# sourceMappingURL=app.fd5f599f865fd85e5ede.js.map
