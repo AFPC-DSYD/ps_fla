@@ -33710,7 +33710,7 @@ var render = function() {
             _vm._v(" "),
             _c("multiselect", {
               attrs: {
-                options: _vm.overviewNormalChart,
+                options: _vm.filterArray,
                 multiple: true,
                 "close-on-select": false,
                 "clear-on-select": false,
@@ -33738,11 +33738,11 @@ var render = function() {
                 }
               ]),
               model: {
-                value: _vm.id,
+                value: _vm.id.selected,
                 callback: function($$v) {
-                  _vm.id = $$v
+                  _vm.$set(_vm.id, "selected", $$v)
                 },
-                expression: "id"
+                expression: "id.selected"
               }
             })
           ],
@@ -45399,4 +45399,4 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.94d8406133f72cff6a8b.js.map
+//# sourceMappingURL=app.39cb1cad07592242c4c3.js.map
