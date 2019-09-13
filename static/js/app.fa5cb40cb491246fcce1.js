@@ -33698,58 +33698,59 @@ var render = function() {
             }
           },
           [_vm._v("\n                    Reset Bottom\n                ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col-6" },
+          [
+            _c("label", { staticClass: "typo__label" }, [
+              _vm._v("Select " + _vm._s(_vm.title) + " dropdown")
+            ]),
+            _vm._v(" "),
+            _c("multiselect", {
+              attrs: {
+                options: _vm.keys,
+                multiple: true,
+                "close-on-select": false,
+                "clear-on-select": false,
+                "preserve-search": true,
+                placeholder: "Pick" + _vm.title + "s",
+                label: "name",
+                "track-by": "name",
+                "preselect-first": true
+              },
+              scopedSlots: _vm._u([
+                {
+                  key: "selection",
+                  fn: function(ref) {
+                    var values = ref.values
+                    var search = ref.search
+                    var isOpen = ref.isOpen
+                    return [
+                      values.length && !isOpen
+                        ? _c("span", { staticClass: "multiselect__single" }, [
+                            _vm._v(_vm._s(values.length) + " options selected")
+                          ])
+                        : _vm._e()
+                    ]
+                  }
+                }
+              ]),
+              model: {
+                value: _vm.keys,
+                callback: function($$v) {
+                  _vm.keys = $$v
+                },
+                expression: "keys"
+              }
+            })
+          ],
+          1
         )
       ]),
       _vm._v(" "),
-      _c(
-        "div",
-        [
-          _c("label", { staticClass: "typo__label" }, [
-            _vm._v("Select " + _vm._s(this.id) + " dropdown")
-          ]),
-          _vm._v(" "),
-          _c("multiselect", {
-            attrs: {
-              options: _vm.options,
-              multiple: true,
-              "close-on-select": false,
-              "clear-on-select": false,
-              "preserve-search": true,
-              placeholder: "Pick some",
-              label: "name",
-              "track-by": "name",
-              "preselect-first": true
-            },
-            scopedSlots: _vm._u([
-              {
-                key: "selection",
-                fn: function(ref) {
-                  var values = ref.values
-                  var search = ref.search
-                  var isOpen = ref.isOpen
-                  return [
-                    values.length && !isOpen
-                      ? _c("span", { staticClass: "multiselect__single" }, [
-                          _vm._v(_vm._s(values.length) + " options selected")
-                        ])
-                      : _vm._e()
-                  ]
-                }
-              }
-            ]),
-            model: {
-              value: _vm.filterArray,
-              callback: function($$v) {
-                _vm.filterArray = $$v
-              },
-              expression: "filterArray"
-            }
-          }),
-          _vm._v(" "),
-          _c("div", { attrs: { id: "dc-overview" + this.id + "-barchart" } })
-        ],
-        1
-      )
+      _c("div", { attrs: { id: "dc-overview" + this.id + "-barchart" } })
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "col-12", attrs: { id: _vm.id } }, [
@@ -41992,6 +41993,7 @@ if(false) {
 //
 //
 //
+//
 
 
 
@@ -45397,4 +45399,4 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.c3a857cc03bab1678d31.js.map
+//# sourceMappingURL=app.fa5cb40cb491246fcce1.js.map
