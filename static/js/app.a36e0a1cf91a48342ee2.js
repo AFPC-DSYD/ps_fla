@@ -33710,7 +33710,7 @@ var render = function() {
             _vm._v(" "),
             _c("multiselect", {
               attrs: {
-                options: _vm.options,
+                options: this.filterArray,
                 multiple: true,
                 "close-on-select": false,
                 "clear-on-select": false,
@@ -42435,7 +42435,6 @@ if(false) {
             this.overviewChart.filter(dc.filters.RangedFilter(0, this.numBars - 0.01));
             this.overviewChart.redraw();
             this.overviewNormalChart.redraw();
-            this.options = overviewNormalChart;
         }
 
     },
@@ -45400,4 +45399,4 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.085c1356d8c094f62f99.js.map
+//# sourceMappingURL=app.a36e0a1cf91a48342ee2.js.map
