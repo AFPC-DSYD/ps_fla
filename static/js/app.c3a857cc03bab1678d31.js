@@ -844,6 +844,7 @@ if (false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_toastr__ = __webpack_require__("vQJi");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_toastr__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_FAB__ = __webpack_require__("yfIS");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_multiOverBarChart__ = __webpack_require__("AZ36");
 //
 //
 //
@@ -977,6 +978,7 @@ if (false) {
 //
 //
 //
+
 
 
 
@@ -1160,7 +1162,8 @@ if (false) {
         'loader': __WEBPACK_IMPORTED_MODULE_5__components_Loader__["a" /* default */],
         FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_8__fortawesome_vue_fontawesome___default.a,
         overviewBarChart: __WEBPACK_IMPORTED_MODULE_7__components_overviewBarChart__["a" /* default */],
-        fab: __WEBPACK_IMPORTED_MODULE_10__components_FAB__["a" /* default */]
+        fab: __WEBPACK_IMPORTED_MODULE_10__components_FAB__["a" /* default */],
+        multiOverBarChart: __WEBPACK_IMPORTED_MODULE_11__components_multiOverBarChart__["a" /* default */]
     },
     created: function created() {
         console.log('created');
@@ -6241,6 +6244,62 @@ if(false) {
  // When the module is disposed, remove the <style> tags
  module.hot.dispose(function() { update(); });
 }
+
+/***/ }),
+
+/***/ "AZ36":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_multiOverBarChart_vue__ = __webpack_require__("ucHF");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_23cee654_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_multiOverBarChart_vue__ = __webpack_require__("k8ci");
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__("Xvjp")
+}
+var normalizeComponent = __webpack_require__("VU/8")
+/* script */
+
+/* template */
+
+/* template functional */
+  var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_multiOverBarChart_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_23cee654_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_multiOverBarChart_vue__["a" /* default */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "src/components/multiOverBarChart.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-23cee654", Component.options)
+  } else {
+    hotAPI.reload("data-v-23cee654", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
 
 /***/ }),
 
@@ -25010,6 +25069,33 @@ if (false) {(function () {
 
 /***/ }),
 
+/***/ "Xvjp":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("hlri");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("rjj0")("6b46e89e", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../css-loader/index.js?{\"minimize\":false,\"sourceMap\":false}!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-23cee654\",\"scoped\":false,\"hasInlineConfig\":false}!./vue-multiselect.min.css", function() {
+     var newContent = require("!!../../css-loader/index.js?{\"minimize\":false,\"sourceMap\":false}!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-23cee654\",\"scoped\":false,\"hasInlineConfig\":false}!./vue-multiselect.min.css");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
 /***/ "Y8IB":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -31028,7 +31114,7 @@ var render = function() {
                 )
               ]),
               _vm._v(" "),
-              _c("overviewBarChart", {
+              _c("multiOverBarChart", {
                 attrs: {
                   id: "majcom",
                   dimension: _vm.majcomDim,
@@ -32658,6 +32744,21 @@ exports.push([module.i, "\n.custom-control.custom-radio[data-v-151def3b]{\n    p
 
 /***/ }),
 
+/***/ "hlri":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("FZ+f")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\nfieldset[disabled] .multiselect{pointer-events:none\n}\n.multiselect__spinner{position:absolute;right:1px;top:1px;width:48px;height:35px;background:#fff;display:block\n}\n.multiselect__spinner:after,.multiselect__spinner:before{position:absolute;content:\"\";top:50%;left:50%;margin:-8px 0 0 -8px;width:16px;height:16px;border-radius:100%;border:2px solid transparent;border-top-color:#41b883;-webkit-box-shadow:0 0 0 1px transparent;box-shadow:0 0 0 1px transparent\n}\n.multiselect__spinner:before{-webkit-animation:spinning 2.4s cubic-bezier(.41,.26,.2,.62);animation:spinning 2.4s cubic-bezier(.41,.26,.2,.62);-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite\n}\n.multiselect__spinner:after{-webkit-animation:spinning 2.4s cubic-bezier(.51,.09,.21,.8);animation:spinning 2.4s cubic-bezier(.51,.09,.21,.8);-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite\n}\n.multiselect__loading-enter-active,.multiselect__loading-leave-active{-webkit-transition:opacity .4s ease-in-out;transition:opacity .4s ease-in-out;opacity:1\n}\n.multiselect__loading-enter,.multiselect__loading-leave-active{opacity:0\n}\n.multiselect,.multiselect__input,.multiselect__single{font-family:inherit;font-size:16px;-ms-touch-action:manipulation;touch-action:manipulation\n}\n.multiselect{-webkit-box-sizing:content-box;box-sizing:content-box;display:block;position:relative;width:100%;min-height:40px;text-align:left;color:#35495e\n}\n.multiselect *{-webkit-box-sizing:border-box;box-sizing:border-box\n}\n.multiselect:focus{outline:none\n}\n.multiselect--disabled{background:#ededed;pointer-events:none;opacity:.6\n}\n.multiselect--active{z-index:50\n}\n.multiselect--active:not(.multiselect--above) .multiselect__current,.multiselect--active:not(.multiselect--above) .multiselect__input,.multiselect--active:not(.multiselect--above) .multiselect__tags{border-bottom-left-radius:0;border-bottom-right-radius:0\n}\n.multiselect--active .multiselect__select{-webkit-transform:rotate(180deg);transform:rotate(180deg)\n}\n.multiselect--above.multiselect--active .multiselect__current,.multiselect--above.multiselect--active .multiselect__input,.multiselect--above.multiselect--active .multiselect__tags{border-top-left-radius:0;border-top-right-radius:0\n}\n.multiselect__input,.multiselect__single{position:relative;display:inline-block;min-height:20px;line-height:20px;border:none;border-radius:5px;background:#fff;padding:0 0 0 5px;width:100%;-webkit-transition:border .1s ease;transition:border .1s ease;-webkit-box-sizing:border-box;box-sizing:border-box;margin-bottom:8px;vertical-align:top\n}\n.multiselect__input:-ms-input-placeholder{color:#35495e\n}\n.multiselect__input::-webkit-input-placeholder{color:#35495e\n}\n.multiselect__input::-ms-input-placeholder{color:#35495e\n}\n.multiselect__input::placeholder{color:#35495e\n}\n.multiselect__tag~.multiselect__input,.multiselect__tag~.multiselect__single{width:auto\n}\n.multiselect__input:hover,.multiselect__single:hover{border-color:#cfcfcf\n}\n.multiselect__input:focus,.multiselect__single:focus{border-color:#a8a8a8;outline:none\n}\n.multiselect__single{padding-left:5px;margin-bottom:8px\n}\n.multiselect__tags-wrap{display:inline\n}\n.multiselect__tags{min-height:40px;display:block;padding:8px 40px 0 8px;border-radius:5px;border:1px solid #e8e8e8;background:#fff;font-size:14px\n}\n.multiselect__tag{position:relative;display:inline-block;padding:4px 26px 4px 10px;border-radius:5px;margin-right:10px;color:#fff;line-height:1;background:#41b883;margin-bottom:5px;white-space:nowrap;overflow:hidden;max-width:100%;text-overflow:ellipsis\n}\n.multiselect__tag-icon{cursor:pointer;margin-left:7px;position:absolute;right:0;top:0;bottom:0;font-weight:700;font-style:normal;width:22px;text-align:center;line-height:22px;-webkit-transition:all .2s ease;transition:all .2s ease;border-radius:5px\n}\n.multiselect__tag-icon:after{content:\"\\D7\";color:#266d4d;font-size:14px\n}\n.multiselect__tag-icon:focus,.multiselect__tag-icon:hover{background:#369a6e\n}\n.multiselect__tag-icon:focus:after,.multiselect__tag-icon:hover:after{color:#fff\n}\n.multiselect__current{min-height:40px;overflow:hidden;padding:8px 30px 0 12px;white-space:nowrap;border-radius:5px;border:1px solid #e8e8e8\n}\n.multiselect__current,.multiselect__select{line-height:16px;-webkit-box-sizing:border-box;box-sizing:border-box;display:block;margin:0;text-decoration:none;cursor:pointer\n}\n.multiselect__select{position:absolute;width:40px;height:38px;right:1px;top:1px;padding:4px 8px;text-align:center;-webkit-transition:-webkit-transform .2s ease;transition:-webkit-transform .2s ease;transition:transform .2s ease;transition:transform .2s ease, -webkit-transform .2s ease\n}\n.multiselect__select:before{position:relative;right:0;top:65%;color:#999;margin-top:4px;border-color:#999 transparent transparent;border-style:solid;border-width:5px 5px 0;content:\"\"\n}\n.multiselect__placeholder{color:#adadad;display:inline-block;margin-bottom:10px;padding-top:2px\n}\n.multiselect--active .multiselect__placeholder{display:none\n}\n.multiselect__content-wrapper{position:absolute;display:block;background:#fff;width:100%;max-height:240px;overflow:auto;border:1px solid #e8e8e8;border-top:none;border-bottom-left-radius:5px;border-bottom-right-radius:5px;z-index:50;-webkit-overflow-scrolling:touch\n}\n.multiselect__content{list-style:none;display:inline-block;padding:0;margin:0;min-width:100%;vertical-align:top\n}\n.multiselect--above .multiselect__content-wrapper{bottom:100%;border-bottom-left-radius:0;border-bottom-right-radius:0;border-top-left-radius:5px;border-top-right-radius:5px;border-bottom:none;border-top:1px solid #e8e8e8\n}\n.multiselect__content::webkit-scrollbar{display:none\n}\n.multiselect__element{display:block\n}\n.multiselect__option{display:block;padding:12px;min-height:40px;line-height:16px;text-decoration:none;text-transform:none;vertical-align:middle;position:relative;cursor:pointer;white-space:nowrap\n}\n.multiselect__option:after{top:0;right:0;position:absolute;line-height:40px;padding-right:12px;padding-left:20px;font-size:13px\n}\n.multiselect__option--highlight{background:#41b883;outline:none;color:#fff\n}\n.multiselect__option--highlight:after{content:attr(data-select);background:#41b883;color:#fff\n}\n.multiselect__option--selected{background:#f3f3f3;color:#35495e;font-weight:700\n}\n.multiselect__option--selected:after{content:attr(data-selected);color:silver\n}\n.multiselect__option--selected.multiselect__option--highlight{background:#ff6a6a;color:#fff\n}\n.multiselect__option--selected.multiselect__option--highlight:after{background:#ff6a6a;content:attr(data-deselect);color:#fff\n}\n.multiselect--disabled .multiselect__current,.multiselect--disabled .multiselect__select{background:#ededed;color:#a6a6a6\n}\n.multiselect__option--disabled{background:#ededed!important;color:#a6a6a6!important;cursor:text;pointer-events:none\n}\n.multiselect__option--group{background:#ededed;color:#35495e\n}\n.multiselect__option--group.multiselect__option--highlight{background:#35495e;color:#fff\n}\n.multiselect__option--group.multiselect__option--highlight:after{background:#35495e\n}\n.multiselect__option--disabled.multiselect__option--highlight{background:#dedede\n}\n.multiselect__option--group-selected.multiselect__option--highlight{background:#ff6a6a;color:#fff\n}\n.multiselect__option--group-selected.multiselect__option--highlight:after{background:#ff6a6a;content:attr(data-deselect);color:#fff\n}\n.multiselect-enter-active,.multiselect-leave-active{-webkit-transition:all .15s ease;transition:all .15s ease\n}\n.multiselect-enter,.multiselect-leave-active{opacity:0\n}\n.multiselect__strong{margin-bottom:8px;line-height:20px;display:inline-block;vertical-align:top\n}\n[dir=rtl] .multiselect{text-align:right\n}\n[dir=rtl] .multiselect__select{right:auto;left:1px\n}\n[dir=rtl] .multiselect__tags{padding:8px 8px 0 40px\n}\n[dir=rtl] .multiselect__content{text-align:right\n}\n[dir=rtl] .multiselect__option:after{right:auto;left:0\n}\n[dir=rtl] .multiselect__clear{right:auto;left:12px\n}\n[dir=rtl] .multiselect__spinner{right:auto;left:1px\n}\n@-webkit-keyframes spinning{\n0%{-webkit-transform:rotate(0);transform:rotate(0)\n}\nto{-webkit-transform:rotate(2turn);transform:rotate(2turn)\n}\n}\n@keyframes spinning{\n0%{-webkit-transform:rotate(0);transform:rotate(0)\n}\nto{-webkit-transform:rotate(2turn);transform:rotate(2turn)\n}\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "hqXP":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -33532,6 +33633,140 @@ if(false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "k8ci":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "col-12", attrs: { id: "overview" + _vm.id } }, [
+      _c("h3", { staticClass: "mb-0 pb-0" }, [
+        _vm._v(" " + _vm._s(_vm.title) + "\n                "),
+        _c("span", { staticStyle: { "font-size": "14pt", opacity: "0.87" } }, [
+          _vm._v(_vm._s(_vm.ylabel))
+        ]),
+        _vm._v(" "),
+        _c(
+          "span",
+          {
+            attrs: {
+              "data-toggle": "tooltip",
+              "data-placement": "right",
+              title:
+                "Use the brush on the top bar chart to filter the bottom bar chart. The bottom bar chart applies filters to other charts. Each chart has it's own reset."
+            }
+          },
+          [
+            _c("FontAwesomeIcon", {
+              attrs: { icon: "info-circle", size: "xs" }
+            })
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-danger btn-sm btn-rounded reset",
+            staticStyle: { visibility: "hidden" },
+            attrs: { type: "button", id: "btn-overview-" + _vm.id + "-reset" },
+            on: {
+              click: function($event) {
+                _vm.resetChart("dc-overview" + _vm.id + "-barchart")
+              }
+            }
+          },
+          [_vm._v("\n                    Reset Top\n                ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-danger btn-sm btn-rounded reset",
+            staticStyle: { visibility: "hidden" },
+            attrs: { type: "button", id: "btn-" + _vm.id + "-reset" },
+            on: {
+              click: function($event) {
+                _vm.resetChart("dc-" + _vm.id + "-barchart")
+              }
+            }
+          },
+          [_vm._v("\n                    Reset Bottom\n                ")]
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        [
+          _c("label", { staticClass: "typo__label" }, [
+            _vm._v("Select " + _vm._s(this.id) + " dropdown")
+          ]),
+          _vm._v(" "),
+          _c("multiselect", {
+            attrs: {
+              options: _vm.options,
+              multiple: true,
+              "close-on-select": false,
+              "clear-on-select": false,
+              "preserve-search": true,
+              placeholder: "Pick some",
+              label: "name",
+              "track-by": "name",
+              "preselect-first": true
+            },
+            scopedSlots: _vm._u([
+              {
+                key: "selection",
+                fn: function(ref) {
+                  var values = ref.values
+                  var search = ref.search
+                  var isOpen = ref.isOpen
+                  return [
+                    values.length && !isOpen
+                      ? _c("span", { staticClass: "multiselect__single" }, [
+                          _vm._v(_vm._s(values.length) + " options selected")
+                        ])
+                      : _vm._e()
+                  ]
+                }
+              }
+            ]),
+            model: {
+              value: _vm.filterArray,
+              callback: function($$v) {
+                _vm.filterArray = $$v
+              },
+              expression: "filterArray"
+            }
+          }),
+          _vm._v(" "),
+          _c("div", { attrs: { id: "dc-overview" + this.id + "-barchart" } })
+        ],
+        1
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "col-12", attrs: { id: _vm.id } }, [
+      _c("div", { attrs: { id: "dc-" + _vm.id + "-barchart" } })
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-23cee654", esExports)
+  }
+}
 
 /***/ }),
 
@@ -41643,6 +41878,606 @@ if(false) {
 
 /***/ }),
 
+/***/ "ucHF":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(d3, dc, _, $) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers__ = __webpack_require__("3VWa");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dchelpers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__dchelpers__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chartSpecs__ = __webpack_require__("K62J");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fortawesome_vue_fontawesome__ = __webpack_require__("U0v6");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fortawesome_vue_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__fortawesome_vue_fontawesome__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_multiselect__ = __webpack_require__("RUzx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_multiselect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vue_multiselect__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    data: function data() {
+        return {
+            filterArray: [],
+            chartSpecs: __WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */],
+            overviewChart: {},
+            overviewNormalChart: {},
+            rendered: false,
+            allSort: true,
+            keys: [],
+            options: []
+        };
+    },
+
+    props: {
+        id: {
+            type: String,
+            required: true
+        },
+        dimension: {
+            type: Object,
+            required: true
+        },
+        aspectRatio: {
+            type: Number,
+            required: true
+        },
+        minHeight: {
+            type: Number,
+            required: true
+        },
+        normalToOverviewFactor: {
+            type: Number,
+            required: false
+        },
+        selected: {
+            type: String,
+            required: false
+        },
+        ylabel: {
+            type: String,
+            required: false
+        },
+        reducerAdd: {
+            type: Function,
+            required: true
+        },
+        reducerRemove: {
+            type: Function,
+            required: true
+        },
+        accumulator: {
+            type: Function,
+            required: true
+        },
+        numBars: {
+            type: Number,
+            required: false, //if not supplied, defaults to 15
+            default: 15
+        },
+        margin: {
+            type: Object,
+            required: true
+        },
+        colorScale: {
+            type: Function,
+            required: true
+        },
+        colorFunction: {
+            type: Function,
+            required: false, //if not supplied, only uses first color in range
+            default: function _default(d, i) {
+                return i;
+            }
+        },
+        title: {
+            type: String,
+            required: true
+        },
+        loaded: {
+            type: Boolean,
+            required: true
+        },
+        sortBy: {
+            type: String,
+            required: false
+        },
+        orderBy: {
+            type: String,
+            required: false
+        }
+    },
+    computed: {
+        overviewGroup: function overviewGroup() {
+            return this.removeError(this.dimension.group().reduce(this.reducerAdd, this.reducerRemove, this.accumulator));
+        },
+        overviewConfig: function overviewConfig() {
+            return {
+                'id': 'overview' + this.id,
+                'dim': this.dimension,
+                'group': this.id_group(this.overviewGroup),
+                'minHeight': this.minHeight / (2 * this.normalToOverviewFactor),
+                'aspectRatio': this.aspectRatio * this.normalToOverviewFactor,
+                'margins': { top: this.margin.top, left: this.margin.left, right: this.margin.right, bottom: 10 },
+                'x': d3.scale.linear().domain([0, this.keys.length]),
+                'xUnits': this.keys.length,
+                'colors': this.colorScale
+            };
+        },
+        overviewNormalConfig: function overviewNormalConfig() {
+            return {
+                'id': this.id,
+                'dim': this.dimension,
+                'group': this.removeEmptyBinsAndNonBrush(this.overviewGroup),
+                'minHeight': this.minHeight,
+                'aspectRatio': this.aspectRatio,
+                'margins': { top: 10, left: this.margin.left, right: this.margin.right, bottom: this.margin.bottom },
+                'colors': this.colorScale
+            };
+        },
+        sortedBy: function sortedBy() {
+            return this.sortBy || 'value';
+        },
+        orderedBy: function orderedBy() {
+            return this.orderBy || 'desc';
+        }
+    },
+    methods: {
+        resetChart: function resetChart(id) {
+            dc.chartRegistry.list().filter(function (chart) {
+                return chart.anchorName() == id;
+            }).forEach(function (chart) {
+                chart.filterAll();
+            });
+            dc.redrawAll();
+        },
+        //remove empty function (es6 syntax to keep correct scope)
+        removeEmptyBins: function removeEmptyBins(source_group) {
+            var _this = this;
+
+            return {
+                all: function all() {
+                    return source_group.all().filter(function (d) {
+                        return (d.value[_this.selected] === undefined ? d.value : d.value[_this.selected]) != 0;
+                    });
+                }
+            };
+        },
+        //remove empty function (es6 syntax to keep correct scope)
+        removeError: function removeError(source_group) {
+            return {
+                all: function all() {
+                    return source_group.all().filter(function (d) {
+                        return d.key != "error" && d.key != "**ERROR**";
+                    });
+                }
+            };
+        },
+        removeNonBrush: function removeNonBrush(source_group) {
+            var _this2 = this;
+
+            return {
+                all: function all() {
+                    return source_group.all().filter(function (d) {
+                        return _.includes(_this2.filterArray, d.key);
+                    });
+                }
+            };
+        },
+        removeEmptyBinsAndNonBrush: function removeEmptyBinsAndNonBrush(source_group) {
+            var _this3 = this;
+
+            return {
+                all: function all() {
+                    return source_group.all().filter(function (d) {
+                        if (_this3.filterArray.length > 0) {
+                            return (d.value[_this3.selected] === undefined ? d.value : d.value[_this3.selected]) != 0 && _.includes(_this3.filterArray, d.key);
+                        } else {
+                            return (d.value[_this3.selected] === undefined ? d.value : d.value[_this3.selected]) != 0;
+                        }
+                    });
+                }
+            };
+        },
+        //group to return for overview chart (brush bar chart)
+        //note: brush bar chart needs a linear scale, and must return key 
+        //number in order to support linear scale
+        id_group: function id_group(group) {
+            return {
+                all: function all() {
+                    return group.all().map(function (kv, i) {
+                        return { key: i, value: kv.value };
+                    });
+                }
+            };
+        },
+        dataAll: function dataAll() {
+            var _this4 = this;
+
+            //allSort toggles between key and value sort 
+            if (this.allSort == true) {
+                //sortedBy is initial sort type (key or value), orderedBy is ascending or descending
+                if (this.sortedBy == "value") {
+                    if (this.orderedBy == 'desc') {
+                        //console.log("Quantity sort: allSort true, sortedBy value, orderedBy desc+")
+                        return this.overviewGroup.all().sort(function (a, b) {
+                            return (b.value[_this4.selected] === undefined ? b.value : b.value[_this4.selected]) - (a.value[_this4.selected] === undefined ? a.value : a.value[_this4.selected]);
+                        });
+                    } else {}
+                    //console.log("allSort true, sortedBy value, orderedBy asc")
+                    //return this.overviewGroup.all().sort((a,b) => (a.value[this.selected] === undefined ? a.value : a.value[this.selected]) - (b.value[this.selected] === undefined ? b.value : b.value[this.selected]));
+
+                    //return this.sortValue(this.orderedBy);
+                } else {
+                    if (this.orderedBy == 'desc') {
+                        //console.log("allSort true, sortedBy key, orderedBy desc")                    
+                        //return this.overviewGroup.all().sort((a,b) => b.key.localeCompare(a.key));
+                    } else {}
+                        //console.log("allSort true, sortedBy key, orderedBy asc")
+                        //return this.overviewGroup.all().sort((a,b) => a.key.localeCompare(b.key));
+
+                        //return this.sortKey(this.orderedBy);
+                }
+            } else {
+                if (this.sortedBy == "value") {
+                    if (this.orderedBy == 'desc') {
+                        //console.log("Alpha sort: allSort false, sortedBy key, orderedBy desc+")                    
+                        return this.overviewGroup.all().sort(function (a, b) {
+                            return a.key.localeCompare(b.key);
+                        });
+                    } else {}
+                    //console.log("allSort false, sortedBy key, orderedBy asc")
+                    //return this.overviewGroup.all().sort((a,b) => b.key.localeCompare(a.key));                            
+
+                    //return this.sortKey('asc');
+                } else {
+                    if (this.orderedBy == 'desc') {
+                        //console.log("allSort false, sortedBy value, orderedBy desc")
+                        //return this.overviewGroup.all().sort((a,b) => (b.value[this.selected] === undefined ? b.value : b.value[this.selected]) - (a.value[this.selected] === undefined ? a.value : a.value[this.selected]));
+                    } else {}
+                        //console.log("allSort false, sortedBy value, orderedBy asc")
+                        //return this.overviewGroup.all().sort((a,b) => (a.value[this.selected] === undefined ? a.value : a.value[this.selected]) - (b.value[this.selected] === undefined ? b.value : b.value[this.selected]));
+
+                        //return this.sortValue('desc');
+                }
+            }
+        },
+        filterAll: function filterAll(all) {
+            //all is boolean. true for all, false for partial
+            console.log('filterAll: no filters');
+            var all = all == undefined ? true : all;
+            d3.select("#" + this.id).selectAll("rect")
+            // on reset, always fill all with first color in color domain
+            .attr("fill", this.colorScale(this.colorScale.domain()[0])).attr("opacity", 1);
+            //hide reset button
+            d3.select("#" + this.id + "reset").style("visibility", all ? "hidden" : "visible");
+            //hide 'move up' button
+            d3.select("#" + this.id + "level").style("visibility", "hidden");
+            // enable slider
+            this.sliderDisabled = !all;
+            //enable sort
+            d3.select("#" + this.id + "sortAll").property("disabled", false);
+            this.filters = [];
+            this.dimension.filterAll();
+            this.level = 0;
+            this.original = true;
+            dc.redrawAll();
+        },
+        updateData: function updateData() {
+            var _this5 = this;
+
+            //data to display now
+            this.data = this.dataAll().slice(this.lastBar * this.level, this.lastBar * (this.level + 1));
+            //remaining data that gets group into others
+            this.nextData = this.dataAll().slice(this.lastBar * (this.level + 1));
+            // pull out value object from all data
+            var nextVal = this.nextData.map(function (d) {
+                return d.value;
+            });
+            this.data = this.data.filter(function (d) {
+                return (d.value[_this5.selected] === undefined ? d.value : d.value[_this5.selected]) != 0;
+            });
+        },
+        sortAll: function sortAll() {
+            this.allSort = !this.allSort;
+            //key function for accessing key properties in data
+            var key = function key(d) {
+                return d.key;
+            };
+            this.updateData();
+            this.renderOverviewCharts();
+        },
+        renderOverviewCharts: function renderOverviewCharts() {
+            var _this6 = this;
+
+            var vm = this;
+            this.keys = this.overviewGroup.all().map(dc.pluck('key')).slice();
+            var overviewChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getBrushBarChart(this.overviewConfig);
+            overviewChart.controlsUseVisibility(true).colorAccessor(this.colorFunction).valueAccessor(function (d) {
+                return d.value[_this6.selected] === undefined ? d.value : d.value[_this6.selected];
+            }).xAxis().ticks([]);
+
+            //set up filter to enable brush (by default no brush for ordinal chart)
+            overviewChart.hasFilterHandler(function (filters, filter) {
+                if (filter === null || typeof filter === 'undefined') {
+                    if (filters.length > 0) {
+                        return filters[0][0] !== vm.keys[0] || filters[0][1] !== vm.keys[14];
+                    } else {
+                        return filters.length === 0;
+                    }
+                } else {
+                    //if filter is defined, we are in the process of applying filters,
+                    //so return false
+                    return false;
+                }
+            });
+            //prevent "resetAll" function from wiping out brush by replacing default filterAll function with our own
+            //note: do not call filter(null) on this chart!
+            overviewChart.filterAll = function () {
+                //subtract by 0.01 to keep numBars correct but set brush to correct point
+                overviewChart.replaceFilter(dc.filters.RangedFilter(0, vm.numBars - 0.01));
+            };
+            overviewChart.filterHandler(function (dimension, filters) {
+                //apply filters (have to go from number to string as specified in dimension)
+                var rangeFilterDecode = filters.map(function (rangefilt) {
+                    //both pairs (low,high) and (lowNum,highNum) are required!
+                    //find units on low end and high end of range
+                    //note: floor on low end and ceil on high end to keep bars at ends of brush
+                    var low = vm.keys[Math.floor(rangefilt[0])];
+                    var high = vm.keys[Math.floor(rangefilt[1])] || 'zzz';
+                    //find number corresponding to high and low end of range
+                    //note: floor on low end and ceil on high end to keep bars at ends of brush
+                    var lowNum = Math.max(Math.floor(rangefilt[0]), 0);
+                    var highNum = Math.min(Math.floor(rangefilt[1]), vm.overviewGroup.all().length);
+                    //reset filter array
+                    vm.filterArray = [];
+                    //put all units within range to an array (creates array of length (highNum - lowNum)
+                    for (var i = lowNum; i < highNum + 1; i++) {
+                        vm.filterArray.push(vm.keys[i]);
+                    }
+                    return dc.filters.RangedFilter(low, high);
+                });
+                return rangeFilterDecode;
+            });
+            //override existing filter function - makes filter(null) a no-op to prevent wiping out brush
+            var existingFunction = overviewChart.filter;
+            overviewChart.oldFilter = existingFunction;
+            overviewChart.filter = function (args) {
+                if (!arguments.length) {
+                    var filters = overviewChart.filters();
+                    return filters.length > 0 ? filters[0] : null;
+                } else if (args == null || args.length == 0) {
+                    return overviewChart;
+                } else {
+                    overviewChart.oldFilter(args);
+                }
+                return overviewChart;
+            };
+            //once user moves brush, store starting position of brush
+            overviewChart.brushStart = [];
+            var b = overviewChart.brush();
+            b.on('brushstart.custom', function () {
+                overviewChart.brushStart = overviewChart.extendBrush();
+            });
+            //override existing _brushing function (_brushing is called everytime brush moves), which does:
+            //1. renames old _brushing function to __brushing
+            //2. uses function supplied as last argument to dc.override as new _brushing function
+            //3. adds a check before calling __brushing. This check resets the start and end of the brush to their 
+            //   positions before the brush was moved if the difference between the start and end of the brush is 
+            //   too small to capture a data element/bar
+            dc.override(overviewChart, '_brushing', function () {
+                //extendBrush() returns an array where the first element is the left most (smallest) side of brush and
+                //the second element is the right most (largest) side of brush
+                var extent = overviewChart.extendBrush();
+                if (Math.abs(extent[1] - extent[0]) < 1) {
+                    overviewChart.brush().extent(overviewChart.brushStart);
+                }
+                overviewChart.__brushing();
+            });
+            //override existing fadeDeselectedArea function to make sure selected area (non-gray bars) aligns
+            //with bars in normal bar chart
+            overviewChart.fadeDeselectedArea = function () {
+                //change of context, 'this' refers to chart object, not vue 
+                var _chart = this;
+                var bars = _chart.chartBodyG().selectAll('rect.bar');
+                var extent = _chart.brush().extent();
+                if (!_chart.brushIsEmpty(extent)) {
+                    //start and end are decimal numbers representing start and end of brush
+                    var start = extent[0];
+                    var end = extent[1];
+
+                    //bar x values(d.x) will be integers, but start and end are decimal
+                    //if bar is within brush or ends of brush sit on bar, highlight bar
+                    bars.classed(dc.constants.DESELECTED_CLASS, function (d) {
+                        return d.x < Math.floor(start) || d.x > end;
+                    });
+                } else {
+                    bars.classed(dc.constants.DESELECTED_CLASS, false);
+                }
+            };
+            //override turnOnControls and turnOffControls for top brush chart to make only "Reset Top" button shown when filtering brush chart 
+            overviewChart.turnOnControls = function () {
+                d3.select('#btn-overview-' + vm.id + '-reset').style('visibility', 'visible');
+            };
+            overviewChart.turnOffControls = function () {
+                d3.select('#btn-overview-' + vm.id + '-reset').style('visibility', 'hidden');
+            };
+            this.overviewChart = overviewChart;
+
+            //unit
+            var overviewNormalChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getOrdinalBarChart(this.overviewNormalConfig);
+            overviewNormalChart.elasticX(true).controlsUseVisibility(true).colorAccessor(this.colorFunction).valueAccessor(function (d) {
+                return d.value[_this6.selected] === undefined ? d.value : d.value[_this6.selected];
+            }).on('pretransition', function (chart) {
+                chart.selectAll('g.x text').style('text-anchor', 'end').attr('transform', 'translate(-8,0)rotate(-45)').on('click', function (d) {
+                    chart.filter(d);
+                    dc.redrawAll();
+                });
+            });
+            //override turnOnControls and turnOffControls for bottom bar chart to allow reset button to be shown in first chart header
+            overviewNormalChart.turnOnControls = function () {
+                d3.select('#btn-' + vm.id + '-reset').style('visibility', 'visible');
+            };
+            overviewNormalChart.turnOffControls = function () {
+                d3.select('#btn-' + vm.id + '-reset').style('visibility', 'hidden');
+            };
+            this.overviewNormalChart = overviewNormalChart;
+            this.updateData();
+            //render and redraw
+            this.overviewChart.render();
+            this.overviewNormalChart.render();
+            //move brush to 'reset' position - subtract 0.01 to keep selection correct and only use number of bars inputted
+            this.overviewChart.filter(dc.filters.RangedFilter(0, this.numBars - 0.01));
+            this.overviewChart.redraw();
+            this.overviewNormalChart.redraw();
+        }
+
+    },
+    watch: {
+        //render charts once loaded changes from false to true
+        loaded: function loaded() {
+            console.log('loaded changed');
+            if (this.loaded == true) {
+                console.log('loaded true');
+                this.renderOverviewCharts();
+            }
+        },
+        //force redraw after rendered changes to true
+        rendered: function rendered() {
+            if (this.rendered == true) {
+                this.updateData();
+            }
+        }
+    },
+    components: {
+        FontAwesomeIcon: __WEBPACK_IMPORTED_MODULE_2__fortawesome_vue_fontawesome___default.a,
+        Multiselect: __WEBPACK_IMPORTED_MODULE_3_vue_multiselect___default.a
+    },
+    mounted: function mounted() {
+        console.log('mounted: overview');
+        //In case we go through mounted after everything is loaded, still render charts (more for hot reloading)
+        // note: this part AND the watcher are required
+        if (this.loaded == true) {
+            this.renderOverviewCharts();
+        }
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    },
+    beforeDestroy: function beforeDestroy() {
+        console.log('before destroy: overview');
+    },
+    destroyed: function destroyed() {
+        console.log('destroyed: overview');
+    }
+});
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("Za4h"), __webpack_require__("iEPi"), __webpack_require__("M4fF"), __webpack_require__("7t+N")))
+
+/***/ }),
+
 /***/ "vRyA":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -44562,4 +45397,4 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.09935ad2f1168fc13079.js.map
+//# sourceMappingURL=app.c3a857cc03bab1678d31.js.map
