@@ -33702,7 +33702,7 @@ var render = function() {
         _vm._v(" "),
         _c(
           "h6",
-          { staticClass: "col-md-3 col-sm-6 col-12" },
+          { staticClass: "col-lg-4 col-md-6 col-sm-6 col-12" },
           [
             _c("label", { staticClass: "typo__label" }, [
               _vm._v("Select " + _vm._s(_vm.title) + " dropdown")
@@ -33710,7 +33710,7 @@ var render = function() {
             _vm._v(" "),
             _c("multiselect", {
               attrs: {
-                options: this.filterArray,
+                options: _vm.options,
                 multiple: true,
                 "close-on-select": false,
                 "clear-on-select": false,
@@ -42416,6 +42416,7 @@ if(false) {
             }).on('pretransition', function (chart) {
                 chart.selectAll('g.x text').style('text-anchor', 'end').attr('transform', 'translate(-8,0)rotate(-45)').on('click', function (d) {
                     chart.filter(d);
+                    options.filter(d);
                     dc.redrawAll();
                 });
             });
@@ -45399,4 +45400,4 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.a36e0a1cf91a48342ee2.js.map
+//# sourceMappingURL=app.e38157a553980726c8ec.js.map
