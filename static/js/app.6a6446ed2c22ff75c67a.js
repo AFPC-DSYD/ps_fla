@@ -1128,14 +1128,14 @@ if (false) {
             dc.chartRegistry.list().forEach(function (d) {
                 //console.log("d.filter(): "+d.filter())
                 //if (d.hasFilter()) {console.log("d.filter(): "+d.filters())}
-                if (d.hasFilter() && d.anchor() != '#dc-overviewmajcom-barchart' && d.anchor() != '#dc-overviewbase-barchart') {
+                if (d.hasFilter() && d.anchor() != '#multi-majcom-select' && d.anchor() != '#dc-overviewmajcom-barchart' && d.anchor() != '#dc-overviewbase-barchart') {
                     //console.log(d.anchor(), d.filters())
                     myFilters += '\n (' + d.filters() + ')';
                 }
             });
             if (myFilters !== undefined) {
                 var counterVars = inv.innerText;
-                console.log("counterVars.value: " + counterVars);
+                //console.log("counterVars.value: "+counterVars);
                 // Override global options
                 __WEBPACK_IMPORTED_MODULE_9_toastr___default.a.options = {
                     "positionClass": "toast-bottom-full-width",
@@ -33647,7 +33647,7 @@ var render = function() {
   return _c("div", { staticClass: "row" }, [
     _c("div", { staticClass: "col-12", attrs: { id: "overview" + _vm.id } }, [
       _c("h3", { staticClass: "mb-0 pb-0" }, [
-        _vm._v(" " + _vm._s(_vm.title) + "\n                "),
+        _vm._v(" " + _vm._s(_vm.title) + "\n              "),
         _c("span", { staticStyle: { "font-size": "14pt", opacity: "0.87" } }, [
           _vm._v(_vm._s(_vm.ylabel))
         ]),
@@ -33682,7 +33682,7 @@ var render = function() {
               }
             }
           },
-          [_vm._v("\n                    Reset Top\n                ")]
+          [_vm._v("\n                  Reset Top\n              ")]
         ),
         _vm._v(" "),
         _c(
@@ -33693,11 +33693,11 @@ var render = function() {
             attrs: { type: "button", id: "btn-" + _vm.id + "-reset" },
             on: {
               click: function($event) {
-                _vm.resetChart("dc-" + _vm.id + "-barchart")
+                _vm.resetMultiChart(_vm.id)
               }
             }
           },
-          [_vm._v("\n                    Reset Bottom\n                ")]
+          [_vm._v("\n                  Reset Bottom\n              ")]
         ),
         _vm._v(" "),
         _c(
@@ -33710,15 +33710,18 @@ var render = function() {
             _vm._v(" "),
             _c("multiselect", {
               attrs: {
-                options: _vm.options,
-                multiple: true,
-                "close-on-select": false,
-                "clear-on-select": false,
-                "preserve-search": true,
-                placeholder: "Pick " + _vm.title + "s",
-                label: "name",
-                "track-by": "name",
-                "preselect-first": true
+                id: "multi-" + _vm.id + "-select",
+                options: _vm.keys,
+                searchable: false,
+                "allow-empty": true,
+                "close-on-select": true,
+                placeholder: "Pick " + _vm.title + "",
+                label: _vm.options,
+                "track-by": _vm.options,
+                "@click": _vm.renderDropdowns(
+                  "dc-" + _vm.id + "-barchart",
+                  _vm.multiLabels
+                )
               },
               scopedSlots: _vm._u([
                 {
@@ -33738,17 +33741,19 @@ var render = function() {
                 }
               ]),
               model: {
-                value: _vm.id.selected,
+                value: _vm.value,
                 callback: function($$v) {
-                  _vm.$set(_vm.id, "selected", $$v)
+                  _vm.value = $$v
                 },
-                expression: "id.selected"
+                expression: "value"
               }
             })
           ],
           1
         )
       ]),
+      _vm._v(" "),
+      _c("div", { attrs: { id: "dc-" + this.id + "-select" } }),
       _vm._v(" "),
       _c("div", { attrs: { id: "dc-overview" + this.id + "-barchart" } })
     ]),
@@ -41994,6 +41999,16 @@ if(false) {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -42010,7 +42025,8 @@ if(false) {
             rendered: false,
             allSort: true,
             keys: [],
-            options: []
+            value: [],
+            options: null
         };
     },
 
@@ -42120,6 +42136,12 @@ if(false) {
                 'colors': this.colorScale
             };
         },
+        resetVal: function resetVal() {
+            return this.value = '';
+        },
+        multiLabels: function multiLabels() {
+            return this.value || '';
+        },
         sortedBy: function sortedBy() {
             return this.sortBy || 'value';
         },
@@ -42134,6 +42156,69 @@ if(false) {
             }).forEach(function (chart) {
                 chart.filterAll();
             });
+            dc.redrawAll();
+        },
+        resetMultiChart: function resetMultiChart(id) {
+            dc.chartRegistry.list().filter(function (chart) {
+                return chart.anchorName() == 'dc-' + id + '-barchart';
+            }).forEach(function (chart) {
+                chart.filterAll();
+            });
+
+            //add enter class
+            //d3.select('#overview' + id + ' div.multiselect div.multiselect__content-wrapper').classed('multiselect-enter', true)
+
+            //add inner active class
+            //d3.select('#overview' + id + ' div.multiselect div.multiselect__content-wrapper').classed('multiselect-enter-active', true)
+            //adjust style
+            //d3.select('#overview' + id + ' div.multiselect div.multiselect__content-wrapper').style('display', 'block')
+
+            //toggle multiselect active
+            //d3.select('#overview' + id + ' div.multiselect').classed('multiselect--active', true)       
+
+            //pseudoclass
+            //remove one class
+            //d3.select('#overview' + id + ' div.multiselect div.multiselect__content-wrapper').classed('multiselect-enter', false)               
+            //add one class
+            //d3.select('#overview' + id + ' div.multiselect div.multiselect__content-wrapper').classed('multiselect-enter-to', true)
+
+            //remove two classes
+            //d3.select('#overview' + id + ' div.multiselect div.multiselect__content-wrapper').classed('multiselect-enter-active', false)              
+            //d3.select('#overview' + id + ' div.multiselect div.multiselect__content-wrapper').classed('multiselect-enter-to', false)
+            // comment out above
+
+            // halfway point               
+            //remove active
+            //d3.select('#overview' + id + ' .multiselect').classed('multiselect--active', false)  
+
+            // comment out below
+            //add two classes      
+            //d3.select('#overview' + id + ' div.multiselect div.multiselect__content-wrapper').classed('multiselect-leave', true)
+            //d3.select('#overview' + id + ' div.multiselect div.multiselect__content-wrapper').classed('multiselect-leave-active', true)    
+
+            //remove one class
+            //d3.select('#overview' + id + ' div.multiselect div.multiselect__content-wrapper').classed('multiselect-leave', false)    
+            //add one class
+            //d3.select('#overview' + id + ' div.multiselect div.multiselect__content-wrapper').classed('multiselect-leave-to', true)  
+
+            // comment out above
+
+            //remove selected
+            //d3.select('#overview' + id + ' div.multiselect div.multiselect__content-wrapper ul li span.multiselect__option.multiselect__option--selected').classed('multiselect__option--selected',false)
+            //d3.select('#overview' + id + ' div.multiselect div.multiselect__content-wrapper ul li span.multiselect__option.multiselect__option--highlight').classed('multiselect__option--highlight',false)
+
+
+            //d3.select("'multi-' + id + '-select'").placeholder = "'Pick '+id "
+
+
+            // comment out below
+            //remove two classes            
+            //d3.select('#overview' + id + ' div.multiselect div.multiselect__content-wrapper').classed('multiselect-leave-active', false)  
+            //d3.select('#overview' + id + ' div.multiselect div.multiselect__content-wrapper').classed('multiselect-leave-to', false)
+
+            //adjust style  
+            //d3.select('#overview' + id + ' div.multiselect div.multiselect__content-wrapper').style('display', 'none') 
+            // comment out above
             dc.redrawAll();
         },
         //remove empty function (es6 syntax to keep correct scope)
@@ -42260,8 +42345,6 @@ if(false) {
             d3.select("#" + this.id + "level").style("visibility", "hidden");
             // enable slider
             this.sliderDisabled = !all;
-            //enable sort
-            d3.select("#" + this.id + "sortAll").property("disabled", false);
             this.filters = [];
             this.dimension.filterAll();
             this.level = 0;
@@ -42283,20 +42366,74 @@ if(false) {
                 return (d.value[_this5.selected] === undefined ? d.value : d.value[_this5.selected]) != 0;
             });
         },
-        sortAll: function sortAll() {
-            this.allSort = !this.allSort;
-            //key function for accessing key properties in data
-            var key = function key(d) {
-                return d.key;
-            };
-            this.updateData();
-            this.renderOverviewCharts();
+        renderDropdowns: function renderDropdowns(id, value) {
+            //console.log('start') 
+            dc.chartRegistry.list().forEach(function (d) {
+                if (d.anchorName() == id) {
+                    d.filter(null);
+                    if (value !== null || typeof value !== 'null') {
+                        var myDropdownArr = value;
+                        //console.log('dropDown: '+ myDropdownArr)
+                        if (value.length > 0) {
+                            return d.filter(value);
+                        }
+                        //else if (value.length <= 0 || typeof(value) == 'null') {
+                        //    return d.filter(null)
+                        //}   
+                    } else {
+                        //console.log('val equals null')
+                        resetChart(d);
+                        resetChart('multi-' + id + '-select');
+                        return d.filter(null);
+                    }
+                }
+            });
+            // //Identify existing filters
+            // if (chart.hasFilter()) {
+            //     myFilters = Array.from(chart.filters())
+            //     console.log('normalChart has filter: '+myFilters)
+            //     myDropdownArr.forEach((d) => {
+            //         console.log('myDropDownArr: '+d)
+            //         if (myFilters.includes(d)) {
+            //             myFilters.pop(d)
+            //             console.log('Value removed. myFilters: '+myFilters)
+            //             return chart.filter(myFilters)
+            //         } else if (!myFilters.includes(d)) {
+            //             myFilters.push(d)
+            //             myFilters.sort()
+            //             console.log('Value added. myFilters: '+myFilters)
+            //             return chart.filter(myFilters)
+            //         }                        
+            //         //this should apply my filters into the chart filter
+            //         //return chart.filter([myFilters])  
+            //     })   
+
+            // } else if (!chart.hasFilter() && myDropdownArr.length > 0) {
+            //     myDropdownArr.forEach((d) => {
+            //         console.log(d)
+            //         myFilters.push(d)
+            //         myFilters.sort()
+            //         console.log('no hasfilters & dropdown.length >0 '+myFilters)     
+
+            //         return chart.filter(myFilters)
+            //     })  
+
+            //   } else {
+            //       console.log('None of the above criteria occurred')
+            //       return chart.filter(null)
+            //   }
+            //   console.log('myFilters @ end: '+myFilters)
+
+            // })    
+            //console.log('end')
+            dc.redrawAll();
         },
         renderOverviewCharts: function renderOverviewCharts() {
             var _this6 = this;
 
             var vm = this;
             this.keys = this.overviewGroup.all().map(dc.pluck('key')).slice();
+
             var overviewChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getBrushBarChart(this.overviewConfig);
             overviewChart.controlsUseVisibility(true).colorAccessor(this.colorFunction).valueAccessor(function (d) {
                 return d.value[_this6.selected] === undefined ? d.value : d.value[_this6.selected];
@@ -42415,11 +42552,12 @@ if(false) {
                 return d.value[_this6.selected] === undefined ? d.value : d.value[_this6.selected];
             }).on('pretransition', function (chart) {
                 chart.selectAll('g.x text').style('text-anchor', 'end').attr('transform', 'translate(-8,0)rotate(-45)').on('click', function (d) {
+                    //console.log(d)                                                     
                     chart.filter(d);
-                    options.filter(d);
                     dc.redrawAll();
                 });
             });
+
             //override turnOnControls and turnOffControls for bottom bar chart to allow reset button to be shown in first chart header
             overviewNormalChart.turnOnControls = function () {
                 d3.select('#btn-' + vm.id + '-reset').style('visibility', 'visible');
@@ -42436,6 +42574,18 @@ if(false) {
             this.overviewChart.filter(dc.filters.RangedFilter(0, this.numBars - 0.01));
             this.overviewChart.redraw();
             this.overviewNormalChart.redraw();
+
+            // create a select menu
+            // var selDim = overviewNormalChart,
+            //     selGroup = selDim.group()
+            // var selectMenu = dc.selectMenu('#dc-' + vm.id + '-select')
+            //   .dimension(selDim)
+            //   .group(selGroup)
+            //   .title((d)=>{
+            //      return d.key
+            //   })
+            //dc.renderAll();
+            //
         }
 
     },
@@ -45400,4 +45550,4 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.e38157a553980726c8ec.js.map
+//# sourceMappingURL=app.6a6446ed2c22ff75c67a.js.map
