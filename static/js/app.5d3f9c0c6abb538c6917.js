@@ -34048,7 +34048,7 @@ var _this2 = this;
             majcomColorScale: d3.scale.ordinal().range([__WEBPACK_IMPORTED_MODULE_1__chartSpecs__["a" /* default */].majcomChart.color]),
             pageName: 'Enlisted Retention',
             category: '1ST TERM',
-            year: '2018',
+            year: new Date().getFullYear(),
             /* FAB items */
             bgColor: '#333333',
             position: 'bottom-right',
@@ -34114,10 +34114,10 @@ var _this2 = this;
         resetAll: function resetAll() {
             this.category = '1ST TERM';
             this.selected = 'reEnlRate';
-            this.year = '2018';
+            this.year = this.year;
             __WEBPACK_IMPORTED_MODULE_5__store_store__["a" /* store */].state.resetAfsc = true;
             dc.filterAll();
-            this.singleSubmit('2018', 'dc-year-rowchart');
+            this.singleSubmit(this.year, 'dc-year-rowchart');
             this.singleSubmit('1ST TERM', 'dc-cat-rowchart');
         },
 
@@ -34140,7 +34140,7 @@ var _this2 = this;
             }).forEach(function (chart) {
                 chart.filterAll();
                 if (_.includes(id, 'year')) {
-                    _this.singleSubmit('2018', id);
+                    _this.singleSubmit(_this.year, id);
                 } else {
                     _this.singleSubmit('1ST TERM', id);
                 }
@@ -34424,7 +34424,7 @@ var _this2 = this;
                     _this4.singleSubmit(d.key, 'dc-year-rowchart');
                 });
             }).controlsUseVisibility(true);
-            yearChart.filter('2018');
+            yearChart.filter(_this4.year);
 
             //CAT
             var catConfig = {};
@@ -45550,4 +45550,4 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.6a6446ed2c22ff75c67a.js.map
+//# sourceMappingURL=app.5d3f9c0c6abb538c6917.js.map
