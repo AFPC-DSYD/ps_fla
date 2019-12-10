@@ -5996,7 +5996,8 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
                 return d.Inventory;
             });
             ageConfig.minHeight = 250;
-            ageConfig.aspectRatio = 2;
+            ageConfig.maxHeight = 250;
+            ageConfig.aspectRatio = 3;
             ageConfig.margins = { top: 0, left: 30, right: 30, bottom: 60 };
             var c = d3.rgb("coral");
             ageConfig.colors = d3.scale.ordinal().range([c.brighter(1).toString(), c.brighter(0.7).toString(), c.brighter(0.3).toString(), c.toString(), c.darker(0.3).toString(), c.darker(0.6).toString()]);
@@ -45667,4 +45668,4 @@ exports.push([module.i, "\na[data-v-40ab164b], a[data-v-40ab164b]:active, a[data
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.159e0c60e621d479b0e8.js.map
+//# sourceMappingURL=app.37845889330b9d92a887.js.map
