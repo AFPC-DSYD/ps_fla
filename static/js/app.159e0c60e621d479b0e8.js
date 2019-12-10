@@ -5995,9 +5995,9 @@ exports.push([module.i, "\n.dc-chart path.dc-symbol, .dc-legend g.dc-legend-item
             ageConfig.group = ageConfig.dim.group().reduceSum(function (d) {
                 return d.Inventory;
             });
-            ageConfig.minHeight = 130;
+            ageConfig.minHeight = 250;
             ageConfig.aspectRatio = 2;
-            ageConfig.margins = { top: 0, left: 30, right: 30, bottom: 66 };
+            ageConfig.margins = { top: 0, left: 30, right: 30, bottom: 60 };
             var c = d3.rgb("coral");
             ageConfig.colors = d3.scale.ordinal().range([c.brighter(1).toString(), c.brighter(0.7).toString(), c.brighter(0.3).toString(), c.toString(), c.darker(0.3).toString(), c.darker(0.6).toString()]);
             var ageChart = __WEBPACK_IMPORTED_MODULE_0__dchelpers___default.a.getRowChart(ageConfig);
@@ -31471,7 +31471,7 @@ var render = function() {
                 _c(
                   "div",
                   {
-                    staticClass: "col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12",
+                    staticClass: "col-xl-4 col-lg-5 col-md-5 col-sm-12 col-12",
                     attrs: { id: "age" }
                   },
                   [
@@ -45667,4 +45667,4 @@ exports.push([module.i, "\na[data-v-40ab164b], a[data-v-40ab164b]:active, a[data
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.189b5e65876a89d53396.js.map
+//# sourceMappingURL=app.159e0c60e621d479b0e8.js.map
