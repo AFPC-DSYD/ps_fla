@@ -4466,7 +4466,7 @@ exports.push([module.i, "\n.toast-title {\n  font-weight: bold;\n}\n.toast-messa
         return {
             data: [],
             loaded: false,
-            fyr: '2018',
+            fyr: '2020',
             searchCAFSC: "",
             pageName: 'Enlisted Education',
             /* FAB items */
@@ -4506,8 +4506,8 @@ exports.push([module.i, "\n.toast-title {\n  font-weight: bold;\n}\n.toast-messa
         resetAll: function resetAll() {
             dc.filterAll();
             dc.redrawAll();
-            this.fyr = '2018';
-            this.singleSubmit('2018', 'dc-fyr-barchart');
+            this.fyr = '2020';
+            this.singleSubmit('2020', 'dc-fyr-barchart');
         },
 
         startDemo: function startDemo() {
@@ -4757,7 +4757,7 @@ exports.push([module.i, "\n.toast-title {\n  font-weight: bold;\n}\n.toast-messa
                     _this.singleSubmit(d.data.key, 'dc-fyr-barchart');
                 });
             });
-            fyrChart.filter('2018');
+            fyrChart.filter('2020');
 
             //Education Level / Degree Type Barchart
             var edLevelConfig = {};
@@ -38015,8 +38015,8 @@ exports.push([module.i, "\n.loader[data-v-04a0d67a] {\n    border: 16px solid #d
         resetAll: function resetAll() {
             dc.filterAll();
             dc.redrawAll();
-            this.fyr = '2018';
-            this.singleSubmit('2018', 'dc-fyr-barchart');
+            this.fyr = '2020';
+            this.singleSubmit('2020', 'dc-fyr-barchart');
         },
 
         startDemo: function startDemo() {
@@ -38291,7 +38291,7 @@ exports.push([module.i, "\n.loader[data-v-04a0d67a] {\n    border: 16px solid #d
                     _this.singleSubmit(d.data.key, 'dc-fyr-barchart');
                 });
             });
-            fyrChart.filter('2018');
+            fyrChart.filter('2020');
 
             //Group Barchart
             var groupConfig = {};
@@ -45668,4 +45668,4 @@ exports.push([module.i, "\na[data-v-40ab164b], a[data-v-40ab164b]:active, a[data
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.37845889330b9d92a887.js.map
+//# sourceMappingURL=app.849ebe397b32d6a094d8.js.map
