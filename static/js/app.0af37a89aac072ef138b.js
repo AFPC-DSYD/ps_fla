@@ -4466,7 +4466,7 @@ exports.push([module.i, "\n.toast-title {\n  font-weight: bold;\n}\n.toast-messa
         return {
             data: [],
             loaded: false,
-            fyr: '2020',
+            fyr: '2019',
             searchCAFSC: "",
             pageName: 'Enlisted Education',
             /* FAB items */
@@ -4506,8 +4506,8 @@ exports.push([module.i, "\n.toast-title {\n  font-weight: bold;\n}\n.toast-messa
         resetAll: function resetAll() {
             dc.filterAll();
             dc.redrawAll();
-            this.fyr = '2020';
-            this.singleSubmit('2020', 'dc-fyr-barchart');
+            this.fyr = '2019';
+            this.singleSubmit('2019', 'dc-fyr-barchart');
         },
 
         startDemo: function startDemo() {
@@ -4757,7 +4757,7 @@ exports.push([module.i, "\n.toast-title {\n  font-weight: bold;\n}\n.toast-messa
                     _this.singleSubmit(d.data.key, 'dc-fyr-barchart');
                 });
             });
-            fyrChart.filter('2020');
+            fyrChart.filter('2019');
 
             //Education Level / Degree Type Barchart
             var edLevelConfig = {};
@@ -38015,8 +38015,11 @@ exports.push([module.i, "\n.loader[data-v-04a0d67a] {\n    border: 16px solid #d
         resetAll: function resetAll() {
             dc.filterAll();
             dc.redrawAll();
-            this.fyr = '2020';
-            this.singleSubmit('2020', 'dc-fyr-barchart');
+            var d = new Date();
+            var n = d.getFullYear();
+            this.fyr = '2019';
+            this.singleSubmit('2019', 'dc-fyr-barchart');
+            // previously hardcoded FY 2020
         },
 
         startDemo: function startDemo() {
@@ -38291,7 +38294,8 @@ exports.push([module.i, "\n.loader[data-v-04a0d67a] {\n    border: 16px solid #d
                     _this.singleSubmit(d.data.key, 'dc-fyr-barchart');
                 });
             });
-            fyrChart.filter('2020');
+            fyrChart.filter('2019');
+            // previously hardcoded 2020
 
             //Group Barchart
             var groupConfig = {};
@@ -45668,4 +45672,4 @@ exports.push([module.i, "\na[data-v-40ab164b], a[data-v-40ab164b]:active, a[data
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.849ebe397b32d6a094d8.js.map
+//# sourceMappingURL=app.0af37a89aac072ef138b.js.map
